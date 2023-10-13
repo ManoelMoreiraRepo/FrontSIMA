@@ -1,0 +1,36 @@
+.adminmain{
+    width: 100%;
+}
+.contenedorContenido{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.contenedorTarjetas{
+    display: flex;
+    justify-content: flex-start;
+    gap: 18px;
+    flex-wrap: wrap;
+    
+}
+.tituloContenido{
+   margin: 12px 12px;
+}
+.separador{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 28px 0;
+}
+.separador img{
+    border-radius: 50%;
+    overflow: hidden;
+}
+.separador span{
+display: block;
+    width: 90%;
+    height: 8px;
+    background-color: white;
+}

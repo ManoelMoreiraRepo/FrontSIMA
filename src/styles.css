@@ -29,11 +29,19 @@ html, body{
 html, body {
   height: 100%;
   margin: 0;
+  background: #11354F;
 }
-
+h2{
+  color: white;
+}
 body {
   display: flex;
   flex-direction: column;
+}
+.footer{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 
 app-root {

@@ -1,0 +1,22 @@
+export const menuAdmin = [
+    {
+        img:"./assets/img/admin/rrhh.png",
+        link:"/gps"
+    },
+    {
+        img:"./assets/img/admin/dpa.png",
+        link:"/gps"
+    },
+    {
+        img:"./assets/img/admin/cred.png",
+        link:"/gps"
+    },
+    {
+        img:"./assets/img/admin/sumi.png",
+        link:"/gps"
+    },
+    {
+        img:"./assets/img/admin/informes.png",
+        link:"/gps"
+    },
+]

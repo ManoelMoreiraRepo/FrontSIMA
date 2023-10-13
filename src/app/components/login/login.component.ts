@@ -13,7 +13,7 @@ export class LoginComponent {
  
 
   main(){
-    this.router.navigate(['/main'])
+    this.router.navigate(['/adminmain'])
   }
 
 }

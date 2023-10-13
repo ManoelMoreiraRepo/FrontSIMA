@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { MainComponent } from './components/main/main.component';
+import {AdminmainComponent} from './components/adminmain/adminmain.component';
 
 import {HttpClientModule} from '@angular/common/http';
 import { HeaderComponent } from './components/header/header.component';
@@ -30,7 +31,8 @@ import { InformacionempleadoComponent } from './components/informacionempleado/i
     EmpleadoComponent,
     NuevoempleadoComponent,
     EditempleadoComponent,
-    InformacionempleadoComponent
+    InformacionempleadoComponent,
+    AdminmainComponent,
   ],
   imports: [
     BrowserModule,
