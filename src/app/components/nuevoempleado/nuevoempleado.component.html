@@ -1,0 +1,111 @@
+<header class="header" id="inicio">
+    <nav class="navbar navbar-expand-md bg-black">
+        <div class="container-fluid">
+            <!-- icono o nombre -->
+            <a class="navbar-brand logo" href="http://gruposima.ar/">
+                <img src="../../../assets/img/logo.png" alt="logo" class="img-fluid" width=" 250" height="">
+            </a>
+            <!-- boton Login -->
+            <div class="botones-menu">
+                <button type="button" class="btn btn-danger g-4" (click)="main()">Principal</button>
+            </div>
+        </div>
+    </nav>
+</header>
+<div class="container col-md-12 my-4">
+    <div class="card">
+        <div class="card-header">
+            <h3>Agregar Personas</h3>
+        </div>
+            <form class="cbp-mc-form"  (ngSubmit)="onCreate()" novalidate #f="ngForm">
+                <div class="cbp-mc-column">
+                    <div class="form-group">
+                        <label for="nombreEmpleado">Nombres</label>
+                        <input type="text" class="form-control" id="nombreEmpleado" name="nombreEmpleado" [(ngModel)]="nombreEmpleado" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="apellidoEmpleado">Apellido</label>
+                        <input type="text" class="form-control" id="apellidoEmpleado" name="apellidoEmpleado" [(ngModel)]="apellidoEmpleado" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="dniempleado">Dni</label>
+                        <input type="text" class="form-control" id="dniempleado" name="dniempleado"  [(ngModel)]="dniempleado" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="direccionEmpleado">Dirección</label>
+                        <input type="text" class="form-control" id="direccionEmpleado" name="direccionEmpleado"  [(ngModel)]="direccionEmpleado" required>
+                    </div>
+     
+                    <div class="form-group">
+                        <label for="legajoEmpleado">Legajo</label>
+                        <input type="text" class="form-control" id="legajoEmpleado" name="legajoEmpleado" [(ngModel)]="legajoEmpleado" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fechaNascimentoEmpleado">Fecha/Nac</label>
+                        <input type="datetime" class="form-control" id="fechaNascimentoEmpleado" name="fechaNascimentoEmpleado" placeholder="yyyy-mm-dd" [(ngModel)]="fingreso" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fechaAltaEmpleado">Fecha/Alta</label>
+                        <input type="datetime" class="form-control" id="fechaAltaEmpleado" name="fechaAltaEmpleado"
+                            placeholder="yyyy-mm-dd" [(ngModel)]="falta" required>
+                    </div>
+                </div>
+                <div class="cbp-mc-column">
+                   
+                    <div class="form-group">
+                        <label for="objetivoEmpleado">Objetivo</label>
+                        <select class="form-select" aria-label="Default select example">
+                            <option *ngFor="let n of objetivo">{{ n }}</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="turnoEmpleado">Turno</label>
+                        <select class="form-select" aria-label="Default select example">
+                            <option *ngFor="let n of turno">{{ n }}</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="telefonoEmpleado">Telefono Contacto</label>
+                        <input type="number" class="form-control" id="telefonoEmpleado" name="telefonoEmpleado"
+                            [(ngModel)]="telefonoEmpleado" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cargoEmpleado">Cargo</label>
+                        <input type="text" class="form-control" id="cargoEmpleado" name="cargoEmpleado"
+                            [(ngModel)]="cargoEmpleado" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="emailEmpleado">Email</label>
+                        <input type="text" class="form-control" id="emailEmpleado" name="emailEmpleado"
+                            [(ngModel)]="emailEmpleado" required>
+                    </div>
+
+                     
+                    <div class="form-group">
+                        <label for="codigoPostalEmpleado">Codifgo postal</label>
+                        <input type="text" class="form-control" id="codigoPostalEmpleado" name="codigoPostalEmpleado"
+                            [(ngModel)]="codigoPostalEmpleado" required>
+                    </div>
+
+                     <div class="form-group">
+                        <label for="testadoEmpleado">Estado</label>
+                        <select class="form-select" aria-label="Default select example">
+                            <option *ngFor="let n of estado">{{ n }}</option>
+                        </select>
+                    </div>
+                </div>
+              
+                <div class="cbp-mc-submit-wrap"><input class="cbp-mc-submit" type="submit" value="Agregar empleado" />
+                </div> 
+
+            </form>
+        </div>
+    </div>
+<app-footer></app-footer>

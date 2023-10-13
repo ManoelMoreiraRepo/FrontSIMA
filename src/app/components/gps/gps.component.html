@@ -1,0 +1,49 @@
+<header class="header" id="inicio">
+    <nav class="navbar navbar-expand-md bg-black">
+        <div class="container-fluid">
+            <!-- icono o nombre -->
+            <a class="navbar-brand logo" href="http://gruposima.ar/">
+                <img src="../../../assets/img/logo.png" alt="logo" class="img-fluid" width=" 250" height="">
+            </a>
+            <!-- boton Login -->
+            <div class="botones-menu">
+                <button type="button" class="btn btn-danger m-2" (click)="main()">MAIN</button>
+                <button type="button" class="btn btn-danger m-2 " (click)="login()" >LOGOUT</button>
+            </div>
+        </div>
+    </nav>
+</header>
+<div class="galeria row g-0 justify-content-center align-items-center text-center">
+
+         <h2 class="titulo my-2">Group of Private Security S.R.L</h2>
+        <div class="contenedor-imagenes">
+            <div class="card m-4" style="width: 18rem;">
+                <img class="card-img-top" src="../../../assets/img/aeroparque.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">AEP</h5>
+                    <p class="card-text">Es el aeropuerto para tráfico nacional y regional del Área Metropolitana de Buenos Aires,
+                         Argentina.</p>
+                    <a (click)="empleado()" class="btn btn-danger">Ver más</a>
+                </div>
+            </div>
+            <div class="card m-4" style="width: 18rem;">
+                <img class="card-img-top" src="../../../assets/img/foto.png" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">EZE</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                    <a href="#" class="btn btn-danger">Ver más</a>
+                </div>
+            </div>
+            <div class="card m-4" style="width: 18rem;">
+                <img class="card-img-top" src="../../../assets/img/foto.png" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">COR</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                    <a href="#" class="btn btn-danger">Ver más</a>
+                </div>
+            </div>
+        </div>  
+</div>
+<app-footer></app-footer>

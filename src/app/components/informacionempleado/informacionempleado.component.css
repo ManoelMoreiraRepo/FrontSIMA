@@ -1,0 +1,339 @@
+
+.cuerpo{
+    font-family: "Poppins", sans-serif;
+    /* padding-top: 1px; */
+    width:100%;
+    background-color: #11354f;
+    min-height: 100vh;
+    margin:0;
+    padding: 0;
+   
+    justify-content: center;
+    align-items: center;
+  }
+  .borde{
+    border-radius: 5px;
+  }
+  
+  /* ======BARRA DE REDES SOCIAL LATERAL=========*/
+  .social {
+  position: fixed;
+  right: 0;
+  top: 210px;
+  z-index: 2000;
+  }
+  .social ul {
+    list-style: none;
+  }
+  .social ul li a {
+    display: inline-block;
+    margin: 2px;
+    color:#fff;
+    background: #ad0505;
+    padding: 15px 15px;
+    text-decoration: none;
+      border-radius: 50%;
+    -webkit-transition:all 500ms ease;
+    -o-transition:all 500ms ease;
+    transition:all 500ms ease;
+  }
+  .social ul li a:hover {
+    background: #000;
+    padding: 20px 20px; 
+    border-radius: 50%;
+  }
+  
+  .icono{
+    font-size: 10px;
+  }
+  
+  .main{
+    background-color: #11354f;
+    width: 100%;
+    margin: 0 auto;
+     height:100vh;
+      justify-content: space-around;
+      flex-wrap: wrap;
+  }
+  
+  .nav-link{
+  background-color: rgba(224, 28, 28, 0.788);
+  color: white;
+  
+  }
+  
+  .fondo{
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    height: 100vh;
+  }
+  
+  .foto{
+    border-radius: 22px;
+    text-align: center;
+    border: solid 2px #eaeaea;
+    box-shadow: 0 0 5px #e4e4e4;
+  }
+  
+  .botones{
+    text-align: right;
+  }
+  .boton1{
+    background-color: rgb(48, 161, 48);
+  }
+  .cursos{
+    margin-top: 1px;
+    /* background-color: rgb(153, 192, 14); */
+    justify-content: center;
+  }
+  .cursos1{
+  margin-top: 25px;
+  /* background-color: rgb(153, 192, 14); */
+  justify-content: center;
+  color:black;
+  }
+  
+  .perfil>table{
+    margin-top: 10px;
+    padding-top: 10px;
+    /* background-color: blueviolet; */
+    border-collapse: separate;
+    
+    border-spacing: 40px;
+  }
+  .tabla{
+   justify-content: center;
+    width: 89%;
+    margin-left: 50px;
+  }
+  .header_fijo thead, 
+  .header_fijo tbody{
+  display: block;
+  }
+  .header_fijo tbody {
+  overflow: auto;
+  height: 150px;
+  }
+  
+  .header_fijo tr>*{
+  width: 50%;
+  }
+  
+  /*corregir el espacio del scroll a la izquierda del tbody*/
+  .header_fijo thead th:last-child{
+   width: 110px;
+  }
+  
+  
+  colgroup {
+    border: black 1px solid;
+  }
+  col {
+    border: rgb(3, 3, 3) 1px solid;
+  }
+  
+   /***************Indumentaria*************/
+  .fondoindumentaria{
+    width: 100%;
+    height:240px;
+  }
+  .cabeza{
+    font-size: 10px;
+    border: solid 3px #eaeaea;
+    box-shadow: 0 0 10px #e4e4e4;
+  }
+  
+  .fila>th{
+   
+  height: 6px; 
+  white-space: nowrap;
+  overflow-x: auto;
+  
+  }
+  .fila1>th{
+   /* background-color: blueviolet; */
+  margin: auto;
+  padding: 1px;
+  white-space: nowrap;
+  overflow-x: auto;
+  
+  }
+  .titulo{
+  font-size: 15px;
+  }
+  
+  .parrafo{
+  font-size:10px;
+  text-align: center;
+  }
+  /***************Operaciones*************/
+  .wrapper-calendar{
+    background-color: rgb(247, 233, 41);
+    margin:1rem;
+    padding: .5rem;
+    border: solid 3px #eaeaea;
+    box-shadow: 0 0 10px #e4e4e4;
+    
+    
+  }
+  .wrapper-calendar > div {
+    text-align: center;
+    width: 50%;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  }
+  
+  ol {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+  li {
+    padding: .25rem;
+    font-size: 1.5ch;
+    cursor: pointer;
+  }
+  li:hover{
+    font-weight: 600;
+  }
+  h2 {
+    margin-bottom: 4px;
+    padding: 0;
+  }
+  .first-day {
+    grid-column-start: var(--first-day-start, 0);
+  }
+  
+  .day-name {
+    background: rgb(236, 236, 224);
+    font-weight: bold;
+    font-size: 12px;
+    margin-bottom: 2px;
+    padding: 4px;
+    text-align: center;
+  }
+  
+  .header-calendar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+  }
+  
+  .header-calendar h1 {
+    width: 100%;
+    font-size: 25px;
+  }
+  
+  .header-calendar button {
+    cursor: pointer;
+    background-color: transparent;
+    border: 0;
+  }
+  
+  /*************Capacitaciones******************/
+  
+  .capacitaciones{
+    /* background-color: blueviolet; */
+    padding-top: 50px;
+  }
+  .capacitaciones > .container > .row{
+  
+  /* background-color: rgb(196, 187, 204); */
+  text-align: center;
+  
+  }
+  .clase{
+  /* background-color: cadetblue; */
+  text-align: center;
+  justify-content: center;
+  margin: auto;
+  
+  }
+  .texto{
+  font-size: 12px;
+  }
+  
+  
+  /*---*/
+  body, .modal{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  }
+  .modal{
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0,0,0,0.5);
+  transition: all 500ms ease;
+  opacity: 0;
+  visibility: hidden;
+  }
+  #btn-modal:checked ~ .modal{
+  opacity: 1;
+  visibility: visible;
+  } 
+  .contenedor{
+  width: 800px;
+  height: 400px;
+  margin: auto;
+  background: #fff;
+  box-shadow: 1px 7px 25px rgba(0,0,0,0.6);
+  transition: all 500ms ease;
+  position: relative;
+  transform: translateY(-30%);
+  font-size: 10px;
+  }
+  #btn-modal:checked ~ .modal .contenedor{
+  transform: translateY(0%);
+  } 
+  .contenedor header{
+  padding: 10px;
+  background: #11354f;
+  color: #fff;
+  font-size: 15px;
+  }
+  .contenedor label{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #fff;
+  font-size: 15px;
+  cursor: pointer;
+  }
+  
+  .contenedor h4{
+  font-size: 15px;
+  }
+  .contenido{
+  width: 100%;
+  padding: 10px; 
+  }
+  .contenido h3{
+  margin-bottom: 10px;
+  }
+  .contenido p{
+  margin-bottom: 7px;
+  }
+  #btn-modal{
+  display: none;
+  }
+  .lbl-modal{
+  background: #ad0505;
+  padding: 10px 15px;
+  border-radius: 4px;
+  
+  cursor: pointer;
+  color: #fff;
+  }
+  @media only screen and (min-width:320px) and (max-width:768px){
+  .contenedor{
+    width: 95%;
+  }
+  }
