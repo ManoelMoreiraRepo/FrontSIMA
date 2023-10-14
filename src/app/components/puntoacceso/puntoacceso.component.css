@@ -1,0 +1,30 @@
+.acceso{
+    width: 522px;
+    
+}
+.tituloAcceso{
+    font-weight: bolder;
+    border-bottom: 11px solid #11354F;
+}
+.acceso > div {
+    background: #FFF;
+    padding-left: 28px;
+}
+.contenedorItem{
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    text-decoration: none;
+    color:black;
+    margin: 4px 0;
+}
+.contenedorItem img{
+    object-fit: cover;
+}
+.contenedorItem h4{
+    margin-bottom: -4px;
+}
+.cuerpoAcceso{
+    padding-top: 12px;
+    padding-bottom: 12px;
+}

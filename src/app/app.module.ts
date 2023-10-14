@@ -17,6 +17,8 @@ import { NuevoempleadoComponent } from './components/nuevoempleado/nuevoempleado
 import { EditempleadoComponent } from './components/editempleado/editempleado.component';
 import { InformacionempleadoComponent } from './components/informacionempleado/informacionempleado.component';
 import { SeparadorComponent } from './components/separador/separador.component';
+import { EmpleadomainComponent } from './components/empleadomain/empleadomain.component';
+import { PuntoaccesoComponent } from './components/puntoacceso/puntoacceso.component';
 
 
 
@@ -35,6 +37,8 @@ import { SeparadorComponent } from './components/separador/separador.component';
     InformacionempleadoComponent,
     AdminmainComponent,
     SeparadorComponent,
+    EmpleadomainComponent,
+    PuntoaccesoComponent,
   ],
   imports: [
     BrowserModule,

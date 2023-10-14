@@ -8,6 +8,7 @@ import { LoginComponent } from './components/login/login.component';
 import { MainComponent } from './components/main/main.component';
 import { NuevoempleadoComponent } from './components/nuevoempleado/nuevoempleado.component';
 import { AdminmainComponent } from './components/adminmain/adminmain.component';
+import { EmpleadomainComponent } from './components/empleadomain/empleadomain.component';
 //import { SistemaComponent } from './components/sistema/sistema.component';
 
 const routes: Routes = [
@@ -19,7 +20,8 @@ const routes: Routes = [
   { path: 'nuevoempleado', component:NuevoempleadoComponent},
   { path: 'editempleado/:id', component:EditempleadoComponent},
   {path:'informacionempleado/:id', component:InformacionempleadoComponent},
-  { path: 'adminmain', component:AdminmainComponent}
+  { path: 'adminmain', component:AdminmainComponent},
+  { path: 'empleadomain', component:EmpleadomainComponent}
   //{path:'sistema', component:SistemaComponent}
 
 ];

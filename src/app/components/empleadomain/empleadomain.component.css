@@ -1,0 +1,20 @@
+.contenedorMenuesSuperior{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.contenedorMenus{
+    display: grid;
+    width: min-content;
+    grid-gap: 10px;
+    grid-template-columns: repeat(2, 1fr);
+    align-content: start;
+}
+.completarRow{
+    background: white;
+}
+.contSumiSis{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}

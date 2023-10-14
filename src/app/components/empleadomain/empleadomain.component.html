@@ -1,0 +1,20 @@
+<div>
+    <app-header></app-header>
+    <app-separador class="separadorContenedor" [urlImg]="urlSeparador" ></app-separador>
+    <div class="contenedorMenuesSuperior">
+        <div class="contenedorMenus">
+            <app-puntoacceso class="completarRow" [objeto]="arrayAmostrar[0]"></app-puntoacceso>
+            <app-puntoacceso [objeto]="arrayAmostrar[1]"></app-puntoacceso>
+            <app-puntoacceso class="completarRow" [objeto]="arrayAmostrar[2]"></app-puntoacceso>
+            <div class="contSumiSis">
+                <app-puntoacceso [objeto]="arrayAmostrar[3]"></app-puntoacceso>
+                <app-puntoacceso [objeto]="arrayAmostrar[4]"></app-puntoacceso>
+            </div>
+            
+            
+        </div>
+    </div>
+   
+
+    <app-footer></app-footer>
+</div>
