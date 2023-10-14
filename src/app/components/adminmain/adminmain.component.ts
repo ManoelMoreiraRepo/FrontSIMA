@@ -8,4 +8,5 @@ import { menuAdmin } from 'src/app/constantes';
 })
 export class AdminmainComponent {
   lista = menuAdmin;
+  urlSeparador = "./assets/img/gruposima.png";
 }
