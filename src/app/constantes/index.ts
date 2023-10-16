@@ -1,7 +1,7 @@
 export const menuAdmin = [
     {
         img:"./assets/img/admin/rrhh.png",
-        link:"/gps"
+        link:"/rrhh"
     },
     {
         img:"./assets/img/admin/dpa.png",
