@@ -1,0 +1,11 @@
+.contenedorTitulos{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 1rem;
+}
+.itemTitulo{
+    color:white;
+    font-size:1rem;
+}

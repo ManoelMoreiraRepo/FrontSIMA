@@ -31,15 +31,16 @@ html, body {
   margin: 0;
   background: #11354F;
 }
-h2{
+h2 , h3{
   color: white;
+  margin: 0 12px
 }
 body {
   display: flex;
   flex-direction: column;
 }
 .footer{
-  position: fixed;
+  position: absolute;
   bottom: 0;
   width: 100%;
 }
@@ -48,6 +49,16 @@ body {
   width: 100%;
 }
 
+.etiqueta{
+  border-radius: 12px;
+  border-color: transparent;
+  padding: 2px 16px;
+  margin: 4px 12px;
+}
+.fondoRojo{
+  color:white;
+  background-color: red;
+}
 app-root {
   flex: 1;
 }

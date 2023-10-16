@@ -97,3 +97,5 @@ export const arrayMenuEmpleado = [
         ]
     },
 ]
+
+export const titulos = ["RRHH" , "CREDENCIALES" , "DPA" ,"SUMINISTROS" , "NOMINA ACTIVA" , "ORGANIGRAMA"];

@@ -5,6 +5,7 @@
 .tituloAcceso{
     font-weight: bolder;
     border-bottom: 11px solid #11354F;
+    text-align: center;
 }
 .acceso > div {
     background: #FFF;
@@ -17,6 +18,9 @@
     text-decoration: none;
     color:black;
     margin: 4px 0;
+}
+.contenedorBoxInferior:hover{
+    background-color: rgb(190, 184, 184);
 }
 .contenedorItem img{
     object-fit: cover;

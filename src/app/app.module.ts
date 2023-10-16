@@ -3,22 +3,25 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './components/login/login.component';
-import { MainComponent } from './components/main/main.component';
-import {AdminmainComponent} from './components/adminmain/adminmain.component';
+import { LoginComponent } from './paginas/login/login.component';
+import { MainComponent } from './paginas/main/main.component';
+import {AdminmainComponent} from './paginas/adminmain/adminmain.component';
 
 import {HttpClientModule} from '@angular/common/http';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { GpsComponent } from './components/gps/gps.component';
-import { EmpleadoComponent } from './components/empleado/empleado.component';
+import { GpsComponent } from './paginas/gps/gps.component';
+import { EmpleadoComponent } from './paginas/empleado/empleado.component';
 import { FormsModule } from '@angular/forms';
-import { NuevoempleadoComponent } from './components/nuevoempleado/nuevoempleado.component';
-import { EditempleadoComponent } from './components/editempleado/editempleado.component';
-import { InformacionempleadoComponent } from './components/informacionempleado/informacionempleado.component';
+import { NuevoempleadoComponent } from './paginas/nuevoempleado/nuevoempleado.component';
+import { EditempleadoComponent } from './paginas/editempleado/editempleado.component';
+import { InformacionempleadoComponent } from './paginas/informacionempleado/informacionempleado.component';
 import { SeparadorComponent } from './components/separador/separador.component';
-import { EmpleadomainComponent } from './components/empleadomain/empleadomain.component';
+import { EmpleadomainComponent } from './paginas/empleadomain/empleadomain.component';
 import { PuntoaccesoComponent } from './components/puntoacceso/puntoacceso.component';
+import { RrhhComponent } from './paginas/rrhh/rrhh.component';
+import { TituleroComponent } from './components/titulero/titulero.component';
+import { ContadorComponent } from './components/contador/contador.component';
 
 
 
@@ -39,6 +42,9 @@ import { PuntoaccesoComponent } from './components/puntoacceso/puntoacceso.compo
     SeparadorComponent,
     EmpleadomainComponent,
     PuntoaccesoComponent,
+    RrhhComponent,
+    TituleroComponent,
+    ContadorComponent,
   ],
   imports: [
     BrowserModule,
