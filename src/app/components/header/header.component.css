@@ -1,0 +1,18 @@
+.header{
+    width: 100%;
+}
+.contenedorGeneralLogos{
+    display: flex;
+    flex-direction: row;
+    margin: 4px 12px;
+}
+
+.contenedorLogos{
+    display: flex;
+    gap:4px
+}
+
+.contenedorLogos img{
+    border-radius: 50%;
+    overflow: hidden;
+}

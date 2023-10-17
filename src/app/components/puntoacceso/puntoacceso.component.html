@@ -1,0 +1,19 @@
+<div class="acceso">
+    <div class="tituloAcceso">
+        <h3 class="tituloAccesoH">{{objeto.titulo}}</h3>
+    </div>
+    <div class="cuerpoAcceso">
+        <div *ngFor="let item of objeto.items">
+            <div class="contenedorBoxInferior">   
+                <a class="contenedorItem" href="#">
+                    <img src="{{item.img}}" width="80px" alt=""> 
+                    <div>
+                        <h4>{{item.titulo}}</h4> 
+                        <p>{{item.descrip}}</p>
+                    </div>
+                </a>
+            </div>
+           
+        </div>
+    </div>
+</div>

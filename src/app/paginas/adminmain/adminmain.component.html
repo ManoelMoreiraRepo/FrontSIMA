@@ -1,0 +1,20 @@
+<div class="adminmain">
+    <app-header></app-header>
+    <div class="contenedorContenido">
+        <!-- <div class="separador">
+            <span></span><img src="./assets/img/gruposima.png" width="80px" alt="">
+        </div> -->
+        <app-separador class="separadorContenedor" [urlImg]="urlSeparador" ></app-separador>
+        <div class="">
+            <h2 class="tituloContenido">GRUPO SIMA</h2>
+            <div class="contenedorTarjetas">
+                <div *ngFor="let item of lista;">
+                    <div class="tarjeta">
+                        <a href="{{item.link}}"><img src="{{item.img}}" alt="" width="180px"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <app-footer></app-footer>
+</div>

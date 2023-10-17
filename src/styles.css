@@ -29,13 +29,39 @@ html, body{
 html, body {
   height: 100%;
   margin: 0;
+  background: #11354F;
 }
-
+h2 , h3{
+  color: white;
+  margin: 0 12px
+}
 body {
   display: flex;
   flex-direction: column;
 }
+.footer{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
 
+.separadorContenedor{
+  width: 100%;
+}
+
+.etiqueta{
+  border-radius: 12px;
+  border-color: transparent;
+  padding: 2px 16px;
+  margin: 4px 12px;
+}
+.fondoRojo{
+  color:white;
+  background-color: red;
+}
+.inputFile{
+  display: none;
+}
 app-root {
   flex: 1;
 }

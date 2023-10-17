@@ -1,0 +1,29 @@
+.adminmain{
+    width: 100%;
+}
+.contenedorContenido{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.contenedorTarjetas{
+    display: flex;
+    justify-content: flex-start;
+    gap: 18px;
+    flex-wrap: wrap;
+    
+}
+.tituloContenido{
+   margin: 12px 12px;
+}
+
+.tarjeta{
+    transition: all;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in-out;
+}
+
+.tarjeta:hover{
+    transform: scale(1.08);
+}

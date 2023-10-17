@@ -1,0 +1,26 @@
+.contenedorContador{
+    display: flex;
+    justify-content: center;
+}
+.contadorEstadistica{
+    color : white;
+    display: flex;
+    flex-direction: row;
+    gap:24px
+}
+.itemContador {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.boxCont{
+    background-color: white;
+    width: 200px;
+    height: 40px;
+    color: black;
+    font-weight: bold;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

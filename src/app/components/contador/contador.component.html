@@ -1,0 +1,13 @@
+<div class="contenedorContador">
+    <div class="contadorEstadistica">
+        <div  *ngFor="let item of lista">
+            <div class="itemContador">
+                <h5>{{item.titulo}}</h5>
+                <span>{{item.descrip}}</span>
+                <div class="boxCont">
+                    <span>{{item.cant}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
