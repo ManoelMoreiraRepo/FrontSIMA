@@ -10,7 +10,18 @@ export class ImpotacionService{
     URL = 'http://localhost:8080/importacion/';
     constructor(private httpClient: HttpClient) { }
 
-    public subir(archivo:any): Observable<any> {
-        return this.httpClient.post(this.URL + `nomina`, archivo, { responseType: 'text' });
+    public subir(archivo:any) {
+        console.log("SREVICIO");
+       
+
+        this.httpClient.post(this.URL + `nomina`, archivo ,  { responseType: 'text' }).subscribe(
+            (response) => {
+              alert(response);
+            },
+            (error) => {
+              console.error('Error al cargar el archivo CSV', error);
+            }
+        );
+        //return this.httpClient.post(this.URL + `nomina`, formData, { responseType: 'text' });
     }
 }

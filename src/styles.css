@@ -59,6 +59,9 @@ body {
   color:white;
   background-color: red;
 }
+.inputFile{
+  display: none;
+}
 app-root {
   flex: 1;
 }
