@@ -34,4 +34,8 @@ export class PersonaServiceTsServiceService {
   public buscar(textoDeInput: string): Observable<PersonaEmpleado[]> {
     return this.httpClient.get<PersonaEmpleado[]>(this.URL + `search?nombreEmpleado=${textoDeInput}`);
   }
+
+  public getCantidadPorEmpresa():Observable<any>{
+    return this.httpClient.get(this.URL + "cantidadNominaEmpresa");
+  }
 }
