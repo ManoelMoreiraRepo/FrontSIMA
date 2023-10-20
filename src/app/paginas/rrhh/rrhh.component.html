@@ -4,7 +4,7 @@
     <app-separador [urlImg]="urlImagen" ></app-separador>
     <h3>RRHH</h3>
     <span class="etiqueta fondoRojo">INFO</span>
-    <app-contador></app-contador>
+    <app-contador [lista]="cantidadPorEmpresa$ | async"></app-contador>
     <div class="contenedorImportacion">
         <div class="barraImportacion">
             <div class="boxImport">
