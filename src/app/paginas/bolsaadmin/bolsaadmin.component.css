@@ -1,0 +1,15 @@
+.contenedorTabla{
+    display: flex;
+    justify-content: center;
+}
+
+
+.tablaBolsa th,td{
+    background-color: white;
+    padding: 10px;
+    border: 12px solid #11354F;;
+}
+
+.tablaBolsa td{
+    text-align: center;
+}

@@ -22,6 +22,7 @@ import { PuntoaccesoComponent } from './components/puntoacceso/puntoacceso.compo
 import { RrhhComponent } from './paginas/rrhh/rrhh.component';
 import { TituleroComponent } from './components/titulero/titulero.component';
 import { ContadorComponent } from './components/contador/contador.component';
+import { BolsaadminComponent } from './paginas/bolsaadmin/bolsaadmin.component';
 
 
 
@@ -45,6 +46,7 @@ import { ContadorComponent } from './components/contador/contador.component';
     RrhhComponent,
     TituleroComponent,
     ContadorComponent,
+    BolsaadminComponent,
   ],
   imports: [
     BrowserModule,

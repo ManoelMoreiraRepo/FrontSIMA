@@ -30,3 +30,11 @@
     align-items: flex-end;
     justify-content: center;
 }
+
+.contenedorInformacion{
+    display: flex;
+    justify-content: center;
+}
+.contenedorInformacion div{
+    width: 69%;
+}

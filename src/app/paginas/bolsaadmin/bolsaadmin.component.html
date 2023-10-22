@@ -1,0 +1,25 @@
+<div>
+    <app-header></app-header>
+    <app-titulero></app-titulero>
+    <app-separador [urlImg]="urlImagen" ></app-separador>
+    <div class="contenedorTabla">
+        <table class="tablaBolsa">
+            <tr>
+                <th>EMPRESA</th>
+                <th>CODIGO</th>
+                <th>DESCRIPCION</th>
+                <th>ZONA</th>
+                <th>POSTULARSE</th>
+            </tr>
+            <tr *ngFor="let item of lista">
+                <td><img src="{{item.img}}" width="45px" alt=""></td>
+                <td>{{item.codigo}}</td>
+                <td>{{item.descripcion}}</td>
+                <td>{{item.zona}}</td>
+                <td><a href="{{item.url}}"><img src="{{urlImagenPostu}}" alt=""></a></td>
+            </tr>
+    
+        </table>
+    </div>
+    <app-footer></app-footer>
+</div>
