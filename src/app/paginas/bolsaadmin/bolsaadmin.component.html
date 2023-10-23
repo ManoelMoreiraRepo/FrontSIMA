@@ -2,6 +2,7 @@
     <app-header></app-header>
     <app-titulero></app-titulero>
     <app-separador [urlImg]="urlImagen" ></app-separador>
+    <span class="etiqueta fondoRojo">INFO</span>
     <div class="contenedorTabla">
         <table class="tablaBolsa">
             <tr>
@@ -20,6 +21,21 @@
             </tr>
     
         </table>
+    </div>
+
+    <div class="contenedorImportacion">
+        <div class="barraImportacion">
+            <div class="boxImport">
+                <div>
+                    <label for="file-bolsa"><img src="./assets/img/up.png" alt="" > </label>
+                    <input id="file-bolsa" class="inputFile" type="file" (change)="onFileChange($event)" />
+                </div>
+                <div>
+                    <h5>Carga Oferta de empleo</h5>
+                    <span>semanal</span>
+                </div>
+            </div>
+        </div>
     </div>
     <app-footer></app-footer>
 </div>
