@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { ToastrService } from 'ngx-toastr';
 
 @Injectable({
     providedIn: 'root'
@@ -8,20 +9,17 @@ import { Observable } from 'rxjs';
 
 export class ImpotacionService{
     URL = 'http://localhost:8080/importacion/';
-    constructor(private httpClient: HttpClient) { }
+    constructor(private httpClient: HttpClient , private mensajero : ToastrService) { }
 
     public subir(archivo:any) {
-        console.log("SREVICIO");
-       
-
         this.httpClient.post(this.URL + `nomina`, archivo ,  { responseType: 'text' }).subscribe(
             (response) => {
-              alert(response);
+              this.mensajero.success(response);
             },
             (error) => {
-              console.error('Error al cargar el archivo CSV', error);
+              this.mensajero.error("Error al cargar el archivo.");
+              console.error('Error al cargar el archivo: ', error);
             }
         );
-        //return this.httpClient.post(this.URL + `nomina`, formData, { responseType: 'text' });
     }
 }

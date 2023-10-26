@@ -21,11 +21,11 @@ const routes: Routes = [
   { path: 'empleado', component:EmpleadoComponent},
   { path: 'nuevoempleado', component:NuevoempleadoComponent},
   { path: 'editempleado/:id', component:EditempleadoComponent},
-  {path:'informacionempleado/:id', component:InformacionempleadoComponent},
+  { path:'informacionempleado/:id', component:InformacionempleadoComponent},
   { path: 'adminmain', component:AdminmainComponent},
   { path: 'empleadomain', component:EmpleadomainComponent},
   { path: 'rrhh', component:RrhhComponent },
-  { path: 'adminbolsa', component:BolsaadminComponent }
+  { path: 'bolsa', component:BolsaadminComponent }
   //{path:'sistema', component:SistemaComponent}
 
 ];
