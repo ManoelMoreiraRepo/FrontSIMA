@@ -10,6 +10,7 @@ import { NuevoempleadoComponent } from './paginas/nuevoempleado/nuevoempleado.co
 import { AdminmainComponent } from './paginas/adminmain/adminmain.component';
 import { EmpleadomainComponent } from './paginas/empleadomain/empleadomain.component';
 import { RrhhComponent } from './paginas/rrhh/rrhh.component';
+import { BolsaadminComponent } from './paginas/bolsaadmin/bolsaadmin.component';
 //import { SistemaComponent } from './components/sistema/sistema.component';
 
 const routes: Routes = [
@@ -23,7 +24,8 @@ const routes: Routes = [
   {path:'informacionempleado/:id', component:InformacionempleadoComponent},
   { path: 'adminmain', component:AdminmainComponent},
   { path: 'empleadomain', component:EmpleadomainComponent},
-  { path: 'rrhh', component:RrhhComponent }
+  { path: 'rrhh', component:RrhhComponent },
+  { path: 'adminbolsa', component:BolsaadminComponent }
   //{path:'sistema', component:SistemaComponent}
 
 ];

@@ -4,7 +4,15 @@
     <app-separador [urlImg]="urlImagen" ></app-separador>
     <h3>RRHH</h3>
     <span class="etiqueta fondoRojo">INFO</span>
-    <app-contador [lista]="cantidadPorEmpresa$ | async"></app-contador>
+    <div class="contenedorInformacion">
+        <div>
+            <span class="tituloBlanco">Por Gerencia</span>
+            <app-contador [lista]="cantidadPorEmpresa$ | async"></app-contador>
+            <span class="tituloBlanco">Por Sindicato</span>
+            <app-contador [lista]="cantidadPorSindicato | async"></app-contador>
+        </div>
+    </div>
+    
     <div class="contenedorImportacion">
         <div class="barraImportacion">
             <div class="boxImport">
@@ -16,7 +24,7 @@
                     <h5>NOMINA ACTIVA</h5>
                     <span>Reporte semanal</span>
                 </div>
-                <dir>
+                <!-- <dir>
                     <select class="form-select" name="empresa" id="empresaSelect" (change)="subirArchivoNomina()">
                         <option selected value="">Por favor seleccione la empresa.</option>
                         <option value="0">Grupo Sima</option>
@@ -25,7 +33,7 @@
                         <option value="3">Global</option>
                         <option value="4">Ecoklin</option>
                     </select>
-                </dir>
+                </dir> -->
             </div>
             <div class="boxImport">
                 <img src="./assets/img/up.png" alt="" >

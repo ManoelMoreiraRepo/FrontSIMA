@@ -1,29 +1,3 @@
-/* You can add global styles to this file, and also import other style files */
-/*body{
-  background-color: #11354f; 
-  min-height: 100vh;
-  margin:0;
-  display: flex;
-  flex-direction: column;
-}
-
-html{
-  background-color: rgb(14, 223, 49);
-  min-height: 100vh;
-  margin:0;
-  display: flex;
-  flex-direction: column;
-} 
-
-html, body{
-
-  min-height: 100vh;
-  margin:0;
-  display: flex;
-  flex-direction: column;
-}*/
-
-
 /* styles.css */
 
 html, body {
@@ -62,6 +36,13 @@ body {
 .inputFile{
   display: none;
 }
+
+.tituloBlanco{
+  color: white;
+  padding: 8px 0;
+  font-size: 1.5rem;
+}
+
 app-root {
   flex: 1;
 }

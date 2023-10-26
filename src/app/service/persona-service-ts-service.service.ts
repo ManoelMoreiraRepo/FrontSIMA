@@ -38,4 +38,7 @@ export class PersonaServiceTsServiceService {
   public getCantidadPorEmpresa():Observable<any>{
     return this.httpClient.get(this.URL + "cantidadNominaEmpresa");
   }
+  public getCantidadPorSindicato():Observable<any>{
+    return this.httpClient.get(this.URL + "cantidadNominaSindicato");
+  }
 }
