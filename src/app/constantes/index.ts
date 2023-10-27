@@ -103,3 +103,6 @@ export const titulos = ["RRHH" , "CREDENCIALES" , "DPA" ,"SUMINISTROS" , "NOMINA
 export const empresaSelect = [
   
 ]
+
+export const rutasUser = ["empleadomain" , "bolsa"];
+export const rutasAdmin = ["empleado","nuevoempleado","editempleado","informacionempleado","adminmain","rrhh","bolsa"]

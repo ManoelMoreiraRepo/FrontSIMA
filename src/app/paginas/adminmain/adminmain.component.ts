@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { menuAdmin } from 'src/app/constantes';
+import { AuthService } from 'src/app/service/auth-service';
 
 @Component({
   selector: 'app-adminmain',
@@ -9,4 +10,14 @@ import { menuAdmin } from 'src/app/constantes';
 export class AdminmainComponent {
   lista = menuAdmin;
   urlSeparador = "./assets/img/gruposima.png";
+  
+  constructor(private seguridad:AuthService) {
+    console.log("Ejectua")
+    this.seguridad.verificarRuta("adminmain");
+  }
+  
+  ngOnInit(): void {
+    console.log("INIT")
+    
+  }
 }

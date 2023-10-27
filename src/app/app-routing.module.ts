@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { RoleGuard } from './role.guard';
 import { RouterModule, Routes } from '@angular/router';
 import { EditempleadoComponent } from './paginas/editempleado/editempleado.component';
 import { EmpleadoComponent } from './paginas/empleado/empleado.component';
@@ -22,8 +23,8 @@ const routes: Routes = [
   { path: 'nuevoempleado', component:NuevoempleadoComponent},
   { path: 'editempleado/:id', component:EditempleadoComponent},
   { path:'informacionempleado/:id', component:InformacionempleadoComponent},
-  { path: 'adminmain', component:AdminmainComponent},
-  { path: 'empleadomain', component:EmpleadomainComponent},
+  { path: 'adminmain', component:AdminmainComponent , canActivate: [RoleGuard], data: { roles: ['ROLE_ADMIN' , 'ROLE_MODERATOR'] }},
+  { path: 'empleadomain', component:EmpleadomainComponent , canActivate: [RoleGuard], data: { roles: ['ROLE_USER']}},
   { path: 'rrhh', component:RrhhComponent },
   { path: 'bolsa', component:BolsaadminComponent }
   //{path:'sistema', component:SistemaComponent}

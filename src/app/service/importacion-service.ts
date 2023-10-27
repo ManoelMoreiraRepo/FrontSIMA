@@ -9,10 +9,11 @@ import { ToastrService } from 'ngx-toastr';
 
 export class ImpotacionService{
     URL = 'http://localhost:8080/importacion/';
+    
     constructor(private httpClient: HttpClient , private mensajero : ToastrService) { }
 
     public subir(archivo:any) {
-        this.httpClient.post(this.URL + `nomina`, archivo ,  { responseType: 'text' }).subscribe(
+        this.httpClient.post(this.URL + `nomina`, archivo ,  { responseType: 'text' , withCredentials: true,}).subscribe(
             (response) => {
               this.mensajero.success(response);
             },
