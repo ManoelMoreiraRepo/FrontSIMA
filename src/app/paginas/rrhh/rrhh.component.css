@@ -1,6 +1,6 @@
 .contenedorImportacion{
-    position: absolute;
-    bottom: 64px;
+    position: relative;
+    bottom: 4px;
     width: 98%;
     margin: 0 1%;
 }
