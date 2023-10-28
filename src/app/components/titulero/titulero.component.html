@@ -1,7 +1,9 @@
 <div>
     <div class="contenedorTitulos">
-        <div *ngFor="let item of titulos">
-            <span class="itemTitulo" >{{item}}</span>
+        <div *ngFor="let item of titulos; index as i">
+
+            <span *ngIf="i != indice" class="itemTitulo" ><a href="{{item.url}}" >{{item.titulo}}</a></span>
+            <span *ngIf="i == indice" class="itemTitulo itemSeleccionado" ><a href="{{item.url}}" >{{item.titulo}}</a></span>
         </div>
     </div>
 

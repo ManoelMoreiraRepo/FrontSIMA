@@ -8,4 +8,13 @@
 .itemTitulo{
     color:white;
     font-size:1rem;
+    
+}
+
+.itemTitulo a{
+    text-decoration: none;
+    color:white;
+}
+.itemSeleccionado{
+    font-weight: bolder;
 }

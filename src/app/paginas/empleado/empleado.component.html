@@ -1,20 +1,5 @@
 <section class="cuerpo1">
-    <header class="header" id="inicio">
-        <nav class="navbar navbar-expand-md bg-black">
-            <div class="container-fluid">
-                <!-- icono o nombre -->
-                <a class="navbar-brand logo" href="http://gruposima.ar/">
-                    <img src="../../../assets/img/logo.png" alt="logo" class="img-fluid bg-black" width=" 250"
-                        height="">
-                </a>
-                <!-- boton Login -->
-                <div class="botones-menu">
-                    <button type="button" class="btn btn-danger m-2" (click)="main()">MAIN</button>
-                    <button type="button" class="btn btn-danger m-2 " (click)="login()">LOGOUT</button>
-                </div>
-            </div>
-        </nav>
-    </header>
+    <app-header></app-header>
     <div class="container card">
 
         <div class="row m-1">
@@ -85,12 +70,4 @@
         </div>
     </div>
 </section>
-<footer class=" d-flex bg-black justify-content-between text-white p-2 navbar-fixed-bottom footer">
-    <p class="float-end">
-        Buenos Aires - Argentina - 2023
-    </p>
-    <p>
-        Copyright:
-        <a href="https://moreirafrontend.web.app/"> M M Dev.</a>
-    </p>
-</footer>
+<app-footer class="footer"></app-footer>

@@ -29,7 +29,7 @@ export const arrayMenuEmpleado = [
             titulo:"BOLSA DE TRABAJO",
             descrip:"Reporte semanal de estado",
             img:"./assets/img/lupa.png",
-            url:"#"
+            url:"/bolsa"
           }
         ]
     },
@@ -98,11 +98,29 @@ export const arrayMenuEmpleado = [
     },
 ]
 
-export const titulos = ["RRHH" , "CREDENCIALES" , "DPA" ,"SUMINISTROS" , "NOMINA ACTIVA" , "ORGANIGRAMA"];
-
-export const empresaSelect = [
-  
-]
-
-export const rutasUser = ["empleadomain" , "bolsa"];
-export const rutasAdmin = ["empleado","nuevoempleado","editempleado","informacionempleado","adminmain","rrhh","bolsa"]
+export const titulos = [
+  {
+    titulo:"RRHH",
+    url:"/rrhh"
+  },
+  {
+    titulo:"CREDENCIALES",
+    url:"/rrhh"
+  },
+  {
+    titulo:"DPA",
+    url:"/rrhh"
+  },
+  {
+    titulo:"SUMINISTROS",
+    url:"/rrhh"
+  },
+  {
+    titulo:"NOMINA ACTIVA",
+    url:"/empleado"
+  },
+  {
+    titulo:"ORGANIGRAMA",
+    url:"/rrhh"
+  },
+];

@@ -5,7 +5,7 @@
     <div class="cuerpoAcceso">
         <div *ngFor="let item of objeto.items">
             <div class="contenedorBoxInferior">   
-                <a class="contenedorItem" href="#">
+                <a class="contenedorItem" href="{{item.url}}">
                     <img src="{{item.img}}" width="80px" alt=""> 
                     <div>
                         <h4>{{item.titulo}}</h4> 

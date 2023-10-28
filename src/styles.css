@@ -44,6 +44,23 @@ body {
   font-size: 1.5rem;
 }
 
+.footer{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.contenedorImportacion{
+  position: fixed;
+  bottom: 58px;
+  width: 98%;
+  margin: 0 1%;
+}
+
+#toast-container{
+  margin-top: 60px;
+}
+
 app-root {
   flex: 1;
 }

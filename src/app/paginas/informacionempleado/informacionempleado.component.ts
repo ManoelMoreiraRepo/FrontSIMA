@@ -70,29 +70,29 @@ export class InformacionempleadoComponent {
     this.empleadoS.detail(id).subscribe((data) => {
       this.empleado = data;
       console.log(this.empleado);
-      this.agruparUniformes(this.empleado.indumentaria)
-      console.log(this.uniformes);
+      // this.agruparUniformes(this.empleado.indumentaria)
+      // console.log(this.uniformes);
       console.log('imprimir DNI ' + this.empleado.dniempleado);
     });
 
-    this.indumentariaS.detail(id).subscribe((dataI) => {
-      this.indumentaria = dataI;
-    });
+    // this.indumentariaS.detail(id).subscribe((dataI) => {
+    //   this.indumentaria = dataI;
+    // });
   }
   main() {
     this.router.navigate(['/main']);
   }
 
-  agruparUniformes(indumentarias: Array<Indumentaria>) {
-    indumentarias.forEach((ind) => {
-      let tipoIndumentaria = ind.tipoIndumentaria;
-      if (this.uniformes.has(tipoIndumentaria)) {
-        let lista = this.uniformes.get(tipoIndumentaria);
-        lista?.push(ind);
-      }else{
-        let lista = [ind];
-        this.uniformes.set(tipoIndumentaria,lista)
-      }
-    });
-  }
+  // agruparUniformes(indumentarias: Array<Indumentaria>) {
+  //   indumentarias.forEach((ind) => {
+  //     let tipoIndumentaria = ind.tipoIndumentaria;
+  //     if (this.uniformes.has(tipoIndumentaria)) {
+  //       let lista = this.uniformes.get(tipoIndumentaria);
+  //       lista?.push(ind);
+  //     }else{
+  //       let lista = [ind];
+  //       this.uniformes.set(tipoIndumentaria,lista)
+  //     }
+  //   });
+  // }
 }

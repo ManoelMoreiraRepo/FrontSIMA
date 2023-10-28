@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component  , Input } from '@angular/core';
 import { titulos } from 'src/app/constantes';
 @Component({
   selector: 'app-titulero',
@@ -7,4 +7,5 @@ import { titulos } from 'src/app/constantes';
 })
 export class TituleroComponent {
   titulos = titulos;
+  @Input() indice : any;
 }

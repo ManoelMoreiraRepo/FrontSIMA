@@ -1,395 +1,220 @@
-<header class="header" id="inicio">
-  <nav class="navbar navbar-expand-md bg-black">
-    <div class="container-fluid">
-      <!-- icono o nombre -->
-      <a class="navbar-brand logo" href="http://gruposima.ar/">
-        <img
-          src="../../../assets/img/logo.png"
-          alt="logo"
-          class="img-fluid"
-          width=" 250"
-          height=""
-        />
-      </a>
-      <!-- boton Login -->
-      <div class="botones-menu">
-        <button type="button" class="btn btn-danger g-4" (click)="main()">
-          Principal
-        </button>
-      </div>
-    </div>
-  </nav>
-</header>
+<app-header></app-header>
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+    <button
+      class="nav-link active gris1"
+      id="nav-perfil-tab"
+      data-bs-toggle="tab"
+      data-bs-target="#nav-perfil"
+      type="button"
+      role="tab"
+      aria-controls="nav-perfil"
+      aria-selected="true"
+    >
+      Perfil
+    </button>
+    <button
+      class="nav-link gris2"
+      id="nav-operaciones-tab"
+      data-bs-toggle="tab"
+      data-bs-target="#nav-operaciones"
+      type="button"
+      role="tab"
+      aria-controls="nav-operaciones"
+      aria-selected="false"
+    >
+      Operaciones
+    </button>
+    <button
+      class="nav-link gris3"
+      id="nav-indumentaria-tab"
+      data-bs-toggle="tab"
+      data-bs-target="#nav-indumentaria"
+      type="button"
+      role="tab"
+      aria-controls="nav-indumentaria"
+      aria-selected="false"
+    >
+      Indumentaria
+    </button>
+    <button
+      class="nav-link gris4"
+      id="nav-capacitaciones-tab"
+      data-bs-toggle="tab"
+      data-bs-target="#nav-capacitaciones"
+      type="button"
+      role="tab"
+      aria-controls="nav-capacitaciones"
+      aria-selected="false"
+    >
+      Capacitaciones
+    </button>
+    <button
+      class="nav-link gris5"
+      id="nav-credenciales-tab"
+      data-bs-toggle="tab"
+      data-bs-target="#nav-credenciales"
+      type="button"
+      role="tab"
+      aria-controls="nav-credenciales"
+      aria-selected="false"
+    >
+      Credenciales
+    </button>
+  </div>
+</nav>
 
-<section class="cuerpo">
-  <section id="main" class="main">
-    <nav>
-      <div class="nav nav-tabs" id="nav-tab" role="tablist">
-        <button
-          class="nav-link active"
-          id="nav-perfil-tab"
-          data-bs-toggle="tab"
-          data-bs-target="#nav-perfil"
-          type="button"
-          role="tab"
-          aria-controls="nav-perfil"
-          aria-selected="true"
-        >
-          Perfil
-        </button>
-        <button
-          class="nav-link"
-          id="nav-operaciones-tab"
-          data-bs-toggle="tab"
-          data-bs-target="#nav-operaciones"
-          type="button"
-          role="tab"
-          aria-controls="nav-operaciones"
-          aria-selected="false"
-        >
-          Operaciones
-        </button>
-        <button
-          class="nav-link"
-          id="nav-indumentaria-tab"
-          data-bs-toggle="tab"
-          data-bs-target="#nav-indumentaria"
-          type="button"
-          role="tab"
-          aria-controls="nav-indumentaria"
-          aria-selected="false"
-        >
-          Indumentaria
-        </button>
-        <button
-          class="nav-link"
-          id="nav-capacitaciones-tab"
-          data-bs-toggle="tab"
-          data-bs-target="#nav-capacitaciones"
-          type="button"
-          role="tab"
-          aria-controls="nav-capacitaciones"
-          aria-selected="false"
-        >
-          Capacitaciones
-        </button>
-        <button
-          class="nav-link"
-          id="nav-credenciales-tab"
-          data-bs-toggle="tab"
-          data-bs-target="#nav-credenciales"
-          type="button"
-          role="tab"
-          aria-controls="nav-credenciales"
-          aria-selected="false"
-        >
-          Credenciales
-        </button>
-      </div>
-    </nav>
-
-    <!--------------------------Peril------------------------------->
-    <div class="tab-content" id="nav-tabContent">
-      <div
-        class="tab-pane fade show active fondo"
+<div class="contenedorGeneral tab-content">
+  <!-- Perfil -->
+  
+    <div
+        class="tab-pane  show active fondo"
         id="nav-perfil"
         role="tabpanel"
         aria-labelledby="nav-perfil-tab"
         tabindex="0"
-      >
-        <div class="container">
-          <div class="row">
-            <div class="foto col-lg-3 bg-white">
-              <img
-                src="../../../assets/img/Rectangle282.jpg"
-                alt="Organigrama"
-                class="img-fluid bg-black foto m-4"
-                width="198"
-                height="0"
-              />
-
-              <button type="button" class="btn btn-success">
-                {{ empleado.estadoEmpleado }}
-              </button>
-              <h6>Estado</h6>
-
-              <p>
-                {{ empleado.nombreEmpleado }} {{ empleado.apellidoEmpleado }}
-              </p>
-            </div>
-            <div class="perfil col-lg-9">
-              <table class="table">
-                <tr>
-                  <td>
-                    <b>Apellido y Nombre:</b>{{ empleado.nombreEmpleado }} {{ empleado.apellidoEmpleado }}
-                  </td>
-                  <td><b>Dni:</b>{{ empleado.dniempleado }}</td>
-                  <td><b>Legajo:</b>{{ empleado.legajoEmpleado }}</td>
-                </tr>
-                <tr>
-                  <td>
-                    <b>Fecha/Nac:</b
-                    >{{ empleado.fechaNascimentoEmpleado | date : "dd/MM/y" }}
-                  </td>
-                  <td><b>Objetivo:</b>{{ empleado.objetivoEmpleado }}</td>
-                  <td><b>Turno:</b>{{ empleado.turnoEmpleado }}</td>
-                </tr>
-                <tr>
-                  <td>
-                    <b>Telefono Contacto:</b>{{ empleado.telefonoEmpleado }}
-                  </td>
-                  <td><b>Cargo:</b> {{ empleado.cargoEmpleado }}</td>
-                  <td><b>E-mail</b> {{ empleado.emailEmpleado }}</td>
-                </tr>
-                <tr>
-                  <td><b>Dirección:</b>{{ empleado.direccionEmpleado }}</td>
-                  <td>
-                    <b>Codigo Postal</b>{{ empleado.codigoPostalEmpleado }}
-                  </td>
-                </tr>
-              </table>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!----------------------------Operaciones---------------------------->
-
-      <div
-        class="tab-pane fade fondo"
-        id="nav-operaciones"
-        role="tabpanel"
-        aria-labelledby="nav-operaciones-tab"
-        tabindex="0"
-      >
-        <div class="container">
-          <div class="row">
-            <div class="foto col-lg-3 bg-white">
-              <img
-                src="../../../assets/img/Rectangle282.jpg"
-                alt="Organigrama"
-                class="img-fluid foto m-4"
-                width="198"
-                height="0"
-              />
-              <button type="button" class="btn btn-success">Activo</button>
-              <h6>Estado</h6>
-              <p>
-                {{ empleado.nombreEmpleado }} {{ empleado.apellidoEmpleado }}
-              </p>
-            </div>
-            <div class="col-lg-9">
-              <div class="row">
-                <div class="col-lg-6">
-                  Inicio Grilla:
-                  {{
-                    empleado.operacion.fechaInicioOperacion | date : "dd/MM/y"
-                  }}
-                </div>
-                <div class="col-lg-6">
-                  Final Grilla:
-                  {{
-                    empleado.operacion.fechaFinalOperacion | date : "dd/MM/y"
-                  }}
-                </div>
-              </div>
-
-              <div class="row">
-                <div>
-                  Estilo Grilla: {{ empleado.operacion.grillaOperacion }}
-                </div>
-              </div>
-            </div>
-            
-          </div>
-          <ol>
-            <li class="day-name"></li>
-            <li
-              [style.gridColumnStart]="first ? day?.indexWeek : 'auto'"
-              *ngFor="let day of monthSelect; let first = first"
-            >
-              <span>{{ day?.value }}</span>
-            </li>
-          </ol>
-        </div>
-
-     
-        <div class="botones">
-          <button type="button" class="btn btn-primary m-2">Modificar</button>
-          <button type="button" class="btn btn-success m-2">Guardar</button>
-          <button type="button" class="btn btn-danger m-2">Borrar</button>
-        </div>
-      </div>
-    </div>
-
-    <!--------------------------Indumentaria-------------------------------->
-    <div
-      class="tab-pane fade fondo"
-      id="nav-indumentaria"
-      role="tabpanel"
-      aria-labelledby="nav-indumentaria-tab"
-      tabindex="0"
     >
-      <div class="social">
-        <ul>
-          <li>
-            <label for="btn-modal" class="lbl-modal"
-              >U<br />n<br />i<br />f<br />o<br />r<br />m<br />e<br />s</label
-            >
-          </li>
-        </ul>
-      </div>
-      <!---Modal  -->
-      <input type="checkbox" id="btn-modal" />
-      <div class="modal">
-        <div class="contenedor">
-          <header>Tipos de Uniformes</header>
-          <label
-            for="btn-modal"
-            tabindex="-1"
-            role="dialog"
-            aria-labelledby="exampleModalLongTitle"
-            aria-hidden="true"
-            >X</label
-          >
-          <div class="contenido">
-            <h4>UNIFORME RECTO GPS HOMBRE/MUJER</h4>
-            <p>
-              CAMISA UNISEX 3 BORDADOS PANTALON RECTO CORBATA GPS CHALECO FLUO
-              Amarillo CINTA PORTA CREDENCIAL ZAPATOS DE SEGURIDAD CAMPERA
-              REFLEX GPS SORDINA CINTURON
-            </p>
-            <h4>UNIFORME RECTO GLOBAL HOMBRE/MUJER</h4>
-            <p>
-              CAMISA UNISEX 3 BORDADOS GLOBAL PANTALON FAJINA CHALECO FLUO
-              Amarillo CINTA PORTA CREDENCIAL CORBATA GLOBAL ZAPATOS DE
-              SEGURIDAD POLAR GLOBAL CAMPERA REFLEX GLOBAL CINTURON
-            </p>
-            <h4>UNIFORME PROFILER MUJER</h4>
-            <p>
-              CAMISA DE VESTIR MUJER 3/4 PANTALON VESTIR MUJER SACOS PROFILERS
-              MUJER PAÑUELO CHALECO FLUO Amarillo CINTA PORTA CREDENCIAL ZAPATOS
-              DE SEGURIDAD CAMPERA REFLEX GPS
-            </p>
-            <h4>UNIFORME PROFILER HOMBRE</h4>
-            <p>
-              CAMISA DE VESTIR HOMBRE ML PANTALON VESTIR HOMBRE SACOS PROFILERS
-              HOMBRE CORBATA GPS CHALECO FLUO Amarillo CINTA PORTA CREDENCIAL
-              ZAPATOS DE SEGURIDAD CAMPERA REFLEX GPS
-            </p>
-            <h4>BRIGADISTA</h4>
-            <p>
-              CHOMBA BRIGADISTA PANTALON FAJINA HOMBRE CHALECO FLUO Amarillo
-              CINTA PORTA CREDENCIAL ZAPATOS DE SEGURIDAD CAMPERA REFLEX GPS
-              SORDINA & GORRO CHALECO FLUO Naranja CINTA PORTA CREDENCIAL
-              BORCEGOS
-            </p>
-            <!--<h4>FAJINA NEGRO</h4>
-              <p>
-                CHOMBA BRIGADISTA PANTALON FAJINA HOMBRE CHALECO FLUO Amarillo
-                CINTA PORTA CREDENCIAL ZAPATOS DE SEGURIDAD CAMPERA REFLEX GPS
-                SORDINA & GORRO CHALECO FLUO Naranja CINTA PORTA CREDENCIAL
-                BORCEGOS
-              </p>
-              <h4>FAJINA GRIS</h4>
-              <p>
-                CHOMBA BRIGADISTA PANTALON FAJINA HOMBRE CHALECO FLUO Amarillo
-                CINTA PORTA CREDENCIAL ZAPATOS DE SEGURIDAD CAMPERA REFLEX GPS
-                SORDINA & GORRO CHALECO FLUO Naranja CINTA PORTA CREDENCIAL
-                BORCEGOS
-              </p>--->
-          </div>
-        </div>
-      </div>
-      <div class="container">
-        <div class="row">
-          <div class="foto col-lg-3 bg-white">
-            <img
-              src="../../../assets/img/Rectangle282.jpg"
-              alt="Organigrama"
-              class="img-fluid foto m-4"
-              width="198"
-              height="0"
-            />
-            <button type="button" class="btn btn-success">
-              {{ empleado.estadoEmpleado }}
-            </button>
-            <h6>Estado</h6>
-            <p>{{ empleado.nombreEmpleado }} {{ empleado.apellidoEmpleado }}</p>
-          </div>
-          <div class="col-lg-9 cursos">
-            <div class="row">
-              <div class="col-lg-12 my-2">
-                <label class="mx-2 titulo" for="name">Ultima Entrega</label>
-                {{
-                  empleado.indumentaria[0].fechaUltimaEntregaIndumentaria
-                    | date : "dd/MM/y"
-                }}
-                <label for="name " class="mx-2 titulo">Proxima Entrega:</label>
-                {{
-                  empleado.indumentaria[0].fechaProximaEntregaIndumentaria
-                    | date : "dd/MM/y"
-                }}
-                <br />
-              </div>
-
-              <div class="col-lg-12">
-                <div
-                  class="uniforme"
-                  *ngFor="let uniforme of uniformes | keyvalue; let i = index"
-                >
-                  <label class="my-2 mx-2 titulo" for="name"
-                    >Uniforme {{ i + 1 }}:</label
-                  >
-                  <input
-                    type="text"
-                    id="name"
-                    name="user_name"
-                    [(ngModel)]="uniforme.key"
-                    required
-                  />
-                  <table class="table cabeza">
-                    <thead>
-                      <tr class="fila1">
-                        <th scope="col">Indumentaria</th>
-                        <th scope="col">Talle</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr
-                        class="fila1"
-                        class="text-center"
-                        *ngFor="let indumentariagps of uniforme.value"
-                      >
-                        <td>{{ indumentariagps.nombreIndumentaria }}</td>
-                        <td>{{ indumentariagps.talleIndumentaria }}</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                  
-            <div class="botones">
-              <button type="button" class="btn btn-primary m-2">
-                Modificar
-              </button>
+        <div class="container">
+        <div class="row d-flex align-items-center">
+            <div class="foto col-lg-3 d-flex flex-column align-items-center">
+                <img
+                    src="../../../assets/img/Rectangle282.jpg"
+                    alt="Organigrama"
+                    class="img-fluid bg-black foto m-4"
+                    width="198"
+                    height="0"
+                />
+                <div class="data-content">
+                    <div *ngIf="empleado.estadoEmpleado == 'Activo' " class="estadoEnpleado estadoActivo"> {{ empleado.estadoEmpleado }}</div>
+                    <div *ngIf="empleado.estadoEmpleado != 'Activo' " class="estadoEnpleado estadoNOActivo"> {{ empleado.estadoEmpleado }}</div>
+                    <div>Estado</div>
+                </div>
+                
             </div>
-          </div>
-        
-      </div>
+
+
+            <div class="perfil col-lg-9  gy-5">
+                <div class="row d-flex justify-content-between">
+                    <div class="data-content">
+                        <div class=""></div>
+                        <div></div>
+                    </div>
+                    <div class="data-content">
+                        <div class="borde-button">2</div>
+                        <div>INFRACIONES</div>
+                    </div>
+                    <div class="data-content">
+                        <div class="borde-button">5</div>
+                        <div>SANCIONES</div>
+                    </div>
+                </div>
+                <div class="row d-flex justify-content-between">
+                    <div class="data-content">
+                        <div class="borde-button">{{ empleado.legajoEmpleado }}</div>
+                        <div>Legajo</div>
+                    </div>
+                    <div class="data-content">
+                        <div class="borde-button">{{ empleado.dniempleado }}</div>
+                        <div>DNI</div>
+                    </div>
+                    <div class="data-content">
+                        <div class="borde-button">{{ empleado.objetivoEmpleado }}</div>
+                        <div>Objetivo</div>
+                    </div>
+                </div>
+                <div class="row d-flex justify-content-between">
+                    <div class="data-content">
+                        <div class="borde-button">{{ empleado.nombreEmpleado }} {{
+                            empleado.apellidoEmpleado }}</div>
+                        <div>Apellido y Nombre</div>
+                    </div>
+                    <div class="data-content">
+                        <div class="borde-button">{{ empleado.cargoEmpleado }}</div>
+                        <div>Cargo</div>
+                    </div>
+                    <div class="data-content">
+                        <div class="borde-button">{{ empleado.fechaNascimentoEmpleado | date :
+                            "dd/MM/y" }}</div>
+                        <div class="text-nowrap">Fecha de Nacimento</div>
+                    </div>
+                </div>
+                <div class="row d-flex justify-content-between">
+                    <div class="data-content">
+                        <div class="borde-button">{{ empleado.telefonoEmpleado }}</div>
+                        <div>Telefono Contacto</div>
+                    </div>
+                    <div class="data-content">
+                        <div class="borde-button">{{ empleado.turnoEmpleado }}</div>
+                        <div>Turno</div>
+                    </div>
+                    <div class="data-content">
+                        <div class="borde-button">{{ empleado.emailEmpleado }}</div>
+                        <div>E-mail</div>
+                    </div>
+                </div>
+                <div class="row d-flex justify-content-between">
+                    <div class="data-content">
+                        <div class="borde-button">{{ empleado.codigoPostalEmpleado }}</div>
+                        <div>Codigo Postal</div>
+                    </div>
+                    <div class="data-content">
+                        <div class="borde-button">{{ empleado.direccionEmpleado }}</div>
+                        <div>Direccion</div>
+                    </div>
+                    <div class="data-content">
+                        <div class=""></div>
+                        <div></div>
+                    </div>
+                </div>
+                
+
+            <!-- <table class="table " style="display: none;">
+                <tr>
+                <td>
+                    <b>Apellido y Nombre:</b>{{ empleado.nombreEmpleado }} {{
+                    empleado.apellidoEmpleado }}
+                </td>
+                <td><b>Dni:</b>{{ empleado.dniempleado }}</td>
+                <td><b>Legajo:</b>{{ empleado.legajoEmpleado }}</td>
+                </tr>
+                <tr>
+                <td>
+                    <b>Fecha/Nac:</b>{{ empleado.fechaNascimentoEmpleado | date :
+                    "dd/MM/y" }}
+                </td>
+                <td><b>Objetivo:</b>{{ empleado.objetivoEmpleado }}</td>
+                <td><b>Turno:</b>{{ empleado.turnoEmpleado }}</td>
+                </tr>
+                <tr>
+                <td><b>Telefono Contacto:</b>{{ empleado.telefonoEmpleado }}</td>
+                <td><b>Cargo:</b> {{ empleado.cargoEmpleado }}</td>
+                <td><b>E-mail</b> {{ empleado.emailEmpleado }}</td>
+                </tr>
+                <tr>
+                <td><b>Dirección:</b>{{ empleado.direccionEmpleado }}</td>
+                <td><b>Codigo Postal</b>{{ empleado.codigoPostalEmpleado }}</td>
+                </tr>
+            </table> -->
+            </div>
+        </div>
+        </div>
     </div>
-     <!--------------------------Credenciales-------------------------------->
-    <div
-    class="tab-pane fade fondo"
-    id="nav-credenciales"
+  <!-- Operaciones -->
+
+  <div
+    class="tab-pane fondo"
+    id="nav-operaciones"
     role="tabpanel"
-    aria-labelledby="nav-credenciales-tab"
-    tabindex="0"
+    aria-labelledby="nav-operaciones-tab"
+    tabindex="1"
   >
-    <div class="container">
+    <!-- <div class="container">
       <div class="row">
-        <div class="foto col-lg-3 bg-white">
+        <div class="foto col-lg-3">
           <img
             src="../../../assets/img/Rectangle282.jpg"
             alt="Organigrama"
-            class="img-fluid bg-black foto m-4"
+            class="img-fluid foto m-4"
             width="198"
             height="0"
           />
@@ -397,185 +222,72 @@
           <h6>Estado</h6>
           <p>{{ empleado.nombreEmpleado }} {{ empleado.apellidoEmpleado }}</p>
         </div>
-       
-          <div class="botones">
-            <button type="button" class="btn btn-primary m-2">
-              Modificar
-            </button>
+        <div class="col-lg-9">
+          <div class="row">
+            <div class="col-lg-6">
+              Inicio Grilla: {{ empleado.operacion.fechaInicioOperacion | date :
+              "dd/MM/y" }}
+            </div>
+            <div class="col-lg-6">
+              Final Grilla: {{ empleado.operacion.fechaFinalOperacion | date :
+              "dd/MM/y" }}
+            </div>
+          </div>
+
+          <div class="row">
+            <div>Estilo Grilla: {{ empleado.operacion.grillaOperacion }}</div>
           </div>
         </div>
       </div>
+      <ol>
+        <li class="day-name"></li>
+        <li
+          [style.gridColumnStart]="first ? day?.indexWeek : 'auto'"
+          *ngFor="let day of monthSelect; let first = first"
+        >
+          <span>{{ day?.value }}</span>
+        </li>
+      </ol>
     </div>
-  </div>
-  <div class="cursos1 col-lg-9">
-    <div class="row text-center">
-      <div class="col-lg-3"></div>
-      <div class="col-lg-3">
-        <button type="button" class="btn btn-success">Activo</button
-        ><br />
-        Cred. Aeroportuaria
-      </div>
-      <div class="col-lg-3">
-        <button type="button" class="btn btn-success">Activo</button
-        ><br />
-        Supervisor
-      </div>
-      <div class="col-lg-3"></div>
-    </div>
-    <br />
-    <div class="row text-center">
-      <div class="col-lg-3">
-        <button type="button" class="btn btn-success">Activo</button
-        ><br />
-        RAYO - X
-      </div>
-      <div class="col-lg-3">
-        <button type="button" class="btn btn-success">Activo</button
-        ><br />
-        BRIGADISTA
-      </div>
-      <div class="col-lg-3">
-        <button type="button" class="btn btn-success">Activo</button
-        ><br />
-        Cred AMAM
-      </div>
-      <div class="col-lg-3">
-        <button type="button" class="btn btn-success">Activo</button
-        ><br />
-        CARGA
-      </div>
-    </div>
-    <br />
 
-    <table class="table tabla header_fijo bg-black">
-      <thead class="table-secondary">
-        <tr>
-          <th scope="col">Codigo</th>
-          <th scope="col">Curso</th>
-          <th scope="col">Fecha</th>
-          <th scope="col">Caducidad</th>
-        </tr>
-      </thead>
-      <tbody class="table-group-divider">
-        <tr *ngFor="let credencial of empleado.credencial">
-          <td>{{ credencial.codigoCredencial }}</td>
-          <td>{{ credencial.nombreCredencial }}</td>
-          <td>
-            {{
-              credencial.fechaOtorgamentoCredencial | date : "dd/MM/y"
-            }}
-          </td>
-          <td>
-            {{
-              credencial.fechaVencimentoCredencial | date : "dd/MM/y"
-            }}
-          </td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="botones">
+      <button type="button" class="btn btn-primary m-2">Modificar</button>
+      <button type="button" class="btn btn-success m-2">Guardar</button>
+      <button type="button" class="btn btn-danger m-2">Borrar</button>
+    </div> -->
+  </div>
+
+  <div
+    class="tab-pane  fondo"
+    id="nav-indumentaria"
+    role="tabpanel"
+    aria-labelledby="nav-operaciones-tab"
+    tabindex="2"
+  >
+
 </div>
+
+<div
+    class="tab-pane  fondo"
+    id="nav-capacitaciones"
+    role="tabpanel"
+    aria-labelledby="nav-operaciones-tab"
+    tabindex="3"
+  >
+
 </div>
-</div>
-<!----------------------------Capacitaciones---------------------------->
-<div class="tab-pane fade fondo" id="nav-capacitaciones" role="tabpanel"
-aria-labelledby="nav-capacitaciones-tab" tabindex="0">
-<div class="container">
-    <div class="row">
-        <div class="foto col-lg-3 bg-white">
-            <img src="../../../assets/img/Rectangle282.jpg" alt="Organigrama"
-                class="img-fluid bg-black foto m-4" width="198" height="0">
-            <button type="button" class="btn btn-success">Activo</button>
-            <h6>Estado</h6>
-            <p>Lopez Peralta, Edgardo </p>
-        </div>
-        <div class="capacitaciones col-lg-9">
-            <div class="container text-center texto">
-                <div class="row justify-content-md-center ">
-                    <div class="col col-lg-2 clase">
-                        21/06/2023
-                        <hr>
-                        Capacitacion General
-                    </div>
-                    <div class="col-md-auto clase">
-                        21/06/2017
-                        <hr>
-                        Curso PSA A001
-                    </div>
-                    <div class="col col-lg-2 clase ">
-                        <div class="row">
-                            <div class="col col-lg-12 ">
-                                <button type="button" class="btn btn-danger my-2">Activo</button>
-                            </div>
-                            <div class="col col-lg-12 ">
-                                RAYO - X
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <br>
-                <div class="row justify-content-md-center ">
-                    <div class="col col-lg-2 clase">
-                        21/06/2023
-                        <hr>
-                        Paletas Detectore Metales
-                    </div>
-                    <div class="col-md-auto clase">
-                        21/06/2023
-                        <hr>
-                        Curso PSA A002
-                    </div>
-                    <div class="col col-lg-2 clase ">
-                        <div class="row">
-                            <div class="col col-lg-12 my-2 ">
-                                <button type="button" class="btn btn-danger my-2">Activo</button>
-                            </div>
-                            <div class="col col-lg-12 ">
-                                Supervisor
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <br>
-                <div class="row justify-content-md-center ">
-                    <div class="col col-lg-2 clase">
-                        21/06/2023
-                        <hr>
-                        Carga/Correo
-                    </div>
-                    <div class="col-md-auto clase">
-                        21/06/2023
-                        <hr>
-                        Vto AMAM
-                    </div>
-                    <div class="col col-lg-2 clase ">
-                        <div class="row">
-                            <div class="col col-lg-12 ">
-                                <button type="button" class="btn btn-danger my-2">Activo</button>
-                            </div>
-                            <br>
-                            <div class="col col-lg-12 ">
-                                Cred AMAM
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <br><br>
-            <div class="botones">
-                <button type="button" class="btn btn-primary m-2">Modificar</button>
-                <button type="button" class="btn btn-success m-2">Guardar</button>
-                <button type="button" class="btn btn-danger m-2">Borrar</button>
-            </div>
-        </div>
-    </div>
-</div>
-</div>
-<footer
-  class="d-flex bg-black justify-content-between text-white p-2 navbar-fixed-bottom"
+  
+<div
+    class="tab-pane  fondo"
+    id="nav-credenciales"
+    role="tabpanel"
+    aria-labelledby="nav-operaciones-tab"
+    tabindex="4"
 >
-  <p class="float-end">Buenos Aires - Argentina - 2023</p>
-  <p>
-    Copyright:
-    <a href="https://moreirafrontend.web.app/"> M M Dev.</a>
-  </p>
-</footer>
+
+</div>
+  
+  
+
+</div>
+<app-footer class="footer"></app-footer>

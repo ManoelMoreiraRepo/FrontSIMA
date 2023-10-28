@@ -9,6 +9,7 @@
     grid-gap: 10px;
     grid-template-columns: repeat(2, 1fr);
     align-content: start;
+    margin-bottom: 50px;
 }
 .tituloAcceso ::first-line{
     color:black !important;

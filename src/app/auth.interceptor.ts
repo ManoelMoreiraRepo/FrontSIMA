@@ -3,10 +3,11 @@ import { HttpInterceptor, HttpRequest, HttpHandler, HttpEvent, HttpResponse, Htt
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
-  constructor(private router: Router) {}
+  constructor(private router: Router , private mensajero : ToastrService) {}
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     return next.handle(request).pipe(
@@ -18,11 +19,13 @@ export class AuthInterceptor implements HttpInterceptor {
           }
         },
         (error) => {
-          this.router.navigate(['/login']);
-          // if (error instanceof HttpErrorResponse && error.status === 401) {
-          //   // Redirige a la página de inicio de sesión en caso de respuesta 401.
-           
-          // }
+          
+          if (error instanceof HttpErrorResponse && error.status === 401) {
+             this.router.navigate(['/login']);
+          }else{
+            this.mensajero.error("Ocurrio un error.");
+            console.log(error);
+          }
         }
       )
     );

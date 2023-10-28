@@ -1,9 +1,4 @@
-.contenedorImportacion{
-    position: relative;
-    bottom: 4px;
-    width: 98%;
-    margin: 0 1%;
-}
+
 .barraImportacion{
     background-color: white;
     display: flex;
@@ -39,4 +34,5 @@
 }
 .contenedorInformacion div{
     width: 69%;
+    margin-bottom: 200px;
 }

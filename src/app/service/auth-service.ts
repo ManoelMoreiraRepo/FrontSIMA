@@ -5,7 +5,6 @@ import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { catchError } from 'rxjs/operators';
 import { throwError } from 'rxjs';
-import { rutasAdmin, rutasUser } from '../constantes';
 
 @Injectable({
     providedIn: 'root'
@@ -70,10 +69,8 @@ export class AuthService {
     redireccionMain() {
         if (this.getRole() === 'ROLE_USER') {
             this.router.navigate(['/empleadomain']);
-            this.mensajero.success("Bienvenido.");
         } else if (this.getRole() === 'ROLE_ADMIN' || this.getRole() === 'ROLE_MODERATOR') {
             this.router.navigate(['/adminmain']);
-            this.mensajero.success("Bienvenido.");
         }
     }
 

@@ -1,8 +1,11 @@
 .contenedorTabla{
     display: flex;
     justify-content: center;
+    
 }
-
+.tablaBolsa{
+    margin-bottom: 174px;
+}
 
 .tablaBolsa th,td{
     background-color: white;
@@ -19,12 +22,7 @@
     text-align: center;
 }
 
-.contenedorImportacion{
-    position: absolute;
-    bottom: 64px;
-    width: 98%;
-    margin: 0 1%;
-}
+
 .barraImportacion{
     background-color: white;
     display: flex;
