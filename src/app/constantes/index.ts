@@ -105,7 +105,7 @@ export const titulos = [
   },
   {
     titulo:"CREDENCIALES",
-    url:"/rrhh"
+    url:"/credenciales"
   },
   {
     titulo:"DPA",

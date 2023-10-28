@@ -27,6 +27,7 @@ import { RrhhComponent } from './paginas/rrhh/rrhh.component';
 import { TituleroComponent } from './components/titulero/titulero.component';
 import { ContadorComponent } from './components/contador/contador.component';
 import { BolsaadminComponent } from './paginas/bolsaadmin/bolsaadmin.component';
+import { CredencialesComponent } from './paginas/credenciales/credenciales.component';
 
 
 
@@ -51,6 +52,7 @@ import { BolsaadminComponent } from './paginas/bolsaadmin/bolsaadmin.component';
     TituleroComponent,
     ContadorComponent,
     BolsaadminComponent,
+    CredencialesComponent,
   ],
   imports: [
     BrowserModule,

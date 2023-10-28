@@ -12,6 +12,7 @@ import { AdminmainComponent } from './paginas/adminmain/adminmain.component';
 import { EmpleadomainComponent } from './paginas/empleadomain/empleadomain.component';
 import { RrhhComponent } from './paginas/rrhh/rrhh.component';
 import { BolsaadminComponent } from './paginas/bolsaadmin/bolsaadmin.component';
+import { CredencialesComponent } from './paginas/credenciales/credenciales.component';
 //import { SistemaComponent } from './components/sistema/sistema.component';
 
 const vistaUser = { roles: ['ROLE_USER' , 'ROLE_MODERATOR']};
@@ -29,7 +30,8 @@ const routes: Routes = [
   { path: 'adminmain', component:AdminmainComponent , canActivate: [RoleGuard], data: vistaAdmin },
   { path: 'empleadomain', component:EmpleadomainComponent , canActivate: [RoleGuard], data: vistaUser},
   { path: 'rrhh', component:RrhhComponent , canActivate: [RoleGuard], data: vistaAdmin },
-  { path: 'bolsa', component:BolsaadminComponent } //Ambos 
+  { path: 'bolsa', component:BolsaadminComponent }, //Ambos 
+  { path: 'credenciales', component:CredencialesComponent , canActivate: [RoleGuard], data: vistaAdmin },
   //{path:'sistema', component:SistemaComponent}
 
 ];
