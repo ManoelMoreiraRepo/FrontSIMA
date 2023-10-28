@@ -10,15 +10,14 @@ export class LoginComponent {
   password: string = '';
 
   constructor( private authService: AuthService ){
+    this.authService.logout();
   }
  
 
-  main(){
+  main = async() => {
     console.log(this.username);
     console.log(this.password);
-    this.authService.login(this.username, this.password);
-    this.authService.procesarUsuario();
-    
+    await this.authService.procesarUsuario(this.username, this.password);
   }
 
 }

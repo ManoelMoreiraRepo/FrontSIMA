@@ -14,19 +14,22 @@ import { RrhhComponent } from './paginas/rrhh/rrhh.component';
 import { BolsaadminComponent } from './paginas/bolsaadmin/bolsaadmin.component';
 //import { SistemaComponent } from './components/sistema/sistema.component';
 
+const vistaUser = { roles: ['ROLE_USER' , 'ROLE_MODERATOR']};
+const vistaAdmin = { roles: ['ROLE_ADMIN' , 'ROLE_MODERATOR'] };
+
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'login' },
   { path: 'login', component:LoginComponent},
-  { path: 'main', component:MainComponent},
-  { path: 'gps', component:GpsComponent},
-  { path: 'empleado', component:EmpleadoComponent},
-  { path: 'nuevoempleado', component:NuevoempleadoComponent},
-  { path: 'editempleado/:id', component:EditempleadoComponent},
-  { path:'informacionempleado/:id', component:InformacionempleadoComponent},
-  { path: 'adminmain', component:AdminmainComponent , canActivate: [RoleGuard], data: { roles: ['ROLE_ADMIN' , 'ROLE_MODERATOR'] }},
-  { path: 'empleadomain', component:EmpleadomainComponent , canActivate: [RoleGuard], data: { roles: ['ROLE_USER']}},
-  { path: 'rrhh', component:RrhhComponent },
-  { path: 'bolsa', component:BolsaadminComponent }
+  { path: 'main', component:MainComponent}, //No se va usar.
+  { path: 'gps', component:GpsComponent}, //No se va a usar
+  { path: 'empleado', component:EmpleadoComponent , canActivate: [RoleGuard], data: vistaAdmin}, 
+  { path: 'nuevoempleado', component:NuevoempleadoComponent , canActivate: [RoleGuard], data: vistaAdmin},
+  { path: 'editempleado/:id', component:EditempleadoComponent , canActivate: [RoleGuard], data: vistaAdmin},
+  { path:'informacionempleado/:id', component:InformacionempleadoComponent , canActivate: [RoleGuard], data: vistaAdmin},
+  { path: 'adminmain', component:AdminmainComponent , canActivate: [RoleGuard], data: vistaAdmin },
+  { path: 'empleadomain', component:EmpleadomainComponent , canActivate: [RoleGuard], data: vistaUser},
+  { path: 'rrhh', component:RrhhComponent , canActivate: [RoleGuard], data: vistaAdmin },
+  { path: 'bolsa', component:BolsaadminComponent } //Ambos 
   //{path:'sistema', component:SistemaComponent}
 
 ];

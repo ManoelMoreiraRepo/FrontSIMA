@@ -12,8 +12,6 @@ export class AdminmainComponent {
   urlSeparador = "./assets/img/gruposima.png";
   
   constructor(private seguridad:AuthService) {
-    console.log("Ejectua")
-    this.seguridad.verificarRuta("adminmain");
   }
   
   ngOnInit(): void {
