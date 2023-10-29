@@ -10,6 +10,11 @@ export class AuthInterceptor implements HttpInterceptor {
   constructor(private router: Router , private mensajero : ToastrService) {}
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+      request = request.clone({
+        withCredentials: true
+      });
+
+
     return next.handle(request).pipe(
       tap(
         (event) => {

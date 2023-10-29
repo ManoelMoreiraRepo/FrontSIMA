@@ -6,5 +6,191 @@
     <span class="etiqueta fondoRojo">CRED</span>
     <span class="etiqueta fondoRojo">AEP</span>
     <span class="etiqueta fondoRojo">EZE</span>
+
+    <!-- {{obsProvGlobalFisica | async}} -->
+
+        <div class="contenedorInformacion">
+            <div class="subContenedor">
+       
+                <div class=" d-flex ">
+                    <table class="tablaCrendial">
+                        <tr>
+                            <th class="text-left bg-white text-dark text-center primeraCol">CABA</th>
+                            <th colspan="3" class="text-left">NOTA MINISTERIO</th>
+                            <th></th>
+                        </tr>
+                        <tr>
+                            <th></th>
+                            <th>TOTAL</th>
+                            <th>NO APTO</th>
+                            <th>VENC.</th>
+                            <th>VENC A 3 MESES</th>
+                        </tr>
+                        <tr *ngIf="obs1 | async as data">
+                                <td>GLOBAL</td>
+                                <td><span class="bg-white">{{getTotal(data)}}</span></td>
+                                <td><span class="backRojo">{{data[0]}}</span></td>
+                                <td><span class="backDorado">{{data[1]}}</span></td>
+                                <td><span class="backAmarillo">{{data[2]}}</span></td>
+                        </tr>
+                        <tr *ngIf="obs2 | async as data">
+                            <td>EDENOR</td>
+                            <td><span class="bg-white">{{getTotal(data)}}</span></td>
+                            <td><span class="backRojo">{{data[0]}}</span></td>
+                            <td><span class="backDorado">{{data[1]}}</span></td>
+                            <td><span class="backAmarillo">{{data[2]}}</span></td>
+                    </tr>
+                    </table>
+                    
+
+                    <table class="tablaCrendial">
+                        <tr>
+                            <th></th>
+                            <th colspan="3" class="text-left">CREDENCIAL FISICA</th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                        <tr>
+                            <th></th>
+                            <th>TOTAL</th>
+                            <th>NO APTO</th>
+                            <th>VENC.</th>
+                            <th>VENC A 3 MESES</th>
+                        </tr>
+                        <tr *ngIf="obs3 | async as data">
+                                <td></td>
+                                <td><span class="bg-white">{{getTotal(data)}}</span></td>
+                                <td><span class="backRojo">{{data[0]}}</span></td>
+                                <td><span class="backDorado">{{data[1]}}</span></td>
+                                <td><span class="backAmarillo">{{data[2]}}</span></td>
+                        </tr>
+                        <tr *ngIf="obs4 | async as data">
+                            <td></td>
+                            <td><span class="bg-white">{{getTotal(data)}}</span></td>
+                            <td><span class="backRojo">{{data[0]}}</span></td>
+                            <td><span class="backDorado">{{data[1]}}</span></td>
+                            <td><span class="backAmarillo">{{data[2]}}</span></td>
+                    </tr>
+                    </table>
+                </div>
+
+
+                <div class=" d-flex ">
+                    <table class="tablaCrendial">
+                        <tr>
+                            <th class="text-left bg-white text-dark text-center primeraCol" >PROVINCIA</th>
+                            <th ></th>
+                            <th></th>
+                            <th></th>
+                            <th class="hiddentext">VENC A 3 MESES</th>
+                        </tr>
+                        
+                        <tr *ngIf="obs5 | async as data">
+                                <td>GLOBAL</td>
+                                <td><span class="bg-white">{{getTotal(data)}}</span></td>
+                                <td><span class="backRojo">{{data[0]}}</span></td>
+                                <td><span class="backDorado">{{data[1]}}</span></td>
+                                <td><span class="backAmarillo">{{data[2]}}</span></td>
+                        </tr>
+                        <tr *ngIf="obs6 | async as data">
+                            <td>EDENOR</td>
+                            <td><span class="bg-white">{{getTotal(data)}}</span></td>
+                            <td><span class="backRojo">{{data[0]}}</span></td>
+                            <td><span class="backDorado">{{data[1]}}</span></td>
+                            <td><span class="backAmarillo">{{data[2]}}</span></td>
+                    </tr>
+                    </table>
+                    
+
+                    <table class="tablaCrendial">
+                        <tr>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th class="hiddentext">VENC A 3 MESES</th>
+                        </tr>
+                        <tr *ngIf="obs7 | async as data">
+                                <td></td>
+                                <td><span class="bg-white">{{getTotal(data)}}</span></td>
+                                <td><span class="backRojo">{{data[0]}}</span></td>
+                                <td><span class="backDorado">{{data[1]}}</span></td>
+                                <td><span class="backAmarillo">{{data[2]}}</span></td>
+                        </tr>
+                        <tr *ngIf="obs8 | async as data">
+                            <td></td>
+                            <td><span class="bg-white">{{getTotal(data)}}</span></td>
+                            <td><span class="backRojo">{{data[0]}}</span></td>
+                            <td><span class="backDorado">{{data[1]}}</span></td>
+                            <td><span class="backAmarillo">{{data[2]}}</span></td>
+                    </tr>
+                    </table>
+                </div>
+                <div class="seccion-titulos">
+                    <div class="columna "></div>
+                    <div class="columna columna-ancha">AEROPARQUE</div>
+                    <div class="columna columna-ancha">EZEIZA</div>
+                  </div>
+                <div class=" d-flex ">
+                    <table class="tablaCrendial">
+                        <tr>
+                            <th class="primeraCol"></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th class="hiddentext">VENC A 3 MESES</th>
+                        </tr>
+                        <tr *ngIf="obs9 | async as data">
+                                <td>AEROPUERTOS</td>
+                                <td><span class="bg-white">{{getTotal(data)}}</span></td>
+                                <td><span class="backRojo">{{data[0]}}</span></td>
+                                <td><span class="backDorado">{{data[1]}}</span></td>
+                                <td><span class="backAmarillo">{{data[2]}}</span></td>
+                        </tr>
+                        
+                    </table>
+                    <table class="tablaCrendial">
+                        <tr>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th class="hiddentext">VENC A 3 MESES</th>
+                        </tr>
+                        
+                        <tr *ngIf="obs10 | async as data">
+                            <td></td>
+                            <td><span class="bg-white">{{getTotal(data)}}</span></td>
+                            <td><span class="backRojo">{{data[0]}}</span></td>
+                            <td><span class="backDorado">{{data[1]}}</span></td>
+                            <td><span class="backAmarillo">{{data[2]}}</span></td>
+                    </tr>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="contenedorImportacion">
+            <div class="barraImportacion">
+                <div class="boxImport">
+                    <div>
+                        <label for="file-nomina"><img src="./assets/img/up.png" alt="" > </label>
+                        <input id="file-nomina" class="inputFile" type="file" (change)="onFileChange($event)" />
+                    </div>
+                    <div>
+                        <h5>CREDENCIALES</h5>
+                        <span>Reporte semanal</span>
+                    </div>
+                </div>
+                
+                <div class="infoImportador">
+                    <span>Opcion de carga de información</span>
+                    <span>Responsable: CREDENCIALES</span>
+                </div>
+            </div>
+        </div>
+     
     <app-footer class="footer"></app-footer>
 </div>

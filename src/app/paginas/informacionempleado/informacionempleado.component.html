@@ -85,8 +85,8 @@
                     height="0"
                 />
                 <div class="data-content">
-                    <div *ngIf="empleado.estadoEmpleado == 'Activo' " class="estadoEnpleado estadoActivo"> {{ empleado.estadoEmpleado }}</div>
-                    <div *ngIf="empleado.estadoEmpleado != 'Activo' " class="estadoEnpleado estadoNOActivo"> {{ empleado.estadoEmpleado }}</div>
+                    <div *ngIf="empleado.estadoEmpleado == 'Activo' ; else noActivo" class="estadoEnpleado estadoActivo"> {{ empleado.estadoEmpleado }}</div>
+                    <ng-template #noActivo><div #noActivo class="estadoEnpleado estadoNOActivo"> {{ empleado.estadoEmpleado }}</div></ng-template>
                     <div>Estado</div>
                 </div>
                 

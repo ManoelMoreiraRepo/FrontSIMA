@@ -1,0 +1,95 @@
+.contenedorInformacion{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.subContenedor{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    margin-bottom: 200px;
+}
+.tablaCrendial{
+    color: white;
+    text-align: center;
+}
+.primeraCol{
+    width: 150px;
+}
+
+.tablaCrendial th{
+    border: 12px solid #11354F;;
+}
+.tablaCrendial td{
+    border: 12px solid #11354F;;
+}
+
+.tablaCrendial td span{
+    color:black;
+    font-weight: bolder;
+    padding: 4px 14px;
+    display: inline-block;
+    width: 80px; /* Establece el ancho mínimo según tus necesidades */
+    text-align: center;
+    border: 12px solid #11354F;;
+}
+
+.backRojo{
+    background-color: #FA3B12;
+}
+.backDorado{
+    background-color: #F7B408;
+}
+.backAmarillo{
+    background-color: #FFF72C;
+}
+
+.hiddentext{
+    visibility: hidden;
+}
+
+.seccion-titulos {
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    font-weight: bolder;
+  }
+  
+  .columna {
+    text-align: center;
+    padding: 4px;
+  }
+  
+  .columna-ancha {
+    flex: 2; 
+  }
+
+  
+.barraImportacion{
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-radius: 12px;
+}
+.boxImport{
+    display: flex;
+    flex-direction: row;
+    margin: 4px 12px;
+    align-items: center;
+    gap: 12px;
+}
+.boxImport img{
+    object-fit: cover;
+    width: 80px;
+    height: 80px;
+}
+.infoImportador{
+    margin: 4px 12px;
+    font-weight: bolder;
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+}

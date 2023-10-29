@@ -26,8 +26,6 @@ export class AuthService {
             .post(this.URL + `signin`, credentials, { observe: 'response', withCredentials: true })
             .toPromise();
       
-          console.log(response);
-          // Realiza otras acciones si es necesario
       
           return response;
         } catch (error : any) {

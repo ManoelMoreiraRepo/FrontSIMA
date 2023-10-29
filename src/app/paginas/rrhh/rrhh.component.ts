@@ -33,19 +33,11 @@ export class RrhhComponent {
 
   subirArchivoNomina(){
     const formData = new FormData();
-    // const empresa = document.querySelector('#empresaSelect')as HTMLInputElement;
-    // if(empresa.value == ""){
-    //   alert("Por favor seleccione la empresa.");
-    //   return;
-    // }
-
     if(!this.selectedFile){
-      alert("Por favor seleccione el archivo.");
       return;
     }
 
     formData.append('file', this.selectedFile);
-    // formData.append("empresa", empresa.value);
     this.importacionService.subir(formData);
   }
 
