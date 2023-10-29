@@ -13,7 +13,7 @@ export class ImpotacionService{
     constructor(private httpClient: HttpClient , private mensajero : ToastrService) { }
 
     public subir(archivo:any) {
-        this.httpClient.post(this.URL + `nomina`, archivo ,  { responseType: 'text' , withCredentials: true,}).subscribe(
+        this.httpClient.post(this.URL + `archivo`, archivo ,  { responseType: 'text' , withCredentials: true,}).subscribe(
             (response) => {
               this.mensajero.success(response);
             },
