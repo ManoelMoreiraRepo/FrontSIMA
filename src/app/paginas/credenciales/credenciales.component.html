@@ -10,9 +10,9 @@
     <!-- {{obsProvGlobalFisica | async}} -->
 
         <div class="contenedorInformacion">
-            <div class="subContenedor">
-       
-                <div class=" d-flex ">
+            <div class="subContenedor" *ngIf="obs1 | async as array">
+
+                <div class=" d-flex " >
                     <table class="tablaCrendial">
                         <tr>
                             <th class="text-left bg-white text-dark text-center primeraCol">CABA</th>
@@ -26,19 +26,19 @@
                             <th>VENC.</th>
                             <th>VENC A 3 MESES</th>
                         </tr>
-                        <tr *ngIf="obs1 | async as data">
+                        <tr>
                                 <td>GLOBAL</td>
-                                <td><span class="bg-white">{{getTotal(data)}}</span></td>
-                                <td><span class="backRojo">{{data[0]}}</span></td>
-                                <td><span class="backDorado">{{data[1]}}</span></td>
-                                <td><span class="backAmarillo">{{data[2]}}</span></td>
+                                <td><span class="bg-white">{{getTotal(array[0])}}</span></td>
+                                <td><span class="backRojo">{{array[0][0]}}</span></td>
+                                <td><span class="backDorado">{{array[0][1]}}</span></td>
+                                <td><span class="backAmarillo">{{array[0][2]}}</span></td>
                         </tr>
-                        <tr *ngIf="obs2 | async as data">
+                        <tr >
                             <td>EDENOR</td>
-                            <td><span class="bg-white">{{getTotal(data)}}</span></td>
-                            <td><span class="backRojo">{{data[0]}}</span></td>
-                            <td><span class="backDorado">{{data[1]}}</span></td>
-                            <td><span class="backAmarillo">{{data[2]}}</span></td>
+                            <td><span class="bg-white">{{getTotal(array[1])}}</span></td>
+                            <td><span class="backRojo">{{array[1][0]}}</span></td>
+                            <td><span class="backDorado">{{array[1][1]}}</span></td>
+                            <td><span class="backAmarillo">{{array[1][2]}}</span></td>
                     </tr>
                     </table>
                     
@@ -58,19 +58,19 @@
                             <th>VENC.</th>
                             <th>VENC A 3 MESES</th>
                         </tr>
-                        <tr *ngIf="obs3 | async as data">
+                        <tr >
                                 <td></td>
-                                <td><span class="bg-white">{{getTotal(data)}}</span></td>
-                                <td><span class="backRojo">{{data[0]}}</span></td>
-                                <td><span class="backDorado">{{data[1]}}</span></td>
-                                <td><span class="backAmarillo">{{data[2]}}</span></td>
+                                <td><span class="bg-white">{{getTotal(array[2])}}</span></td>
+                                <td><span class="backRojo">{{array[2][0]}}</span></td>
+                                <td><span class="backDorado">{{array[2][1]}}</span></td>
+                                <td><span class="backAmarillo">{{array[2][2]}}</span></td>
                         </tr>
-                        <tr *ngIf="obs4 | async as data">
+                        <tr>
                             <td></td>
-                            <td><span class="bg-white">{{getTotal(data)}}</span></td>
-                            <td><span class="backRojo">{{data[0]}}</span></td>
-                            <td><span class="backDorado">{{data[1]}}</span></td>
-                            <td><span class="backAmarillo">{{data[2]}}</span></td>
+                            <td><span class="bg-white">{{getTotal(array[3])}}</span></td>
+                            <td><span class="backRojo">{{array[3][0]}}</span></td>
+                            <td><span class="backDorado">{{array[3][1]}}</span></td>
+                            <td><span class="backAmarillo">{{array[3][2]}}</span></td>
                     </tr>
                     </table>
                 </div>
@@ -86,19 +86,19 @@
                             <th class="hiddentext">VENC A 3 MESES</th>
                         </tr>
                         
-                        <tr *ngIf="obs5 | async as data">
+                        <tr>
                                 <td>GLOBAL</td>
-                                <td><span class="bg-white">{{getTotal(data)}}</span></td>
-                                <td><span class="backRojo">{{data[0]}}</span></td>
-                                <td><span class="backDorado">{{data[1]}}</span></td>
-                                <td><span class="backAmarillo">{{data[2]}}</span></td>
+                                <td><span class="bg-white">{{getTotal(array[4])}}</span></td>
+                                <td><span class="backRojo">{{array[4][0]}}</span></td>
+                                <td><span class="backDorado">{{array[4][1]}}</span></td>
+                                <td><span class="backAmarillo">{{array[4][2]}}</span></td>
                         </tr>
-                        <tr *ngIf="obs6 | async as data">
+                        <tr >
                             <td>EDENOR</td>
-                            <td><span class="bg-white">{{getTotal(data)}}</span></td>
-                            <td><span class="backRojo">{{data[0]}}</span></td>
-                            <td><span class="backDorado">{{data[1]}}</span></td>
-                            <td><span class="backAmarillo">{{data[2]}}</span></td>
+                            <td><span class="bg-white">{{getTotal(array[5])}}</span></td>
+                            <td><span class="backRojo">{{array[5][0]}}</span></td>
+                            <td><span class="backDorado">{{array[5][1]}}</span></td>
+                            <td><span class="backAmarillo">{{array[5][2]}}</span></td>
                     </tr>
                     </table>
                     
@@ -111,19 +111,19 @@
                             <th></th>
                             <th class="hiddentext">VENC A 3 MESES</th>
                         </tr>
-                        <tr *ngIf="obs7 | async as data">
+                        <tr>
                                 <td></td>
-                                <td><span class="bg-white">{{getTotal(data)}}</span></td>
-                                <td><span class="backRojo">{{data[0]}}</span></td>
-                                <td><span class="backDorado">{{data[1]}}</span></td>
-                                <td><span class="backAmarillo">{{data[2]}}</span></td>
+                                <td><span class="bg-white">{{getTotal(array[6])}}</span></td>
+                                <td><span class="backRojo">{{array[6][0]}}</span></td>
+                                <td><span class="backDorado">{{array[6][1]}}</span></td>
+                                <td><span class="backAmarillo">{{array[6][2]}}</span></td>
                         </tr>
-                        <tr *ngIf="obs8 | async as data">
+                        <tr>
                             <td></td>
-                            <td><span class="bg-white">{{getTotal(data)}}</span></td>
-                            <td><span class="backRojo">{{data[0]}}</span></td>
-                            <td><span class="backDorado">{{data[1]}}</span></td>
-                            <td><span class="backAmarillo">{{data[2]}}</span></td>
+                            <td><span class="bg-white">{{getTotal(array[7])}}</span></td>
+                            <td><span class="backRojo">{{array[7][0]}}</span></td>
+                            <td><span class="backDorado">{{array[7][1]}}</span></td>
+                            <td><span class="backAmarillo">{{array[7][2]}}</span></td>
                     </tr>
                     </table>
                 </div>
@@ -141,12 +141,12 @@
                             <th></th>
                             <th class="hiddentext">VENC A 3 MESES</th>
                         </tr>
-                        <tr *ngIf="obs9 | async as data">
+                        <tr>
                                 <td>AEROPUERTOS</td>
-                                <td><span class="bg-white">{{getTotal(data)}}</span></td>
-                                <td><span class="backRojo">{{data[0]}}</span></td>
-                                <td><span class="backDorado">{{data[1]}}</span></td>
-                                <td><span class="backAmarillo">{{data[2]}}</span></td>
+                                <td><span class="bg-white">{{getTotal(array[8])}}</span></td>
+                                <td><span class="backRojo">{{array[8][0]}}</span></td>
+                                <td><span class="backDorado">{{array[8][1]}}</span></td>
+                                <td><span class="backAmarillo">{{array[8][2]}}</span></td>
                         </tr>
                         
                     </table>
@@ -159,12 +159,12 @@
                             <th class="hiddentext">VENC A 3 MESES</th>
                         </tr>
                         
-                        <tr *ngIf="obs10 | async as data">
+                        <tr>
                             <td></td>
-                            <td><span class="bg-white">{{getTotal(data)}}</span></td>
-                            <td><span class="backRojo">{{data[0]}}</span></td>
-                            <td><span class="backDorado">{{data[1]}}</span></td>
-                            <td><span class="backAmarillo">{{data[2]}}</span></td>
+                            <td><span class="bg-white">{{getTotal(array[9])}}</span></td>
+                            <td><span class="backRojo">{{array[9][0]}}</span></td>
+                            <td><span class="backDorado">{{array[9][1]}}</span></td>
+                            <td><span class="backAmarillo">{{array[9][2]}}</span></td>
                     </tr>
                     </table>
 

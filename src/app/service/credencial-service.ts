@@ -12,12 +12,8 @@ export class CredencialService {
     constructor(private httpClient: HttpClient, private mensajero: ToastrService) {
     }
 
-    public getCantidades(jurisdiccion: string, gerencia: string, tipo: string) : Observable<any> {
-        const data = {
-          "jurisdiccion": jurisdiccion,
-          "gerencia": gerencia,
-          "tipo": tipo
-        };
+    public getCantidades() : Observable<any> {
+       
       
         const httpOptions = {
           headers: new HttpHeaders({
@@ -26,6 +22,6 @@ export class CredencialService {
           withCredentials: true
         };
       
-        return this.httpClient.post(this.URL + "cantidad", JSON.stringify(data) , httpOptions);
+        return this.httpClient.get(this.URL + "cantidad", httpOptions);
       }
 }   

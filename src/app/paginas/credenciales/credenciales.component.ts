@@ -10,60 +10,13 @@ import { ImpotacionService } from 'src/app/service/importacion-service';
 export class CredencialesComponent {
   urlImagen : string ='./assets/img/admin/cred.png';
   obs1: Observable<any>;
-  obs2: Observable<any>;
-  obs3: Observable<any>;
-  obs4: Observable<any>;
-  obs5: Observable<any>;
-  obs6: Observable<any>;
-  obs7: Observable<any>;
-  obs8: Observable<any>;
-  obs9: Observable<any>;
-  obs10: Observable<any>;
   selectedFile: any;
   constructor(private credencialService : CredencialService , private importacionService : ImpotacionService) {
     this.obs1 = new Observable<any>();
-    this.obs2 = new Observable<any>();
-    this.obs3 = new Observable<any>();
-    this.obs4 = new Observable<any>();
-    this.obs5 = new Observable<any>();
-    this.obs6 = new Observable<any>();
-    this.obs7 = new Observable<any>();
-    this.obs8 = new Observable<any>();
-    this.obs9 = new Observable<any>();
-    this.obs10 = new Observable<any>();
-
-    // console.log(credencialService.getCantidades("PROVINCIA" , "G03" , "FISICA"));  
   }
 
   ngOnInit(){
-    this.obs1 =  this.credencialService.getCantidades("CABA" , "G03" , "NOTA");
-    this.obs2 =  this.credencialService.getCantidades("CABA" , "G04" , "NOTA");
-
-    this.obs3 =  this.credencialService.getCantidades("CABA" , "G03" , "FISICA");
-    this.obs4 =  this.credencialService.getCantidades("CABA" , "G04" , "FISICA");
-
-    this.obs5 =  this.credencialService.getCantidades("PROVINCIA" , "G03" , "NOTA");
-    this.obs6 =  this.credencialService.getCantidades("PROVINCIA" , "G04" , "NOTA");
-
-    this.obs7 =  this.credencialService.getCantidades("PROVINCIA" , "G03" , "FISICA");
-    this.obs8 =  this.credencialService.getCantidades("PROVINCIA" , "G04" , "FISICA");
-
-    this.obs9 =  this.credencialService.getCantidades("AEP" , "G02" , "NOTA");
-    this.obs10 =  this.credencialService.getCantidades("EZE" , "G02" , "NOTA");
-
-
-
-    // this.obsProvGlobalFisica.subscribe(
-    //   valor => {
-    //     console.log('Valor emitido:', valor);
-    //   },
-    //   error => {
-    //     console.error('Error:', error);
-    //   },
-    //   () => {
-    //     console.log('El Observable ha completado.');
-    //   }
-    // );
+    this.obs1 =  this.credencialService.getCantidades();
   }
 
   getTotal(array1:any){
