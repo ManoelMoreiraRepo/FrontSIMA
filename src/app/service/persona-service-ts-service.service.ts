@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { PersonaEmpleado } from '../model/PersonaEmpleado.model';
-
+import { ApiResponse } from '../model/ApiResponse';
 @Injectable({
   providedIn: 'root'
 })
@@ -13,9 +13,9 @@ export class PersonaServiceTsServiceService {
   };
   constructor(private httpClient: HttpClient) { }
 
-  public traer(): Observable<PersonaEmpleado[]> {
+  public traer(): Observable<ApiResponse> {
     
-    return this.httpClient.get<PersonaEmpleado[]>(this.URL + 'traer' , this.options);
+    return this.httpClient.get<ApiResponse>(this.URL + 'traer' , this.options);
   }
 
    public borrar(id: number): Observable<any> {

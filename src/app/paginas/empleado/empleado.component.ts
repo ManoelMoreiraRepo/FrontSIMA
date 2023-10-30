@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { AppComponent } from 'src/app/app.component';
 import { PersonaEmpleado } from 'src/app/model/PersonaEmpleado.model';
 import { PersonaServiceTsServiceService } from 'src/app/service/persona-service-ts-service.service';
-
+import { ApiResponse } from 'src/app/model/ApiResponse';
 
 
 @Component({
@@ -18,12 +19,12 @@ export class EmpleadoComponent {
   constructor(private router:Router, private empleadoS: PersonaServiceTsServiceService) { }
 
   ngOnInit(): void {
-    this.empleadoS.traer().subscribe(data => {this.empleado= data});
+    this.empleadoS.traer().subscribe(data => {this.empleado = data.content});
   }
 
   cargarcliente(): void {
-    this.empleadoS.traer().subscribe((data: PersonaEmpleado[]) => {
-      this. empleado = data;
+    this.empleadoS.traer().subscribe((data: ApiResponse) => {
+      this.empleado = data.content;
     });
   }
 
