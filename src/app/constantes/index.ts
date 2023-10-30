@@ -5,19 +5,19 @@ export const menuAdmin = [
     },
     {
         img:"./assets/img/admin/dpa.png",
-        link:"/gps"
+        link:"/credenciales"
     },
     {
         img:"./assets/img/admin/cred.png",
-        link:"/gps"
+        link:"/credenciales"
     },
     {
         img:"./assets/img/admin/sumi.png",
-        link:"/gps"
+        link:"/credenciales"
     },
     {
         img:"./assets/img/admin/informes.png",
-        link:"/gps"
+        link:"/credenciales"
     },
 ]
 
