@@ -1,0 +1,44 @@
+<nav aria-label="Page navigation">
+    <ul class="navlinks">
+        <li *ngIf="showFirstLastButton">
+            <a
+                (click)="setPage(1)"
+                class="navlink"
+            >
+                First
+            </a>
+        </li>
+        <li>
+            <a
+                 (click)="downPage()"
+                class="navlink"
+            >
+                < Prev
+            </a>
+        </li>
+        <li *ngFor="let page of getNavigablePages()">
+            <a
+                class="navlink"
+                (click)="setPage(page)"
+            >
+                {{ page }}
+            </a>
+        </li>
+        <li>
+            <a
+            (click)="upPage()"
+                class="navlink"
+            >
+                Next >
+            </a>
+        </li>
+        <li *ngIf="showFirstLastButton">
+            <a
+                (click)="setPage(totalPages)"
+                class="navlink"
+            >
+                Last
+            </a>
+        </li>
+    </ul>
+</nav>

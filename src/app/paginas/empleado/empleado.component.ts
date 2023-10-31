@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { AppComponent } from 'src/app/app.component';
 import { PersonaEmpleado } from 'src/app/model/PersonaEmpleado.model';
 import { PersonaServiceTsServiceService } from 'src/app/service/persona-service-ts-service.service';
 import { ApiResponse } from 'src/app/model/ApiResponse';
-
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-empleado',
@@ -15,15 +14,22 @@ export class EmpleadoComponent {
 
   empleado: PersonaEmpleado[] = [];
   textoDeInput: string = "";
+  paginable:any;
+  alldata:any
 
-  constructor(private router:Router, private empleadoS: PersonaServiceTsServiceService) { }
+  constructor(private router:Router, private empleadoS: PersonaServiceTsServiceService , private mensajero : ToastrService) { }
 
   ngOnInit(): void {
-    this.empleadoS.traer().subscribe(data => {this.empleado = data.content});
+    this.empleadoS.buscar("" , 1).subscribe(data => {
+      this.empleado = data.content
+      this.paginable = data.pageable;
+      this.alldata = data;
+      console.log(data);
+    });
   }
 
-  cargarcliente(): void {
-    this.empleadoS.traer().subscribe((data: ApiResponse) => {
+  cargarcliente(page:any = 1): void {
+    this.empleadoS.traer(page).subscribe((data: ApiResponse) => {
       this.empleado = data.content;
     });
   }
@@ -32,19 +38,13 @@ export class EmpleadoComponent {
     this.empleado = data;
   }
 
-  onBuscar() {
-    if (this.textoDeInput.trim() === "" || this.textoDeInput.trim() === null) {
-      alert('Debe ingresar un nombre valido');
-    }
-    else {
-      console.log("a ver que recibe del imput   " + this.textoDeInput);
-      this.empleadoS.buscar(this.textoDeInput).subscribe({
-        next: (data: PersonaEmpleado[]) => {
-          console.log("lo que trae del back "+ data)
-          data.length === 0 ? alert(' No se encontro el Empleado') : this.cargarclientebusqueda(data);
-        }
-      })
-    }
+  onBuscar(pagina = 1) {
+    this.empleadoS.buscar(this.textoDeInput.trim() , pagina).subscribe(data => {
+      this.empleado = data.content
+      this.paginable = data.pageable;
+      this.alldata = data;
+      console.log(data);
+    });
   }
 
 
@@ -79,6 +79,11 @@ export class EmpleadoComponent {
 
   login(){
     this.router.navigate(['/login'])
+  }
+
+  recibirPagina(pagina:any){
+    console.log(pagina);
+    this.onBuscar(pagina);
   }
 
 }

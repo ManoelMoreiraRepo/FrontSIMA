@@ -13,9 +13,9 @@ export class PersonaServiceTsServiceService {
   };
   constructor(private httpClient: HttpClient) { }
 
-  public traer(): Observable<ApiResponse> {
+  public traer( page : any = 1): Observable<ApiResponse> {
     
-    return this.httpClient.get<ApiResponse>(this.URL + 'traer' , this.options);
+    return this.httpClient.get<ApiResponse>(this.URL + `traer?page=${page}` , this.options);
   }
 
    public borrar(id: number): Observable<any> {
@@ -35,8 +35,8 @@ export class PersonaServiceTsServiceService {
      return this.httpClient.put(this.URL + `actualizar/${id}`, persona, { responseType: 'text' ,  withCredentials: true });
    }
  
-  public buscar(textoDeInput: string): Observable<PersonaEmpleado[]> {
-    return this.httpClient.get<PersonaEmpleado[]>(this.URL + `search?nombreEmpleado=${textoDeInput}` , this.options);
+  public buscar(textoDeInput: string , pagina :any = 1): Observable<ApiResponse> {
+    return this.httpClient.get<ApiResponse>(this.URL + `search?nombreEmpleado=${textoDeInput}&&page=${pagina}` , this.options);
   }
 
   public getCantidadPorEmpresa():Observable<any>{

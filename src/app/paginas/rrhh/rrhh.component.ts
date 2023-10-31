@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { ImpotacionService } from 'src/app/service/importacion-service';
 import { PersonaServiceTsServiceService } from 'src/app/service/persona-service-ts-service.service';
 import { Observable } from 'rxjs';
-import { RouterTestingHarness } from '@angular/router/testing';
 
 @Component({
   selector: 'app-rrhh',

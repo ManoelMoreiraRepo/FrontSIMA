@@ -35,7 +35,7 @@
         </div>
 
         <div>
-
+            <app-pagination *ngIf="alldata" (enviarPagina)="recibirPagina($event)" [totalPages]="alldata.totalPages" [size]="alldata.size"></app-pagination>
             <table class=" card table table-secondary table-hover p-4">
                 <table class="table table-hover">
                     <thead>

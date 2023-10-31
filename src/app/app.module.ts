@@ -28,7 +28,7 @@ import { TituleroComponent } from './components/titulero/titulero.component';
 import { ContadorComponent } from './components/contador/contador.component';
 import { BolsaadminComponent } from './paginas/bolsaadmin/bolsaadmin.component';
 import { CredencialesComponent } from './paginas/credenciales/credenciales.component';
-
+import { PaginationComponent } from './components/pagination/pagination.component';
 
 
 
@@ -61,6 +61,7 @@ import { CredencialesComponent } from './paginas/credenciales/credenciales.compo
     FormsModule,
     ToastrModule.forRoot(),
     BrowserAnimationsModule,
+    PaginationComponent
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
