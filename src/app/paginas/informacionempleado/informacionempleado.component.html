@@ -89,6 +89,16 @@
                     <ng-template #noActivo><div #noActivo class="estadoEnpleado estadoNOActivo"> {{ empleado.estadoEmpleado }}</div></ng-template>
                     <div>Estado</div>
                 </div>
+                <div class="data-content">
+                    <div class="borde-button">{{ empleado.nombreEmpleado }} {{
+                        empleado.apellidoEmpleado }}</div>
+                    <div>Apellido y Nombre</div>
+                </div>
+
+                <div class="data-content">
+                  <div class="borde-button">{{ empleado.telefonoEmpleado }}</div>
+                  <div>Telefono Contacto</div>
+                </div>
                 
             </div>
 
@@ -96,8 +106,8 @@
             <div class="perfil col-lg-9  gy-5">
                 <div class="row d-flex justify-content-between">
                     <div class="data-content">
-                        <div class=""></div>
-                        <div></div>
+                      <div class="borde-button">{{ empleado.direccionEmpleado }}</div>
+                      <div>Direccion</div>
                     </div>
                     <div class="data-content">
                         <div class="borde-button">2</div>
@@ -123,15 +133,15 @@
                     </div>
                 </div>
                 <div class="row d-flex justify-content-between">
-                    <div class="data-content">
-                        <div class="borde-button">{{ empleado.nombreEmpleado }} {{
-                            empleado.apellidoEmpleado }}</div>
-                        <div>Apellido y Nombre</div>
-                    </div>
+                    
                     <div class="data-content">
                         <div class="borde-button">{{ empleado.cargoEmpleado }}</div>
                         <div>Cargo</div>
                     </div>
+                    <div class="data-content">
+                      <div class="borde-button">{{ empleado.codigoPostalEmpleado }}</div>
+                      <div>Codigo Postal</div>
+                     </div>
                     <div class="data-content">
                         <div class="borde-button">{{ empleado.fechaNascimentoEmpleado | date :
                             "dd/MM/y" }}</div>
@@ -153,14 +163,8 @@
                     </div>
                 </div>
                 <div class="row d-flex justify-content-between">
-                    <div class="data-content">
-                        <div class="borde-button">{{ empleado.codigoPostalEmpleado }}</div>
-                        <div>Codigo Postal</div>
-                    </div>
-                    <div class="data-content">
-                        <div class="borde-button">{{ empleado.direccionEmpleado }}</div>
-                        <div>Direccion</div>
-                    </div>
+                   
+                    
                     <div class="data-content">
                         <div class=""></div>
                         <div></div>
@@ -258,12 +262,134 @@
   </div>
 
   <div
-    class="tab-pane  fondo"
+    class="tab-pane  fondo d-flex justify-content-center"
     id="nav-indumentaria"
     role="tabpanel"
     aria-labelledby="nav-operaciones-tab"
     tabindex="2"
   >
+
+
+  <div class="foto col-lg-3 d-flex flex-column align-items-center">
+    <img
+        src="../../../assets/img/Rectangle282.jpg"
+        alt="Organigrama"
+        class="img-fluid bg-black foto m-4"
+        width="198"
+        height="0"
+    />
+    <div class="data-content">
+        <div *ngIf="empleado.estadoEmpleado == 'Activo' ; else noActivo" class="estadoEnpleado estadoActivo"> {{ empleado.estadoEmpleado }}</div>
+        <ng-template #noActivo><div #noActivo class="estadoEnpleado estadoNOActivo"> {{ empleado.estadoEmpleado }}</div></ng-template>
+        <div>Estado</div>
+    </div>
+    <div class="data-content">
+        <div class="borde-button">{{ empleado.nombreEmpleado }} {{
+            empleado.apellidoEmpleado }}</div>
+        <div>Apellido y Nombre</div>
+    </div>
+
+    <div class="data-content">
+      <div class="borde-button">{{ empleado.telefonoEmpleado }}</div>
+      <div>Telefono Contacto</div>
+    </div>
+    
+</div>
+
+<div class="contenedorUniformes">
+  <div class="fechasUniforme">
+    <span>
+      <span>Fecha última entrega</span>
+      <span>07/23</span>
+    </span>
+    
+    <span>
+      <span>Fecha proxima entrega</span>
+      <span>07/24</span>
+    </span>
+  </div>
+
+  <table >
+    <thead>
+      <tr><th colspan="2" (click)="openModal('#uniforme1')">{{uniformesRecibidos.uniformes[0].nombre}}</th></tr>
+      <tr>
+        <th>Uniforme 1</th>
+        <th>Talle</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let propiedad of getPropiedades(uniformesRecibidos.uniformes[0])">
+        <td>{{ propiedad[0] }}</td>
+        <td>{{ propiedad[1] }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <table>
+    <thead>
+      <tr><th colspan="2" (click)="openModal('#uniforme2')">{{uniformesRecibidos.uniformes[1].nombre}}</th></tr>
+      <tr>
+        <th>Uniforme 2</th>
+        <th>Talle</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let propiedad of getPropiedades(uniformesRecibidos.uniformes[0])">
+        <td>{{ propiedad[0] }}</td>
+        <td>{{ propiedad[1] }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+
+<div class="modal fade" id="uniforme1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content" *ngIf="uniformesData">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">{{ uniformesData.uniformes[indexUniforme1].nombre }}</h5>
+      </div>
+      <div class="modal-body text-center">
+        <div >
+          
+          <ul>
+            <li *ngFor="let item of uniformesData.uniformes[0].items">
+              {{ item }}
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="closeModal('#uniforme1')">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="uniforme2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content" *ngIf="uniformesData">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">{{ uniformesData.uniformes[indexUniforme2].nombre }}</h5>
+      </div>
+      <div class="modal-body text-center">
+        <div >
+          
+          <ul>
+            <li *ngFor="let item of uniformesData.uniformes[0].items">
+              {{ item }}
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="closeModal('#uniforme2')">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 </div>
 

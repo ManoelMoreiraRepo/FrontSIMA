@@ -71,3 +71,76 @@
   background-color: #FA3B12;
   color:white;
 }
+
+
+/* Estilo de la tabla */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+table th {
+  background-color: #eee;
+  color: #333;
+  font-weight: bold;
+  padding: 8px;
+  text-align: left;
+  border: 1px solid #ccc;
+}
+
+table td {
+  padding: 8px;
+  text-align: left;
+  border: 1px solid #ccc;
+}
+
+table th[colspan="2"] {
+  background-color: #666;
+  color: #fff;
+  cursor: pointer;
+}
+
+table th[colspan="2"]:hover {
+  background-color: #444;
+}
+
+table tbody tr:nth-child(odd) {
+  background-color: #f2f2f2;
+}
+
+table th[colspan="2"]:active {
+  background-color: #555;
+}
+
+.contenedorUniformes{
+  margin: 1rem;
+}
+
+.fechasUniforme {
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid #333;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #f0f0f0;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilo de las "box informativas" */
+.fechasUniforme  span {
+  display: block;
+  text-align: center;
+  margin: 4px 23px;
+}
+
+.fechasUniforme  span span:nth-child(1) {
+  font-weight: bold;
+  color: #333;
+}
+
+.fechasUniforme span span:nth-child(2) {
+  font-size: 1.2em;
+  color: #0077b6; /* Puedes ajustar el color a tu preferencia */
+  margin-top: 5px;
+}
