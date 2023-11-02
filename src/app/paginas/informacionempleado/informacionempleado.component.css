@@ -1,5 +1,4 @@
 .contenedorGeneral{
-  height:88vh;
 }
 .gris1{
   background-color: #D9D9D9;
@@ -143,4 +142,24 @@ table th[colspan="2"]:active {
   font-size: 1.2em;
   color: #0077b6; /* Puedes ajustar el color a tu preferencia */
   margin-top: 5px;
+}
+.contenedorInfo{
+  padding-bottom: 118px;
+}
+
+.botonCred{
+  padding: 8px 12px;
+  border-radius: 12px;
+  margin: 4px 0;
+}
+
+.activo{
+  background-color: green;
+}
+.inactivo{
+  background-color: red;
+}
+.inactivoAmarillo{
+  color: black;
+  background-color: yellow;
 }

@@ -4,10 +4,10 @@
 html, body {
   height: 100%;
   margin: 0;
-  background: #11354F;
+  background: #11354F !important;
 }
 h2 , h3{
-  color: white;
+  color: white !important;
   margin: 0 12px
 }
 body {
