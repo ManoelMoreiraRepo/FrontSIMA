@@ -89,11 +89,11 @@
               *ngIf="empleado.estadoEmpleado == 'Activo'; else noActivo"
               class="estadoEnpleado estadoActivo"
             >
-              {{ empleado.estadoEmpleado }}
+              {{ empleado.estadoEmpleado  }}
             </div>
             <ng-template #noActivo
               ><div #noActivo class="estadoEnpleado estadoNOActivo">
-                {{ empleado.estadoEmpleado }}
+                {{ empleado.estadoEmpleado  || 'No informado'}}
               </div></ng-template
             >
             <div>Estado</div>

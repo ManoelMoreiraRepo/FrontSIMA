@@ -16,7 +16,9 @@ export class EmpleadoComponent {
   textoDeInput: string = "";
   paginable:any;
   alldata:any
-
+  ordenado:string ='legajoEmpleado';
+  orden:string = 'ASC';
+  paginaActual = 1;
   constructor(private router:Router, private empleadoS: PersonaServiceTsServiceService , private mensajero : ToastrService) { }
 
   ngOnInit(): void {
@@ -24,7 +26,7 @@ export class EmpleadoComponent {
       this.empleado = data.content
       this.paginable = data.pageable;
       this.alldata = data;
-      console.log(data);
+      // console.log(data);
     });
   }
 
@@ -38,15 +40,25 @@ export class EmpleadoComponent {
     this.empleado = data;
   }
 
-  onBuscar(pagina = 1) {
-    this.empleadoS.buscar(this.textoDeInput.trim() , pagina).subscribe(data => {
+  onBuscar(pagina = 0) {
+    if(this.orden ==='ASC'){
+      this.orden = 'DESC';
+    }else{
+      this.orden = 'ASC';
+    }
+    this.paginaActual = pagina;
+    this.empleadoS.buscar(this.textoDeInput.trim() , pagina , this.ordenado , this.orden).subscribe(data => {
       this.empleado = data.content
       this.paginable = data.pageable;
       this.alldata = data;
-      console.log(data);
+      // console.log(data);
     });
   }
 
+  ordenColumna(ordenado:string){
+    this.ordenado = ordenado;
+    this.onBuscar(this.paginaActual);
+  }
 
   borrar(id?: number) {
     console.log("a ver que recibe" +id);

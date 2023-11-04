@@ -13,7 +13,7 @@ export class PersonaServiceTsServiceService {
   };
   constructor(private httpClient: HttpClient) { }
 
-  public traer( page : any = 1): Observable<ApiResponse> {
+  public traer( page : any = 0): Observable<ApiResponse> {
     
     return this.httpClient.get<ApiResponse>(this.URL + `traer?page=${page}` , this.options);
   }
@@ -35,8 +35,8 @@ export class PersonaServiceTsServiceService {
      return this.httpClient.put(this.URL + `actualizar/${id}`, persona, { responseType: 'text' ,  withCredentials: true });
    }
  
-  public buscar(textoDeInput: string , pagina :any = 1): Observable<ApiResponse> {
-    return this.httpClient.get<ApiResponse>(this.URL + `search?nombreEmpleado=${textoDeInput}&&page=${pagina}` , this.options);
+  public buscar(textoDeInput: string , pagina :any = 0 , ordenado = 'legajoEmpleado' , orden ='ASC'): Observable<ApiResponse> {
+    return this.httpClient.get<ApiResponse>(this.URL + `search?nombreEmpleado=${textoDeInput}&&page=${pagina}&&ordenado=${ordenado}&&orden=${orden}` , this.options);
   }
 
   public getCantidadPorEmpresa():Observable<any>{

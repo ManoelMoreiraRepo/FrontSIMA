@@ -40,10 +40,10 @@
                 <table class="table table-hover">
                     <thead>
                         <tr class="text-center">
-                            <th scope="col">Fotografia</th>
-                            <th scope="col">Legajo</th>
-                            <th scope="col">Apellido, Nombre</th>
-                            <th scope="col">Estado</th>
+                            <th scope="col" >Fotografia</th>
+                            <th scope="col" role="button" (click)="ordenColumna('legajoEmpleado')">Legajo</th>
+                            <th scope="col" role="button" (click)="ordenColumna('apellidoEmpleado')">Apellido, Nombre</th>
+                            <th scope="col" role="button" (click)="ordenColumna('estadoEmpleado')">Estado</th>
                             <th scope="col">Acción</th>
                         </tr>
                     </thead>
@@ -57,7 +57,7 @@
                             <td>
                                 <button (click)="borrar(empleadosgps.idEmpleado)"
                                     class="btn btn-warning">Borrar</button>
-                                <button class="btn btn-danger"
+                                <button class="btn btn-success"
                                     routerLink="/informacionempleado/{{empleadosgps.idEmpleado}}"
                                     style="margin-left: 10px;">Ver</button>
                                 <button class="btn btn-danger" routerLink="/editempleado/{{empleadosgps.idEmpleado}}"
