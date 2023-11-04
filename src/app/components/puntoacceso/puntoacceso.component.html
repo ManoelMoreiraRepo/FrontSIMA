@@ -1,19 +1,44 @@
 <div class="acceso">
     <div class="tituloAcceso">
-        <h3 class="tituloAccesoH">{{objeto.titulo}}</h3>
+        <span class="tituloAccesoH">{{objeto.titulo}}</span>
     </div>
-    <div class="cuerpoAcceso">
-        <div *ngFor="let item of objeto.items">
+    <div *ngIf="objeto.items" class="cuerpoAcceso">
+        <div  *ngFor="let item of objeto.items">
             <div class="contenedorBoxInferior">   
-                <a class="contenedorItem" href="{{item.url}}">
-                    <img src="{{item.img}}" width="80px" alt=""> 
+                <a class="contenedorItem" href="{{item.url}}" target="_blank">
+                    <img src="{{item.img}}" width="60px" height="60px" alt=""> 
                     <div>
-                        <h4>{{item.titulo}}</h4> 
+                        <span>{{item.titulo}}</span> 
                         <p>{{item.descrip}}</p>
                     </div>
                 </a>
             </div>
            
+        </div>
+    </div>
+    <div *ngIf="objeto.subItems" class="" style="padding: 4px 0 !important; margin-top:-20px">
+        <div class="contenedorSubitem">
+            <div>
+                <span>{{objeto.subItems.titulo}}</span> 
+                <p>{{objeto.subItems.descrip}}</p>
+            </div>
+        </div>
+       
+        <div class="contendorSubitemsicons">
+            <div class="" *ngFor="let item of objeto.subItems.icons">
+                <div class="contenedorBoxInferior">   
+                    
+                    <a class="contenedorItem" href="{{item.url}}" target="_blank">
+                        <img src="{{item.img}}" width="40px" height="40px" alt=""> 
+                        <div>
+                            <span>{{item.titulo}}</span> 
+                            <p>{{item.descrip}}</p>
+                        </div>
+                    </a>
+                </div>
+               
+        </div>
+        
         </div>
     </div>
 </div>

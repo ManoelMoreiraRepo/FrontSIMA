@@ -31,6 +31,7 @@
 .contenedorInformacion{
     display: flex;
     justify-content: center;
+    width: 101%;
 }
 .contenedorInformacion div{
     width: 69%;

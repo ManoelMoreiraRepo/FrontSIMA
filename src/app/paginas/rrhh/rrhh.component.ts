@@ -38,6 +38,9 @@ export class RrhhComponent {
 
     formData.append('file', this.selectedFile);
     this.importacionService.subir(formData);
+    setTimeout(() => {
+     location.reload();
+    }, 2000);
   }
 
 }

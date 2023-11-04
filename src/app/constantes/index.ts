@@ -36,19 +36,40 @@ export const arrayMenuEmpleado = [
     {
         titulo:"CREDENCIALES",
         items:[
-          {
-            titulo:"REGISTRO del VIGILADOR",
-            descrip:"Legajo digital del Vigilador",
-            img:"./assets/img/checkdoc.png",
-            url:"#"
-          },
-          {
-            titulo:"REGISTRO del VIGILADOR",
-            descrip:"Legajo digital Exclusivo AEROPUERTOS",
-            img:"./assets/img/checkdoc.png",
-            url:"#"
-          }
-        ]
+          // {
+          //   titulo:"REGISTRO del VIGILADOR",
+          //   descrip:"Legajo digital del Vigilador",
+          //   img:"./assets/img/checkdoc.png",
+          //   url:"#"
+          // },
+          // {
+          //   titulo:"REGISTRO del VIGILADOR",
+          //   descrip:"Legajo digital Exclusivo AEROPUERTOS",
+          //   img:"./assets/img/checkdoc.png",
+          //   url:"#"
+          // }
+        ],
+        subItems:{
+          titulo:"REGISTRO del VIGILADOR",
+          descrip:"Legajo digital del Vigilador",
+          icons:[
+            {
+              descrip:"AEP",
+              img:"./assets/img/checkdoc.png",
+              url:"https://forms.gle/WizffgBqnpMYEpbx8"
+            },
+            {
+              descrip:"EZE",
+              img:"./assets/img/checkdoc.png",
+              url:"#"
+            },
+            {
+              descrip:"GPS /GLOBAL",
+              img:"./assets/img/checkdoc.png",
+              url:"https://forms.gle/PUKJvVE7VciZdi9A9"
+            },
+          ]
+        }
     },
     {
         titulo:"DPA",
@@ -57,19 +78,19 @@ export const arrayMenuEmpleado = [
             titulo:"REPORTE  de ESTADO Vehicular",
             descrip:"Reporte semanal de estado",
             img:"./assets/img/checkdoc.png",
-            url:"#"
+            url:"https://forms.gle/4ZNC9n13Hriy8d4k9"
           },
           {
             titulo:"INFRACCIONES",
             descrip:"Asignacion de Infraccion",
             img:"./assets/img/checkdoc.png",
-            url:"#"
+            url:"https://forms.gle/p8go74qVbKe61Df18"
           },
           {
             titulo:"REPORTE DE SINIESTROS",
             descrip:"Informe de Siniestros",
             img:"./assets/img/checkdoc.png",
-            url:"#"
+            url:"https://forms.gle/B4dEfpvjg55ZMu3dA"
           }
 
         ]
@@ -81,7 +102,7 @@ export const arrayMenuEmpleado = [
             titulo:"SOLICITUD de SUMINISTROS",
             descrip:"Solicitud de Indumentaria, Equipos y Equipamiento",
             img:"./assets/img/checkdoc.png",
-            url:"#"
+            url:"https://forms.gle/VjThaBax18j9xGuU6"
           }
         ]
     },
@@ -92,7 +113,7 @@ export const arrayMenuEmpleado = [
             titulo:"SISTEMAS Help Desk",
             descrip:"Generación de Ticket de Requerimiento",
             img:"./assets/img/checkdoc.png",
-            url:"#"
+            url:"https://forms.gle/CyviPnnQYjJdJeQW6"
           }
         ]
     },

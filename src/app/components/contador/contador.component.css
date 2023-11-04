@@ -2,12 +2,14 @@
     display: flex;
     justify-content: center;
     margin: 24px 0;
+    flex-wrap: wrap;
 }
 .contadorEstadistica{
     color : white;
     display: flex;
     flex-direction: row;
-    gap:24px
+    gap:24px;
+    flex-wrap: wrap;
 }
 .itemContador {
     display: flex;

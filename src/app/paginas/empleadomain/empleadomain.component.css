@@ -10,6 +10,7 @@
     grid-template-columns: repeat(2, 1fr);
     align-content: start;
     margin-bottom: 50px;
+    margin-top: -28px;
 }
 .tituloAcceso ::first-line{
     color:black !important;
