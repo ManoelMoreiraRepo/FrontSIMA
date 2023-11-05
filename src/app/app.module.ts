@@ -29,6 +29,7 @@ import { ContadorComponent } from './components/contador/contador.component';
 import { BolsaadminComponent } from './paginas/bolsaadmin/bolsaadmin.component';
 import { CredencialesComponent } from './paginas/credenciales/credenciales.component';
 import { PaginationComponent } from './components/pagination/pagination.component';
+import { OfertaComponent } from './paginas/oferta/oferta.component';
 
 
 
@@ -53,6 +54,7 @@ import { PaginationComponent } from './components/pagination/pagination.componen
     ContadorComponent,
     BolsaadminComponent,
     CredencialesComponent,
+    OfertaComponent,
   ],
   imports: [
     BrowserModule,

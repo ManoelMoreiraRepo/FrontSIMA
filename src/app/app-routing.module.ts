@@ -13,6 +13,7 @@ import { EmpleadomainComponent } from './paginas/empleadomain/empleadomain.compo
 import { RrhhComponent } from './paginas/rrhh/rrhh.component';
 import { BolsaadminComponent } from './paginas/bolsaadmin/bolsaadmin.component';
 import { CredencialesComponent } from './paginas/credenciales/credenciales.component';
+import { OfertaComponent } from './paginas/oferta/oferta.component';
 //import { SistemaComponent } from './components/sistema/sistema.component';
 
 const vistaUser = { roles: ['ROLE_USER' , 'ROLE_MODERATOR']};
@@ -21,8 +22,8 @@ const vistaAdmin = { roles: ['ROLE_ADMIN' , 'ROLE_MODERATOR'] };
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'login' },
   { path: 'login', component:LoginComponent},
-  { path: 'main', component:MainComponent}, //No se va usar.
-  { path: 'gps', component:GpsComponent}, //No se va a usar
+ // { path: 'main', component:MainComponent}, //No se va usar.
+ // { path: 'gps', component:GpsComponent}, //No se va a usar
   { path: 'empleado', component:EmpleadoComponent , canActivate: [RoleGuard], data: vistaAdmin}, 
   { path: 'nuevoempleado', component:NuevoempleadoComponent , canActivate: [RoleGuard], data: vistaAdmin},
   { path: 'editempleado/:id', component:EditempleadoComponent , canActivate: [RoleGuard], data: vistaAdmin},
@@ -32,6 +33,7 @@ const routes: Routes = [
   { path: 'rrhh', component:RrhhComponent , canActivate: [RoleGuard], data: vistaAdmin },
   { path: 'bolsa', component:BolsaadminComponent }, //Ambos 
   { path: 'credenciales', component:CredencialesComponent , canActivate: [RoleGuard], data: vistaAdmin },
+  { path: 'oferta/:id', component:OfertaComponent }, //Ambos 
   //{path:'sistema', component:SistemaComponent}
 
 ];

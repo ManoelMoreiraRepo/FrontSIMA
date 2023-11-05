@@ -144,4 +144,8 @@ export const titulos = [
     titulo:"ORGANIGRAMA",
     url:"/rrhh"
   },
+  {
+    titulo:"BOLSA DE TRABAJO",
+    url:"/bolsa"
+  },
 ];

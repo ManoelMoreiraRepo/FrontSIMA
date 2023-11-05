@@ -1,6 +1,6 @@
 <div>
     <app-header></app-header>
-    <app-titulero></app-titulero>
+    <app-titulero [indice]="6"></app-titulero>
     <app-separador [urlImg]="urlImagen" ></app-separador>
     <span class="etiqueta fondoRojo">INFO</span>
     <div class="contenedorTabla">
@@ -17,7 +17,7 @@
                 <td>{{item.codigo}}</td>
                 <td>{{item.descripcion}}</td>
                 <td>{{item.zona}}</td>
-                <td><a href="{{item.url}}"><img src="{{urlImagenPostu}}" alt=""></a></td>
+                <td><a href="{{'/oferta/' + item.id}}"><img src="{{urlImagenPostu}}" alt=""></a></td>
             </tr>
     
         </table>

@@ -17,56 +17,56 @@ export class BolsaadminComponent {
       codigo:"1244",
       descripcion: "Operario de Maestranza",
       zona:"Mataderos",
-      url:"/postularse?id=1245"
+    id:"1245"
     },
     {
       img:"./assets/img/ecoklinTransparente.png",
       codigo:"1244",
       descripcion: "Operario de Maestranza",
       zona:"Mataderos",
-      url:"/postularse?id=1245"
+      id:"1245"
     },
     {
       img:"./assets/img/ecoklinTransparente.png",
       codigo:"1244",
       descripcion: "Operario de Maestranza",
       zona:"Mataderos",
-      url:"/postularse?id=1245"
+      id:"1245"
     },
     {
       img:"./assets/img/ecoklinTransparente.png",
       codigo:"1244",
       descripcion: "Operario de Maestranza",
       zona:"Mataderos",
-      url:"/postularse?id=1245"
+      id:"1245"
     },
     {
       img:"./assets/img/ecoklinTransparente.png",
       codigo:"1244",
       descripcion: "Operario de Maestranza",
       zona:"Mataderos",
-      url:"/postularse?id=1245"
+      id:"1245"
     },
     {
       img:"./assets/img/ecoklinTransparente.png",
       codigo:"1244",
       descripcion: "Operario de Maestranza",
       zona:"Mataderos",
-      url:"/postularse?id=1245"
+      id:"1245"
     },
     {
       img:"./assets/img/ecoklinTransparente.png",
       codigo:"1244",
       descripcion: "Operario de Maestranza",
       zona:"Mataderos",
-      url:"/postularse?id=1245"
+      id:"1245"
     },
     {
       img:"./assets/img/ecoklinTransparente.png",
       codigo:"1244",
       descripcion: "Operario de Maestranza",
       zona:"Mataderos",
-      url:"/postularse?id=1245"
+      id:"1245"
     },
   ]
 

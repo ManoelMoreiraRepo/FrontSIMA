@@ -1,0 +1,75 @@
+<div>
+    <app-header></app-header>
+    <app-separador [urlImg]="urlImagen" ></app-separador>
+    <div class="contenedorGeneral">
+        <div class="contenedorOferta">
+            <div class="bg-white mb-3 text-center col-md-12 d-flex align-items-center">
+                <div class="col-md-2">
+                    <img src="./assets/img/ecoklinTransparente.png"  width="60px">
+                </div>
+                 <span class="col-md-10 fw-bold">{{oferta.titulo}}</span>
+            </div>
+            <div class="d-flex justify-content-between mb-3 col-md-12">
+                <div class="bg-white col-md-5 d-flex justify-content-between">
+                    <span class="fw-bold p-2">CODIGO </span>
+                    <span class="p-2">{{oferta.codigo}}</span>
+                </div>
+                <div class="bg-white col-md-5  d-flex justify-content-between">
+                    <span class="fw-bold p-2">ZONA </span>
+                    <span class="p-2">{{oferta.zona}}</span>
+                </div>
+            </div>
+            <div class="bg-white mb-3 text-center p-3">
+                <span class="fw-bold">DESCRIPCIÓN DE LA OFERTA</span>
+            </div>
+            <div class="fondoGris mb-3 p-2">
+                <span>{{oferta.descripcion}}</span>
+            </div>
+
+            <div class="bg-white mb-3 text-center p-3">
+                <span class="fw-bold"> REQUISITOS DE LA OFERTA</span>
+            </div>
+            <div class="fondoGris mb-3 p-2">
+                <span>{{oferta.requisitos}}</span>
+            </div>
+
+            <div class="d-flex justify-content-between mb-3 col-md-12 contenedor-flex">
+                <div class="bg-white ">
+                   <input  [(ngModel)]="nombreApellido"  class="form-control" type="text" placeholder="Nombre y apellido*" required/>
+                </div>
+                <div class="bg-white ">
+                    <input [(ngModel)]="dni" class="form-control" type="text" placeholder="DNI*" required/>
+                </div>
+            </div>
+            <div class="d-flex justify-content-between mb-3 col-md-12 contenedor-flex">
+                <div class="bg-white">
+                   <input [(ngModel)] = "email" class="form-control" type="text" placeholder="E-mail*" required/>
+                </div>
+                <div class="bg-white">
+                    <input [(ngModel)]="telefono" class="form-control" type="text" placeholder="Telefono*" required/>
+                </div>
+            </div>
+            <div class="d-flex justify-content-between mb-3 col-md-12 contenedor-flex">
+                <div class="boxImport col-md-6 text-center  bg-white d-flex ">
+                    <div>
+                        <label for="file"><img src="./assets/img/up.png" width="80px" alt="" > </label>
+                        <input id="file" class="inputFile" type="file" (change)="onFileChange($event)" />
+                    </div>
+                    <div class="ps-3 pe-3 pt-2">
+                        <span class="fw-bold">Adjuntá tu <br/>curriculum</span>
+                    </div>
+                </div>
+                <div class="bg-white col-md-6 d-flex " (click)="enviarForm()">
+                            <img src="./assets/img/checkdoc.png" width="80px" height="80px" alt="" style="object-fit: cover;"> 
+                            <div class="ps-3 pe-3 pt-2">
+                                <span class="fw-bold">Enviar</span> 
+                            </div>
+                </div>
+            </div>
+    
+        </div>
+    </div>  
+   
+
+    <app-footer class="footer"></app-footer>
+</div>
