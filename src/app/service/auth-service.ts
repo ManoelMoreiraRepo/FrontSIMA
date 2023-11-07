@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpResponse } from '@angular/common/http';
-import { CookieService } from 'ngx-cookie-service';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { catchError } from 'rxjs/operators';
 import { throwError } from 'rxjs';
+import { URL_API } from '../constantes';
 
 @Injectable({
     providedIn: 'root'
@@ -12,8 +12,8 @@ import { throwError } from 'rxjs';
 export class AuthService {
     private role: string | null = '';
     private username: string | null = '';
-    URL = 'http://localhost:8080/auth/';
-    constructor(private http: HttpClient, private cookieService: CookieService, private router: Router, private mensajero: ToastrService) {
+    URL = `${URL_API}/auth/`;
+    constructor(private http: HttpClient, private router: Router, private mensajero: ToastrService) {
         this.role = localStorage.getItem('userRole') || null;
     }
 

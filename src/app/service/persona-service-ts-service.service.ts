@@ -3,11 +3,12 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { PersonaEmpleado } from '../model/PersonaEmpleado.model';
 import { ApiResponse } from '../model/ApiResponse';
+import { URL_API } from '../constantes';
 @Injectable({
   providedIn: 'root'
 })
 export class PersonaServiceTsServiceService {
-  URL = 'http://localhost:8080/Empleado/';
+  URL = `${URL_API}/Empleado/`;
   options = {
     withCredentials: true
   };

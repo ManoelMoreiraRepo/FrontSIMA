@@ -2,13 +2,14 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Indumentaria } from '../model/Indumentaria.model';
+import { URL_API } from '../constantes';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ServiceindumentariaServiceService {
 
-  URL = 'http://localhost:8080/Indumentaria/';
+  URL = `${URL_API}/Indumentaria/`;
   constructor(private httpClient: HttpClient) { }
 
   public traer(): Observable<Indumentaria[]> {

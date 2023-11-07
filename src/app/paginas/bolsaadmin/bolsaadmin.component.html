@@ -7,15 +7,15 @@
         <table class="tablaBolsa">
             <tr>
                 <th>EMPRESA</th>
-                <th>CODIGO</th>
-                <th>DESCRIPCION</th>
-                <th>ZONA</th>
+                <th role="button" (click)="ordenColumna('codigo')" >CODIGO</th>
+                <th role="button" (click)="ordenColumna('titulo')" >DESCRIPCION</th>
+                <th role="button" (click)="ordenColumna('zona')">ZONA</th>
                 <th>POSTULARSE</th>
             </tr>
             <tr *ngFor="let item of lista">
-                <td><img src="{{item.img}}" width="45px" alt=""></td>
+                <td><img src="{{getLogo(item.gerencia)}}" width="45px" alt=""></td>
                 <td>{{item.codigo}}</td>
-                <td>{{item.descripcion}}</td>
+                <td>{{item.titulo}}</td>
                 <td>{{item.zona}}</td>
                 <td><a href="{{'/oferta/' + item.id}}"><img src="{{urlImagenPostu}}" alt=""></a></td>
             </tr>

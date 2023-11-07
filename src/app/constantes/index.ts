@@ -1,3 +1,5 @@
+export const URL_API = 'http://localhost:8080';
+
 export const menuAdmin = [
     {
         img:"./assets/img/admin/rrhh.png",
