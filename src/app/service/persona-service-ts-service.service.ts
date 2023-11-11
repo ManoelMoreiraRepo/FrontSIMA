@@ -46,4 +46,8 @@ export class PersonaServiceTsServiceService {
   public getCantidadPorSindicato():Observable<any>{
     return this.httpClient.get(this.URL + "cantidadNominaSindicato" , this.options);
   }
+
+  public getGrilla(mes:any,anio:any,idEmpleado=0):Observable<any>{
+    return this.httpClient.get(this.URL + `grilla?mes=${mes}&&anio=${anio}&&id=${idEmpleado}` , this.options);
+  }
 }

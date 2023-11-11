@@ -1,6 +1,6 @@
 <div>
     <app-header></app-header>
-    <app-titulero [indice]="6"></app-titulero>
+    <app-titulero *ngIf="esAdmin" [indice]="6"></app-titulero>
     <app-separador [urlImg]="urlImagen" ></app-separador>
     <span class="etiqueta fondoRojo">INFO</span>
     <div class="contenedorTabla">

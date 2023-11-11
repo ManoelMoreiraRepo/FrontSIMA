@@ -30,6 +30,7 @@ import { BolsaadminComponent } from './paginas/bolsaadmin/bolsaadmin.component';
 import { CredencialesComponent } from './paginas/credenciales/credenciales.component';
 import { PaginationComponent } from './components/pagination/pagination.component';
 import { OfertaComponent } from './paginas/oferta/oferta.component';
+import { CalendarioComponent } from './components/calendario/calendario.component';
 
 
 
@@ -55,6 +56,7 @@ import { OfertaComponent } from './paginas/oferta/oferta.component';
     BolsaadminComponent,
     CredencialesComponent,
     OfertaComponent,
+    CalendarioComponent,
   ],
   imports: [
     BrowserModule,

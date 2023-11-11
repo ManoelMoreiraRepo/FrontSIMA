@@ -1,0 +1,27 @@
+<div class="cotenenedorCalendario"> 
+    <div class="wrapper-calendar">
+        <div class="header-calendar">
+            <div>
+                <button (click)="changeMonth(-1)" class="btn-prev">Antes</button>
+            </div>
+            <h1>{{dateSelect.format("MMMM YYYY")}}</h1>
+            <div>
+                <button (click)="changeMonth(1)" class="btn-next">Siguiente</button>
+            </div>
+        </div>
+        <ol>
+            <li *ngFor="let day of week" class="day-name">{{day | slice:0:3}}</li>
+
+            <li (click)="clickDay(day)" [style.gridColumnStart]="first ? day?.indexWeek : 'auto'"
+            *ngFor="let day of monthSelect;let first = first" >
+                <ng-template #diaSinData><span>{{day?.value}}</span></ng-template>
+                <span *ngIf="day?.estado ; else diaSinData" class="marcaDIa" title="{{day?.estado}}">{{day?.value}}</span>
+            </li>
+        </ol>
+    </div>
+
+    <hr>
+    <div>
+        Fecha: {{dateValue | date}}
+    </div>
+</div>

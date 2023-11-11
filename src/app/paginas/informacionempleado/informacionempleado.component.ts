@@ -60,6 +60,8 @@ export class InformacionempleadoComponent {
 
   indexUniforme2 :any = 1
 
+  idEmpleado :any;
+
   constructor(
     private router: Router,
     private activatedRouter: ActivatedRoute,
@@ -70,7 +72,7 @@ export class InformacionempleadoComponent {
 
   ngOnInit(): void {
     const id = this.activatedRouter.snapshot.params['id'];
-    
+    this.idEmpleado=id;
     this.empleadoS.detail(id).subscribe((data) => {
       this.empleado = data;
       console.log(this.empleado);
@@ -78,6 +80,7 @@ export class InformacionempleadoComponent {
       // console.log(this.uniformes);
       console.log('imprimir DNI ' + this.empleado.dniempleado);
     });
+
 
     // this.indumentariaS.detail(id).subscribe((dataI) => {
     //   this.indumentaria = dataI;
