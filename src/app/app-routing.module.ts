@@ -14,7 +14,8 @@ import { RrhhComponent } from './paginas/rrhh/rrhh.component';
 import { BolsaadminComponent } from './paginas/bolsaadmin/bolsaadmin.component';
 import { CredencialesComponent } from './paginas/credenciales/credenciales.component';
 import { OfertaComponent } from './paginas/oferta/oferta.component';
-//import { SistemaComponent } from './components/sistema/sistema.component';
+import { ParqueComponent } from './paginas/parque/parque.component';
+import { InfraccionesComponent } from './paginas/infracciones/infracciones.component';
 
 const vistaUser = { roles: ['ROLE_USER' , 'ROLE_MODERATOR']};
 const vistaAdmin = { roles: ['ROLE_ADMIN' , 'ROLE_MODERATOR'] };
@@ -34,6 +35,8 @@ const routes: Routes = [
   { path: 'bolsa', component:BolsaadminComponent }, //Ambos 
   { path: 'credenciales', component:CredencialesComponent , canActivate: [RoleGuard], data: vistaAdmin },
   { path: 'oferta/:id', component:OfertaComponent }, //Ambos 
+  { path: 'dpa/parque', component:ParqueComponent , canActivate: [RoleGuard], data: vistaAdmin },
+  { path: 'dpa/infracciones', component:InfraccionesComponent , canActivate: [RoleGuard], data: vistaAdmin },
   //{path:'sistema', component:SistemaComponent}
 
 ];

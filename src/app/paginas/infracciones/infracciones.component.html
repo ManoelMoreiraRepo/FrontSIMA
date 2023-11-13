@@ -1,0 +1,116 @@
+<div>
+    <app-header></app-header>
+    <app-titulero [indice]="2"></app-titulero>
+    <app-titulero [indice]="1"  [tititulosExternos] = "subtitulos"></app-titulero>
+    <app-separador [urlImg]="urlImagen" ></app-separador>
+    <h3>INFRACCIONES</h3>
+    <div>
+        <span class="etiqueta fondoRojo">INFO</span>
+        <span class="etiqueta fondoGris">CANT</span>
+        <span class="etiqueta fondoRojo">VALOR</span>
+    </div>
+   
+    <div *ngIf="data" class="contendorGeneral">
+        <div class="contenedorInformacion">
+            <div id="generencia">
+                <p style="height: 80px"></p>
+                <p *ngFor="let item of data.gerencia">{{item}}</p>
+            </div>
+            
+            <div class="columna columna1 bg-black">
+                <span>DPA</span>
+                <p>INFRACCIONES<br/> GENERADAS</p>
+                <table>
+                    <thead>
+                        <th>
+                            
+                        </th>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of data.cantidades">
+                            <td>
+                                {{item}}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="columna columna2">
+                <span>OPERACIONES</span>
+                <p>INFRACCIONES</p>
+                <table>
+                    <thead>
+                        <th>
+                            SIN ASIGNAR 
+                        </th>
+                        <th>
+                            ASIGNADAS
+                        </th>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of data.gerencia; index as i">
+                            <td>
+                                {{data.sinAsignar[i]}}
+                            </td>
+                            <td>
+                                {{data.asignada[i]}}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+    
+            <div class="columna columna3">
+                <p>CONTADURIA</p>
+                <table>
+                    <thead>
+                        <th>
+                            COBRADAS
+                        </th>
+                        <th>
+                            PENDIENTES
+                        </th>
+                    </thead>
+                    <tbody>
+                        
+                        <tr *ngFor="let item of data.gerencia; index as i">
+                            <td>
+                                {{data.cobrada[i]}}
+                            </td>
+                            <td>
+                                {{data.pendiente[i]}}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+    
+            <div class="columna columna4 bg-black">
+                <span>STATUS</span>
+                <table>
+                    <thead>
+                        <th>
+                            
+                        </th>
+                    </thead>
+                    <tbody>
+                        
+                        <tr>
+                            <td>
+                               GRAFICO
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <span style="color: white;">INFRACCIONES generadas, Informadas y Cobradas YTD</span>
+        </div>
+
+        
+       
+    
+    
+    
+    <app-footer class="footer"></app-footer>
+</div>

@@ -7,7 +7,7 @@ export const menuAdmin = [
     },
     {
         img:"./assets/img/admin/dpa.png",
-        link:"/credenciales"
+        link:"/dpa/parque"
     },
     {
         img:"./assets/img/admin/cred.png",
@@ -132,7 +132,7 @@ export const titulos = [
   },
   {
     titulo:"DPA",
-    url:"/rrhh"
+    url:"/dpa/parque"
   },
   {
     titulo:"SUMINISTROS",

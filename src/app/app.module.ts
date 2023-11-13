@@ -31,6 +31,8 @@ import { CredencialesComponent } from './paginas/credenciales/credenciales.compo
 import { PaginationComponent } from './components/pagination/pagination.component';
 import { OfertaComponent } from './paginas/oferta/oferta.component';
 import { CalendarioComponent } from './components/calendario/calendario.component';
+import { InfraccionesComponent } from './paginas/infracciones/infracciones.component';
+import { ParqueComponent } from './paginas/parque/parque.component';
 
 
 
@@ -57,6 +59,8 @@ import { CalendarioComponent } from './components/calendario/calendario.componen
     CredencialesComponent,
     OfertaComponent,
     CalendarioComponent,
+    InfraccionesComponent,
+    ParqueComponent,
   ],
   imports: [
     BrowserModule,

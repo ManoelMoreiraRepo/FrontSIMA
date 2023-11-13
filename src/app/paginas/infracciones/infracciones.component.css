@@ -1,0 +1,144 @@
+.fondoGris{
+    background-color:#85898C;
+    color: white;
+}
+
+.contendorGeneral{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+   
+}
+.contenedorInformacion{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 150px;
+}
+
+.contenedorInformacion table{
+    color:white;
+}
+
+.columna{
+    margin: 0 12px;
+}
+
+.columna1{
+    color: white;
+    text-align: center;
+}
+.columna1 span{
+    font-weight: bold;
+    
+}
+
+.columna1 p{
+    font-weight: 300;
+    margin: 4px;
+}
+.columna1 table{
+    width: 80%;
+    margin: 4px auto 4px auto;
+}
+
+.columna1 table td{
+    background-color: #FFF72C;
+    color: black;
+    font-weight: bold;
+    width: 80%;
+    text-align: center;
+    border-top: 12px solid black;
+    border-bottom: 12px solid black;
+}
+
+
+.columna2{
+    background-color: #FFF72C ;
+    color: black;
+    text-align: center;
+}
+.columna2 span{
+    font-weight: bold;
+}
+.columna2 p{
+    font-weight: 300;
+    margin-bottom: 7px;
+    color: black !important;
+}
+
+.columna2 th{
+    color:black;
+    font-weight: 300;
+    text-wrap: nowrap;
+    text-align: center;
+    border-left: 4px solid #FFF72C;
+    border-right: 4px solid #FFF72C;
+}
+
+.columna2 table tr :nth-child(1){
+    background-color: #FA3B12;
+}
+.columna2 table tr :nth-child(2){
+    background-color: #F7B408;
+}
+
+.columna2 table td{
+   
+    color: black;
+    font-weight: bold;
+    width: 80%;
+    text-align: center;
+    border-top: 12px solid #FFF72C;
+    border-bottom: 12px solid #FFF72C;
+    border-left: 4px solid #FFF72C;
+    border-right: 4px solid #FFF72C;
+}
+
+
+
+.columna3{
+    background-color: #F7B408 ;
+    color: black !important;
+    text-align: center;
+}
+.columna3 p{
+    font-weight: bold;
+    margin-bottom: 31px;
+    color: black !important;
+}
+
+
+.columna3 th{
+    color:black;
+    font-weight: 300;
+    text-wrap: nowrap;
+    text-align: center;
+    border-left: 4px solid #F7B408;
+    border-right: 4px solid #F7B408;
+}
+
+.columna3 table tr :nth-child(1){
+    background-color: white;
+}
+.columna3 table tr :nth-child(2){
+    background-color: white;
+}
+
+.columna3 table td{
+    color: black;
+    font-weight: bold;
+    width: 80%;
+    text-align: center;
+    border-top: 12px solid #F7B408;
+    border-bottom: 12px solid #F7B408;
+    border-left: 4px solid #F7B408;
+    border-right: 4px solid #F7B408;
+}
+
+.contenedorInformacion p {
+    color: white ;
+}
+#generencia p {
+    margin-bottom: 14px;
+}

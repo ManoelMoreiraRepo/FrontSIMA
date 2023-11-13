@@ -8,4 +8,12 @@ import { titulos } from 'src/app/constantes';
 export class TituleroComponent {
   titulos = titulos;
   @Input() indice : any;
+  @Input() tititulosExternos : any;
+
+  ngOnInit(){
+    if(this.tititulosExternos){
+      this.titulos=this.tititulosExternos;
+    }
+  }
+
 }
