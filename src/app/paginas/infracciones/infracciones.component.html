@@ -6,8 +6,8 @@
     <h3>INFRACCIONES</h3>
     <div>
         <span class="etiqueta fondoRojo">INFO</span>
-        <span class="etiqueta fondoGris">CANT</span>
-        <span class="etiqueta fondoRojo">VALOR</span>
+        <span id="boton1" class="etiqueta  fondoRojo" (click)="mostrarCantidad()">CANT</span>
+        <span id="boton2"  class="etiqueta fondoGris " (click)="mostrarImporte()">VALOR</span>
     </div>
    
     <div *ngIf="data" class="contendorGeneral">
@@ -16,8 +16,27 @@
                 <p style="height: 80px"></p>
                 <p *ngFor="let item of data.gerencia">{{item}}</p>
             </div>
+
+            <div id="importe" class="columna columna1 bg-black d-none" >
+                <span>DPA</span>
+                <p>INFRACCIONES<br/> GENERADAS</p>
+                <table>
+                    <thead>
+                        <th>
+                            
+                        </th>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of data.totales">
+                            <td style="text-wrap: nowrap;">
+                               {{item | currency:'ARS':'symbol':'4.2-2' }}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
             
-            <div class="columna columna1 bg-black">
+            <div id="cant" class="columna columna1 bg-black">
                 <span>DPA</span>
                 <p>INFRACCIONES<br/> GENERADAS</p>
                 <table>

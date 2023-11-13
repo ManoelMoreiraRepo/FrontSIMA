@@ -33,6 +33,8 @@ import { OfertaComponent } from './paginas/oferta/oferta.component';
 import { CalendarioComponent } from './components/calendario/calendario.component';
 import { InfraccionesComponent } from './paginas/infracciones/infracciones.component';
 import { ParqueComponent } from './paginas/parque/parque.component';
+import { BarChartComponent } from './components/barras/barChartComponent.component';
+import { CommonModule } from '@angular/common';
 
 
 
@@ -61,6 +63,8 @@ import { ParqueComponent } from './paginas/parque/parque.component';
     CalendarioComponent,
     InfraccionesComponent,
     ParqueComponent,
+    BarChartComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -69,7 +73,8 @@ import { ParqueComponent } from './paginas/parque/parque.component';
     FormsModule,
     ToastrModule.forRoot(),
     BrowserAnimationsModule,
-    PaginationComponent
+    PaginationComponent,
+    CommonModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
