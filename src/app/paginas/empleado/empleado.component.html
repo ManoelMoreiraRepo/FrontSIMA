@@ -21,10 +21,21 @@
             <div class="col-lg-10">
                 <form novalidate #f="ngForm" (ngSubmit)="onBuscar()">
                     <div class="row text-center">
-                        <div class="col-lg-9">
+                        <div class="col-lg-6">
                             <!----[(ngModel)]='textoDeInput'-->
                             <input type="text" class="form-control" id="name" name="name"
-                                placeholder="Ingresa el Nombrea buscar......." [(ngModel)]='textoDeInput' required>
+                                placeholder="Ingrese dni nombre o apellido." [(ngModel)]='textoDeInput' required>
+                        </div>
+                        <div class="col-lg-3">
+                            <select id="gerencia" class="form-control" [(ngModel)]="gerencia" >
+                                <option value="">Seleccione..</option>
+                                <option value="GER_001">Grupo sima</option>
+                                <option value="GER_002">Aeropuertos</option>
+                                <option value="GER_003">Global</option>
+                                <option value="GER_004">Edenor</option>
+                                <option value="GER_005">La bizantina</option>
+                                <option value="GER_006">Ecoklin</option>
+                            </select>
                         </div>
                         <div class="col-lg-3">
                             <button type="submit" class="btn btn-primary mb-3 mx-3" value="Buscar">Buscar</button>

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { PersonaEmpleado } from 'src/app/model/PersonaEmpleado.model';
 import { PersonaServiceTsServiceService } from 'src/app/service/persona-service-ts-service.service';
 import { ApiResponse } from 'src/app/model/ApiResponse';
@@ -14,15 +14,25 @@ export class EmpleadoComponent {
 
   empleado: PersonaEmpleado[] = [];
   textoDeInput: string = "";
+  gerencia: any = "";
   paginable:any;
   alldata:any
   ordenado:string ='legajoEmpleado';
   orden:string = 'ASC';
   paginaActual = 1;
-  constructor(private router:Router, private empleadoS: PersonaServiceTsServiceService , private mensajero : ToastrService) { }
+  constructor(private router:Router,private activatedRouter: ActivatedRoute, private empleadoS: PersonaServiceTsServiceService , private mensajero : ToastrService) { }
 
   ngOnInit(): void {
-    this.empleadoS.buscar("" , 1).subscribe(data => {
+    var params = new URLSearchParams(window.location.search);
+    let gerenciaRecibida =  params.get('gerencia');
+    console.log(gerenciaRecibida);
+    if(gerenciaRecibida != undefined){
+      (<HTMLInputElement>document.getElementById("gerencia")).value = gerenciaRecibida;
+      this.gerencia = gerenciaRecibida;
+    }else{
+      (<HTMLInputElement>document.getElementById("gerencia")).value = '';
+    }
+    this.empleadoS.buscar("" , this.gerencia , 1).subscribe(data => {
       this.empleado = data.content
       this.paginable = data.pageable;
       this.alldata = data;
@@ -47,7 +57,7 @@ export class EmpleadoComponent {
       this.orden = 'ASC';
     }
     this.paginaActual = pagina;
-    this.empleadoS.buscar(this.textoDeInput.trim() , pagina , this.ordenado , this.orden).subscribe(data => {
+    this.empleadoS.buscar(this.textoDeInput.trim() ,this.gerencia ,pagina , this.ordenado , this.orden).subscribe(data => {
       this.empleado = data.content
       this.paginable = data.pageable;
       this.alldata = data;
