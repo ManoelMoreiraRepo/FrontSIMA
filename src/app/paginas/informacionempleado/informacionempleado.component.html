@@ -78,11 +78,12 @@
       <div class="row d-flex align-items-center">
         <div class="foto col-lg-3 d-flex flex-column align-items-center">
           <img
-            src="../../../assets/img/Rectangle282.jpg"
+            [src]="imagenURL"
             alt="Organigrama"
-            class="img-fluid bg-black foto m-4"
+            class="img-fluid foto m-4"
             width="198"
             height="0"
+            (error)="cargarImagenPorDefecto()"
           />
           <div class="data-content">
             <div
@@ -222,11 +223,12 @@
     <div class="fondo d-flex justify-content-center">
       <div class="foto col-lg-3 d-flex flex-column align-items-center">
         <img
-          src="../../../assets/img/Rectangle282.jpg"
+          [src]="imagenURL"
           alt="Organigrama"
-          class="img-fluid bg-black foto m-4"
+          class="img-fluid foto m-4"
           width="198"
           height="0"
+          (error)="cargarImagenPorDefecto()"
         />
         <div class="data-content">
           <div
@@ -271,11 +273,12 @@
     <div class="fondo d-flex justify-content-center">
       <div class="foto col-lg-3 d-flex flex-column align-items-center">
         <img
-          src="../../../assets/img/Rectangle282.jpg"
+          [src]="imagenURL"
           alt="Organigrama"
           class="img-fluid bg-black foto m-4"
           width="198"
           height="0"
+          (error)="cargarImagenPorDefecto()"
         />
         <div class="data-content">
           <div
@@ -463,11 +466,12 @@
     <div class="row d-flex align-items-center">
       <div class="foto col-lg-3 d-flex flex-column align-items-center">
         <img
-          src="../../../assets/img/Rectangle282.jpg"
+          [src]="imagenURL"
           alt="Organigrama"
           class="img-fluid bg-black foto m-4"
           width="198"
           height="0"
+          (error)="cargarImagenPorDefecto()"
         />
         <div class="data-content">
           <div

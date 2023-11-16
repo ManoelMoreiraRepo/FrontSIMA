@@ -5,7 +5,8 @@
                 <h5>{{item.titulo}}</h5>
                 <span>{{item.descrip}}</span>
                 <div class="boxCont">
-                   <a href="{{item.url}}"><span>{{item.cant}}</span></a>
+                   <a *ngIf="item.url else sinLink" href="{{item.url}}"><span>{{item.cant}}</span></a>
+                   <ng-template #sinLink><span>{{item.cant}}</span></ng-template>
                 </div>
             </div>
         </div>

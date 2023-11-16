@@ -4,6 +4,7 @@ import { PersonaEmpleado } from 'src/app/model/PersonaEmpleado.model';
 import { PersonaServiceTsServiceService } from 'src/app/service/persona-service-ts-service.service';
 import { ApiResponse } from 'src/app/model/ApiResponse';
 import { ToastrService } from 'ngx-toastr';
+import { IMAGEN_DEFAULT } from 'src/app/constantes';
 
 @Component({
   selector: 'app-empleado',
@@ -20,6 +21,7 @@ export class EmpleadoComponent {
   ordenado:string ='legajoEmpleado';
   orden:string = 'ASC';
   paginaActual = 1;
+  imagenDefault = IMAGEN_DEFAULT;
   constructor(private router:Router,private activatedRouter: ActivatedRoute, private empleadoS: PersonaServiceTsServiceService , private mensajero : ToastrService) { }
 
   ngOnInit(): void {
@@ -32,15 +34,30 @@ export class EmpleadoComponent {
     }else{
       (<HTMLInputElement>document.getElementById("gerencia")).value = '';
     }
-    this.empleadoS.buscar("" , this.gerencia , 1).subscribe(data => {
+    this.empleadoS.buscar("" , this.gerencia , 0).subscribe(data => {
       this.empleado = data.content
       this.paginable = data.pageable;
       this.alldata = data;
+      this.armarUrlsFotos(this.empleado);
       // console.log(data);
     });
   }
 
-  cargarcliente(page:any = 1): void {
+  setImagenReal(obj:PersonaEmpleado){
+    obj.foto = `../../../assets/img/perfil/PIC${obj.dniempleado}.jpg`;
+  }
+
+  setImagenDefualt( obj :PersonaEmpleado){
+    obj.foto = IMAGEN_DEFAULT;
+  }
+
+  armarUrlsFotos(array:any){
+    for(let item of array){
+      this.setImagenReal(item);
+    }
+  }
+
+  cargarcliente(page:any = 0): void {
     this.empleadoS.traer(page).subscribe((data: ApiResponse) => {
       this.empleado = data.content;
     });
@@ -57,11 +74,13 @@ export class EmpleadoComponent {
       this.orden = 'ASC';
     }
     this.paginaActual = pagina;
+    this.gerencia =  (<HTMLInputElement>document.getElementById("gerencia")).value;
     this.empleadoS.buscar(this.textoDeInput.trim() ,this.gerencia ,pagina , this.ordenado , this.orden).subscribe(data => {
       this.empleado = data.content
       this.paginable = data.pageable;
       this.alldata = data;
-      // console.log(data);
+      this.armarUrlsFotos(this.empleado);
+       console.log(data.content);
     });
   }
 

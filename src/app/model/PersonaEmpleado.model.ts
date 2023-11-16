@@ -55,6 +55,7 @@ export class PersonaEmpleado {
   credencial : Array <Credencial>= new Array<Credencial>();
   capacitacion : Array <Capacitacion>= new Array<Capacitacion>();
   operacion!: Operacion;
+  foto:any;
   constructor(
     estadoEmpleado: string,
     dniempleado: string,
@@ -69,7 +70,7 @@ export class PersonaEmpleado {
     cargoEmpleado: string,
     emailEmpleado: string,
     direccionEmpleado: string,
-    codigoPostalEmpleado: string
+    codigoPostalEmpleado: string,
     // img:string
 
   ) {
@@ -90,7 +91,6 @@ export class PersonaEmpleado {
     this.emailEmpleado = emailEmpleado;
     this.direccionEmpleado = direccionEmpleado;
     this.codigoPostalEmpleado = codigoPostalEmpleado;
-
     // this.img= img;
   }
 }

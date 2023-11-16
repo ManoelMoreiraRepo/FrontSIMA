@@ -2,19 +2,20 @@ import { Component } from '@angular/core';
 import { AuthService } from 'src/app/service/auth-service';
 import { OfertaService } from 'src/app/service/oferta-service';
 import { getLogoByGerencia } from 'src/app/utils';
+import { ImpotacionService } from 'src/app/service/importacion-service';
 @Component({
   selector: 'app-bolsaadmin',
   templateUrl: './bolsaadmin.component.html',
   styleUrls: ['./bolsaadmin.component.css']
 })
 export class BolsaadminComponent {
-  constructor(private authService : AuthService , private ofertaService : OfertaService){}
+  constructor(private authService : AuthService , private ofertaService : OfertaService , private importacionService : ImpotacionService ){}
 
   esAdmin = this.authService.getRole()!='ROLE_USER';
   urlImagen : string = "./assets/img/Ellipse 99.png";
   urlImagenPostu:string = "./assets/img/postu.png";
 
-
+  selectedFile:any;
   paginable:any;
   alldata:any
   ordenado:string ='codigo';
@@ -111,7 +112,22 @@ export class BolsaadminComponent {
     // },
   ]
 
-  onFileChange=(event:any)=>{
-    console.log("Subida");
+  onFileChange(event: any) {
+    this.selectedFile = event.target.files[0];
+    
+    this.subirArchivo();
+  }
+
+  subirArchivo(){
+    const formData = new FormData();
+    if(!this.selectedFile){
+      return;
+    }
+
+    formData.append('file', this.selectedFile);
+    this.importacionService.subir(formData);
+    setTimeout(() => {
+     location.reload();
+    }, 2000);
   }
 }

@@ -1,5 +1,7 @@
 export const URL_API = 'http://localhost:8080';
 
+export const IMAGEN_DEFAULT =  "../../../assets/img/perfil/default.png"
+
 export const menuAdmin = [
     {
         img:"./assets/img/admin/rrhh.png",

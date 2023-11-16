@@ -4,6 +4,7 @@ import { Indumentaria } from 'src/app/model/Indumentaria.model';
 import { PersonaEmpleado } from 'src/app/model/PersonaEmpleado.model';
 import { PersonaServiceTsServiceService } from 'src/app/service/persona-service-ts-service.service';
 import { ServiceindumentariaServiceService } from 'src/app/service/serviceindumentaria.service.service';
+import { IMAGEN_DEFAULT } from 'src/app/constantes';
 
 declare var $: any;
 @Component({
@@ -12,6 +13,8 @@ declare var $: any;
   styleUrls: ['./informacionempleado.component.css'],
 })
 export class InformacionempleadoComponent {
+
+
   empleado: PersonaEmpleado = new PersonaEmpleado(
     ' ',
     ' ',
@@ -62,6 +65,8 @@ export class InformacionempleadoComponent {
 
   idEmpleado :any;
 
+  imagenURL : string = "../../../assets/img/perfil/PIC";
+
   constructor(
     private router: Router,
     private activatedRouter: ActivatedRoute,
@@ -75,6 +80,7 @@ export class InformacionempleadoComponent {
     this.idEmpleado=id;
     this.empleadoS.detail(id).subscribe((data) => {
       this.empleado = data;
+      this.imagenURL += `${this.empleado.dniempleado}.jpg`;
       console.log(this.empleado);
       // this.agruparUniformes(this.empleado.indumentaria)
       // console.log(this.uniformes);
@@ -93,6 +99,10 @@ export class InformacionempleadoComponent {
 
   closeModal(id:string){
     $(id).modal('hide');
+  }
+
+  cargarImagenPorDefecto() {
+    this.imagenURL = IMAGEN_DEFAULT;
   }
 
   main() {
