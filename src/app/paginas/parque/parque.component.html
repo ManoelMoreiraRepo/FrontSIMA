@@ -5,11 +5,21 @@
     <app-separador [urlImg]="urlImagen" ></app-separador>
     <h3>DPA</h3>
     <span class="etiqueta fondoRojo">PARQUE</span>
-    <div style="width: 400px;">
-        <app-bar-chart></app-bar-chart>
 
-
+    <div class="contenedorGeneral d-flex justify-content-center">
+        <div class="contenedorInfo d-flex" style="gap:1rem ; margin:12px">
+            <div *ngIf="objeto" style="width: 400px;">
+                <div style="width: 100%;text-align:right;"><span style="background-color: white; padding:2px ; border:1px solid black ">Total : {{getSumaTotal(objeto) | currency:'ARS':'symbol':'4.2-2'}}</span></div>
+                <app-bar-chart  [objeto]="objeto" style="margin:12px"></app-bar-chart>
+            </div>
+            <div *ngIf="objeto2" style="width: 400px;">
+                <div style="width: 100%;text-align:right; "><span style="background-color: white; padding:2px ; border:1px solid black">Total Activos : {{getSumaTotal(objeto2)}}</span></div>
+                <app-bar-chart  [objeto]="objeto2" style="margin:12px"></app-bar-chart>
+            </div>
+        </div>
     </div>
+
+    
     
    
     
