@@ -90,22 +90,17 @@ export class EmpleadoComponent {
   }
 
   borrar(id?: number) {
-    console.log("a ver que recibe" +id);
     if (id != undefined) {
-      console.log("entro");
       this.empleadoS.borrar(id).subscribe({
         next: () => {
-          alert('se eliminó correctamente');
-          this.cargarcliente();
+          this.mensajero.success('Se eliminó correctamente');
+          this.onBuscar(this.paginaActual);
         },
         error: (err) => {
           console.log(err);
-          alert('Error, No se pude eliminar el empleado 1');
+          this.mensajero.error('Error, No se pude eliminar el empleado.');
         }
       });
-    }
-    else{
-      alert('Error, algo pasa con el id');
     }
   }
 

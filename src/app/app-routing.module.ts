@@ -3,10 +3,8 @@ import { RoleGuard } from './role.guard';
 import { RouterModule, Routes } from '@angular/router';
 import { EditempleadoComponent } from './paginas/editempleado/editempleado.component';
 import { EmpleadoComponent } from './paginas/empleado/empleado.component';
-import { GpsComponent } from './paginas/gps/gps.component';
 import { InformacionempleadoComponent } from './paginas/informacionempleado/informacionempleado.component';
 import { LoginComponent } from './paginas/login/login.component';
-import { MainComponent } from './paginas/main/main.component';
 import { NuevoempleadoComponent } from './paginas/nuevoempleado/nuevoempleado.component';
 import { AdminmainComponent } from './paginas/adminmain/adminmain.component';
 import { EmpleadomainComponent } from './paginas/empleadomain/empleadomain.component';
@@ -16,6 +14,9 @@ import { CredencialesComponent } from './paginas/credenciales/credenciales.compo
 import { OfertaComponent } from './paginas/oferta/oferta.component';
 import { ParqueComponent } from './paginas/parque/parque.component';
 import { InfraccionesComponent } from './paginas/infracciones/infracciones.component';
+import { SuministrosComponent } from './paginas/suministros/suministros.component';
+import { PerifericosComponent } from './paginas/perifericos/perifericos.component';
+import { EquipamientosComponent } from './paginas/equipamientos/equipamientos.component';
 
 const vistaUser = { roles: ['ROLE_USER' , 'ROLE_MODERATOR']};
 const vistaAdmin = { roles: ['ROLE_ADMIN' , 'ROLE_MODERATOR'] };
@@ -37,6 +38,9 @@ const routes: Routes = [
   { path: 'oferta/:id', component:OfertaComponent }, //Ambos 
   { path: 'dpa/parque', component:ParqueComponent , canActivate: [RoleGuard], data: vistaAdmin },
   { path: 'dpa/infracciones', component:InfraccionesComponent , canActivate: [RoleGuard], data: vistaAdmin },
+  { path: 'suministros', component:SuministrosComponent , canActivate: [RoleGuard], data: vistaAdmin },
+  { path: 'perifericos', component:PerifericosComponent , canActivate: [RoleGuard], data: vistaAdmin },
+  { path: 'equipamientos', component:EquipamientosComponent , canActivate: [RoleGuard], data: vistaAdmin },
   //{path:'sistema', component:SistemaComponent}
 
 ];

@@ -60,7 +60,7 @@
                     </thead>
                     <tbody>
                         <tr *ngFor="let empleadosgps of empleado" class="text-center">
-                            <td><img src="{{empleadosgps.foto}}" (error)="setImagenDefualt(empleadosgps)" alt="GPS" class="img-fluid bg-black rounded-circle"
+                            <td><img src="{{empleadosgps.foto}}" (error)="setImagenDefualt(empleadosgps)" alt="GPS" class="img-fluid rounded-circle"
                                 width=" 60" height=""></td>
                             <td>{{empleadosgps.legajoEmpleado}}</td>
                             <td>{{empleadosgps.apellidoEmpleado}}, {{empleadosgps.nombreEmpleado}}</td>

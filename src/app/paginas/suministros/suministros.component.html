@@ -1,0 +1,49 @@
+<div>
+    <app-header></app-header>
+    <app-titulero [indice]="3"></app-titulero>
+    <app-titulero [indice]="0"  [tititulosExternos] = "subtitulos"></app-titulero>
+    <app-separador [urlImg]="urlImagen" ></app-separador>
+    <h3>SUMINISTROS</h3>
+    <span class="etiqueta fondoRojo">INFO</span>
+
+    <div class="contenedorGeneral d-flex justify-content-center">
+        <div class="contenedorInfo d-flex" style="gap:1rem ;  flex-direction: column; align-items: center;">
+            <!-- | async -->
+            <app-contador [lista]="totales "></app-contador>
+            <div *ngIf="objeto" style="width: 1000px; height:400px" >
+                <app-bar-chart id="graficoAnual"  [objeto]="objeto" style="margin:12px"></app-bar-chart>
+            </div>
+        </div>
+    </div>
+    <div class="contenedorImportacion">
+        <div class="barraImportacion">
+            <div class="boxImport">
+                <div>
+                    <label for="file-1"><img src="./assets/img/up.png" alt="" > </label>
+                    <input id="file-1" class="inputFile" type="file" (change)="onFileChange($event)" />
+                </div>
+                <div>
+                    <h5>SUMINISTROS</h5>
+                    <span>Reporte semanal</span>
+                </div>
+            </div>
+            <!-- <div class="boxImport">
+                <div>
+                    <label for="file-2"><img src="./assets/img/up.png" alt="" > </label>
+                    <input id="file-2" class="inputFile" type="file" (change)="onFileChange($event)" />
+                </div>
+                <div >
+                    <h5>INFRACCIONES</h5>
+                    <span>Reporte semanal</span>
+                </div>
+            </div> -->
+            <div class="infoImportador">
+                <span>Opcion de carga de información</span>
+                <span>Responsable: SUMINISTROS</span>
+            </div>
+        </div>
+    </div>
+    
+    <app-footer class="footer"></app-footer>
+
+</div>

@@ -32,7 +32,7 @@ export class ParqueComponent {
 
   ngOnInit(){
     this.dpaService.getEstadistica().subscribe((resp)=>{
-      // console.log(resp);
+       console.log(resp);
       this.nombres = resp.gerencia;
       this.importes = resp.totales;
 
@@ -58,7 +58,7 @@ export class ParqueComponent {
           },
           elements: {
             bar: {
-              backgroundColor: 'white', // Establece el fondo blanco para las barras
+              backgroundColor: 'white',
             },
           }
         },
