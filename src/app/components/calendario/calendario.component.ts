@@ -24,7 +24,7 @@ export class CalendarioComponent {
   monthSelect: any[] = [];
   dateSelect: any;
   dateValue: any;
-
+  diasTrabajados : any =[];
   grilla :any;
 
   constructor(private empleadoS : PersonaServiceTsServiceService) {
@@ -39,6 +39,7 @@ export class CalendarioComponent {
       // console.log(resp);
       this.grilla = resp;
       this.getDaysFromDate(startDate.format('MM'), startDate.format('YYYY'));
+      this.diasTrabajados = this.grilla.filter((obj:any)=>(obj.estado == 'MAÑANA' || obj.estado == 'TARDE' || obj.estado == 'NOCHE'));
     });
     
   }
@@ -87,9 +88,28 @@ export class CalendarioComponent {
 
   actualizarGrilla(month:any, year:any){
     this.empleadoS.getGrilla(month ,year , this.idEmpleado ).subscribe((resp)=>{
-      // console.log(resp);
+       console.log(resp);
       this.grilla = resp;
       this.getDaysFromDate(month, year);
+      this.diasTrabajados = this.grilla.filter((obj:any)=>(obj.estado == 'MAÑANA' || obj.estado == 'TARDE' || obj.estado == 'NOCHE'));
     });
+  }
+
+  esDiaTrabajado(obj:any){
+    return (obj.estado == 'MAÑANA' || obj.estado == 'TARDE' || obj.estado == 'NOCHE');
+  }
+
+  getTurnos(){
+    let obj = this.diasTrabajados;
+    let data = "";
+    
+    if(obj.length === 0){
+      return data;
+    }
+    const lista = new Set();
+
+    obj.forEach((x:any)=>{lista.add(x.estado)});
+
+    return [...lista].join('-');
   }
 }

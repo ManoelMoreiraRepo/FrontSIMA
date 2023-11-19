@@ -81,7 +81,7 @@ export class InformacionempleadoComponent {
     this.empleadoS.detail(id).subscribe((data) => {
       this.empleado = data;
       this.imagenURL += `${this.empleado.dniempleado}.jpg`;
-      // console.log(this.empleado);
+       console.log(this.empleado);
       // this.agruparUniformes(this.empleado.indumentaria)
       // console.log(this.uniformes);
       // console.log('imprimir DNI ' + this.empleado.dniempleado);
