@@ -67,65 +67,6 @@ export class InformacionempleadoComponent {
 
   imagenURL : string = "../../../assets/img/perfil/PIC";
 
-  constructor(
-    private router: Router,
-    private activatedRouter: ActivatedRoute,
-    private empleadoS: PersonaServiceTsServiceService,
-
-    private indumentariaS: ServiceindumentariaServiceService
-  ) {}
-
-  ngOnInit(): void {
-    const id = this.activatedRouter.snapshot.params['id'];
-    this.idEmpleado=id;
-    this.empleadoS.detail(id).subscribe((data) => {
-      this.empleado = data;
-      this.imagenURL += `${this.empleado.dniempleado}.jpg`;
-       console.log(this.empleado);
-      // this.agruparUniformes(this.empleado.indumentaria)
-      // console.log(this.uniformes);
-      // console.log('imprimir DNI ' + this.empleado.dniempleado);
-    });
-
-
-    // this.indumentariaS.detail(id).subscribe((dataI) => {
-    //   this.indumentaria = dataI;
-    // });
-  }
-
-  openModal(id:string) {
-    $(id).modal('show');
-  }
-
-  closeModal(id:string){
-    $(id).modal('hide');
-  }
-
-  cargarImagenPorDefecto() {
-    this.imagenURL = IMAGEN_DEFAULT;
-  }
-
-  main() {
-    this.router.navigate(['/main']);
-  }
-
-  // agruparUniformes(indumentarias: Array<Indumentaria>) {
-  //   indumentarias.forEach((ind) => {
-  //     let tipoIndumentaria = ind.tipoIndumentaria;
-  //     if (this.uniformes.has(tipoIndumentaria)) {
-  //       let lista = this.uniformes.get(tipoIndumentaria);
-  //       lista?.push(ind);
-  //     }else{
-  //       let lista = [ind];
-  //       this.uniformes.set(tipoIndumentaria,lista)
-  //     }
-  //   });
-  // }
-
-  getPropiedades(objeto: any): [string, any][] {
-    return Object.entries(objeto).filter(([key, value]) => key !== 'nombre');
-  }
-
   uniformesRecibidos = {
     "uniformes": [
       {
@@ -222,5 +163,64 @@ export class InformacionempleadoComponent {
       }
     ]
   }
+
+  cursos = [
+    {
+      fecha:'21/06/18',
+      codigo:'PSA001',
+      titulo:'VIGILADOR INICIAL',
+      duracion:""
+    },
+    {
+      fecha:'21/06/18',
+      codigo:'PSA001A',
+      titulo:'IGILADOR RENOVACION',
+      duracion:"Anual"
+    },
+  ]
+
+  codigos = this.cursos.map(curso => curso.codigo);
+
+  constructor(
+    private router: Router,
+    private activatedRouter: ActivatedRoute,
+    private empleadoS: PersonaServiceTsServiceService,
+
+    private indumentariaS: ServiceindumentariaServiceService
+  ) {}
+
+  ngOnInit(): void {
+    const id = this.activatedRouter.snapshot.params['id'];
+    this.idEmpleado=id;
+    this.empleadoS.detail(id).subscribe((data) => {
+      this.empleado = data;
+      this.imagenURL += `${this.empleado.dniempleado}.jpg`;
+       console.log(this.empleado);
+     
+    });
+
+  }
+
+  openModal(id:string) {
+    $(id).modal('show');
+  }
+
+  closeModal(id:string){
+    $(id).modal('hide');
+  }
+
+  cargarImagenPorDefecto() {
+    this.imagenURL = IMAGEN_DEFAULT;
+  }
+
+  main() {
+    this.router.navigate(['/main']);
+  }
+
+  getPropiedades(objeto: any): [string, any][] {
+    return Object.entries(objeto).filter(([key, value]) => key !== 'nombre');
+  }
+
+  
   
 }
