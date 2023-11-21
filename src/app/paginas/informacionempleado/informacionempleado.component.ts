@@ -65,7 +65,7 @@ export class InformacionempleadoComponent {
 
   idEmpleado :any;
 
-  imagenURL : string = "../../../assets/img/perfil/";
+  imagenURL : string = "";
 
   uniformesRecibidos = {
     "uniformes": [
@@ -194,7 +194,7 @@ export class InformacionempleadoComponent {
     this.idEmpleado=id;
     this.empleadoS.detail(id).subscribe((data) => {
       this.empleado = data;
-      this.imagenURL += `${this.empleado.dniempleado}.jpg`;
+      this.imagenURL = `../../../assets/img/perfil/${this.empleado.dniempleado}.jpg`;
        console.log(this.empleado);
      
     });
