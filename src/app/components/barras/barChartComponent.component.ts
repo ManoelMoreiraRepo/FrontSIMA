@@ -1,40 +1,27 @@
-import { Component, OnInit } from '@angular/core';
-import Chart from 'chart.js/auto';
+import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import Chart, { ChartConfiguration } from 'chart.js/auto';
 import 'chart.js/auto';
-
 
 @Component({
   selector: 'app-bar-chart',
-  template: '<canvas id="barChart" width="400" height="400"></canvas>',
+  template: '<canvas #barCanvas class="grafico"></canvas>',
 })
 export class BarChartComponent implements OnInit {
+  @Input() objeto!: ChartConfiguration;
+  @Input() widthPercentage: number = 100; 
+  @Input() heightPercentage: number = 100; 
+  @ViewChild('barCanvas', { static: true }) barCanvas!: ElementRef;
+
   ngOnInit() {
     this.createBarChart();
   }
 
   createBarChart() {
-    const ctx = document.getElementById('barChart') as HTMLCanvasElement;
-    const barChart = new Chart(ctx, {
-      type: 'bar',
-      data: {
-        labels: ['Label 1', 'Label 2', 'Label 3', 'Label 4'],
-        datasets: [
-          {
-            label: 'Sample Data',
-            data: [10, 20, 15, 25],
-            backgroundColor: 'rgba(75, 192, 192, 0.2)',
-            borderColor: 'rgba(75, 192, 192, 1)',
-            borderWidth: 1,
-          },
-        ],
-      },
-      options: {
-        scales: {
-          y: {
-            beginAtZero: true,
-          },
-        },
-      },
-    });
+    const ctx = this.barCanvas.nativeElement as HTMLCanvasElement;
+
+    ctx.style.width = this.widthPercentage + '%';
+    ctx.style.height = this.heightPercentage + '%';
+
+    const barChart = new Chart(ctx, this.objeto);
   }
 }

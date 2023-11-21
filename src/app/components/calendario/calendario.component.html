@@ -1,4 +1,24 @@
 <div class="cotenenedorCalendario"> 
+    <div class="d-flex">
+        <div class="data-content">
+            <div class="borde-button">
+              <span *ngIf="diasTrabajados" >{{ getTurnos() }}</span>
+            </div>
+            <div>Turno</div>
+          </div>
+          <div class="data-content">
+            <div class="borde-button">
+                {{ diasTrabajados ? diasTrabajados.length : 0}}
+            </div>
+            <div>Dias trabajados</div>
+          </div>
+          <div class="data-content">
+            <div class="borde-button">
+              {{ diasTrabajados ? diasTrabajados.length * 8  : 0}}
+            </div>
+            <div>Horas</div>
+          </div>
+    </div>
     <div class="wrapper-calendar">
         <div class="header-calendar">
             <div>
@@ -15,7 +35,7 @@
             <li (click)="clickDay(day)" [style.gridColumnStart]="first ? day?.indexWeek : 'auto'"
             *ngFor="let day of monthSelect;let first = first" >
                 <ng-template #diaSinData><span>{{day?.value}}</span></ng-template>
-                <span *ngIf="day?.estado ; else diaSinData" class="marcaDIa" title="{{day?.estado}}">{{day?.value}}</span>
+                <span *ngIf="day?.estado ; else diaSinData" class="marcaDIa"  [ngClass]="esDiaTrabajado(day) ? 'marcaVerde' : 'marcaDia'" title="{{day?.estado}}">{{day?.value}}</span>
             </li>
         </ol>
     </div>

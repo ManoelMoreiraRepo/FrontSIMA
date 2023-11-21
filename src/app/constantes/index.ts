@@ -17,7 +17,7 @@ export const menuAdmin = [
     },
     {
         img:"./assets/img/admin/sumi.png",
-        link:"/credenciales"
+        link:"/suministros"
     },
     {
         img:"./assets/img/admin/informes.png",
@@ -132,7 +132,7 @@ export const titulos = [
   },
   {
     titulo:"SUMINISTROS",
-    url:"/rrhh"
+    url:"/suministros"
   },
   {
     titulo:"NOMINA ACTIVA",

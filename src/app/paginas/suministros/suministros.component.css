@@ -1,0 +1,6 @@
+.contenedorInfo{
+    margin-bottom: 200px;
+}
+#graficoAnual canvas{
+    width: 1500px !important;
+}

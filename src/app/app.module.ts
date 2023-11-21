@@ -35,6 +35,9 @@ import { InfraccionesComponent } from './paginas/infracciones/infracciones.compo
 import { ParqueComponent } from './paginas/parque/parque.component';
 import { BarChartComponent } from './components/barras/barChartComponent.component';
 import { CommonModule } from '@angular/common';
+import { SuministrosComponent } from './paginas/suministros/suministros.component';
+import { PerifericosComponent } from './paginas/perifericos/perifericos.component';
+import { EquipamientosComponent } from './paginas/equipamientos/equipamientos.component';
 
 
 
@@ -64,6 +67,9 @@ import { CommonModule } from '@angular/common';
     InfraccionesComponent,
     ParqueComponent,
     BarChartComponent,
+    SuministrosComponent,
+    PerifericosComponent,
+    EquipamientosComponent,
     
   ],
   imports: [

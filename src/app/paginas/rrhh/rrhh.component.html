@@ -26,10 +26,13 @@
                 </div>
             </div>
             <div class="boxImport">
-                <img src="./assets/img/up.png" alt="" >
-                <div >
-                    <h5>BOLSA DE TRABAJO</h5>
-                    <span>Vacante Disponible</span>
+                <div>
+                    <label for="file-grilla"><img src="./assets/img/up.png" alt="" > </label>
+                    <input id="file-grilla" class="inputFile" type="file" (change)="onFileChange($event)" />
+                </div>
+                <div>
+                    <h5>GRILLA</h5>
+                    <span>Reporte mensual</span>
                 </div>
             </div>
             <div class="infoImportador">
