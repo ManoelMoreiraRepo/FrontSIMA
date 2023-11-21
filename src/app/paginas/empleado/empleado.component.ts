@@ -44,7 +44,7 @@ export class EmpleadoComponent {
   }
 
   setImagenReal(obj:PersonaEmpleado){
-    obj.foto = `../../../assets/img/perfil/PIC${obj.dniempleado}.jpg`;
+    obj.foto = `../../../assets/img/perfil/${obj.dniempleado}.jpg`;
   }
 
   setImagenDefualt( obj :PersonaEmpleado){

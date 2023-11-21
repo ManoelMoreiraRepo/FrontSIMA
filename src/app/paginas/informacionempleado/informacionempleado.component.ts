@@ -65,7 +65,7 @@ export class InformacionempleadoComponent {
 
   idEmpleado :any;
 
-  imagenURL : string = "../../../assets/img/perfil/PIC";
+  imagenURL : string = "../../../assets/img/perfil/";
 
   uniformesRecibidos = {
     "uniformes": [
@@ -199,6 +199,18 @@ export class InformacionempleadoComponent {
      
     });
 
+  }
+
+  procesarHabilitaciones(){
+    const vigilador = ['PSA001', 'PSA001A'].every(valor => this.codigos.includes(valor));
+    const rayosX = ['PSA001', 'PSA001A' , 'PSA002' , 'PSA002A'].every(valor => this.codigos.includes(valor));
+    const plataforma = ['PSA001', 'PSA001A'].every(valor => this.codigos.includes(valor));
+    const cargas = ['PSA001', 'PSA001A' ,'PSA005'].every(valor => this.codigos.includes(valor));
+    const supervisor = ['PSA001', 'PSA001A' , 'PSA004' , 'PSA004A'].every(valor => this.codigos.includes(valor));
+    const asistencia = ['PSA001', 'PSA001A'].every(valor => this.codigos.includes(valor));
+    const chofer = ['PSA001', 'PSA001A' , 'ANAC002'].every(valor => this.codigos.includes(valor));
+    const brigadista = ['PSA001', 'PSA001A' , 'ANAC001'].every(valor => this.codigos.includes(valor));
+  
   }
 
   openModal(id:string) {
