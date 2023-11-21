@@ -84,13 +84,7 @@ export const arrayMenuEmpleado = [
             img:"./assets/img/checkdoc.png",
             url:"https://forms.gle/4ZNC9n13Hriy8d4k9"
           },
-          {
-            titulo:"INFRACCIONES",
-            descrip:"Asignacion de Infraccion",
-            img:"./assets/img/checkdoc.png",
-            url:"https://forms.gle/p8go74qVbKe61Df18"
-          },
-          {
+                    {
             titulo:"REPORTE DE SINIESTROS",
             descrip:"Informe de Siniestros",
             img:"./assets/img/checkdoc.png",
