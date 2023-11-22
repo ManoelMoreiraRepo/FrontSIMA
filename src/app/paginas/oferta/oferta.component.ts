@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { OfertaService } from 'src/app/service/oferta-service';
-
+import { getLogoByGerencia } from 'src/app/utils';
 @Component({
   selector: 'app-oferta',
   templateUrl: './oferta.component.html',
@@ -82,6 +82,9 @@ export class OfertaComponent {
       console.log(resp);
       console.log(postu);
       this.ofertaService.subirPostulacion(postu);
+      setTimeout(() => {
+        this.router.navigate(['/bolsa']);
+      }, 1000);
     },
     (error) => {
       this.mensajero.error("Error al procesar la postulacion.");
@@ -92,6 +95,10 @@ export class OfertaComponent {
     
 
     console.log(postu);
+  }
+
+  getLogo(gerencia:string){
+    return getLogoByGerencia(gerencia);
   }
   
 }

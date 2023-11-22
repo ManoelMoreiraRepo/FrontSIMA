@@ -1,0 +1,33 @@
+    <img
+      [src]="imagenURL"
+      alt="Organigrama"
+      class="img-fluid foto"
+      width="198"
+      height="0"
+      (error)="cargarImagenPorDefecto()"
+    />
+    <div class="data-content">
+      <div
+        *ngIf="empleado.estadoEmpleado == 'Activo'; else noActivo"
+        class="estadoEnpleado estadoActivo"
+      >
+        {{ empleado.estadoEmpleado  }}
+      </div>
+      <ng-template #noActivo
+        ><div #noActivo class="estadoEnpleado estadoNOActivo">
+          {{ empleado.estadoEmpleado  || 'No informado'}}
+        </div></ng-template
+      >
+      <div>Estado</div>
+    </div>
+    <div class="data-content">
+      <div class="borde-button">
+        {{ empleado.nombreEmpleado }} {{ empleado.apellidoEmpleado }}
+      </div>
+      <div>Apellido y Nombre</div>
+    </div>
+
+    <div class="data-content">
+      <div class="borde-button">{{ empleado.telefonoEmpleado }}</div>
+      <div>Telefono Contacto</div>
+    </div>

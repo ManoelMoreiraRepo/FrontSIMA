@@ -38,6 +38,7 @@ import { CommonModule } from '@angular/common';
 import { SuministrosComponent } from './paginas/suministros/suministros.component';
 import { PerifericosComponent } from './paginas/perifericos/perifericos.component';
 import { EquipamientosComponent } from './paginas/equipamientos/equipamientos.component';
+import { PerfilComponent } from './components/perfil/perfil.component';
 
 
 
@@ -70,6 +71,7 @@ import { EquipamientosComponent } from './paginas/equipamientos/equipamientos.co
     SuministrosComponent,
     PerifericosComponent,
     EquipamientosComponent,
+    PerfilComponent,
     
   ],
   imports: [

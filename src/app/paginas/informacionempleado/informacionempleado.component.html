@@ -37,7 +37,7 @@
     >
       Indumentaria
     </button>
-    <button
+    <!-- <button
       class="nav-link gris4"
       id="nav-capacitaciones-tab"
       data-bs-toggle="tab"
@@ -48,7 +48,7 @@
       aria-selected="false"
     >
       Capacitaciones
-    </button>
+    </button> -->
     <button
       class="nav-link gris5"
       id="nav-credenciales-tab"
@@ -63,114 +63,385 @@
     </button>
   </div>
 </nav>
+<div class="col-md-12" style="display: flex;">
 
-<div class="contenedorGeneral tab-content">
-  <!-- Perfil -->
-
-  <div
-    class="tab-pane show active "
-    id="nav-perfil"
-    role="tabpanel"
-    aria-labelledby="nav-perfil-tab"
-    tabindex="0"
-  >
-    <div class="container">
-      <div class="row d-flex align-items-center">
-        <div class="foto col-lg-3 d-flex flex-column align-items-center">
-          <img
-            [src]="imagenURL"
-            alt="Organigrama"
-            class="img-fluid foto m-4"
-            width="198"
-            height="0"
-            (error)="cargarImagenPorDefecto()"
-          />
-          <div class="data-content">
-            <div
-              *ngIf="empleado.estadoEmpleado == 'Activo'; else noActivo"
-              class="estadoEnpleado estadoActivo"
-            >
-              {{ empleado.estadoEmpleado  }}
+  <div class="foto col-md-3 d-flex flex-column align-items-center p-4 perfilComponente">
+    <app-perfil *ngIf="empleado" [empleado]="empleado" [imagenURL]="imagenURL"></app-perfil>
+  </div>
+  <div class="contenedorGeneral tab-content col-md-9">
+    <!-- Perfil -->
+  
+    <div
+      class="tab-pane show active "
+      id="nav-perfil"
+      role="tabpanel"
+      aria-labelledby="nav-perfil-tab"
+      tabindex="0"
+    >
+      <div class="container">
+        <div class="row d-flex align-items-center col-md-12">
+          
+          
+  
+          <div class="perfil col-md-8 gy-5">
+            <div class="row d-flex justify-content-between">
+              <div class="data-content">
+                <div class="borde-button">{{ empleado.direccionEmpleado }}</div>
+                <div>Direccion</div>
+              </div>
+              <div class="data-content">
+                <div class="borde-button">0</div>
+                <div>INFRACIONES</div>
+              </div>
+              <div class="data-content">
+                <div class="borde-button">0</div>
+                <div>SANCIONES</div>
+              </div>
             </div>
-            <ng-template #noActivo
-              ><div #noActivo class="estadoEnpleado estadoNOActivo">
-                {{ empleado.estadoEmpleado  || 'No informado'}}
-              </div></ng-template
-            >
-            <div>Estado</div>
-          </div>
-          <div class="data-content">
-            <div class="borde-button">
-              {{ empleado.nombreEmpleado }} {{ empleado.apellidoEmpleado }}
+            <div class="row d-flex justify-content-between">
+              <div class="data-content">
+                <div class="borde-button">{{ empleado.legajoEmpleado }}</div>
+                <div>Legajo</div>
+              </div>
+              <div class="data-content">
+                <div class="borde-button">{{ empleado.dniempleado }}</div>
+                <div>DNI</div>
+              </div>
+              <div class="data-content">
+                <div class="borde-button">{{ empleado.objetivoEmpleado }}</div>
+                <div>Objetivo</div>
+              </div>
             </div>
-            <div>Apellido y Nombre</div>
-          </div>
-
-          <div class="data-content">
-            <div class="borde-button">{{ empleado.telefonoEmpleado }}</div>
-            <div>Telefono Contacto</div>
+            <div class="row d-flex justify-content-between">
+              <div class="data-content">
+                <div class="borde-button">{{ empleado.cargoEmpleado }}</div>
+                <div>Cargo</div>
+              </div>
+              <div class="data-content">
+                <div class="borde-button">
+                  {{ empleado.codigoPostalEmpleado }}
+                </div>
+                <div>Codigo Postal</div>
+              </div>
+              <div class="data-content">
+                <div class="borde-button">
+                  {{ empleado.fechaNascimentoEmpleado | date : "dd/MM/y" }}
+                </div>
+                <div class="text-nowrap">Fecha de Nacimento</div>
+              </div>
+            </div>
+            <div class="row d-flex justify-content-between">
+              <div class="data-content">
+                <div class="borde-button">{{ empleado.telefonoEmpleado }}</div>
+                <div>Telefono Contacto</div>
+              </div>
+              <div class="data-content">
+                <div class="borde-button">{{ empleado.turnoEmpleado }}</div>
+                <div>Turno</div>
+              </div>
+              <div class="data-content">
+                <div class="borde-button">{{ empleado.emailEmpleado }}</div>
+                <div>E-mail</div>
+              </div>
+            </div>
+            <div class="row d-flex justify-content-between">
+              <div class="data-content">
+                <div class=""></div>
+                <div></div>
+              </div>
+            </div>
+  
+            <!-- <table class="table " style="display: none;">
+                  <tr>
+                  <td>
+                      <b>Apellido y Nombre:</b>{{ empleado.nombreEmpleado }} {{
+                      empleado.apellidoEmpleado }}
+                  </td>
+                  <td><b>Dni:</b>{{ empleado.dniempleado }}</td>
+                  <td><b>Legajo:</b>{{ empleado.legajoEmpleado }}</td>
+                  </tr>
+                  <tr>
+                  <td>
+                      <b>Fecha/Nac:</b>{{ empleado.fechaNascimentoEmpleado | date :
+                      "dd/MM/y" }}
+                  </td>
+                  <td><b>Objetivo:</b>{{ empleado.objetivoEmpleado }}</td>
+                  <td><b>Turno:</b>{{ empleado.turnoEmpleado }}</td>
+                  </tr>
+                  <tr>
+                  <td><b>Telefono Contacto:</b>{{ empleado.telefonoEmpleado }}</td>
+                  <td><b>Cargo:</b> {{ empleado.cargoEmpleado }}</td>
+                  <td><b>E-mail</b> {{ empleado.emailEmpleado }}</td>
+                  </tr>
+                  <tr>
+                  <td><b>Dirección:</b>{{ empleado.direccionEmpleado }}</td>
+                  <td><b>Codigo Postal</b>{{ empleado.codigoPostalEmpleado }}</td>
+                  </tr>
+              </table> -->
           </div>
         </div>
-
+      </div>
+    </div>
+    <!-- Operaciones -->
+  
+    <div
+      class="tab-pane"
+      id="nav-operaciones"
+      role="tabpanel"
+      aria-labelledby="nav-operaciones-tab"
+      tabindex="1"
+    >
+      <div class="fondo d-flex justify-content-center col-md-12">
+          <app-calendario [idEmpleado]="idEmpleado"></app-calendario>
+      </div>
+    </div>
+  
+    <!-- Indumentaria -->
+    <div
+      class="tab-pane"
+      id="nav-indumentaria"
+      role="tabpanel"
+      aria-labelledby="nav-indumentaria-tab"
+      tabindex="2"
+    >
+      <div class="contenedorInfo">
+      <div class="fondo d-flex justify-content-center">
+  
+        <div class="contenedorUniformes col-md-8">
+          <div class="fechasUniforme col-md-12">
+            <span>
+              <span>Fecha última entrega</span>
+              <span>07/23</span>
+            </span>
+  
+            <span>
+              <span>Fecha proxima entrega</span>
+              <span>07/24</span>
+            </span>
+          </div>
+          <div class="col-md-6 d-flex">
+            <table class="col-md-6 ">
+              <thead>
+                <tr>
+                  <th colspan="2" (click)="openModal('#uniforme1')">
+                    {{ uniformesRecibidos.uniformes[0].nombre }}
+                  </th>
+                </tr>
+                <tr>
+                  <th>Uniforme 1</th>
+                  <th>Talle</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr
+                  *ngFor="
+                    let propiedad of getPropiedades(uniformesRecibidos.uniformes[0])
+                  "
+                >
+                  <td>{{ propiedad[0] }}</td>
+                  <td>{{ propiedad[1] }}</td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="col-md-6 ">
+              <thead>
+                <tr>
+                  <th colspan="2" (click)="openModal('#uniforme2')">
+                    {{ uniformesRecibidos.uniformes[1].nombre }}
+                  </th>
+                </tr>
+                <tr>
+                  <th>Uniforme 2</th>
+                  <th>Talle</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr
+                  *ngFor="
+                    let propiedad of getPropiedades(uniformesRecibidos.uniformes[0])
+                  "
+                >
+                  <td>{{ propiedad[0] }}</td>
+                  <td>{{ propiedad[1] }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          
+        </div>
+      </div>
+      <div
+        class="modal fade"
+        id="uniforme1"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog" role="document">
+          <div class="modal-content" *ngIf="uniformesData">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">
+                {{ uniformesData.uniformes[indexUniforme1].nombre }}
+              </h5>
+            </div>
+            <div class="modal-body text-center">
+              <div>
+                <ul>
+                  <li *ngFor="let item of uniformesData.uniformes[0].items">
+                    {{ item }}
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+                (click)="closeModal('#uniforme1')"
+              >
+                Cerrar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div
+        class="modal fade"
+        id="uniforme2"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog" role="document">
+          <div class="modal-content" *ngIf="uniformesData">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">
+                {{ uniformesData.uniformes[indexUniforme2].nombre }}
+              </h5>
+            </div>
+            <div class="modal-body text-center">
+              <div>
+                <ul>
+                  <li *ngFor="let item of uniformesData.uniformes[0].items">
+                    {{ item }}
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+                (click)="closeModal('#uniforme2')"
+              >
+                Cerrar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  
+    <!-- <div
+      class="tab-pane "
+      id="nav-capacitaciones"
+      role="tabpanel"
+      aria-labelledby="nav-capacitaciones-tab"
+      tabindex="3"
+    ></div> -->
+  
+    <div
+      class="tab-pane "
+      id="nav-credenciales"
+      role="tabpanel"
+      aria-labelledby="nav-credenciales-tab"
+      tabindex="4"
+    >
+  
+    <div class="container" style="color:white;padding-bottom:120px">
+      <div class="row d-flex align-items-center">
+  
         <div class="perfil col-lg-9 gy-5">
+          <div class="row d-flex justify-content-center" style="gap: 19px;">
+            <div class="data-content">
+              <div class="botonCred activo">Activo</div>
+              <div>RAYO - X</div>
+            </div>
+            <div class="data-content">
+              <div class="botonCred inactivo">Activo</div>
+              <div>RAYO - X</div>
+            </div>
+            
+          </div>
           <div class="row d-flex justify-content-between">
             <div class="data-content">
-              <div class="borde-button">{{ empleado.direccionEmpleado }}</div>
-              <div>Direccion</div>
+              <div class="botonCred activo">Activo</div>
+              <div>RAYO - X</div>
             </div>
             <div class="data-content">
-              <div class="borde-button">2</div>
-              <div>INFRACIONES</div>
+              <div class="botonCred inactivo">Activo</div>
+              <div>RAYO - X</div>
             </div>
             <div class="data-content">
-              <div class="borde-button">5</div>
-              <div>SANCIONES</div>
+              <div class="botonCred inactivoAmarillo">Activo</div>
+              <div>RAYO - X</div>
+            </div>
+            <div class="data-content">
+              <div class="botonCred inactivo">Activo</div>
+              <div>RAYO - X</div>
             </div>
           </div>
           <div class="row d-flex justify-content-between">
             <div class="data-content">
-              <div class="borde-button">{{ empleado.legajoEmpleado }}</div>
-              <div>Legajo</div>
+              <div class=""></div>
+              <div></div>
             </div>
             <div class="data-content">
-              <div class="borde-button">{{ empleado.dniempleado }}</div>
-              <div>DNI</div>
+              <div class="borde-button">21/06/2017</div>
+              <div>Vto. PPP</div>
             </div>
             <div class="data-content">
-              <div class="borde-button">{{ empleado.objetivoEmpleado }}</div>
-              <div>Objetivo</div>
+              <div class=""></div>
+              <div></div>
             </div>
           </div>
           <div class="row d-flex justify-content-between">
             <div class="data-content">
-              <div class="borde-button">{{ empleado.cargoEmpleado }}</div>
-              <div>Cargo</div>
+              <div class="borde-button">21/06/2017</div>
+              <div>Curso PSA A001</div>
             </div>
             <div class="data-content">
               <div class="borde-button">
-                {{ empleado.codigoPostalEmpleado }}
+                21/06/2017
               </div>
-              <div>Codigo Postal</div>
+              <div>Curso PSA A002
+              </div>
             </div>
             <div class="data-content">
               <div class="borde-button">
-                {{ empleado.fechaNascimentoEmpleado | date : "dd/MM/y" }}
+                21/06/2017
               </div>
-              <div class="text-nowrap">Fecha de Nacimento</div>
+              <div class="text-nowrap">Curso PSA004</div>
             </div>
           </div>
           <div class="row d-flex justify-content-between">
             <div class="data-content">
-              <div class="borde-button">{{ empleado.telefonoEmpleado }}</div>
-              <div>Telefono Contacto</div>
+              <div class="borde-button">21/06/2017</div>
+              <div>Vto AMAM</div>
             </div>
             <div class="data-content">
-              <div class="borde-button">{{ empleado.turnoEmpleado }}</div>
-              <div>Turno</div>
+              <div class="borde-button">21/06/2017</div>
+              <div>Carga/Correo</div>
             </div>
             <div class="data-content">
-              <div class="borde-button">{{ empleado.emailEmpleado }}</div>
-              <div>E-mail</div>
+              <div class="borde-button">21/06/2017</div>
+              <div>Carga/Correo</div>
             </div>
           </div>
           <div class="row d-flex justify-content-between">
@@ -179,417 +450,16 @@
               <div></div>
             </div>
           </div>
-
-          <!-- <table class="table " style="display: none;">
-                <tr>
-                <td>
-                    <b>Apellido y Nombre:</b>{{ empleado.nombreEmpleado }} {{
-                    empleado.apellidoEmpleado }}
-                </td>
-                <td><b>Dni:</b>{{ empleado.dniempleado }}</td>
-                <td><b>Legajo:</b>{{ empleado.legajoEmpleado }}</td>
-                </tr>
-                <tr>
-                <td>
-                    <b>Fecha/Nac:</b>{{ empleado.fechaNascimentoEmpleado | date :
-                    "dd/MM/y" }}
-                </td>
-                <td><b>Objetivo:</b>{{ empleado.objetivoEmpleado }}</td>
-                <td><b>Turno:</b>{{ empleado.turnoEmpleado }}</td>
-                </tr>
-                <tr>
-                <td><b>Telefono Contacto:</b>{{ empleado.telefonoEmpleado }}</td>
-                <td><b>Cargo:</b> {{ empleado.cargoEmpleado }}</td>
-                <td><b>E-mail</b> {{ empleado.emailEmpleado }}</td>
-                </tr>
-                <tr>
-                <td><b>Dirección:</b>{{ empleado.direccionEmpleado }}</td>
-                <td><b>Codigo Postal</b>{{ empleado.codigoPostalEmpleado }}</td>
-                </tr>
-            </table> -->
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Operaciones -->
-
-  <div
-    class="tab-pane"
-    id="nav-operaciones"
-    role="tabpanel"
-    aria-labelledby="nav-operaciones-tab"
-    tabindex="1"
-  >
-    <div class="fondo d-flex justify-content-center">
-      <div class="foto col-lg-3 d-flex flex-column align-items-center">
-        <img
-          [src]="imagenURL"
-          alt="Organigrama"
-          class="img-fluid foto m-4"
-          width="198"
-          height="0"
-          (error)="cargarImagenPorDefecto()"
-        />
-        <div class="data-content">
-          <div
-            *ngIf="empleado.estadoEmpleado == 'Activo'; else noActivo"
-            class="estadoEnpleado estadoActivo"
-          >
-            {{ empleado.estadoEmpleado }}
-          </div>
-          <ng-template #noActivo
-            ><div #noActivo class="estadoEnpleado estadoNOActivo">
-              {{ empleado.estadoEmpleado }}
-            </div></ng-template
-          >
-          <div>Estado</div>
-        </div>
-        <div class="data-content">
-          <div class="borde-button">
-            {{ empleado.nombreEmpleado }} {{ empleado.apellidoEmpleado }}
-          </div>
-          <div>Apellido y Nombre</div>
-        </div>
-
-        <div class="data-content">
-          <div class="borde-button">{{ empleado.telefonoEmpleado }}</div>
-          <div>Telefono Contacto</div>
-        </div>
-      </div>
-      <app-calendario [idEmpleado]="idEmpleado"></app-calendario>
-      
-    </div>
-  </div>
-
-  <!-- Indumentaria -->
-  <div
-    class="tab-pane"
-    id="nav-indumentaria"
-    role="tabpanel"
-    aria-labelledby="nav-indumentaria-tab"
-    tabindex="2"
-  >
-    <div class="contenedorInfo">
-    <div class="fondo d-flex justify-content-center">
-      <div class="foto col-lg-3 d-flex flex-column align-items-center">
-        <img
-          [src]="imagenURL"
-          alt="Organigrama"
-          class="img-fluid bg-black foto m-4"
-          width="198"
-          height="0"
-          (error)="cargarImagenPorDefecto()"
-        />
-        <div class="data-content">
-          <div
-            *ngIf="empleado.estadoEmpleado == 'Activo'; else noActivo"
-            class="estadoEnpleado estadoActivo"
-          >
-            {{ empleado.estadoEmpleado }}
-          </div>
-          <ng-template #noActivo
-            ><div #noActivo class="estadoEnpleado estadoNOActivo">
-              {{ empleado.estadoEmpleado }}
-            </div></ng-template
-          >
-          <div>Estado</div>
-        </div>
-        <div class="data-content">
-          <div class="borde-button">
-            {{ empleado.nombreEmpleado }} {{ empleado.apellidoEmpleado }}
-          </div>
-          <div>Apellido y Nombre</div>
-        </div>
-
-        <div class="data-content">
-          <div class="borde-button">{{ empleado.telefonoEmpleado }}</div>
-          <div>Telefono Contacto</div>
-        </div>
-      </div>
-
-      <div class="contenedorUniformes">
-        <div class="fechasUniforme">
-          <span>
-            <span>Fecha última entrega</span>
-            <span>07/23</span>
-          </span>
-
-          <span>
-            <span>Fecha proxima entrega</span>
-            <span>07/24</span>
-          </span>
-        </div>
-
-        <table>
-          <thead>
-            <tr>
-              <th colspan="2" (click)="openModal('#uniforme1')">
-                {{ uniformesRecibidos.uniformes[0].nombre }}
-              </th>
-            </tr>
-            <tr>
-              <th>Uniforme 1</th>
-              <th>Talle</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr
-              *ngFor="
-                let propiedad of getPropiedades(uniformesRecibidos.uniformes[0])
-              "
-            >
-              <td>{{ propiedad[0] }}</td>
-              <td>{{ propiedad[1] }}</td>
-            </tr>
-          </tbody>
-        </table>
-        <table>
-          <thead>
-            <tr>
-              <th colspan="2" (click)="openModal('#uniforme2')">
-                {{ uniformesRecibidos.uniformes[1].nombre }}
-              </th>
-            </tr>
-            <tr>
-              <th>Uniforme 2</th>
-              <th>Talle</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr
-              *ngFor="
-                let propiedad of getPropiedades(uniformesRecibidos.uniformes[0])
-              "
-            >
-              <td>{{ propiedad[0] }}</td>
-              <td>{{ propiedad[1] }}</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-    <div
-      class="modal fade"
-      id="uniforme1"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog" role="document">
-        <div class="modal-content" *ngIf="uniformesData">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">
-              {{ uniformesData.uniformes[indexUniforme1].nombre }}
-            </h5>
-          </div>
-          <div class="modal-body text-center">
-            <div>
-              <ul>
-                <li *ngFor="let item of uniformesData.uniformes[0].items">
-                  {{ item }}
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-dismiss="modal"
-              (click)="closeModal('#uniforme1')"
-            >
-              Cerrar
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div
-      class="modal fade"
-      id="uniforme2"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog" role="document">
-        <div class="modal-content" *ngIf="uniformesData">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">
-              {{ uniformesData.uniformes[indexUniforme2].nombre }}
-            </h5>
-          </div>
-          <div class="modal-body text-center">
-            <div>
-              <ul>
-                <li *ngFor="let item of uniformesData.uniformes[0].items">
-                  {{ item }}
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-dismiss="modal"
-              (click)="closeModal('#uniforme2')"
-            >
-              Cerrar
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  </div>
-
-  <div
-    class="tab-pane "
-    id="nav-capacitaciones"
-    role="tabpanel"
-    aria-labelledby="nav-capacitaciones-tab"
-    tabindex="3"
-  ></div>
-
-  <div
-    class="tab-pane "
-    id="nav-credenciales"
-    role="tabpanel"
-    aria-labelledby="nav-credenciales-tab"
-    tabindex="4"
-  >
-
-  <div class="container" style="color:white;padding-bottom:120px">
-    <div class="row d-flex align-items-center">
-      <div class="foto col-lg-3 d-flex flex-column align-items-center">
-        <img
-          [src]="imagenURL"
-          alt="Organigrama"
-          class="img-fluid bg-black foto m-4"
-          width="198"
-          height="0"
-          (error)="cargarImagenPorDefecto()"
-        />
-        <div class="data-content">
-          <div
-            *ngIf="empleado.estadoEmpleado == 'Activo'; else noActivo"
-            class="estadoEnpleado estadoActivo"
-          >
-            {{ empleado.estadoEmpleado }}
-          </div>
-          <ng-template #noActivo
-            ><div #noActivo class="estadoEnpleado estadoNOActivo">
-              {{ empleado.estadoEmpleado }}
-            </div></ng-template
-          >
-          <div>Estado</div>
-        </div>
-        <div class="data-content">
-          <div class="borde-button">
-            {{ empleado.nombreEmpleado }} {{ empleado.apellidoEmpleado }}
-          </div>
-          <div>Apellido y Nombre</div>
-        </div>
-
-        <div class="data-content">
-          <div class="borde-button">{{ empleado.telefonoEmpleado }}</div>
-          <div>Telefono Contacto</div>
-        </div>
-      </div>
-
-      <div class="perfil col-lg-9 gy-5">
-        <div class="row d-flex justify-content-center" style="gap: 19px;">
-          <div class="data-content">
-            <div class="botonCred activo">Activo</div>
-            <div>RAYO - X</div>
-          </div>
-          <div class="data-content">
-            <div class="botonCred inactivo">Activo</div>
-            <div>RAYO - X</div>
-          </div>
+  
           
         </div>
-        <div class="row d-flex justify-content-between">
-          <div class="data-content">
-            <div class="botonCred activo">Activo</div>
-            <div>RAYO - X</div>
-          </div>
-          <div class="data-content">
-            <div class="botonCred inactivo">Activo</div>
-            <div>RAYO - X</div>
-          </div>
-          <div class="data-content">
-            <div class="botonCred inactivoAmarillo">Activo</div>
-            <div>RAYO - X</div>
-          </div>
-          <div class="data-content">
-            <div class="botonCred inactivo">Activo</div>
-            <div>RAYO - X</div>
-          </div>
-        </div>
-        <div class="row d-flex justify-content-between">
-          <div class="data-content">
-            <div class=""></div>
-            <div></div>
-          </div>
-          <div class="data-content">
-            <div class="borde-button">21/06/2017</div>
-            <div>Vto. PPP</div>
-          </div>
-          <div class="data-content">
-            <div class=""></div>
-            <div></div>
-          </div>
-        </div>
-        <div class="row d-flex justify-content-between">
-          <div class="data-content">
-            <div class="borde-button">21/06/2017</div>
-            <div>Curso PSA A001</div>
-          </div>
-          <div class="data-content">
-            <div class="borde-button">
-              21/06/2017
-            </div>
-            <div>Curso PSA A002
-            </div>
-          </div>
-          <div class="data-content">
-            <div class="borde-button">
-              21/06/2017
-            </div>
-            <div class="text-nowrap">Curso PSA004</div>
-          </div>
-        </div>
-        <div class="row d-flex justify-content-between">
-          <div class="data-content">
-            <div class="borde-button">21/06/2017</div>
-            <div>Vto AMAM</div>
-          </div>
-          <div class="data-content">
-            <div class="borde-button">21/06/2017</div>
-            <div>Carga/Correo</div>
-          </div>
-          <div class="data-content">
-            <div class="borde-button">21/06/2017</div>
-            <div>Carga/Correo</div>
-          </div>
-        </div>
-        <div class="row d-flex justify-content-between">
-          <div class="data-content">
-            <div class=""></div>
-            <div></div>
-          </div>
-        </div>
-
-        
       </div>
+    </div>
+  
+  
     </div>
   </div>
 
-
-  </div>
 </div>
+
 <app-footer class="footer"></app-footer>
