@@ -56,6 +56,7 @@ export class PersonaEmpleado {
   capacitacion : Array <Capacitacion>= new Array<Capacitacion>();
   operacion!: Operacion;
   foto:any;
+  sindicato:any;
   constructor(
     estadoEmpleado: string,
     dniempleado: string,
