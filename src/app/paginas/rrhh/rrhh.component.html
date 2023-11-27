@@ -6,8 +6,10 @@
     <span class="etiqueta fondoRojo">INFO</span>
     <div class="contenedorInformacion">
         <div>
+            <span class="tituloBlanco">Por Empresa</span>
+            <app-contador [lista]="cantidadPorEmpresa | async"></app-contador>
             <span class="tituloBlanco">Por Gerencia</span>
-            <app-contador [lista]="cantidadPorEmpresa$ | async"></app-contador>
+            <app-contador [lista]="cantidadPorGerencia$ | async"></app-contador>
             <span class="tituloBlanco">Por Sindicato</span>
             <app-contador [lista]="cantidadPorSindicato | async"></app-contador>
         </div>

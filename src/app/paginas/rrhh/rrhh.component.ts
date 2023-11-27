@@ -12,15 +12,18 @@ export class RrhhComponent {
   urlImagen : string = "./assets/img/Ellipse 99.png";
   selectedFile: any;
   selectOption: any;
-  cantidadPorEmpresa$: Observable<any>;
+  cantidadPorGerencia$: Observable<any>;
   cantidadPorSindicato: Observable<any>;
+  cantidadPorEmpresa: Observable<any>;
   constructor(private  importacionService :ImpotacionService , private empleadoService : PersonaServiceTsServiceService){
-    this.cantidadPorEmpresa$ = new Observable<any>();
+    this.cantidadPorGerencia$ = new Observable<any>();
     this.cantidadPorSindicato = new Observable<any>();
+    this.cantidadPorEmpresa = new Observable<any>();
   }
   ngOnInit() {
-    this.cantidadPorEmpresa$ = this.empleadoService.getCantidadPorEmpresa();
+    this.cantidadPorGerencia$ = this.empleadoService.getCantidadPorGerencia();
     this.cantidadPorSindicato = this.empleadoService.getCantidadPorSindicato();
+    this.cantidadPorEmpresa = this.empleadoService.getCantidadPorEmpresa();
   }
   
   
