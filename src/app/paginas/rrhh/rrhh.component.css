@@ -1,33 +1,3 @@
-
-.barraImportacion{
-    background-color: white;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    border-radius: 12px;
-}
-.boxImport{
-    display: flex;
-    flex-direction: row;
-    margin: 4px 12px;
-    align-items: center;
-    gap: 12px;
-}
-.boxImport img{
-    object-fit: cover;
-    width: 80px;
-    height: 80px;
-}
-.infoImportador{
-    margin: 4px 12px;
-    font-weight: bolder;
-    font-size: 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    justify-content: center;
-}
-
 .contenedorInformacion{
     display: flex;
     justify-content: center;

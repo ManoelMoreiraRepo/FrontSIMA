@@ -34,10 +34,18 @@ export class EmpleadoComponent {
     }else{
       (<HTMLInputElement>document.getElementById("gerencia")).value = '';
     }
-    this.empleadoS.buscar("" , this.gerencia , 0).subscribe(data => {
-      this.empleado = data.content
-      this.paginable = data.pageable;
-      this.alldata = data;
+
+    let filtro = {
+      "nombreEmpleado": this.textoDeInput,
+      "ordenado": this.ordenado,
+      "orden":this.orden,
+      "gerencia": this.gerencia,
+      "page":this.paginaActual
+    }
+    this.empleadoS.buscarFiltro(filtro).subscribe(apiResponse => {
+      this.empleado = apiResponse.content.data
+      this.paginable = apiResponse.pageable
+      this.alldata = apiResponse.pageable;
       this.armarUrlsFotos(this.empleado);
       // console.log(data);
     });
@@ -75,12 +83,19 @@ export class EmpleadoComponent {
     }
     this.paginaActual = pagina;
     this.gerencia =  (<HTMLInputElement>document.getElementById("gerencia")).value;
-    this.empleadoS.buscar(this.textoDeInput.trim() ,this.gerencia ,pagina , this.ordenado , this.orden).subscribe(data => {
-      this.empleado = data.content
-      this.paginable = data.pageable;
-      this.alldata = data;
+    let filtro = {
+        "nombreEmpleado": this.textoDeInput,
+        "ordenado": this.ordenado,
+        "orden":this.orden,
+        "gerencia": this.gerencia,
+        "page":this.paginaActual
+   }
+    this.empleadoS.buscarFiltro(filtro).subscribe(apiResponse => {
+      this.empleado = apiResponse.content.data
+      this.paginable = apiResponse.pageable
+      this.alldata = apiResponse.pageable;
       this.armarUrlsFotos(this.empleado);
-       console.log(data.content);
+       console.log(apiResponse);
     });
   }
 

@@ -40,6 +40,10 @@ export class PersonaServiceTsServiceService {
     return this.httpClient.get<ApiResponse>(this.URL + `search?nombreEmpleado=${textoDeInput}&&page=${pagina}&&ordenado=${ordenado}&&orden=${orden}&&gerencia=${gerencia}` , this.options);
   }
 
+  public buscarFiltro(obj:any): Observable<ApiResponse> {
+    return this.httpClient.post<ApiResponse>(this.URL + `buscar` , obj , this.options);
+  }
+
   public getCantidadPorGerencia():Observable<any>{
     return this.httpClient.get(this.URL + "cantidadNominaGerencia" , this.options);
   }
