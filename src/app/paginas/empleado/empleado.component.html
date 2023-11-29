@@ -3,50 +3,62 @@
     <div class="container card">
 
         <div class="row m-1">
-            <div class="col-lg-12 ">
-                <h4>Buscar Cliente</h4>
+            <div class="d-flex col-lg-12">
+                <div class="col-lg-8 ">
+                    <h4>Buscar Empleado</h4>
+                </div>
+                <div class="col-lg-4 d-flex justify-content-end">
+                    <a class="navbar-brand">
+                        <img src="../../../assets/img/gpsNegro.png" alt="GPS" class="img-fluid bg-black rounded-circle"
+                            width=" 60" height="">
+                    </a>
+                </div>
             </div>
             <button type="button" class="btn btn-dark col-lg-2" routerLink="/nuevoempleado">
                 Agregar Empleado
             </button>
         </div>
 
-        <div class="row encabezado p-3">
-            <div class="col-lg-2">
-                <a class="navbar-brand">
-                    <img src="../../../assets/img/gpsNegro.png" alt="GPS" class="img-fluid bg-black rounded-circle"
-                        width=" 60" height="">
-                </a>
-            </div>
+        <div class="row encabezado d-flex justify-content-center p-2">
             <div class="col-lg-10">
                 <form novalidate #f="ngForm" (ngSubmit)="onBuscar()">
-                    <div class="row text-center">
-                        <div class="col-lg-6">
-                            <!----[(ngModel)]='textoDeInput'-->
+                    <div class="row">
+                        <div class="col-lg-7">
+                            <label for="name"  class="form-label">Empleado</label>
                             <input type="text" class="form-control" id="name" name="name"
                                 placeholder="Ingrese dni nombre o apellido." [(ngModel)]='textoDeInput' required>
                         </div>
                         <div class="col-lg-3">
+                            <label for="gerencia" class="form-label">Gerencia</label>
                             <select id="gerencia" class="form-control" [(ngModel)]="gerencia" >
                                 <option value="">Seleccione..</option>
-                                <option value="GER_001">Grupo sima</option>
-                                <option value="GER_002">Aeropuertos</option>
-                                <option value="GER_003">Global</option>
-                                <option value="GER_004">Edenor</option>
-                                <option value="GER_005">La bizantina</option>
-                                <option value="GER_006">Ecoklin</option>
+                                <option value="GER01">Grupo sima</option>
+                                <option value="GER02">Aeropuertos</option>
+                                <option value="GER03">Global</option>
+                                <option value="GER04">Edenor</option>
+                                <option value="GER05">La bizantina</option>
+                                <option value="GER06">Ecoklin</option>
                             </select>
                         </div>
-                        <div class="col-lg-3">
-                            <button type="submit" class="btn btn-primary mb-3 mx-3" value="Buscar">Buscar</button>
+                        
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-7">
+                            <label for="objetivo"  class="form-label">Objetivo</label>
+                            <input type="text" class="form-control" id="objetivo" name="objetivo"
+                                placeholder="Ingrese el objetivo" [(ngModel)]='objetivo'>
                         </div>
+                    </div>
+                    <div class="row mt-4 d-flex col-lg-2 ml-0">
+                            <button type="submit" class="btn btn-primary mb-3 mx-3" value="Buscar">Buscar</button>
                     </div>
                 </form>
             </div>
         </div>
 
         <div>
-            <app-pagination *ngIf="alldata" (enviarPagina)="recibirPagina($event)" [totalPages]="alldata.totalPages" [size]="alldata.size"></app-pagination>
+            <app-pagination class="d-flex justify-content-end" *ngIf="alldata" (enviarPagina)="recibirPagina($event)" [totalPages]="alldata.totalPages" [size]="alldata.size"></app-pagination>
+            
             <table class=" card table table-secondary table-hover p-4">
                 <table class="table table-hover">
                     <thead>

@@ -81,6 +81,11 @@ app-root {
   flex-direction: row;
   justify-content: space-between;
   border-radius: 12px;
+  opacity: 0;
+  transition: opacity 1s;
+}
+.barraImportacion:hover {
+  opacity: 1;
 }
 .boxImport{
   display: flex;

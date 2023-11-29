@@ -15,8 +15,8 @@ export class EmpleadoComponent {
 
   empleado: PersonaEmpleado[] = [];
   textoDeInput: string = "";
+  objetivo:string = "";
   gerencia: any = "";
-  paginable:any;
   alldata:any
   ordenado:string ='legajoEmpleado';
   orden:string = 'ASC';
@@ -34,12 +34,12 @@ export class EmpleadoComponent {
     }else{
       (<HTMLInputElement>document.getElementById("gerencia")).value = '';
     }
-    this.empleadoS.buscar("" , this.gerencia , 0).subscribe(data => {
-      this.empleado = data.content
-      this.paginable = data.pageable;
-      this.alldata = data;
+
+    let filtro =  this.getFiltro();
+    this.empleadoS.buscarFiltro(filtro).subscribe(apiResponse => {
+      this.empleado = apiResponse.content.data
+      this.alldata = apiResponse.pageable;
       this.armarUrlsFotos(this.empleado);
-      // console.log(data);
     });
   }
 
@@ -68,24 +68,35 @@ export class EmpleadoComponent {
   }
 
   onBuscar(pagina = 0) {
+    
+    this.paginaActual = pagina;
+    this.gerencia =  (<HTMLInputElement>document.getElementById("gerencia")).value;
+    let filtro =  this.getFiltro();
+    this.empleadoS.buscarFiltro(filtro).subscribe(apiResponse => {
+      this.empleado = apiResponse.content.data
+      this.alldata = apiResponse.pageable;
+      this.armarUrlsFotos(this.empleado);
+    });
+  }
+
+  getFiltro(){
+    return {
+      "nombreEmpleado": this.textoDeInput,
+      "ordenado": this.ordenado,
+      "orden":this.orden,
+      "gerencia": this.gerencia,
+      "page":this.paginaActual,
+      "objetivo": this.objetivo
+    }
+  }
+
+  ordenColumna(ordenado:string){
+    this.ordenado = ordenado;
     if(this.orden ==='ASC'){
       this.orden = 'DESC';
     }else{
       this.orden = 'ASC';
     }
-    this.paginaActual = pagina;
-    this.gerencia =  (<HTMLInputElement>document.getElementById("gerencia")).value;
-    this.empleadoS.buscar(this.textoDeInput.trim() ,this.gerencia ,pagina , this.ordenado , this.orden).subscribe(data => {
-      this.empleado = data.content
-      this.paginable = data.pageable;
-      this.alldata = data;
-      this.armarUrlsFotos(this.empleado);
-       console.log(data.content);
-    });
-  }
-
-  ordenColumna(ordenado:string){
-    this.ordenado = ordenado;
     this.onBuscar(this.paginaActual);
   }
 
@@ -118,7 +129,6 @@ export class EmpleadoComponent {
   }
 
   recibirPagina(pagina:any){
-    console.log(pagina);
     this.onBuscar(pagina);
   }
 
