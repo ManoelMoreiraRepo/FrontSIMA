@@ -71,7 +71,7 @@ export class InformacionempleadoComponent {
     "uniformes": [
       {
         "nombre": "IPO Brigadista",
-        "Pantalon": "38",
+        "Pantalon": "44",
         "Chomba": "M",
         "Zapatos": "L",
         "Polar": "XL",
