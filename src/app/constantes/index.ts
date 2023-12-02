@@ -1,4 +1,5 @@
-export const URL_API = 'http://localhost:8080';
+//export const URL_API = 'http://localhost:8080';
+export const URL_API = 'http://localhost/api'; //con docker
 
 export const IMAGEN_DEFAULT =  "../../../assets/img/perfil/default.png"
 
