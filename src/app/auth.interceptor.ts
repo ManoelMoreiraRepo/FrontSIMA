@@ -29,6 +29,7 @@ export class AuthInterceptor implements HttpInterceptor {
              this.router.navigate(['/login']);
           }else{
             this.mensajero.error("Ocurrio un error.");
+           // alert(JSON.stringify(error));
             console.log(error);
           }
         }

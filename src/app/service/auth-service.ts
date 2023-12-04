@@ -29,6 +29,7 @@ export class AuthService {
       
           return response;
         } catch (error : any) {
+          alert(JSON.stringify(error));
           if (error.status === 401) {
             this.mensajero.error("Usuario o contraseña incorrecto.");
           }

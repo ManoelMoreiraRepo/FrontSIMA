@@ -50,7 +50,7 @@
                         </div>
                     </div>
                     <div class="row mt-4 d-flex col-lg-2 ml-0">
-                            <button type="submit" class="btn btn-primary mb-3 mx-3" value="Buscar">Buscar</button>
+                            <button type="submit" class="btn btn-primary mb-3" value="Buscar">Buscar</button>
                     </div>
                 </form>
             </div>
@@ -59,7 +59,7 @@
         <div>
             <app-pagination class="d-flex justify-content-end" *ngIf="alldata" (enviarPagina)="recibirPagina($event)" [totalPages]="alldata.totalPages" [size]="alldata.size"></app-pagination>
             
-            <table class=" card table table-secondary table-hover p-4">
+            <table *ngIf="anchoPantalla>anchoMovil ; else tablaMovil" class=" card table table-secondary table-hover p-4">
                 <table class="table table-hover">
                     <thead>
                         <tr class="text-center">
@@ -94,6 +94,41 @@
                     </tbody>
                 </table>
             </table>
+
+            <ng-template #tablaMovil>
+                <table class=" card table table-secondary table-hover p-4">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr class="text-center">
+                                <th scope="col" >Fotografia</th>
+                                <th scope="col" role="button" (click)="ordenColumna('apellidoEmpleado')">Apellido, Nombre</th>
+                                <th scope="col">Acción</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let empleadosgps of empleado" class="text-center">
+                                <td class="employee-photo">
+                                    <div class="photo-container">
+                                        <img src="{{empleadosgps.foto}}" (error)="setImagenDefualt(empleadosgps)" alt="GPS"
+                                            class="img-fluid photo-img">
+                                    </div>
+                                </td>
+                                <td>{{empleadosgps.apellidoEmpleado}}, {{empleadosgps.nombreEmpleado}}</td>
+                                <td>
+                                    <!-- <button (click)="borrar(empleadosgps.idEmpleado)"
+                                        class="btn btn-warning">Borrar</button> -->
+                                    <button class="btn btn-success"
+                                        routerLink="/informacionempleado/{{empleadosgps.idEmpleado}}"
+                                        style="margin-left: 10px;">Ver</button>
+                                    <!-- <button class="btn btn-danger" routerLink="/editempleado/{{empleadosgps.idEmpleado}}"
+                                        style="margin-left: 10px;">Modificar</button> -->
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </table>
+
+            </ng-template>
         </div>
     </div>
 </section>

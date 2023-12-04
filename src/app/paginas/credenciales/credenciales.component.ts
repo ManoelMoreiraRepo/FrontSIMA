@@ -11,6 +11,8 @@ export class CredencialesComponent {
   urlImagen : string ='./assets/img/admin/cred.png';
   obs1: Observable<any>;
   selectedFile: any;
+  anchoPantalla = window.innerWidth;
+  anchoMovil = 769;
   constructor(private credencialService : CredencialService , private importacionService : ImpotacionService) {
     this.obs1 = new Observable<any>();
   }

@@ -10,6 +10,7 @@
     flex-direction: row;
     gap:24px;
     flex-wrap: wrap;
+    justify-content: center
 }
 .itemContador {
     display: flex;
@@ -18,7 +19,7 @@
 }
 .boxCont{
     background-color: white;
-    width: 200px;
+    width: 160px;
     height: 40px;
     color: black;
     font-weight: bold;
@@ -27,3 +28,9 @@
     align-items: center;
     justify-content: center;
 }
+
+@media (max-width : 769px){
+    .boxCont{
+        width: 144px;
+    }
+  }

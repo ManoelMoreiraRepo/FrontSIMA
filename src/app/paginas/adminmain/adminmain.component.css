@@ -9,11 +9,12 @@
 }
 .contenedorTarjetas{
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     gap: 18px;
     flex-wrap: wrap;
     
 }
+
 .tituloContenido{
    margin: 12px 12px;
 }

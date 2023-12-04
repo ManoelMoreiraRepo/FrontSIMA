@@ -20,6 +20,7 @@
             <a
                 class="navlink"
                 (click)="setPage(page)"
+                [class.current-page]="page === currentPage"
             >
                 {{ page }}
             </a>

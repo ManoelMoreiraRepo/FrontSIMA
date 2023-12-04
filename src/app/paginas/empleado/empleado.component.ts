@@ -22,6 +22,8 @@ export class EmpleadoComponent {
   orden:string = 'ASC';
   paginaActual = 1;
   imagenDefault = IMAGEN_DEFAULT;
+  anchoPantalla = window.innerWidth;
+  anchoMovil = 769;
   constructor(private router:Router,private activatedRouter: ActivatedRoute, private empleadoS: PersonaServiceTsServiceService , private mensajero : ToastrService) { }
 
   ngOnInit(): void {

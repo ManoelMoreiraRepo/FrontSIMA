@@ -1,12 +1,12 @@
-.contenedorInformacion{
+ .contenedorInformacion{
     display: flex;
     flex-direction: column;
     align-items: center;
-}
+} 
 .subContenedor{
     display: flex;
     flex-direction: column;
-    align-items: left;
+    align-items: flex-start;
     margin-bottom: 200px;
 }
 .tablaCrendial{
@@ -63,4 +63,14 @@
   .columna-ancha {
     flex: 2; 
   }
-
+  @media (max-width : 769px){
+    .contenedor1{
+        flex-direction: column;
+    }
+    tr :nth-child(1){
+        display: none;
+    }
+    .contenedorInformacion{
+        align-items: normal;
+    }
+  }

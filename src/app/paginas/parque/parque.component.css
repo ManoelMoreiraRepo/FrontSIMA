@@ -1,0 +1,6 @@
+@media ( max-width:796px){
+    .contenedorInfo{
+        flex-direction: column;
+        gap: 4rem !important;
+    }
+}

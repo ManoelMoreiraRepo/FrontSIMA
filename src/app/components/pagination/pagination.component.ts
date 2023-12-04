@@ -11,22 +11,46 @@ import { RouterModule } from '@angular/router'
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PaginationComponent {
-    @Input() currentPage = 0
+    @Input() currentPage = 1
     @Input() totalPages = 1
     @Input() size = 20
-    @Input() windowSize = 4
+    @Input() windowSize =1;
     @Input() showFirstLastButton = true
     @Input() routerLinkBase: string[] = []
     @Output() enviarPagina = new EventEmitter<any>();
 
+    // getNavigablePages(): number[] {
+    //     const pages = []
+    //     const left = Math.max(1, this.currentPage - this.windowSize)
+    //     const right = Math.min(this.totalPages, this.currentPage + this.windowSize)
+    //     for (let i = left; i <= right; i++) {
+    //         pages.push(i)
+    //     }
+    //     return pages
+    // }
+
     getNavigablePages(): number[] {
-        const pages = []
-        const left = Math.max(1, this.currentPage - this.windowSize)
-        const right = Math.min(this.totalPages, this.currentPage + this.windowSize)
+        const pages = [];
+        let left = Math.max(1, this.currentPage - this.windowSize);
+        let right = Math.min(this.totalPages, this.currentPage + this.windowSize);
+    
+        const targetSize = this.windowSize * 2 + 1;
+        
+    
         for (let i = left; i <= right; i++) {
-            pages.push(i)
+            pages.push(i);
         }
-        return pages
+    
+        while (pages.length < targetSize && (left > 1 || right < this.totalPages)) {
+            if (right < this.totalPages) {
+                pages.push(++right);
+            }
+            if (left > 1) {
+                pages.unshift(--left);
+            }
+        }
+    
+        return pages;
     }
 
     upPage(){
