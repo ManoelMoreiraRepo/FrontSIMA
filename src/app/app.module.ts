@@ -39,8 +39,7 @@ import { SuministrosComponent } from './paginas/suministros/suministros.componen
 import { PerifericosComponent } from './paginas/perifericos/perifericos.component';
 import { EquipamientosComponent } from './paginas/equipamientos/equipamientos.component';
 import { PerfilComponent } from './components/perfil/perfil.component';
-
-
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -86,6 +85,7 @@ import { PerfilComponent } from './components/perfil/perfil.component';
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+    { provide: 'ENVIRONMENT', useValue: environment }
   ],
   bootstrap: [AppComponent]
 })

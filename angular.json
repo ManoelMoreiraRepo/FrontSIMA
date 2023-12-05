@@ -54,7 +54,41 @@
               "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
-              "namedChunks": true
+              "namedChunks": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.development.ts"
+                }
+              ]
+            },
+            "devMatias": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.devMatias.ts"
+                }
+              ]
+            },
+            "devManoel": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.devManoel.ts"
+                }
+              ]
             }
           },
           "defaultConfiguration": "production"
@@ -67,6 +101,14 @@
             },
             "development": {
               "browserTarget": "simafinal:build:development"
+            }
+            ,
+            "devMatias": {
+              "browserTarget": "simafinal:build:devMatias"
+            }
+            ,
+            "devManoel": {
+              "browserTarget": "simafinal:build:devManoel"
             }
           },
           "defaultConfiguration": "development"

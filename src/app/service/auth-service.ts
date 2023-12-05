@@ -1,10 +1,9 @@
-import { Injectable } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
 import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { catchError } from 'rxjs/operators';
 import { throwError } from 'rxjs';
-import { URL_API } from '../constantes';
 
 @Injectable({
     providedIn: 'root'
@@ -12,8 +11,8 @@ import { URL_API } from '../constantes';
 export class AuthService {
     private role: string | null = '';
     private username: string | null = '';
-    URL = `${URL_API}/auth/`;
-    constructor(private http: HttpClient, private router: Router, private mensajero: ToastrService) {
+    URL = `${this.environment.URL_API}/auth/`;
+    constructor(private http: HttpClient, private router: Router, private mensajero: ToastrService , @Inject('ENVIRONMENT') private environment: any) {
         this.role = localStorage.getItem('userRole') || null;
     }
 
@@ -29,7 +28,6 @@ export class AuthService {
       
           return response;
         } catch (error : any) {
-          alert(JSON.stringify(error));
           if (error.status === 401) {
             this.mensajero.error("Usuario o contraseña incorrecto.");
           }
