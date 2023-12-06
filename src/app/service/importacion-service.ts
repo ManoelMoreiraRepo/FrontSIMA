@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ToastrService } from 'ngx-toastr';
 import { URL_API } from '../constantes';
@@ -9,8 +9,8 @@ import { URL_API } from '../constantes';
 })
 
 export class ImpotacionService{
-    URL = `${URL_API}/importacion/`;
-    constructor(private httpClient: HttpClient , private mensajero : ToastrService) { }
+    URL = `${this.environment.URL_API}/importacion/`;
+    constructor(private httpClient: HttpClient , private mensajero : ToastrService , @Inject('ENVIRONMENT') private environment: any) { }
 
     public subir(archivo:any) {
         this.httpClient.post(this.URL + `archivo`, archivo ,  { responseType: 'text' , withCredentials: true,}).subscribe(
