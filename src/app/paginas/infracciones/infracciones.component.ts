@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { DpaService } from 'src/app/service/dpa-service';
-
+import { esMovil } from 'src/app/utils';
 @Component({
   selector: 'app-infracciones',
   templateUrl: './infracciones.component.html',
@@ -8,6 +8,7 @@ import { DpaService } from 'src/app/service/dpa-service';
 })
 export class InfraccionesComponent {
   urlImagen : string = "./assets/img/dpa.png";
+  esMovil : boolean = esMovil();
   subtitulos = [
     {
       titulo:"PARQUE AUTOMOTOR",

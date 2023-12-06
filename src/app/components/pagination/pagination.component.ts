@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common'
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core'
 import { RouterModule } from '@angular/router'
+import { esMovil } from 'src/app/utils'
 
 @Component({
     selector: 'app-pagination',
@@ -15,7 +16,7 @@ export class PaginationComponent {
     @Input() totalPages = 1
     @Input() size = 20
     @Input() windowSize =1;
-    @Input() showFirstLastButton = true
+    @Input() showFirstLastButton = !esMovil();
     @Input() routerLinkBase: string[] = []
     @Output() enviarPagina = new EventEmitter<any>();
 

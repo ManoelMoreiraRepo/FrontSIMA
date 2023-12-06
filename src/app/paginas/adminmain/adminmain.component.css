@@ -7,6 +7,9 @@
     flex-direction: column;
     align-items: center;
 }
+.contenedorInformacion{
+    margin-bottom:100px;
+}
 .contenedorTarjetas{
     display: flex;
     justify-content: center;

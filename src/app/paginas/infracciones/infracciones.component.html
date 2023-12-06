@@ -12,8 +12,9 @@
    
     <div *ngIf="data" class="contendorGeneral">
         <div class="contenedorInformacion">
-            <div id="generencia">
-                <p style="height: 80px"></p>
+            <div id="generencia"> 
+                <span *ngIf="esMovil ; else espacio" class="text-white">La información se presenta en el siguiente orden: </span>
+                <ng-template #espacio><p style="height: 80px"></p></ng-template>
                 <p *ngFor="let item of data.gerencia">{{item}}</p>
             </div>
 

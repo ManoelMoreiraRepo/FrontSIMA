@@ -233,6 +233,8 @@ export class InformacionempleadoComponent {
     return Object.entries(objeto).filter(([key, value]) => key !== 'nombre');
   }
 
-  
+  toContenedor(selector:string){
+    document.getElementById(selector)?.scrollIntoView({ behavior: 'smooth' });
+  }
   
 }

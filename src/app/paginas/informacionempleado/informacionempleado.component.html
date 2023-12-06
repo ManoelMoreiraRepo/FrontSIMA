@@ -10,6 +10,7 @@
       role="tab"
       aria-controls="nav-perfil"
       aria-selected="true"
+      (click)="toContenedor('nav-perfil')"
     >
       Perfil
     </button>
@@ -22,6 +23,7 @@
       role="tab"
       aria-controls="nav-operaciones"
       aria-selected="false"
+      (click)="toContenedor('nav-operaciones')"
     >
       Operaciones
     </button>
@@ -34,6 +36,7 @@
       role="tab"
       aria-controls="nav-indumentaria"
       aria-selected="false"
+      (click)="toContenedor('nav-indumentaria')"
     >
       Indumentaria
     </button>
@@ -58,17 +61,18 @@
       role="tab"
       aria-controls="nav-credenciales"
       aria-selected="false"
+      (click)="toContenedor('nav-credenciales')"
     >
       Credenciales
     </button>
   </div>
 </nav>
-<div class="col-md-12" style="display: flex;">
+<div class="contenedorInfor col-lg-12" style="display: flex;">
 
-  <div class="foto col-md-3 d-flex flex-column align-items-center p-4 perfilComponente">
+  <div class="foto col-lg-3 d-flex flex-column align-items-center p-4 perfilComponente">
     <app-perfil *ngIf="empleado" [empleado]="empleado" [imagenURL]="imagenURL"></app-perfil>
   </div>
-  <div class="contenedorGeneral tab-content col-md-9">
+  <div class="contenedorGeneral tab-content col-lg-9">
     <!-- Perfil -->
   
     <div
@@ -80,11 +84,7 @@
     >
       <div class="container">
         <div class="row d-flex align-items-center col-md-12" style="justify-content: center;">
-          
-          
-  
-          <div class="perfil col-md-8 gy-5">
-            <div class="row d-flex justify-content-between">
+          <div class="perfil col-md-8 gy-5" style="display: contents;">
               <div class="data-content">
                 <div class="borde-button">{{ empleado.direccionEmpleado }}</div>
                 <div>Direccion</div>
@@ -97,8 +97,6 @@
                 <div class="borde-button">0</div>
                 <div>SANCIONES</div>
               </div>
-            </div>
-            <div class="row d-flex justify-content-between">
               <div class="data-content">
                 <div class="borde-button">{{ empleado.legajoEmpleado }}</div>
                 <div>Legajo</div>
@@ -111,8 +109,6 @@
                 <div class="borde-button">{{ empleado.objetivoEmpleado }}</div>
                 <div>Objetivo</div>
               </div>
-            </div>
-            <div class="row d-flex justify-content-between">
               <div class="data-content">
                 <div class="borde-button">{{ empleado.cargoEmpleado }}</div>
                 <div>Cargo</div>
@@ -129,8 +125,6 @@
                 </div>
                 <div class="text-nowrap">Fecha de Nacimento</div>
               </div>
-            </div>
-            <div class="row d-flex justify-content-between">
               <div class="data-content">
                 <div class="borde-button">{{ empleado.telefonoEmpleado }}</div>
                 <div>Telefono Contacto</div>
@@ -143,41 +137,11 @@
                 <div class="borde-button">{{ empleado.emailEmpleado }}</div>
                 <div>E-mail</div>
               </div>
-            </div>
-            <div class="row d-flex justify-content-between">
               <div class="data-content">
                 <div class="borde-button">{{ empleado.sindicato }}</div>
                 <div>Sindicato</div>
               </div>
-            </div>
-  
-            <!-- <table class="table " style="display: none;">
-                  <tr>
-                  <td>
-                      <b>Apellido y Nombre:</b>{{ empleado.nombreEmpleado }} {{
-                      empleado.apellidoEmpleado }}
-                  </td>
-                  <td><b>Dni:</b>{{ empleado.dniempleado }}</td>
-                  <td><b>Legajo:</b>{{ empleado.legajoEmpleado }}</td>
-                  </tr>
-                  <tr>
-                  <td>
-                      <b>Fecha/Nac:</b>{{ empleado.fechaNascimentoEmpleado | date :
-                      "dd/MM/y" }}
-                  </td>
-                  <td><b>Objetivo:</b>{{ empleado.objetivoEmpleado }}</td>
-                  <td><b>Turno:</b>{{ empleado.turnoEmpleado }}</td>
-                  </tr>
-                  <tr>
-                  <td><b>Telefono Contacto:</b>{{ empleado.telefonoEmpleado }}</td>
-                  <td><b>Cargo:</b> {{ empleado.cargoEmpleado }}</td>
-                  <td><b>E-mail</b> {{ empleado.emailEmpleado }}</td>
-                  </tr>
-                  <tr>
-                  <td><b>Dirección:</b>{{ empleado.direccionEmpleado }}</td>
-                  <td><b>Codigo Postal</b>{{ empleado.codigoPostalEmpleado }}</td>
-                  </tr>
-              </table> -->
+              
           </div>
         </div>
       </div>
@@ -365,10 +329,9 @@
     >
   
     <div class="container" style="color:white;padding-bottom:120px">
-      <div class="row d-flex align-items-center" style="justify-content: center;">
+      <div class="row d-flex align-items-center m-3" style="justify-content: center;">
   
-        <div class="perfil col-lg-9 gy-5">
-          <div class="row d-flex justify-content-center" style="gap: 19px;">
+        <div class="perfil col-lg-9 gy-5" style="display: contents; width: 100%;">
             <div class="data-content">
               <div class="botonCred activo">Activo</div>
               <div>RAYO - X</div>
@@ -378,8 +341,6 @@
               <div>RAYO - X</div>
             </div>
             
-          </div>
-          <div class="row d-flex justify-content-between">
             <div class="data-content">
               <div class="botonCred activo">Activo</div>
               <div>RAYO - X</div>
@@ -396,22 +357,12 @@
               <div class="botonCred inactivo">Activo</div>
               <div>RAYO - X</div>
             </div>
-          </div>
-          <div class="row d-flex justify-content-between">
-            <div class="data-content">
-              <div class=""></div>
-              <div></div>
-            </div>
+            
             <div class="data-content">
               <div class="borde-button">21/06/2017</div>
               <div>Vto. PPP</div>
             </div>
-            <div class="data-content">
-              <div class=""></div>
-              <div></div>
-            </div>
-          </div>
-          <div class="row d-flex justify-content-between">
+            
             <div class="data-content">
               <div class="borde-button">21/06/2017</div>
               <div>Curso PSA A001</div>
@@ -429,8 +380,6 @@
               </div>
               <div class="text-nowrap">Curso PSA004</div>
             </div>
-          </div>
-          <div class="row d-flex justify-content-between">
             <div class="data-content">
               <div class="borde-button">21/06/2017</div>
               <div>Vto AMAM</div>
@@ -443,13 +392,7 @@
               <div class="borde-button">21/06/2017</div>
               <div>Carga/Correo</div>
             </div>
-          </div>
-          <div class="row d-flex justify-content-between">
-            <div class="data-content">
-              <div class=""></div>
-              <div></div>
-            </div>
-          </div>
+            
   
           
         </div>

@@ -24,3 +24,10 @@ export function getLogoByGerencia(gerencia: string):string {
     }
     return url;
 }
+
+
+export function esMovil(){
+    let anchoPantalla = window.innerWidth;
+    let anchoMovil = 769;
+    return anchoPantalla <= anchoMovil;
+}

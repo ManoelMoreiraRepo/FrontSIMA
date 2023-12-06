@@ -59,7 +59,7 @@
         <div>
             <app-pagination class="d-flex justify-content-end" *ngIf="alldata" (enviarPagina)="recibirPagina($event)" [totalPages]="alldata.totalPages" [size]="alldata.size"></app-pagination>
             
-            <table *ngIf="anchoPantalla>anchoMovil ; else tablaMovil" class=" card table table-secondary table-hover p-4">
+            <table *ngIf="!esMovil ; else tablaMovil" class=" card table table-secondary table-hover p-4">
                 <table class="table table-hover">
                     <thead>
                         <tr class="text-center">

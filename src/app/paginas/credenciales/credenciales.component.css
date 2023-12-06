@@ -73,4 +73,10 @@
     .contenedorInformacion{
         align-items: normal;
     }
+    .tablaCrendial th{
+        border: 4px solid #11354F;;
+    }
+    .tablaCrendial td{
+        border: 4px solid #11354F;;
+    }
   }

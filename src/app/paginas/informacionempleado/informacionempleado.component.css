@@ -1,4 +1,5 @@
-.contenedorGeneral{
+.contenedorInfor{
+  overflow: hidden;
 }
 .gris1{
   background-color: #D9D9D9;
@@ -173,4 +174,35 @@ table th[colspan="2"]:active {
   border-radius: 12px;
   margin:12px 12px  0 12px;
   background-color: #D9D9D9;
+}
+
+@media(max-width : 796px){
+  .contenedorInfor{
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 100px;
+  }
+  .container{
+    margin-bottom: 152px;
+  }
+  
+  .foto{
+    width: 90%;
+    border-radius: 0;
+  }
+  .contenedorGeneral{
+    width: 90%;
+  }
+  .data-content{
+    width: 40%;
+  }
+  #nav-operaciones{
+    margin-bottom: 200px !important;
+  }
+  #nav-credenciales .data-content{
+    width: 50%;
+  }
+  .data-content{
+    width: 50%;
+  }
 }

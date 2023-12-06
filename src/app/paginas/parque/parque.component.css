@@ -2,5 +2,12 @@
     .contenedorInfo{
         flex-direction: column;
         gap: 4rem !important;
+        margin-bottom: 200px !important;
+    }
+    #barras{
+        width: 350px !important;
+    }
+    #torta{
+        width: 350px !important;
     }
 }

@@ -2,7 +2,7 @@
     <div class="contadorEstadistica col-lg-12 col-sm-12">
         <div  *ngFor="let item of lista" class="col-sm-2">
             <div class="itemContador">
-                <h5>{{item.titulo}}</h5>
+                <h6>{{item.titulo}}</h6>
                 <span>{{item.descrip}}</span>
                 <div class="boxCont">
                    <a *ngIf="item.url else sinLink" href="{{item.url}}"><span>{{item.cant}}</span></a>

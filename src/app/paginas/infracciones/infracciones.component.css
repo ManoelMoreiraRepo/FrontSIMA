@@ -143,3 +143,19 @@
 #generencia p {
     margin-bottom: 14px;
 }
+
+
+@media (max-width:796px){
+    .contenedorInformacion{
+        flex-direction: column !important;
+        gap: 1rem;
+        width: 100%;
+        align-items: center;
+    }
+    .contenedorInformacion div {
+        width: 80%;
+    }
+    .columna{
+        width: 80% !important;
+    }
+}

@@ -5,6 +5,7 @@ import { PersonaServiceTsServiceService } from 'src/app/service/persona-service-
 import { ApiResponse } from 'src/app/model/ApiResponse';
 import { ToastrService } from 'ngx-toastr';
 import { IMAGEN_DEFAULT } from 'src/app/constantes';
+import { esMovil } from 'src/app/utils';
 
 @Component({
   selector: 'app-empleado',
@@ -22,8 +23,7 @@ export class EmpleadoComponent {
   orden:string = 'ASC';
   paginaActual = 1;
   imagenDefault = IMAGEN_DEFAULT;
-  anchoPantalla = window.innerWidth;
-  anchoMovil = 769;
+  esMovil : boolean = esMovil();
   constructor(private router:Router,private activatedRouter: ActivatedRoute, private empleadoS: PersonaServiceTsServiceService , private mensajero : ToastrService) { }
 
   ngOnInit(): void {
