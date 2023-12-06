@@ -4,14 +4,3 @@
 #graficoAnual canvas{
     width: 1500px !important;
 }
-
-@media (max-width:796px){
-    .contenedorInformacion{
-        flex-direction: column !important;
-        gap: 1rem;
-    }
-    .contenedorInformacion div {
-        width: 80%;
-    }
-
-}
