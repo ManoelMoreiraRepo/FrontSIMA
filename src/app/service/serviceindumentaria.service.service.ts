@@ -2,7 +2,6 @@ import { HttpClient } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Indumentaria } from '../model/Indumentaria.model';
-import { URL_API } from '../constantes';
 
 @Injectable({
   providedIn: 'root'

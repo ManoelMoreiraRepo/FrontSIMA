@@ -2,7 +2,6 @@ import { Inject, Injectable } from '@angular/core';
 import { HttpClient, HttpResponse , HttpParams , HttpHeaders } from '@angular/common/http';
 import { ToastrService } from 'ngx-toastr';
 import { Observable } from 'rxjs';
-import { URL_API } from '../constantes';
 
 @Injectable({
     providedIn: 'root'

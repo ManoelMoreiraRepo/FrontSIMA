@@ -1,0 +1,31 @@
+.contenedorTabla{
+    display: flex;
+    justify-content: center;
+    
+}
+.tablaBolsa{
+    margin-bottom: 174px;
+}
+
+.tablaBolsa th,td{
+    background-color: white;
+    padding: 10px;
+    border: 12px solid #11354F;;
+}
+
+.tablaBolsa th:nth-child(3),td:nth-child(3){
+    width: 400px;
+    text-align: left !important;
+}
+
+.tablaBolsa td{
+    text-align: center;
+}
+
+.contenedorInformacion{
+    display: flex;
+    justify-content: center;
+}
+.contenedorInformacion div{
+    width: 69%;
+}
