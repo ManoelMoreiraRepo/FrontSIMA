@@ -23,4 +23,12 @@ export class ImpotacionService{
             }
         );
     }
+
+    public getLog(id:number) : Observable<any>{
+      return this.httpClient.get(this.URL + `log?id=${id}` , {withCredentials: true});
+    }
+
+    public getTodosLogs() : Observable<any>{
+      return this.httpClient.get(this.URL + `logs` , {withCredentials: true});
+    }
 }

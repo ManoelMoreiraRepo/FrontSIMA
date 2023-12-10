@@ -40,6 +40,7 @@ import { PerifericosComponent } from './paginas/perifericos/perifericos.componen
 import { EquipamientosComponent } from './paginas/equipamientos/equipamientos.component';
 import { PerfilComponent } from './components/perfil/perfil.component';
 import { environment } from 'src/environments/environment';
+import { LogsimportacionComponent } from './paginas/logsimportacion/logsimportacion.component';
 
 @NgModule({
   declarations: [
@@ -71,6 +72,7 @@ import { environment } from 'src/environments/environment';
     PerifericosComponent,
     EquipamientosComponent,
     PerfilComponent,
+    LogsimportacionComponent,
     
   ],
   imports: [
