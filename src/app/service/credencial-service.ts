@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
 import { HttpClient, HttpResponse , HttpParams , HttpHeaders } from '@angular/common/http';
 import { ToastrService } from 'ngx-toastr';
 import { Observable } from 'rxjs';
@@ -8,8 +8,8 @@ import { URL_API } from '../constantes';
     providedIn: 'root'
 })
 export class CredencialService {
-    URL = `${URL_API}/Credencial/`;
-    constructor(private httpClient: HttpClient, private mensajero: ToastrService) {
+    URL = `${this.environment.URL_API}/Credencial/`;
+    constructor(private httpClient: HttpClient, private mensajero: ToastrService , @Inject('ENVIRONMENT') private environment: any) {
     }
 
     public getCantidades() : Observable<any> {

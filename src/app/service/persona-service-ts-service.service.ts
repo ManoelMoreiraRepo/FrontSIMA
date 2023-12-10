@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { PersonaEmpleado } from '../model/PersonaEmpleado.model';
 import { ApiResponse } from '../model/ApiResponse';
@@ -8,11 +8,11 @@ import { URL_API } from '../constantes';
   providedIn: 'root'
 })
 export class PersonaServiceTsServiceService {
-  URL = `${URL_API}/Empleado/`;
+  URL = `${this.environment.URL_API}/Empleado/`;
   options = {
     withCredentials: true
   };
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient , @Inject('ENVIRONMENT') private environment: any) { }
 
   public traer( page : any = 0): Observable<ApiResponse> {
     

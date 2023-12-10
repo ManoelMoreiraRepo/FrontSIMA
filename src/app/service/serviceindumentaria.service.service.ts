@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Indumentaria } from '../model/Indumentaria.model';
 import { URL_API } from '../constantes';
@@ -9,8 +9,8 @@ import { URL_API } from '../constantes';
 })
 export class ServiceindumentariaServiceService {
 
-  URL = `${URL_API}/Indumentaria/`;
-  constructor(private httpClient: HttpClient) { }
+  URL = `${this.environment.URL_API}/Indumentaria/`;
+  constructor(private httpClient: HttpClient , @Inject('ENVIRONMENT') private environment: any) { }
 
   public traer(): Observable<Indumentaria[]> {
     return this.httpClient.get<Indumentaria[]>(this.URL + 'traer');

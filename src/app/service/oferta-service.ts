@@ -1,4 +1,4 @@
-import { Injectable } from "@angular/core";
+import { Inject, Injectable } from "@angular/core";
 import { URL_API } from "../constantes";
 import { HttpClient } from "@angular/common/http";
 import { Router } from "@angular/router";
@@ -11,11 +11,11 @@ import { ApiMensaje } from "../model/ApiMensaje";
     providedIn: 'root'
 })
 export class OfertaService{
-    URL = `${URL_API}/oferta/`;
+    URL = `${this.environment.URL_API}/oferta/`;
     options = {
         withCredentials: true
       };
-    constructor(private httpClient: HttpClient, private router: Router, private mensajero: ToastrService) {
+    constructor(private httpClient: HttpClient, private router: Router, private mensajero: ToastrService , @Inject('ENVIRONMENT') private environment: any) {
     }
 
     public listar(pagina :any = 0 , ordenado = 'codigo' , orden ='ASC'): Observable<ApiResponse> {

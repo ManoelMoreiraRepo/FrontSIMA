@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ToastrService } from 'ngx-toastr';
 import { Observable } from 'rxjs';
@@ -9,8 +9,8 @@ import { URL_API } from '../constantes';
 })
 export class DpaService {
 
-  URL = `${URL_API}/dpa/`;
-  constructor(private httpClient: HttpClient, private mensajero: ToastrService) {
+  URL = `${this.environment.URL_API}/dpa/`;
+  constructor(private httpClient: HttpClient, private mensajero: ToastrService , @Inject('ENVIRONMENT') private environment: any) {
   }
 
   public getEstadistica(): Observable<any> {
