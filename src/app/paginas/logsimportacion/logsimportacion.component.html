@@ -1,0 +1,61 @@
+<div>
+    <app-header></app-header>
+    <app-titulero [indice]="7"></app-titulero>
+    <app-separador [urlImg]="urlImagen" ></app-separador>
+    <span class="etiqueta fondoRojo">INFO</span>
+    <div class="contenedorTabla">
+        <table class="tablaBolsa">
+            <tr>
+                <th>Fecha y hora</th>
+                <th>Usuario</th>
+                <th>Archivo</th>
+                <th>Acciones</th>
+            </tr>
+            <tr *ngFor="let item of lista ">
+
+                <td>{{item.inicio | date:"MMM dd, yyyy ':' hh:mm a" }}</td>
+                <td>{{item.usuario?.nombreUsuario || ''}}</td>
+                <td><a href="{{item.url}}">{{item.archivo}}</a></td>
+                <td><button type="button" class="btn btn-secondary" (click)="abrirObservaciones(item.id)">Observaciones</button></td>
+            </tr>
+    
+        </table>
+    </div>
+    <div
+        class="modal fade"
+        id="observaciones"
+        tabindex="-1"
+        role="dialog"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" >
+                Observaciones de la importación
+              </h5>
+            </div>
+            <div class="modal-body text-center">
+              <div  [innerHTML]="observacion.texto" >
+               
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+                (click)="closeModal('#observaciones')"
+              >
+                Cerrar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    <app-footer class="footer"></app-footer>
+
+    
+</div>

@@ -1,5 +1,4 @@
 import { Inject, Injectable } from "@angular/core";
-import { URL_API } from "../constantes";
 import { HttpClient } from "@angular/common/http";
 import { Router } from "@angular/router";
 import { ToastrService } from "ngx-toastr";

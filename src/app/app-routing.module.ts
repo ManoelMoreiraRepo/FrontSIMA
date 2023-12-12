@@ -17,6 +17,7 @@ import { InfraccionesComponent } from './paginas/infracciones/infracciones.compo
 import { SuministrosComponent } from './paginas/suministros/suministros.component';
 import { PerifericosComponent } from './paginas/perifericos/perifericos.component';
 import { EquipamientosComponent } from './paginas/equipamientos/equipamientos.component';
+import { LogsimportacionComponent } from './paginas/logsimportacion/logsimportacion.component';
 
 const vistaUser = { roles: ['ROLE_USER' , 'ROLE_MODERATOR']};
 const vistaAdmin = { roles: ['ROLE_ADMIN' , 'ROLE_MODERATOR'] };
@@ -41,6 +42,7 @@ const routes: Routes = [
   { path: 'suministros', component:SuministrosComponent , canActivate: [RoleGuard], data: vistaAdmin },
   { path: 'perifericos', component:PerifericosComponent , canActivate: [RoleGuard], data: vistaAdmin },
   { path: 'equipamientos', component:EquipamientosComponent , canActivate: [RoleGuard], data: vistaAdmin },
+  { path: 'logsimportacion', component:LogsimportacionComponent , canActivate: [RoleGuard], data: vistaAdmin },
   //{path:'sistema', component:SistemaComponent}
 
 ];

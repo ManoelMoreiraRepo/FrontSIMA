@@ -3,7 +3,6 @@ import { Inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { PersonaEmpleado } from '../model/PersonaEmpleado.model';
 import { ApiResponse } from '../model/ApiResponse';
-import { URL_API } from '../constantes';
 @Injectable({
   providedIn: 'root'
 })

@@ -1,4 +1,4 @@
-export const URL_API = 'http://192.168.1.93:8080'; //ACA PONER LA IP LOCAL DE TU CONEXION.
+//export const URL_API = 'http://192.168.1.93:8080'; //ACA PONER LA IP LOCAL DE TU CONEXION.
 //export const URL_API = 'http://localhost/api'; //con docker
 
 export const IMAGEN_DEFAULT =  "../../../assets/img/perfil/default.png"
@@ -146,5 +146,9 @@ export const titulos = [
   {
     titulo:"BOLSA DE TRABAJO",
     url:"/bolsa"
+  },
+  {
+    titulo:"LOGS IMPORTACIÓN",
+    url:"/logsimportacion"
   },
 ];
