@@ -1,6 +1,5 @@
 export function getLogoByGerencia(gerencia: string):string {
     let url = './assets/img/logos/';
-    console.log(gerencia);
     switch (gerencia) {
         case 'GER01':
             url += 'sima.png'
