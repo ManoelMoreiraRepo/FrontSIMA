@@ -1,4 +1,5 @@
 import { Component, Inject } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { ImpotacionService } from 'src/app/service/importacion-service';
 
@@ -19,7 +20,7 @@ export class LogsimportacionComponent {
 
   URL_API = this.environment.URL_API;
 
-  constructor(private importacionService : ImpotacionService , @Inject('ENVIRONMENT') private environment: any) {
+  constructor(private importacionService : ImpotacionService , @Inject('ENVIRONMENT') private environment: any , private router: Router) {
   }
 
   ngOnInit(){
@@ -28,6 +29,10 @@ export class LogsimportacionComponent {
       this.completarURlDescarga(this.lista);
     });
     console.log(this.lista);
+  }
+
+  navigateToDestination(destination: string) {
+    this.router.navigate([destination]);
   }
 
   abrirObservaciones(id:any){

@@ -5,7 +5,7 @@
     <div *ngIf="objeto.items" class="cuerpoAcceso">
         <div  *ngFor="let item of objeto.items">
             <div class="contenedorBoxInferior">   
-                <a class="contenedorItem" href="{{item.url}}" target="_blank">
+                <a class="contenedorItem" (click)="navigateToDestination(item.url)" target="_blank">
                     <img src="{{item.img}}" width="60px" height="60px" alt=""> 
                     <div>
                         <span>{{item.titulo}}</span> 
@@ -28,7 +28,7 @@
             <div class="" *ngFor="let item of objeto.subItems.icons">
                 <div class="contenedorBoxInferior">   
                     
-                    <a class="contenedorItem" href="{{item.url}}" target="_blank">
+                    <a class="contenedorItem" (click)="navigateToDestination(item.url)" target="_blank">
                         <img src="{{item.img}}" width="40px" height="40px" alt=""> 
                         <div>
                             <span>{{item.titulo}}</span> 

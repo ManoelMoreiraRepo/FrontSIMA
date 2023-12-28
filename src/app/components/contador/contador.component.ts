@@ -1,4 +1,5 @@
 import { Component , Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-contador',
@@ -7,6 +8,13 @@ import { Component , Input } from '@angular/core';
 })
 export class ContadorComponent {
   @Input() lista : any;
+
+  constructor(private router: Router){}
+
+
+  navigateToDestination(destination: string) {
+    this.router.navigate([destination]);
+  }
 
   // lista = [
   //   {
