@@ -109,6 +109,10 @@ app-root {
   justify-content: center;
 }
 
+input[type="file"] {
+  display: none !important;
+}
+
 @media (max-width : 769px){
   .boxImport img{
     width: 60px;

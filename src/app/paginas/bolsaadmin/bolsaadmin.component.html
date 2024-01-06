@@ -17,7 +17,7 @@
                 <td>{{item.codigo}}</td>
                 <td>{{item.titulo}}</td>
                 <td>{{item.zona}}</td>
-                <td><a href="{{'/oferta/' + item.id}}"><img src="{{urlImagenPostu}}" alt=""></a></td>
+                <td><a (click)="navigateToDestination('/oferta/' + item.id)" ><img src="{{urlImagenPostu}}" alt=""></a></td>
             </tr>
     
         </table>

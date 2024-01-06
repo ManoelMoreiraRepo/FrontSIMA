@@ -46,11 +46,11 @@ export class EmpleadoComponent {
   }
 
   setImagenReal(obj:PersonaEmpleado){
-    obj.foto = `../../../assets/img/perfil/${obj.dniempleado}.jpg`;
+    obj.foto =this.empleadoS.getUrlImagen(`${obj.dniempleado}.jpg`);
   }
 
   setImagenDefualt( obj :PersonaEmpleado){
-    obj.foto = IMAGEN_DEFAULT;
+    obj.foto = this.empleadoS.getUrlImagen(IMAGEN_DEFAULT);
   }
 
   armarUrlsFotos(array:any){

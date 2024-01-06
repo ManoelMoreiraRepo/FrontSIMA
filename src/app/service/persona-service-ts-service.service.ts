@@ -3,6 +3,7 @@ import { Inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { PersonaEmpleado } from '../model/PersonaEmpleado.model';
 import { ApiResponse } from '../model/ApiResponse';
+import { ToastrService } from 'ngx-toastr';
 @Injectable({
   providedIn: 'root'
 })
@@ -11,7 +12,9 @@ export class PersonaServiceTsServiceService {
   options = {
     withCredentials: true
   };
-  constructor(private httpClient: HttpClient , @Inject('ENVIRONMENT') private environment: any) { }
+  constructor(private httpClient: HttpClient , 
+    @Inject('ENVIRONMENT') private environment: any,
+    private mensajero : ToastrService) { }
 
   public traer( page : any = 0): Observable<ApiResponse> {
     
@@ -56,4 +59,20 @@ export class PersonaServiceTsServiceService {
   public getGrilla(mes:any,anio:any,idEmpleado=0):Observable<any>{
     return this.httpClient.get(this.URL + `grilla?mes=${mes}&&anio=${anio}&&id=${idEmpleado}` , this.options);
   }
+
+  public getUrlImagen(nombre:string){
+    return `${this.environment.URL_API}/Empleado/imagen/${nombre}`;
+  }
+
+  public subirImagen(nombre:string , archivo:any) {
+    this.httpClient.post(`${this.environment.URL_API}/Empleado/imagen/${nombre}`, archivo ,  { responseType: 'text' , withCredentials: true,}).subscribe(
+        (response) => {
+          this.mensajero.success(response);
+        },
+        (error) => {
+          this.mensajero.error("Error al cargar el archivo.");
+          console.error('Error al cargar el archivo: ', error);
+        }
+    );
+}
 }

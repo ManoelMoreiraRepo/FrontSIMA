@@ -194,7 +194,7 @@ export class InformacionempleadoComponent {
     this.idEmpleado=id;
     this.empleadoS.detail(id).subscribe((data) => {
       this.empleado = data;
-      this.imagenURL = `../../../assets/img/perfil/${this.empleado.dniempleado}.jpg`;
+      this.imagenURL = this.empleadoS.getUrlImagen(`${this.empleado.dniempleado}.jpg`);
        console.log(this.empleado);
      
     });
@@ -222,7 +222,7 @@ export class InformacionempleadoComponent {
   }
 
   cargarImagenPorDefecto() {
-    this.imagenURL = IMAGEN_DEFAULT;
+    this.imagenURL = this.empleadoS.getUrlImagen(IMAGEN_DEFAULT);
   }
 
   main() {

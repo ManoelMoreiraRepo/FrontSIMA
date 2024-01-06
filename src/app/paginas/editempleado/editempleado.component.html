@@ -16,10 +16,24 @@
 <div class="container col-md-12 my-4">
     <div class="card">
         <div class="card-header">
-            <h3>Agregar Personas</h3>
+            <div class="d-flex justify-content-center">
+                <label for="imagen">
+                    <img
+                    [src]="imagenURL"
+                    alt="Organigrama"
+                    class="img-fluid foto"
+                    width="198"
+                    height="0"
+                    (error)="cargarImagenPorDefecto()"
+                    />
+                </label>
+                <input id="imagen" class="inputFile" type="file" (change)="onFileChange($event)" />
+            </div>
         </div>
             <form class="cbp-mc-form"  (ngSubmit)="onUpdate()" novalidate #f="ngForm">
                 <div class="cbp-mc-column">
+                    
+                    
                     <div class="form-group">
                         <label for="nombreEmpleado">Nombres</label>
                         <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)]="empleado.nombreEmpleado" required>
@@ -43,6 +57,21 @@
                         <label for="legajoEmpleado">Legajo</label>
                         <input type="text" class="form-control" id="legajoEmpleado" name="legajoEmpleado" [(ngModel)]="empleado.legajoEmpleado" required>
                     </div>
+                   
+                    <div class="form-group">
+                        <label for="codigoPostalEmpleado">Codigo postal</label>
+                        <input type="text" class="form-control" id="codigoPostalEmpleado" name="codigoPostalEmpleado"
+                            [(ngModel)]="empleado.codigoPostalEmpleado" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="estadoEmpleado">Estado</label>
+                        <input type="text" class="form-control" id="estadoEmpleado" name="estadoEmpleado"
+                            [(ngModel)]="empleado.estadoEmpleado" required>
+                    </div>
+                   
+                </div>
+                <div class="cbp-mc-column">
 
                     <div class="form-group">
                         <label for="fechaNascimentoEmpleado">Fecha/Nac</label>
@@ -53,8 +82,6 @@
                         <label for="fechaAltaEmpleado">Fecha/Alta</label>
                         <input type="datetime" class="form-control" id="fechaAltaEmpleado" name="fechaAltaEmpleado" [(ngModel)]="empleado.fechaAltaEmpleado" required>
                     </div>
-                </div>
-                <div class="cbp-mc-column">
                    
                     <div class="form-group">
                         <label for="objetivoEmpleado">Objetivo</label>
@@ -85,18 +112,9 @@
                         <input type="text" class="form-control" id="emailEmpleado" name="emailEmpleado" [(ngModel)]="empleado.emailEmpleado" required>
                     </div>
 
-                    <div class="form-group">
-                        <label for="estadoEmpleado">Estado</label>
-                        <select id="occupation" name="occupation" class="form-select" aria-label="Default select example">
-                            <option *ngFor="let n of estado">{{ n }}</option>
-                        </select>
-                    </div>
+                   
 
-                    <div class="form-group">
-                        <label for="codigoPostalEmpleado">Codifgo postal</label>
-                        <input type="text" class="form-control" id="codigoPostalEmpleado" name="codigoPostalEmpleado"
-                            [(ngModel)]="empleado.codigoPostalEmpleado" required>
-                    </div>
+                    
 
                 </div>
               
