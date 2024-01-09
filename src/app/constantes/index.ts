@@ -6,7 +6,7 @@ export const IMAGEN_DEFAULT =  "default.png"
 export const menuAdmin = [
     {
         img:"./assets/img/admin/rrhh.png",
-        link:"/rrhh"
+        link:"/rrhh/totales"
     },
     {
         img:"./assets/img/admin/dpa.png",
@@ -34,7 +34,7 @@ export const arrayMenuEmpleado = [
             titulo:"BOLSA DE TRABAJO",
             descrip:"Reporte semanal de estado",
             img:"./assets/img/lupa.png",
-            url:"/bolsa"
+            url:"/rrhh/bolsa"
           }
         ]
     },
@@ -121,7 +121,7 @@ export const arrayMenuEmpleado = [
 export const titulos = [
   {
     titulo:"RRHH",
-    url:"/rrhh"
+    url:"/rrhh/totales"
   },
   {
     titulo:"CREDENCIALES",
@@ -135,7 +135,7 @@ export const titulos = [
     titulo:"SUMINISTROS",
     url:"/suministros"
   },
-  {
+ /* {
     titulo:"NOMINA ACTIVA",
     url:"/empleado"
   },
@@ -146,7 +146,7 @@ export const titulos = [
   {
     titulo:"BOLSA DE TRABAJO",
     url:"/bolsa"
-  },
+  },*/
   {
     titulo:"LOGS IMPORTACIÓN",
     url:"/logsimportacion"

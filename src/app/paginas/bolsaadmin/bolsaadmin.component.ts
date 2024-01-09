@@ -23,6 +23,24 @@ export class BolsaadminComponent {
   orden:string = 'ASC';
   paginaActual = 0;
 
+  subtitulos = [
+    {
+      titulo:"CANTIDADES",
+      url:"/rrhh/totales"
+    },
+    {
+      titulo:"NOMINA ACTIVA",
+      url:"/rrhh/empleado"
+    },
+    {
+      titulo:"ORGANIGRAMA",
+      url:"/rrhh/totales"
+    },
+    {
+      titulo:"BOLSA DE TRABAJO",
+      url:"/rrhh/bolsa"
+    },
+  ]
 
   ngOnInit() :void{
     this.ofertaService.listar().subscribe((resp)=>{

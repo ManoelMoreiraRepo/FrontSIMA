@@ -8,12 +8,21 @@ import { Router } from '@angular/router';
 })
 export class ContadorComponent {
   @Input() lista : any;
+    
+  ngAfterContentChecked(){
+    console.log(this.lista);
+  }
 
-  constructor(private router: Router){}
+  constructor(private router: Router){
+  }
 
 
-  navigateToDestination(destination: string) {
-    this.router.navigate([destination]);
+  // navigateToDestination(destination: string) {
+  //   this.router.navigate([destination]);
+  // }
+
+  navigateToEmpleados(item: any) {
+    this.router.navigate([item.url], { queryParams: { gerencia: item.ger } });
   }
 
   // lista = [
