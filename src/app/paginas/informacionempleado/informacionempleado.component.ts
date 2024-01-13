@@ -5,6 +5,7 @@ import { PersonaEmpleado } from 'src/app/model/PersonaEmpleado.model';
 import { PersonaServiceTsServiceService } from 'src/app/service/persona-service-ts-service.service';
 import { ServiceindumentariaServiceService } from 'src/app/service/serviceindumentaria.service.service';
 import { IMAGEN_DEFAULT } from 'src/app/constantes';
+import { CredencialService } from 'src/app/service/credencial-service';
 
 declare var $: any;
 @Component({
@@ -66,6 +67,8 @@ export class InformacionempleadoComponent {
   idEmpleado :any;
 
   imagenURL : string = "";
+
+  credenciales : any = {};
 
   uniformesRecibidos = {
     "uniformes": [
@@ -164,28 +167,51 @@ export class InformacionempleadoComponent {
     ]
   }
 
-  cursos = [
-    {
-      fecha:'21/06/18',
-      codigo:'PSA001',
-      titulo:'VIGILADOR INICIAL',
-      duracion:""
-    },
-    {
-      fecha:'21/06/18',
-      codigo:'PSA001A',
-      titulo:'IGILADOR RENOVACION',
-      duracion:"Anual"
-    },
-  ]
+  // cursos = [
+  //   {
+  //     fecha:'21/06/18',
+  //     codigo:'PSA001',
+  //     titulo:'VIGILADOR INICIAL',
+  //     duracion:""
+  //   },
+  //   {
+  //     fecha:'21/06/18',
+  //     codigo:'PSA001A',
+  //     titulo:'IGILADOR RENOVACION',
+  //     duracion:"Anual"
+  //   },
+  // ]
 
-  codigos = this.cursos.map(curso => curso.codigo);
+  // credenciales = {
+  //   habilitaciones : [
+  //     {
+  //       nombre:"AGENTE VIGILADOR",
+  //       estado:"Activo" , //Inactivo //Suspendido
+  //     }
+  //   ],
+  //   agente:[
+  //     {
+  //       fecha:"xx/xx/xxxx",
+  //       codigo:"PSA001",
+  //       nombre:"VIGILADOR"
+  //     }
+  //   ],
+  //   vigilador:[
+  //     {
+  //       nombre:"CREDENCIAL FISICA",
+  //       valor:"SI"
+  //     }
+  //   ],
+  //   numeroCredencial : 1234
+  // }
+
+  // codigos = this.cursos.map(curso => curso.codigo);
 
   constructor(
     private router: Router,
     private activatedRouter: ActivatedRoute,
     private empleadoS: PersonaServiceTsServiceService,
-
+    private credencialesS : CredencialService,
     private indumentariaS: ServiceindumentariaServiceService
   ) {}
 
@@ -196,20 +222,13 @@ export class InformacionempleadoComponent {
       this.empleado = data;
       this.imagenURL = this.empleadoS.getUrlImagen(`${this.empleado.dniempleado}.jpg`);
        console.log(this.empleado);
-     
     });
-
+    this.credencialesS.getCredecialesDTO(id).subscribe((data)=>{
+      this.credenciales = data;
+    });
   }
 
   procesarHabilitaciones(){
-    const vigilador = ['PSA001', 'PSA001A'].every(valor => this.codigos.includes(valor));
-    const rayosX = ['PSA001', 'PSA001A' , 'PSA002' , 'PSA002A'].every(valor => this.codigos.includes(valor));
-    const plataforma = ['PSA001', 'PSA001A'].every(valor => this.codigos.includes(valor));
-    const cargas = ['PSA001', 'PSA001A' ,'PSA005'].every(valor => this.codigos.includes(valor));
-    const supervisor = ['PSA001', 'PSA001A' , 'PSA004' , 'PSA004A'].every(valor => this.codigos.includes(valor));
-    const asistencia = ['PSA001', 'PSA001A'].every(valor => this.codigos.includes(valor));
-    const chofer = ['PSA001', 'PSA001A' , 'ANAC002'].every(valor => this.codigos.includes(valor));
-    const brigadista = ['PSA001', 'PSA001A' , 'ANAC001'].every(valor => this.codigos.includes(valor));
   
   }
 

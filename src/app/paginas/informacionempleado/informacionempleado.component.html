@@ -1,6 +1,6 @@
 <app-header></app-header>
 <nav>
-  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <div class="nav nav-tabs" id="nav-tab" role="tablist" style="border-bottom: none;">
     <button
       class="nav-link active gris1"
       id="nav-perfil-tab"
@@ -67,7 +67,7 @@
     </button>
   </div>
 </nav>
-<div class="contenedorInfor col-lg-12" style="display: flex;">
+<div class="contenedorInfor" style="display: flex;margin:12px 0 0 12px;width: 98%;">
 
   <div class="foto col-lg-3 d-flex flex-column align-items-center p-4 perfilComponente">
     <app-perfil *ngIf="empleado" [empleado]="empleado" [imagenURL]="imagenURL"></app-perfil>
@@ -328,72 +328,49 @@
       tabindex="4"
     >
   
-    <div class="container" style="color:white;padding-bottom:120px">
+    <div class="container" style="padding-bottom:120px">
       <div class="row d-flex align-items-center m-3" style="justify-content: center;">
   
         <div class="perfil col-lg-9 gy-5" style="display: contents; width: 100%;">
-            <div class="data-content">
-              <div class="botonCred activo">Activo</div>
-              <div>RAYO - X</div>
-            </div>
-            <div class="data-content">
-              <div class="botonCred inactivo">Activo</div>
-              <div>RAYO - X</div>
-            </div>
-            
-            <div class="data-content">
-              <div class="botonCred activo">Activo</div>
-              <div>RAYO - X</div>
-            </div>
-            <div class="data-content">
-              <div class="botonCred inactivo">Activo</div>
-              <div>RAYO - X</div>
-            </div>
-            <div class="data-content">
-              <div class="botonCred inactivoAmarillo">Activo</div>
-              <div>RAYO - X</div>
-            </div>
-            <div class="data-content">
-              <div class="botonCred inactivo">Activo</div>
-              <div>RAYO - X</div>
-            </div>
-            
-            <div class="data-content">
-              <div class="borde-button">21/06/2017</div>
-              <div>Vto. PPP</div>
-            </div>
-            
-            <div class="data-content">
-              <div class="borde-button">21/06/2017</div>
-              <div>Curso PSA A001</div>
-            </div>
-            <div class="data-content">
-              <div class="borde-button">
-                21/06/2017
-              </div>
-              <div>Curso PSA A002
+          <div class="habilitaciones contenedorCredenciales">
+            <div class="row tituloSeccion">HABILITACIONES</div>
+            <div class="contenedorInforCred">
+              <div *ngFor="let item of credenciales.habilitaciones" class="data-content">
+                <div [class.botonCred]="true" [class]="item.estado" >{{item.estado}}</div>
+                <div class="fw-bold">{{item.nombre}}</div>
               </div>
             </div>
-            <div class="data-content">
-              <div class="borde-button">
-                21/06/2017
+           
+
+          </div>
+          <div class="agente contenedorCredenciales">
+            <div class="row tituloSeccion">AGENTE AEROPORTUARIO</div>
+            <div class="contenedorInforCred">
+              <div *ngFor="let item of credenciales.agente" class="data-content">
+                <div class="borde-button">{{item.fecha}}</div>
+                <div>{{item.codigo}}</div>
+                <div>{{item.nombre}}</div>
               </div>
-              <div class="text-nowrap">Curso PSA004</div>
             </div>
-            <div class="data-content">
-              <div class="borde-button">21/06/2017</div>
-              <div>Vto AMAM</div>
+          </div>
+
+          <div class="vigilador contenedorCredenciales">
+            <div class="row tituloSeccion">VIGILADOR</div>
+            <div class="row justify-content-center">
+              <div class="data-content">
+                <div *ngIf="credenciales.numeroCredencial != '#N/A'" class="borde-button credBoton credVerde">{{credenciales.numeroCredencial}}</div>
+                <div *ngIf="credenciales.numeroCredencial == '#N/A'" class="borde-button  credBoton credRojo">{{credenciales.numeroCredencial}}</div>
+                <div class="fw-bold">CREDENCIAL NRO</div>
+              </div>
             </div>
-            <div class="data-content">
-              <div class="borde-button">21/06/2017</div>
-              <div>Carga/Correo</div>
-            </div>
-            <div class="data-content">
-              <div class="borde-button">21/06/2017</div>
-              <div>Carga/Correo</div>
+            <div class="contenedorInforCred">
+              <div *ngFor="let item of credenciales.vigilador" class="data-content">
+                <div class="borde-button">{{item.valor}}</div>
+                <div>{{item.nombre}}</div>
+              </div>
             </div>
             
-  
+          </div>
           
         </div>
       </div>
