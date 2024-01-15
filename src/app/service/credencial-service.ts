@@ -8,19 +8,20 @@ import { Observable } from 'rxjs';
 })
 export class CredencialService {
     URL = `${this.environment.URL_API}/Credencial/`;
+    httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      }),
+      withCredentials: true
+    };
     constructor(private httpClient: HttpClient, private mensajero: ToastrService , @Inject('ENVIRONMENT') private environment: any) {
     }
 
     public getCantidades() : Observable<any> {
-       
-      
-        const httpOptions = {
-          headers: new HttpHeaders({
-            'Content-Type': 'application/json'
-          }),
-          withCredentials: true
-        };
-      
-        return this.httpClient.get(this.URL + "cantidad", httpOptions);
-      }
+        return this.httpClient.get(this.URL + "cantidad", this.httpOptions);
+    }
+
+    public getCredecialesDTO(id:string) : Observable<any>{
+      return this.httpClient.get(this.URL + `credencialesDTO/${id}` , {withCredentials:true});
+    }
 }   

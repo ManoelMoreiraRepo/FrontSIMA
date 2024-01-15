@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { menuAdmin } from 'src/app/constantes';
 import { AuthService } from 'src/app/service/auth-service';
 
@@ -11,11 +12,15 @@ export class AdminmainComponent {
   lista = menuAdmin;
   urlSeparador = "./assets/img/gruposima.png";
   
-  constructor(private seguridad:AuthService) {
+  constructor(private seguridad:AuthService , private router: Router) {
   }
   
   ngOnInit(): void {
     console.log("INIT")
     
+  }
+
+  navigateToDestination(destination: string) {
+    this.router.navigate([destination]);
   }
 }

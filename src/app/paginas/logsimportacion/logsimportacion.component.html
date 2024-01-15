@@ -15,7 +15,7 @@
 
                 <td>{{item.inicio | date:"MMM dd, yyyy ':' hh:mm a" }}</td>
                 <td>{{item.usuario?.nombreUsuario || ''}}</td>
-                <td><a href="{{item.url}}">{{item.archivo}}</a></td>
+                <td><a  href="{{item.url}}" >{{item.archivo}}</a></td>
                 <td><button type="button" class="btn btn-secondary" (click)="abrirObservaciones(item.id)">Observaciones</button></td>
             </tr>
     

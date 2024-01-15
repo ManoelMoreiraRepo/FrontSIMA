@@ -99,6 +99,10 @@ export class AuthService {
         return this.role;
     }
 
+    isModerador(){
+      return this.getRole() === 'ROLE_MODERATOR';
+    }
+
     // getRoleActual = async () => {
     //     if (this.getRole() == '') {
     //         return await this.procesarUsuario();

@@ -5,7 +5,7 @@
                 <h6>{{item.titulo}}</h6>
                 <span>{{item.descrip}}</span>
                 <div class="boxCont">
-                   <a *ngIf="item.url else sinLink" href="{{item.url}}"><span>{{item.cant}}</span></a>
+                   <a *ngIf="item.url != undefined else sinLink" style="color:blue;cursor:pointer;" (click)="navigateToEmpleados(item)"><span>{{item.cant}}</span></a>
                    <ng-template #sinLink><span>{{item.cant}}</span></ng-template>
                 </div>
             </div>

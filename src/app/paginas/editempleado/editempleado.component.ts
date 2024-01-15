@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+import { IMAGEN_DEFAULT } from 'src/app/constantes';
 import { PersonaEmpleado } from 'src/app/model/PersonaEmpleado.model';
 import { PersonaServiceTsServiceService } from 'src/app/service/persona-service-ts-service.service';
 
@@ -16,10 +18,13 @@ export class EditempleadoComponent {
   objetivo =['EZEIZA','AEROPARQUE','CORDOBA'];
   cargo= ['Vigilador','Vig./Op. Rx., RRHH','Vig./Aux de Turno','SUPERVISOR','PAÑOL',
    'Vig./Brigadista'];
+  imagenURL = '';
+  imagenSeleccionada : any;
   constructor(
     private router:Router,
     private activatedRouter: ActivatedRoute, 
-    private empleadoS: PersonaServiceTsServiceService
+    private empleadoS: PersonaServiceTsServiceService,
+    private mensajero : ToastrService
   ) { }
 
   ngOnInit(): void {
@@ -28,6 +33,7 @@ export class EditempleadoComponent {
     this.empleadoS.detail(id).subscribe(
       data => {
         this.empleado = data;
+        this.imagenURL = this.empleadoS.getUrlImagen(`${this.empleado.dniempleado}.jpg`);
       }
     )
   }
@@ -52,5 +58,39 @@ export class EditempleadoComponent {
     this.router.navigate(['/login'])
   }
 
+
+  cargarImagenPorDefecto() {
+    this.imagenURL = this.empleadoS.getUrlImagen(IMAGEN_DEFAULT);
+  }
+
+  onFileChange(event: any) {
+    this.imagenSeleccionada = event.target.files[0];
+    console.log(this.imagenSeleccionada);
+    if(this.imagenSeleccionada != undefined){
+      if(this.imagenSeleccionada.type !== "image/jpeg"){
+        this.mensajero.error("Solo estan permitdas imagenes en formato jpg.");
+        setTimeout(() => {
+          location.reload();
+        }, 2000);
+      }else{
+        this.subirArchivo();
+      }
+    }
+   // this.subirArchivoNomina();
+  }
+
+
+  subirArchivo(){
+    const formData = new FormData();
+    if(!this.imagenSeleccionada){
+      return;
+    }
+
+    formData.append('file', this.imagenSeleccionada);
+    this.empleadoS.subirImagen(this.empleado.dniempleado+'.jpg',formData);
+    setTimeout(() => {
+     location.reload();
+    }, 2000);
+  }
 
 }

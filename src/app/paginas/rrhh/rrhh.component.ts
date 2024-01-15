@@ -15,6 +15,25 @@ export class RrhhComponent {
   cantidadPorGerencia$: Observable<any>;
   cantidadPorSindicato: Observable<any>;
   cantidadPorEmpresa: Observable<any>;
+
+  subtitulos = [
+    {
+      titulo:"CANTIDADES",
+      url:"/rrhh/totales"
+    },
+    {
+      titulo:"NOMINA ACTIVA",
+      url:"/rrhh/empleado"
+    },
+    {
+      titulo:"ORGANIGRAMA",
+      url:"/rrhh/totales"
+    },
+    {
+      titulo:"BOLSA DE TRABAJO",
+      url:"/rrhh/bolsa"
+    },
+  ]
   constructor(private  importacionService :ImpotacionService , private empleadoService : PersonaServiceTsServiceService){
     this.cantidadPorGerencia$ = new Observable<any>();
     this.cantidadPorSindicato = new Observable<any>();

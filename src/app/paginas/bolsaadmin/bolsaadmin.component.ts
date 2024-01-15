@@ -3,13 +3,14 @@ import { AuthService } from 'src/app/service/auth-service';
 import { OfertaService } from 'src/app/service/oferta-service';
 import { getLogoByGerencia } from 'src/app/utils';
 import { ImpotacionService } from 'src/app/service/importacion-service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-bolsaadmin',
   templateUrl: './bolsaadmin.component.html',
   styleUrls: ['./bolsaadmin.component.css']
 })
 export class BolsaadminComponent {
-  constructor(private authService : AuthService , private ofertaService : OfertaService , private importacionService : ImpotacionService ){}
+  constructor(private authService : AuthService , private ofertaService : OfertaService , private importacionService : ImpotacionService , private router: Router){}
 
   esAdmin = this.authService.getRole()!='ROLE_USER';
   urlImagen : string = "./assets/img/Ellipse 99.png";
@@ -22,11 +23,33 @@ export class BolsaadminComponent {
   orden:string = 'ASC';
   paginaActual = 0;
 
+  subtitulos = [
+    {
+      titulo:"CANTIDADES",
+      url:"/rrhh/totales"
+    },
+    {
+      titulo:"NOMINA ACTIVA",
+      url:"/rrhh/empleado"
+    },
+    {
+      titulo:"ORGANIGRAMA",
+      url:"/rrhh/totales"
+    },
+    {
+      titulo:"BOLSA DE TRABAJO",
+      url:"/rrhh/bolsa"
+    },
+  ]
 
   ngOnInit() :void{
     this.ofertaService.listar().subscribe((resp)=>{
       this.lista = resp.content;
     })
+  }
+
+  navigateToDestination(destination: string) {
+    this.router.navigate([destination]);
   }
 
   onBuscar(pagina = 0) {

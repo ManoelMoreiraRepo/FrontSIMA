@@ -61,7 +61,7 @@
 }
 
 .foto {
-  border-radius: 12px;
+  /* border-radius: 12px; */
 }
 
 .estadoEnpleado{
@@ -159,21 +159,55 @@ table th[colspan="2"]:active {
   margin: 4px 0;
 }
 
-.activo{
-  background-color: green;
+.Activo{
+  background-color: #09CE35;
 }
-.inactivo{
+.Suspendido{
   background-color: red;
 }
-.inactivoAmarillo{
-  color: black;
-  background-color: yellow;
+.Inactivo{
+  background-color: #B9B9B9;
+}
+
+.contenedorCredenciales{
+  background-color: white;
+  width: 95%;
+  margin: 12px auto;
+}
+.tituloSeccion{
+  margin: 4px 8px;
+  font-weight: 800;
 }
 
 .perfilComponente{
-  border-radius: 12px;
-  margin:12px 12px  0 12px;
+  /* border-radius: 12px; */
+  margin: 0 12px  0 0;
   background-color: #D9D9D9;
+}
+
+
+.contenedorInforCred{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 8px;
+}
+
+.credBoton {
+  padding: 4px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.credVerde{
+  background-color: #72D250;
+  
+}
+.credRojo{
+  background-color: #FA3B12;
+  color:white;
 }
 
 @media(max-width : 796px){
