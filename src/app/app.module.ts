@@ -34,7 +34,7 @@ import { CalendarioComponent } from './components/calendario/calendario.componen
 import { InfraccionesComponent } from './paginas/infracciones/infracciones.component';
 import { ParqueComponent } from './paginas/parque/parque.component';
 import { BarChartComponent } from './components/barras/barChartComponent.component';
-import { CommonModule } from '@angular/common';
+import { CommonModule, HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { SuministrosComponent } from './paginas/suministros/suministros.component';
 import { PerifericosComponent } from './paginas/perifericos/perifericos.component';
 import { EquipamientosComponent } from './paginas/equipamientos/equipamientos.component';
@@ -87,7 +87,8 @@ import { LogsimportacionComponent } from './paginas/logsimportacion/logsimportac
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
-    { provide: 'ENVIRONMENT', useValue: environment }
+    { provide: 'ENVIRONMENT', useValue: environment },
+    { provide: LocationStrategy , useClass : HashLocationStrategy } //Soluciona error de rutas en prod.
   ],
   bootstrap: [AppComponent]
 })

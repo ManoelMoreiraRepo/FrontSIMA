@@ -22,7 +22,7 @@ export class AuthService {
         const credentials = { username, password };
         try {
           const response = await this.http
-            .post(this.URL + `signin`, credentials, { observe: 'response', withCredentials: true })
+            .post(this.URL + `signin`, credentials, { observe: 'response', withCredentials: false })
             .toPromise();
       
       
@@ -79,7 +79,7 @@ export class AuthService {
         this.username = null;
         this.role = null;
         localStorage.removeItem('userRole');
-        this.http.post(this.URL + `signout`,{},  { observe: 'response', withCredentials: true, })
+        this.http.post(this.URL + `signout`,{},  { observe: 'response', withCredentials: false, })
             .pipe(
                 catchError((error) => {
                     return throwError(error);
