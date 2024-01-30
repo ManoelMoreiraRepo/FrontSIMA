@@ -32,13 +32,7 @@ export class InformacionempleadoComponent {
     ' ',
     ' '
   );
-  indumentaria: Indumentaria = new Indumentaria(
-    ' ',
-    ' ',
-    ' ',
-    new Date(),
-    new Date()
-  );
+
   fechahabiles: string = ' ';
 
   title(title: any) {
@@ -167,45 +161,7 @@ export class InformacionempleadoComponent {
     ]
   }
 
-  // cursos = [
-  //   {
-  //     fecha:'21/06/18',
-  //     codigo:'PSA001',
-  //     titulo:'VIGILADOR INICIAL',
-  //     duracion:""
-  //   },
-  //   {
-  //     fecha:'21/06/18',
-  //     codigo:'PSA001A',
-  //     titulo:'IGILADOR RENOVACION',
-  //     duracion:"Anual"
-  //   },
-  // ]
-
-  // credenciales = {
-  //   habilitaciones : [
-  //     {
-  //       nombre:"AGENTE VIGILADOR",
-  //       estado:"Activo" , //Inactivo //Suspendido
-  //     }
-  //   ],
-  //   agente:[
-  //     {
-  //       fecha:"xx/xx/xxxx",
-  //       codigo:"PSA001",
-  //       nombre:"VIGILADOR"
-  //     }
-  //   ],
-  //   vigilador:[
-  //     {
-  //       nombre:"CREDENCIAL FISICA",
-  //       valor:"SI"
-  //     }
-  //   ],
-  //   numeroCredencial : 1234
-  // }
-
-  // codigos = this.cursos.map(curso => curso.codigo);
+  indumentariaArray:any = [];
 
   constructor(
     private router: Router,
@@ -220,6 +176,7 @@ export class InformacionempleadoComponent {
     this.idEmpleado=id;
     this.empleadoS.detail(id).subscribe((data) => {
       this.empleado = data;
+      this.indumentariaArray = data.indumentaria;
       this.imagenURL = this.empleadoS.getUrlImagen(`${this.empleado.dniempleado}.jpg`);
        console.log(this.empleado);
     });

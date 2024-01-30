@@ -1,22 +1,27 @@
 export class Indumentaria{
      
-    idIdumentaria?: number;
+    id: number;
     
-    tipoIndumentaria:string;
+    familia:string;
     nombreIndumentaria:string;
-    talleIndumentaria:string;
+    talle:string;
     fechaUltimaEntregaIndumentaria:Date;
     fechaProximaEntregaIndumentaria:Date;
+    codigo:string;
+    modeloIndumentaria:string;
 
-    constructor(
-        tipoIndumentaria:string, nombreIndumentaria:string, talleIndumentaria:string,
-        fechaUltimaEntregaIndumentaria:Date,fechaProximaEntregaIndumentaria:Date )
-        {
-          this.tipoIndumentaria=tipoIndumentaria;
+    constructor(id:number,
+        familia:string, nombreIndumentaria:string, talle:string,
+        fechaUltimaEntregaIndumentaria:Date,fechaProximaEntregaIndumentaria:Date, codigo:string , modeloIndumentaria:string)
+        { 
+          this.id = id;
+          this.familia=familia;
           this.nombreIndumentaria=nombreIndumentaria;
-          this.talleIndumentaria= talleIndumentaria;
-          this. fechaUltimaEntregaIndumentaria= fechaUltimaEntregaIndumentaria;
+          this.talle= talle;
+          this.fechaUltimaEntregaIndumentaria= fechaUltimaEntregaIndumentaria;
           this.fechaProximaEntregaIndumentaria=fechaProximaEntregaIndumentaria; 
+          this.codigo = codigo;
+          this.modeloIndumentaria = modeloIndumentaria;
          }
 
 

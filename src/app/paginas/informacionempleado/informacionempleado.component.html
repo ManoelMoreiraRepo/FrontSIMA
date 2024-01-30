@@ -156,7 +156,7 @@
       tabindex="1"
     >
       <div class="fondo d-flex justify-content-center col-md-12">
-          <app-calendario [idEmpleado]="idEmpleado"></app-calendario>
+          <app-calendario *ngIf="idEmpleado" [idEmpleado]="idEmpleado"></app-calendario>
       </div>
     </div>
   
@@ -169,6 +169,36 @@
       tabindex="2"
     >
       <div class="contenedorInfo">
+
+        <div class="fondo d-flex justify-content-center">
+          <table class="table tablaIndumentaria m-3 p-3">
+            <thead class="table-light">
+              <tr>
+                <th>CODIGO PRODUCTO</th>
+                <th>PRODUCTO</th>
+                <th>MODELO</th>
+                <th>TALLE</th>
+                <th>FECHA ULTIMA</th>
+                <th>FECHA PROXIMA</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of empleado.indumentaria" >
+                <td>{{item.codigo}}</td>
+                <td>{{item.nombreIndumentaria}}</td>
+                <td>{{item.modeloIndumentaria}}</td>
+                <td>{{item.talle}}</td>
+                <td>{{item.fechaUltimaEntregaIndumentaria | date : "MM/YY"}}</td>
+                <td>{{item.fechaProximaEntregaIndumentaria | date: "MM/YY"}}</td>
+              </tr>
+              <tr *ngIf="empleado.indumentaria.length == 0" ><td colspan="6">El empleado no tiene indumentaria informada.</td></tr>
+            </tbody>
+          </table>
+
+        </div>
+
+
+        <!-- 
       <div class="fondo d-flex justify-content-center">
   
         <div class="contenedorUniformes col-md-8">
@@ -271,7 +301,7 @@
           </div>
         </div>
       </div>
-  
+      -->
       <div
         class="modal fade"
         id="uniforme2"
