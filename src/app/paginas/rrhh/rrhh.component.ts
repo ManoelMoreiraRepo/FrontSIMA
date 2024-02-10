@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { ImpotacionService } from 'src/app/service/importacion-service';
 import { PersonaServiceTsServiceService } from 'src/app/service/persona-service-ts-service.service';
 import { Observable } from 'rxjs';
@@ -9,31 +9,13 @@ import { Observable } from 'rxjs';
   styleUrls: ['./rrhh.component.css']
 })
 export class RrhhComponent {
-  urlImagen : string = "./assets/img/Ellipse 99.png";
-  selectedFile: any;
-  selectOption: any;
+  // selectedFile: any;
+  // selectOption: any;
+  @Output() cambiarGerencia = new EventEmitter<string>();
   cantidadPorGerencia$: Observable<any>;
   cantidadPorSindicato: Observable<any>;
   cantidadPorEmpresa: Observable<any>;
 
-  subtitulos = [
-    {
-      titulo:"CANTIDADES",
-      url:"/rrhh/totales"
-    },
-    {
-      titulo:"NOMINA ACTIVA",
-      url:"/rrhh/empleado"
-    },
-    {
-      titulo:"ORGANIGRAMA",
-      url:"/rrhh/totales"
-    },
-    {
-      titulo:"BOLSA DE TRABAJO",
-      url:"/rrhh/bolsa"
-    },
-  ]
   constructor(private  importacionService :ImpotacionService , private empleadoService : PersonaServiceTsServiceService){
     this.cantidadPorGerencia$ = new Observable<any>();
     this.cantidadPorSindicato = new Observable<any>();
@@ -45,24 +27,27 @@ export class RrhhComponent {
     this.cantidadPorEmpresa = this.empleadoService.getCantidadPorEmpresa();
   }
   
+  enviarGerenciaAEmpleado(ger:string){
+    this.cambiarGerencia.emit(ger);
+  }
   
-  onFileChange(event: any) {
-    this.selectedFile = event.target.files[0];
+  // onFileChange(event: any) {
+  //   this.selectedFile = event.target.files[0];
     
-    this.subirArchivoNomina();
-  }
+  //   this.subirArchivoNomina();
+  // }
 
-  subirArchivoNomina(){
-    const formData = new FormData();
-    if(!this.selectedFile){
-      return;
-    }
+  // subirArchivoNomina(){
+  //   const formData = new FormData();
+  //   if(!this.selectedFile){
+  //     return;
+  //   }
 
-    formData.append('file', this.selectedFile);
-    this.importacionService.subir(formData);
-    setTimeout(() => {
-     location.reload();
-    }, 2000);
-  }
+  //   formData.append('file', this.selectedFile);
+  //   this.importacionService.subir(formData);
+  //   setTimeout(() => {
+  //    location.reload();
+  //   }, 2000);
+  // }
 
 }

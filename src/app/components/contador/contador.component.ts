@@ -1,4 +1,4 @@
-import { Component , Input } from '@angular/core';
+import { Component , EventEmitter, Input, Output } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,9 +8,10 @@ import { Router } from '@angular/router';
 })
 export class ContadorComponent {
   @Input() lista : any;
+  @Output() enviarGerencia = new EventEmitter<string>();
     
   ngAfterContentChecked(){
-    console.log(this.lista);
+    // console.log(this.lista);
   }
 
   constructor(private router: Router){
@@ -22,7 +23,8 @@ export class ContadorComponent {
   // }
 
   navigateToEmpleados(item: any) {
-    this.router.navigate([item.url], { queryParams: { gerencia: item.ger } });
+    this.enviarGerencia.emit(item.ger);
+   // this.router.navigate([item.url], { queryParams: { gerencia: item.ger } });
   }
 
   // lista = [

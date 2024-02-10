@@ -12,23 +12,13 @@ export class ParqueComponent {
 
   constructor(private dpaService : DpaService , private importacionService : ImpotacionService ){}
 
-  urlImagen : string = "./assets/img/dpa.png";
-  selectedFile:any;
+  // selectedFile:any;
   nombres : any = [];
   importes: any = [];
   cantidades: any = [];
   objeto : any;
   objeto2 : any;
-  subtitulos = [
-    {
-      titulo:"PARQUE AUTOMOTOR",
-      url:"/dpa/parque"
-    },
-    {
-      titulo:"INFRACCIONES / SINIESTROS",
-      url:"/dpa/infracciones"
-    }
-  ]
+ 
 
   ngOnInit(){
     this.dpaService.getEstadistica().subscribe((resp)=>{
@@ -102,23 +92,23 @@ export class ParqueComponent {
   
  
 
-  onFileChange(event: any) {
-    this.selectedFile = event.target.files[0]; 
-    this.subirArchivo();
-  }
+  // onFileChange(event: any) {
+  //   this.selectedFile = event.target.files[0]; 
+  //   this.subirArchivo();
+  // }
 
-  subirArchivo(){
-    const formData = new FormData();
-    if(!this.selectedFile){
-      return;
-    }
+  // subirArchivo(){
+  //   const formData = new FormData();
+  //   if(!this.selectedFile){
+  //     return;
+  //   }
 
-    formData.append('file', this.selectedFile);
-    this.importacionService.subir(formData);
-    setTimeout(() => {
-     location.reload();
-    }, 2000);
-  }
+  //   formData.append('file', this.selectedFile);
+  //   this.importacionService.subir(formData);
+  //   setTimeout(() => {
+  //    location.reload();
+  //   }, 2000);
+  // }
 
   getSumaTotal(obj :any){
     return  obj.data.datasets[0].data.reduce((suma:any,numero : any)=> suma+ numero, 0);

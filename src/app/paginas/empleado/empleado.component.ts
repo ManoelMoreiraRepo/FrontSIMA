@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PersonaEmpleado } from 'src/app/model/PersonaEmpleado.model';
 import { PersonaServiceTsServiceService } from 'src/app/service/persona-service-ts-service.service';
@@ -14,7 +14,7 @@ import { FiltroService } from 'src/app/service/filtro-service';
   styleUrls: ['./empleado.component.css']
 })
 export class EmpleadoComponent {
-
+  @Input() gerenciaRecibida : any;
   empleado: PersonaEmpleado[] = [];
   textoDeInput: string = "";
   objetivo:string = "";
@@ -31,8 +31,10 @@ export class EmpleadoComponent {
   constructor(private router:Router,private activatedRouter: ActivatedRoute, private empleadoS: PersonaServiceTsServiceService , private mensajero : ToastrService , private filtroService : FiltroService) { }
 
   async ngOnInit(): Promise<void>{
-    var params = new URLSearchParams(new URL(location.href.replaceAll('/#', "")).search);
-    this.gerencia =  params.get('gerencia');
+    // var params = new URLSearchParams(new URL(location.href.replaceAll('/#', "")).search);
+    // this.gerencia =  params.get('gerencia');
+
+    this.gerencia = this.gerenciaRecibida;
     await this.llenarFiltros();
   }
 
@@ -49,7 +51,7 @@ export class EmpleadoComponent {
     this.filtroService.getFiltroSelect("GERENCIA" , true).subscribe(data =>{
       this.filtroGerencia = data.filtro;
       setTimeout(() => {
-        if(this.gerencia != undefined){
+        if(this.gerencia != ''){
           this.getSelector('gerencia').value = this.gerencia;
         }else{
           this.getSelector('gerencia').value = data.defecto;

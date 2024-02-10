@@ -13,34 +13,14 @@ export class BolsaadminComponent {
   constructor(private authService : AuthService , private ofertaService : OfertaService , private importacionService : ImpotacionService , private router: Router){}
 
   esAdmin = this.authService.getRole()!='ROLE_USER';
-  urlImagen : string = "./assets/img/Ellipse 99.png";
   urlImagenPostu:string = "./assets/img/postu.png";
-
-  selectedFile:any;
+  // selectedFile:any;
+  lista : any = [ ]
   paginable:any;
   alldata:any
   ordenado:string ='codigo';
   orden:string = 'ASC';
   paginaActual = 0;
-
-  subtitulos = [
-    {
-      titulo:"CANTIDADES",
-      url:"/rrhh/totales"
-    },
-    {
-      titulo:"NOMINA ACTIVA",
-      url:"/rrhh/empleado"
-    },
-    {
-      titulo:"ORGANIGRAMA",
-      url:"/rrhh/totales"
-    },
-    {
-      titulo:"BOLSA DE TRABAJO",
-      url:"/rrhh/bolsa"
-    },
-  ]
 
   ngOnInit() :void{
     this.ofertaService.listar().subscribe((resp)=>{
@@ -76,81 +56,22 @@ export class BolsaadminComponent {
     return getLogoByGerencia(gerencia);
   }
 
-  lista : any = [ 
-    // {
-    //   img:"./assets/img/ecoklinTransparente.png",
-    //   codigo:"1244",
-    //   titulo: "Operario de Maestranza",
-    //   zona:"Mataderos",
-    //   id:"1245"
-    // },
-    // {
-    //   img:"./assets/img/ecoklinTransparente.png",
-    //   codigo:"1244",
-    //   descripcion: "Operario de Maestranza",
-    //   zona:"Mataderos",
-    //   id:"1245"
-    // },
-    // {
-    //   img:"./assets/img/ecoklinTransparente.png",
-    //   codigo:"1244",
-    //   descripcion: "Operario de Maestranza",
-    //   zona:"Mataderos",
-    //   id:"1245"
-    // },
-    // {
-    //   img:"./assets/img/ecoklinTransparente.png",
-    //   codigo:"1244",
-    //   descripcion: "Operario de Maestranza",
-    //   zona:"Mataderos",
-    //   id:"1245"
-    // },
-    // {
-    //   img:"./assets/img/ecoklinTransparente.png",
-    //   codigo:"1244",
-    //   descripcion: "Operario de Maestranza",
-    //   zona:"Mataderos",
-    //   id:"1245"
-    // },
-    // {
-    //   img:"./assets/img/ecoklinTransparente.png",
-    //   codigo:"1244",
-    //   descripcion: "Operario de Maestranza",
-    //   zona:"Mataderos",
-    //   id:"1245"
-    // },
-    // {
-    //   img:"./assets/img/ecoklinTransparente.png",
-    //   codigo:"1244",
-    //   descripcion: "Operario de Maestranza",
-    //   zona:"Mataderos",
-    //   id:"1245"
-    // },
-    // {
-    //   img:"./assets/img/ecoklinTransparente.png",
-    //   codigo:"1244",
-    //   descripcion: "Operario de Maestranza",
-    //   zona:"Mataderos",
-    //   id:"1245"
-    // },
-  ]
-
-  onFileChange(event: any) {
-    this.selectedFile = event.target.files[0];
+  // onFileChange(event: any) {
+  //   this.selectedFile = event.target.files[0];
     
-    this.subirArchivo();
-  }
+  //   this.subirArchivo();
+  // }
 
-  subirArchivo(){
-    const formData = new FormData();
-    if(!this.selectedFile){
-      return;
-    }
+  // subirArchivo(){
+  //   const formData = new FormData();
+  //   if(!this.selectedFile){
+  //     return;
+  //   }
 
-    formData.append('file', this.selectedFile);
-    this.importacionService.subir(formData);
-    setTimeout(() => {
-     location.reload();
-    }, 2000);
-  }
+  //   formData.append('file', this.selectedFile);
+  //   this.importacionService.subir(formData);
+  //   setTimeout(() => {
+  //    location.reload();
+  //   }, 2000);
+  // }
 }

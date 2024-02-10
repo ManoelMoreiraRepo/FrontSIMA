@@ -18,6 +18,10 @@ import { SuministrosComponent } from './paginas/suministros/suministros.componen
 import { PerifericosComponent } from './paginas/perifericos/perifericos.component';
 import { EquipamientosComponent } from './paginas/equipamientos/equipamientos.component';
 import { LogsimportacionComponent } from './paginas/logsimportacion/logsimportacion.component';
+import { IndumentariaComponent } from './paginas/indumentaria/indumentaria.component';
+import { DpaComponent } from './paginas/dpa/dpa.component';
+import { RrhhprincipalComponent } from './paginas/rrhhprincipal/rrhhprincipal.component';
+import { SuministrosPrincipalComponent } from './paginas/suministros-principal/suministros-principal.component';
 
 const vistaUser = { roles: ['ROLE_USER' , 'ROLE_MODERATOR']};
 const vistaAdmin = { roles: ['ROLE_ADMIN' , 'ROLE_MODERATOR'] };
@@ -27,24 +31,18 @@ const vistaMod = { roles: ['ROLE_MODERATOR'] };
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'login' },
   { path: 'login', component:LoginComponent},
- // { path: 'main', component:MainComponent}, //No se va usar.
- // { path: 'gps', component:GpsComponent}, //No se va a usar
-  { path: 'rrhh/empleado', component:EmpleadoComponent , canActivate: [RoleGuard], data: vistaAdmin}, 
+  { path: 'rrhh', component:RrhhprincipalComponent , canActivate: [RoleGuard], data: vistaAdmin}, 
   { path: 'nuevoempleado', component:NuevoempleadoComponent , canActivate: [RoleGuard], data: vistaAdmin},
   { path: 'editempleado/:id', component:EditempleadoComponent , canActivate: [RoleGuard], data: vistaAdmin},
   { path:'informacionempleado/:id', component:InformacionempleadoComponent , canActivate: [RoleGuard], data: vistaAdmin},
   { path: 'adminmain', component:AdminmainComponent , canActivate: [RoleGuard], data: vistaAdmin },
   { path: 'empleadomain', component:EmpleadomainComponent , canActivate: [RoleGuard], data: vistaUser},
-  { path: 'rrhh/totales', component:RrhhComponent , canActivate: [RoleGuard], data: vistaAdmin },
-  { path: 'rrhh/bolsa', component:BolsaadminComponent }, //Ambos 
   { path: 'credenciales', component:CredencialesComponent , canActivate: [RoleGuard], data: vistaAdmin },
   { path: 'oferta/:id', component:OfertaComponent }, //Ambos 
-  { path: 'dpa/parque', component:ParqueComponent , canActivate: [RoleGuard], data: vistaAdmin },
-  { path: 'dpa/infracciones', component:InfraccionesComponent , canActivate: [RoleGuard], data: vistaAdmin },
-  { path: 'suministros', component:SuministrosComponent , canActivate: [RoleGuard], data: vistaAdmin },
-  { path: 'perifericos', component:PerifericosComponent , canActivate: [RoleGuard], data: vistaAdmin },
-  { path: 'equipamientos', component:EquipamientosComponent , canActivate: [RoleGuard], data: vistaAdmin },
+  { path: 'dpa', component:DpaComponent , canActivate: [RoleGuard], data: vistaAdmin },
+  { path: 'suministros', component:SuministrosPrincipalComponent , canActivate: [RoleGuard], data: vistaAdmin },
   { path: 'logsimportacion', component:LogsimportacionComponent , canActivate: [RoleGuard], data: vistaMod },
+  // { path: 'indumentaria', component:IndumentariaComponent , canActivate: [RoleGuard], data: vistaAdmin },
 
 ];
 

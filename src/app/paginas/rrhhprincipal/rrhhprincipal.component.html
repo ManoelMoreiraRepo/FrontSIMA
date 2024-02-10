@@ -1,0 +1,9 @@
+<div>
+    <app-header></app-header>
+    <app-titulero [indice]="0"></app-titulero>
+    <app-titulero [indice]="indiceActivo"  [tititulosExternos] = "subtitulos" (cambioRuta) = "cambiarComponente($event)"></app-titulero>
+    <app-separador [urlImg]="urlImagen" ></app-separador>
+    <app-rrhh *ngIf="componenteActivo === subtitulos[0].url" (cambiarGerencia)="procesarGerencia($event)" ></app-rrhh>
+    <app-empleado *ngIf="componenteActivo === subtitulos[1].url" [gerenciaRecibida] = 'gerencia'></app-empleado>
+    <app-bolsaadmin *ngIf="componenteActivo === subtitulos[3].url"></app-bolsaadmin>
+</div>

@@ -41,6 +41,10 @@ import { EquipamientosComponent } from './paginas/equipamientos/equipamientos.co
 import { PerfilComponent } from './components/perfil/perfil.component';
 import { environment } from 'src/environments/environment';
 import { LogsimportacionComponent } from './paginas/logsimportacion/logsimportacion.component';
+import { IndumentariaComponent } from './paginas/indumentaria/indumentaria.component';
+import { DpaComponent } from './paginas/dpa/dpa.component';
+import { RrhhprincipalComponent } from './paginas/rrhhprincipal/rrhhprincipal.component';
+import { SuministrosPrincipalComponent } from './paginas/suministros-principal/suministros-principal.component';
 
 @NgModule({
   declarations: [
@@ -73,6 +77,10 @@ import { LogsimportacionComponent } from './paginas/logsimportacion/logsimportac
     EquipamientosComponent,
     PerfilComponent,
     LogsimportacionComponent,
+    IndumentariaComponent,
+    DpaComponent,
+    RrhhprincipalComponent,
+    SuministrosPrincipalComponent,
     
   ],
   imports: [

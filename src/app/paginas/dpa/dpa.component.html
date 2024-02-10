@@ -1,0 +1,8 @@
+<div>
+    <app-header></app-header>
+    <app-titulero [indice]="2"></app-titulero>
+    <app-titulero [indice]="indiceActivo"  [tititulosExternos] = "subtitulos" (cambioRuta) = "cambiarComponente($event)"></app-titulero>
+    <app-separador [urlImg]="urlImagen" ></app-separador>
+    <app-parque *ngIf="componenteActivo === subtitulos[0].url"></app-parque>
+    <app-infracciones *ngIf="componenteActivo === subtitulos[1].url"></app-infracciones>
+</div>

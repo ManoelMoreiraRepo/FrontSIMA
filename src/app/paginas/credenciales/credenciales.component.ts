@@ -10,7 +10,7 @@ import { ImpotacionService } from 'src/app/service/importacion-service';
 export class CredencialesComponent {
   urlImagen : string ='./assets/img/admin/cred.png';
   obs1: Observable<any>;
-  selectedFile: any;
+  // selectedFile: any;
   anchoPantalla = window.innerWidth;
   anchoMovil = 769;
   constructor(private credencialService : CredencialService , private importacionService : ImpotacionService) {
@@ -27,20 +27,20 @@ export class CredencialesComponent {
     return sumWithInitial;
   }
 
-  onFileChange(event: any) {
-    this.selectedFile = event.target.files[0];
+  // onFileChange(event: any) {
+  //   this.selectedFile = event.target.files[0];
     
-    this.subirArchivoNomina();
-  }
+  //   this.subirArchivoNomina();
+  // }
 
-  subirArchivoNomina(){
-    const formData = new FormData();
-    if(!this.selectedFile){
-      return;
-    }
+  // subirArchivoNomina(){
+  //   const formData = new FormData();
+  //   if(!this.selectedFile){
+  //     return;
+  //   }
 
-    formData.append('file', this.selectedFile);
-    this.importacionService.subir(formData);
-  }
+  //   formData.append('file', this.selectedFile);
+  //   this.importacionService.subir(formData);
+  // }
 
 }

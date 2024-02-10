@@ -10,23 +10,27 @@ import { ImpotacionService } from 'src/app/service/importacion-service';
   styleUrls: ['./suministros.component.css']
 })
 export class SuministrosComponent {
-  urlImagen : string = "./assets/img/suministros.png";
+  // urlImagen : string = "./assets/img/suministros.png";
   objeto:any = {};
   selectedFile:any;
-  subtitulos = [
-    {
-      titulo:"SUMINISTROS",
-      url:"/suministros"
-    },
-    {
-      titulo:"PERIFERICOS",
-      url:"/perifericos"
-    },
-    {
-      titulo:"EQUIPAMIENTOS",
-      url:"/equipamientos"
-    }
-  ]
+  // subtitulos = [
+  //   {
+  //     titulo:"SUMINISTROS",
+  //     url:"/suministros"
+  //   },
+  //   {
+  //     titulo:"PERIFERICOS",
+  //     url:"/perifericos"
+  //   },
+  //   {
+  //     titulo:"EQUIPAMIENTOS",
+  //     url:"/equipamientos"
+  //   },
+  //   {
+  //     titulo:"INDUMENTARIA",
+  //     url:"/indumentaria"
+  //   }
+  // ]
   totales :any = [
     {
       titulo:"GRUPO SIMA",
@@ -61,14 +65,7 @@ export class SuministrosComponent {
   ];
 
   constructor(private dpaService : DpaService , private importacionService : ImpotacionService , private filtroService : FiltroService){}
-  // [
-  //   "GRUPO SIMA",
-  //   "AEROPUERTOS",
-  //   "GLOBAL",
-  //   "EDENOR",
-  //   "LA BIZANTINA",
-  //   "ECOKLIN"
-  // ]
+
   ngOnInit(){
     this.objeto = {
       type: 'bar',
@@ -143,8 +140,6 @@ export class SuministrosComponent {
         }
       },
     }
-
-    this.filtroService.inicializarAutocompletable('#objetivo' , 'objetivoSelect2');
   }
   
   onFileChange(event: any) {

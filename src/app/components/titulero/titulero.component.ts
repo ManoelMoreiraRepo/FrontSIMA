@@ -1,4 +1,4 @@
-import { Component  , Input } from '@angular/core';
+import { Component  , EventEmitter, Input, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { titulos } from 'src/app/constantes';
 import { AuthService } from 'src/app/service/auth-service';
@@ -11,6 +11,7 @@ export class TituleroComponent {
   titulos = titulos;
   @Input() indice : any;
   @Input() tititulosExternos : any;
+  @Output() cambioRuta = new EventEmitter<string>();
 
   constructor(private router: Router , private authService : AuthService){}
 
@@ -27,7 +28,12 @@ export class TituleroComponent {
   }
 
   navigateToDestination(destination: string) {
-    this.router.navigate([destination]);
+    if(this.tititulosExternos != undefined){
+      this.cambioRuta.emit(destination);
+    }else{
+      this.router.navigate([destination]);
+    }
+    
   }
 
 }

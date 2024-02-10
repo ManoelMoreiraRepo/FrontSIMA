@@ -6,11 +6,11 @@ export const IMAGEN_DEFAULT =  "default.png"
 export const menuAdmin = [
     {
         img:"./assets/img/admin/rrhh.png",
-        link:"/rrhh/totales"
+        link:"/rrhh"
     },
     {
         img:"./assets/img/admin/dpa.png",
-        link:"/dpa/parque"
+        link:"/dpa"
     },
     {
         img:"./assets/img/admin/cred.png",
@@ -121,7 +121,7 @@ export const arrayMenuEmpleado = [
 export const titulos = [
   {
     titulo:"RRHH",
-    url:"/rrhh/totales"
+    url:"/rrhh"
   },
   {
     titulo:"CREDENCIALES",
@@ -129,7 +129,7 @@ export const titulos = [
   },
   {
     titulo:"DPA",
-    url:"/dpa/parque"
+    url:"/dpa"
   },
   {
     titulo:"SUMINISTROS",
