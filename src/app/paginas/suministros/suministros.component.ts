@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { DpaService } from 'src/app/service/dpa-service';
+import { FiltroService } from 'src/app/service/filtro-service';
 import { ImpotacionService } from 'src/app/service/importacion-service';
+
 
 @Component({
   selector: 'app-suministros',
@@ -58,7 +60,7 @@ export class SuministrosComponent {
     },
   ];
 
-  constructor(private dpaService : DpaService , private importacionService : ImpotacionService ){}
+  constructor(private dpaService : DpaService , private importacionService : ImpotacionService , private filtroService : FiltroService){}
   // [
   //   "GRUPO SIMA",
   //   "AEROPUERTOS",
@@ -141,6 +143,8 @@ export class SuministrosComponent {
         }
       },
     }
+
+    this.filtroService.inicializarAutocompletable('#objetivo' , 'objetivoSelect2');
   }
   
   onFileChange(event: any) {
@@ -160,5 +164,7 @@ export class SuministrosComponent {
      location.reload();
     }, 2000);
   }
+
+  
 
 }

@@ -31,13 +31,7 @@
                         <div class="col-lg-3">
                             <label for="gerencia" class="form-label">Gerencia</label>
                             <select id="gerencia" class="form-control" [(ngModel)]="gerencia" >
-                                <option value="">Seleccione..</option>
-                                <option value="GER01">Grupo sima</option>
-                                <option value="GER02">Aeropuertos</option>
-                                <option value="GER03">Global</option>
-                                <option value="GER04">Edenor</option>
-                                <option value="GER05">La bizantina</option>
-                                <option value="GER06">Ecoklin</option>
+                                <option *ngFor="let item of filtroGerencia" value="{{item.value}}">{{item.vista}}</option>
                             </select>
                         </div>
                         

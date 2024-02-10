@@ -6,6 +6,7 @@ import { ApiResponse } from 'src/app/model/ApiResponse';
 import { ToastrService } from 'ngx-toastr';
 import { IMAGEN_DEFAULT } from 'src/app/constantes';
 import { esMovil } from 'src/app/utils';
+import { FiltroService } from 'src/app/service/filtro-service';
 
 @Component({
   selector: 'app-empleado',
@@ -24,25 +25,42 @@ export class EmpleadoComponent {
   paginaActual = 1;
   imagenDefault = IMAGEN_DEFAULT;
   esMovil : boolean = esMovil();
-  constructor(private router:Router,private activatedRouter: ActivatedRoute, private empleadoS: PersonaServiceTsServiceService , private mensajero : ToastrService) { }
 
-  ngOnInit(): void {
-    var params = new URLSearchParams(window.location.search);
-    let gerenciaRecibida =  params.get('gerencia');
-    console.log(gerenciaRecibida);
-    if(gerenciaRecibida != undefined){
-      (<HTMLInputElement>document.getElementById("gerencia")).value = gerenciaRecibida;
-      this.gerencia = gerenciaRecibida;
-    }else{
-      (<HTMLInputElement>document.getElementById("gerencia")).value = '';
-    }
+  filtroGerencia : any;
 
+  constructor(private router:Router,private activatedRouter: ActivatedRoute, private empleadoS: PersonaServiceTsServiceService , private mensajero : ToastrService , private filtroService : FiltroService) { }
+
+  async ngOnInit(): Promise<void>{
+    var params = new URLSearchParams(new URL(location.href.replaceAll('/#', "")).search);
+    this.gerencia =  params.get('gerencia');
+    await this.llenarFiltros();
+  }
+
+  procesarDatos() {
     let filtro =  this.getFiltro();
     this.empleadoS.buscarFiltro(filtro).subscribe(apiResponse => {
       this.empleado = apiResponse.content.data
       this.alldata = apiResponse.pageable;
       this.armarUrlsFotos(this.empleado);
     });
+  }
+
+  async llenarFiltros() {
+    this.filtroService.getFiltroSelect("GERENCIA" , true).subscribe(data =>{
+      this.filtroGerencia = data.filtro;
+      setTimeout(() => {
+        if(this.gerencia != undefined){
+          this.getSelector('gerencia').value = this.gerencia;
+        }else{
+          this.getSelector('gerencia').value = data.defecto;
+        }
+        this.procesarDatos();
+      }, 500);
+      
+    })
+  }
+  getSelector(id:string) {
+    return (<HTMLInputElement>document.getElementById(id));
   }
 
   setImagenReal(obj:PersonaEmpleado){
