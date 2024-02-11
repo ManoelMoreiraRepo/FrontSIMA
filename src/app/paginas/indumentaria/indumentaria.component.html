@@ -48,14 +48,13 @@
                             <td>{{ item.gerencia }}</td>
                             <td *ngFor="let item of getSumatoriaMensual(item);">
                                 {{item}}
-                            </td>
+                            </td> 
                           </tr>
-                        <tr *ngFor="let row of item.rows" class="">
-                          <td>{{ row.anio }}</td>
-                          <td *ngFor="let item of row.datos;">
+                        <tr *ngFor="let row of item.datos" class="">
+                          <td *ngFor="let item of getRowImprimible(row);">
                             {{item}}
                           </td>
-                          
+                          <!-- <td>{{getSumaFila(row.datos)}}</td> -->
                         </tr>
                       </ng-container>
                 </tbody>

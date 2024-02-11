@@ -9,6 +9,9 @@ import { Indumentaria } from '../model/Indumentaria.model';
 export class ServiceindumentariaServiceService {
 
   URL = `${this.environment.URL_API}/Indumentaria/`;
+  options = {
+    withCredentials: true
+  };
   constructor(private httpClient: HttpClient , @Inject('ENVIRONMENT') private environment: any) { }
 
   public traer(): Observable<Indumentaria[]> {
@@ -23,4 +26,14 @@ export class ServiceindumentariaServiceService {
      console.log('onupdate', persona);
      return this.httpClient.put(this.URL + `actualizar/${id}`, persona, { responseType: 'text' });
    }
+
+   public getIndumentariaFiltro(
+    obj:any = {
+      "anios":[],
+      "gerencias":[]
+      }
+   ): Observable<any> {
+
+    return this.httpClient.post<any>(this.URL + `vistaIntereactiva` , obj , this.options);
+  }
 }
