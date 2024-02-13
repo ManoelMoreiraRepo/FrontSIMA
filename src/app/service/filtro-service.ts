@@ -43,6 +43,7 @@ export class FiltroService{
           },
           multiple: multiple,
           quietMillis: 100,
+          theme: "bootstrap-5",
           maximumSelectionLength: 6,
           placeholder: "Ingrese el dato",
           ajax: {
@@ -76,5 +77,17 @@ export class FiltroService{
               }
           }
       })
+    }
+
+    public iniciarPickerAnios(id:string){
+      var selectYears = <HTMLInputElement>document.getElementById(id);
+      var currentYear = new Date().getFullYear();
+      for (var year = currentYear; year >= currentYear - 100; year--) {
+        var option = document.createElement("option");
+        option.text = String(year);
+        option.value = String(year);
+        selectYears.appendChild(option);
+      }
+      // $('select[multiple]').multiSelect();
     }
 }

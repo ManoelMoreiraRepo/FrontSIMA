@@ -17,9 +17,9 @@ export class EmpleadoComponent {
   @Input() gerenciaRecibida : any;
   empleado: PersonaEmpleado[] = [];
   textoDeInput: string = "";
-  objetivo:string = "";
+  objetivo: any = "";
   gerencia: any = "";
-  alldata:any
+  alldata: any
   ordenado:string ='legajoEmpleado';
   orden:string = 'ASC';
   paginaActual = 1;
