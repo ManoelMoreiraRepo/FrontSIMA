@@ -99,18 +99,18 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "simafinal:build:production"
+              "buildTarget": "simafinal:build:production"
             },
             "development": {
-              "browserTarget": "simafinal:build:development"
+              "buildTarget": "simafinal:build:development"
             }
             ,
             "devMatias": {
-              "browserTarget": "simafinal:build:devMatias"
+              "buildTarget": "simafinal:build:devMatias"
             }
             ,
             "devManoel": {
-              "browserTarget": "simafinal:build:devManoel"
+              "buildTarget": "simafinal:build:devManoel"
             }
           },
           "defaultConfiguration": "development"
@@ -118,7 +118,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "simafinal:build"
+            "buildTarget": "simafinal:build"
           }
         },
         "test": {

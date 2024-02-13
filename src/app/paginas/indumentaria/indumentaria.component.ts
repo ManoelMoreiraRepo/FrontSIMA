@@ -18,14 +18,68 @@ export class IndumentariaComponent {
             ]
     }
   ]
+  anios:any;
+  gerencias :any;
+  objetivo : any;
+  familia : any;
+  producto : any;
+  modelo : any;
+
+  filtro : any;
+
+  filtroGerencia:any;
+
   ngOnInit(){
     this.filtroService.iniciarPickerAnios("selectAnios");
-    this.filtroService.inicializarAutocompletable('#objetivo' , 'objetivoSelect2');
-    this.filtroService.inicializarAutocompletable('#familia' , 'objetivoSelect2');
-    this.filtroService.inicializarAutocompletable('#producto' , 'objetivoSelect2');
-    this.filtroService.inicializarAutocompletable('#modelo' , 'objetivoSelect2');
+    
+    this.filtroService.inicializarAutocompletable('objetivo' , 'OBJETIVO');
+    this.filtroService.inicializarAutocompletable('familia' , 'FAMILIA');
+    this.filtroService.inicializarAutocompletable('producto' , 'PRODUCTO');
+    this.filtroService.inicializarAutocompletable('modelo' , 'MODELO');
 
     this.indumentariaService.getIndumentariaFiltro().subscribe(resp =>{
+      this.data = resp;
+    });
+    this.filtroService.getFiltroSelect("GERENCIA" , false).subscribe(data =>{
+      this.filtroGerencia = data.filtro;
+    })
+  }
+
+  getFiltro(){
+    let selectAnios = document.getElementById('selectAnios') as HTMLSelectElement
+    var optionsAnios = selectAnios.selectedOptions;
+    var valuesAnios = Array.from(optionsAnios).map(({ value }) => value);
+
+    let selectGerencias = document.getElementById('gerencias') as HTMLSelectElement
+    var optionsGerencias = selectGerencias.selectedOptions;
+    var valuesGerencias = Array.from(optionsGerencias).map(({ value }) => value);
+
+    let objetivo = this.filtroService.getValueSelect2('#objetivo');
+    let familia = this.filtroService.getValueSelect2('#familia');
+    let producto = this.filtroService.getValueSelect2('#producto');
+    let modelo = this.filtroService.getValueSelect2('#modelo');
+
+    this.filtro = {
+      anios : valuesAnios,
+      gerencias : valuesGerencias,
+      objetivo : objetivo,
+      familia : familia,
+      producto : producto,
+      modelo : modelo
+    }
+    return this.filtro;
+  }
+  limpiarFiltros(){
+    this.filtroService.resetMultiselect('selectAnios');
+    this.filtroService.resetMultiselect('gerencias');
+    this.filtroService.resetSelect2('objetivo');
+    this.filtroService.resetSelect2('familia');
+    this.filtroService.resetSelect2('producto');
+    this.filtroService.resetSelect2('modelo');
+    this.onBuscar();
+  }
+  onBuscar(){
+    this.indumentariaService.getIndumentariaFiltro(this.getFiltro()).subscribe(resp =>{
       this.data = resp;
     });
   }
@@ -50,7 +104,6 @@ export class IndumentariaComponent {
          });
         arraySumas[i]=suma;
       }
-      console.log(arraySumas);
     }
     return arraySumas;
   }

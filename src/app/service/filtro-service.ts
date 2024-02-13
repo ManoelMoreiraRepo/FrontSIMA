@@ -9,6 +9,7 @@ declare var $: any;
 })
 
 export class FiltroService{
+    
     URL = `${this.environment.URL_API}/filtro/`;
     constructor(private http: HttpClient, private mensajero: ToastrService , @Inject('ENVIRONMENT') private environment: any) {
     }
@@ -24,8 +25,8 @@ export class FiltroService{
           return this.http.get(this.URL + `select?tipo=${tipo}&seleccione=${seleccione}`, httpOptions);
     }
 
-    public inicializarAutocompletable(id:string , endpoint:string , multiple = false){
-      $(id).select2({
+    public inicializarAutocompletable(id:string , tipo : string , multiple = false){
+      $('#'+id).select2({
           minimumInputLength: 2,
           language: {
             "errorLoading":function(){return"No se pudieron cargar los resultados"},
@@ -47,7 +48,7 @@ export class FiltroService{
           maximumSelectionLength: 6,
           placeholder: "Ingrese el dato",
           ajax: {
-            url: `${this.environment.URL_API}/filtro/${endpoint}`,
+            url: `${this.environment.URL_API}/filtro/select2`,
             dataType: 'json',
             crossDomain: true,
             xhrFields: {
@@ -56,7 +57,8 @@ export class FiltroService{
             delay: 250,
             data: function (params:any) {
               return {
-              texto: params.term
+              texto: params.term,
+              tipo:tipo
               };
             },
             processResults: function (data:any,page:any) {
@@ -77,6 +79,25 @@ export class FiltroService{
               }
           }
       })
+    }
+
+    public resetMultiselect(id:string){
+      let selectGerencias = document.getElementById(id) as HTMLSelectElement
+      for (let i = 0; i < selectGerencias.options.length; i++) {
+        selectGerencias.options[i].selected = false;
+      }
+    }
+
+    public resetSelect2(id:string) : void{
+      $('#'+id).val('').trigger('change')
+    }
+
+    public getValueSelect2(id: string) {
+      let selector =  $(id).select2('data');
+      if(selector[0] == undefined ){
+        return '';
+      }
+      return $(id).select2('data')[0].id;
     }
 
     public iniciarPickerAnios(id:string){
