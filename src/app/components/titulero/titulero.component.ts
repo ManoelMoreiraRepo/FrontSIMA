@@ -19,7 +19,7 @@ export class TituleroComponent {
     if(this.tititulosExternos){
       this.titulos=this.tititulosExternos;
     }else{
-      if(!this.authService.isModerador()){
+      if(!this.authService.isModeradorORAdmin()){
         this.titulos = titulos.filter(titulo => titulo.url !== "/logsimportacion");
       }
     }

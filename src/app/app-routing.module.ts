@@ -34,7 +34,7 @@ const routes: Routes = [
   { path: 'oferta/:id', component:OfertaComponent }, //Ambos 
   { path: 'dpa', component:DpaComponent , canActivate: [RoleGuard], data: vistaAdmin },
   { path: 'suministros', component:SuministrosPrincipalComponent , canActivate: [RoleGuard], data: vistaAdmin },
-  { path: 'logsimportacion', component:LogsimportacionComponent , canActivate: [RoleGuard], data: vistaMod },
+  { path: 'logsimportacion', component:LogsimportacionComponent , canActivate: [RoleGuard], data: vistaAdmin },
   // { path: 'indumentaria', component:IndumentariaComponent , canActivate: [RoleGuard], data: vistaAdmin },
 
 ];

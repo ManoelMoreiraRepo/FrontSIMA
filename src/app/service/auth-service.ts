@@ -99,8 +99,8 @@ export class AuthService {
         return this.role;
     }
 
-    isModerador(){
-      return this.getRole() === 'ROLE_MODERATOR';
+    isModeradorORAdmin(){
+      return this.getRole() === 'ROLE_MODERATOR' || this.getRole() === 'ROLE_ADMIN';
     }
 
     // getRoleActual = async () => {
