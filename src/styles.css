@@ -113,28 +113,6 @@ input[type="file"] {
   display: none !important;
 }
 
-/* .entradaSelect2{
-  width: 100% !important;
-}
-
-.select2-hidden-accessible{
-  display: none;
-} 
-.select2-container{
-  background-color: white;
-}
-.select2-search__field{
-  height: 34px !important;
-  resize: none;
-}
-.select2-search{
-  display: block !important;
-  height: 0 !important;
-}
-.select2-selection__rendered{
-  position:absolute !important;
-} */
-
 @media (max-width : 769px){
   .boxImport img{
     width: 60px;

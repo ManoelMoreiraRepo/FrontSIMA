@@ -8,12 +8,12 @@
               
                 <div class="col-lg-2">
                   <label for="selectAnios">Años</label>
-                  <select id="selectAnios"  class="form-select" multiple  name="anios" style="width: 100%;">
+                  <select id="selectAnios"  class="form-select multiselect" multiple  name="anios" style="width: 100%;">
                   </select>
                </div>
                <div class="col-lg-2">
                 <label for="gerencias">Gerencias</label>
-                <select id="gerencias"  class="form-select" multiple  name="gerencias" style="width: 100%;">
+                <select id="gerencias"  class="form-select multiselect" multiple  name="gerencias" style="width: 100%;">
                   <option *ngFor="let item of filtroGerencia" value="{{item.value}}">{{item.vista}}</option>
                 </select>
               </div>
