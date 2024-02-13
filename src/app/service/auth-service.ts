@@ -9,14 +9,13 @@ import { throwError } from 'rxjs';
     providedIn: 'root'
 })
 export class AuthService {
+  
     private role: string | null = '';
     private username: string | null = '';
     URL = `${this.environment.URL_API}/auth/`;
     constructor(private http: HttpClient, private router: Router, private mensajero: ToastrService , @Inject('ENVIRONMENT') private environment: any) {
         this.role = localStorage.getItem('userRole') || null;
     }
-
-
     login = async (username: string, password: string) => {
         this.setUsername(username);
         const credentials = { username, password };
@@ -44,7 +43,7 @@ export class AuthService {
             .get(this.URL + `role`, { withCredentials: true })
             .toPromise();
       
-          console.log(response);
+          // console.log(response);
       
           if (response != undefined  && response.role != null) {
             this.setRole(response.role);
@@ -86,9 +85,7 @@ export class AuthService {
                 })
             )
             .subscribe((response:  HttpResponse<any>) => {
-                console.log(response);
-                // this.router.navigate(['/adminmain']);
-                // this.mensajero.success("Bienvenido.");
+                // console.log(response);
             });
     }
     setRole(role: string) {
@@ -103,14 +100,12 @@ export class AuthService {
       return this.getRole() === 'ROLE_MODERATOR' || this.getRole() === 'ROLE_ADMIN';
     }
 
-    // getRoleActual = async () => {
-    //     if (this.getRole() == '') {
-    //         return await this.procesarUsuario();
-    //     } else {
-    //         return this.getRole();
-    //     }
-
-    // }
+    isAdmin() {
+      return this.getRole() === 'ROLE_ADMIN';
+    }
+    isModerador() {
+      return this.getRole() === 'ROLE_MODERATOR';
+    }
 
     setUsername(username: string) {
         this.username = username;

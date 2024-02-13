@@ -118,7 +118,7 @@ export const arrayMenuEmpleado = [
     },
 ]
 
-export const titulos = [
+export const titulosAdmin = [
   {
     titulo:"RRHH",
     url:"/rrhh"
@@ -135,20 +135,35 @@ export const titulos = [
     titulo:"SUMINISTROS",
     url:"/suministros"
   },
- /* {
-    titulo:"NOMINA ACTIVA",
-    url:"/empleado"
-  },
-  {
-    titulo:"ORGANIGRAMA",
-    url:"/rrhh"
-  },
-  {
-    titulo:"BOLSA DE TRABAJO",
-    url:"/bolsa"
-  },*/
   {
     titulo:"LOGS IMPORTACIÓN",
     url:"/logsimportacion"
+  },
+];
+
+export const titulosMod =  [
+  {
+    titulo:"RRHH",
+    url:"/rrhh"
+  },
+  {
+    titulo:"CREDENCIALES",
+    url:"/credenciales"
+  },
+  {
+    titulo:"DPA",
+    url:"/dpa"
+  },
+  {
+    titulo:"SUMINISTROS",
+    url:"/suministros"
+  },
+  {
+    titulo:"LOGS IMPORTACIÓN",
+    url:"/logsimportacion"
+  },
+  {
+    titulo:"USUARIOS",
+    url:"/usuarios"
   },
 ];

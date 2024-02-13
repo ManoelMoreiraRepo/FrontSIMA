@@ -45,6 +45,8 @@ import { IndumentariaComponent } from './paginas/indumentaria/indumentaria.compo
 import { DpaComponent } from './paginas/dpa/dpa.component';
 import { RrhhprincipalComponent } from './paginas/rrhhprincipal/rrhhprincipal.component';
 import { SuministrosPrincipalComponent } from './paginas/suministros-principal/suministros-principal.component';
+import { UsuariosComponent } from './paginas/usuarios/usuarios.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -81,7 +83,7 @@ import { SuministrosPrincipalComponent } from './paginas/suministros-principal/s
     DpaComponent,
     RrhhprincipalComponent,
     SuministrosPrincipalComponent,
-    
+    UsuariosComponent
   ],
   imports: [
     BrowserModule,
@@ -91,7 +93,8 @@ import { SuministrosPrincipalComponent } from './paginas/suministros-principal/s
     ToastrModule.forRoot(),
     BrowserAnimationsModule,
     PaginationComponent,
-    CommonModule
+    CommonModule,
+    FontAwesomeModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },

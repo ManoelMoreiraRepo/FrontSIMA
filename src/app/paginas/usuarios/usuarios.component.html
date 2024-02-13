@@ -1,0 +1,91 @@
+<div>
+    <app-header></app-header>
+    <app-titulero [indice]="5"></app-titulero>
+    <app-separador [urlImg]="urlImagen" ></app-separador>
+    <div class="col-md-12 d-flex justify-content-center">
+        <div class="col-md-10">
+            <table class="table table-hover ">
+                <thead>
+                    <tr>
+                        <th>Usuario</th>
+                        <th>Role</th>
+                        <th>Correo</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of usuarios ">
+
+                        <td>{{item.nombreUsuario}}</td>
+                        <td>{{item.roles[0].name}}</td>
+                        <td>{{item.correoUsuario || ''}}</td>
+                        <td><a (click)="editarUsuario(item.idUsuario)"><fa-icon [icon]="faPencil"></fa-icon></a></td>
+                    </tr>
+                </tbody>
+
+
+        
+            </table>
+        </div>
+    </div>
+    <div
+        class="modal fade"
+        id="modalEditarUsuario"
+        tabindex="-1"
+        role="dialog"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog " role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" >
+                <ng-template *ngIf="usuarioEditable == 0 ; else edicion">Nuevo Usuario</ng-template>
+                <ng-template #edicion> Editar usuario</ng-template>
+            </h5>
+            </div>
+            <div class="modal-body">
+                <form  autocomplete="off">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" >Usuario</span>
+                        <input type="text" id="usuario" [(ngModel)]="usuarioEditable.usuario" class="form-control" placeholder="Usuario" aria-label="Usuario" >
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" >Contraseña</span>
+                        <input type="password"  id="contrasena" class="form-control" placeholder="Contraseña" aria-label="Username" >
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" >Correo</span>
+                        <input type="text" id="correo" [(ngModel)]="usuarioEditable.correo" class="form-control" placeholder="Correo" aria-label="Correo" >
+                    </div>
+                    <div class="input-group mb-3">
+                        <label class="input-group-text" for="rol">Rol</label>
+                        <select class="form-select" id="rol"  [(ngModel)]="usuarioEditable.rol">
+                        <option value="user">ROLE_USER</option>
+                        <option value="admin">ROLE_ADMIN</option>
+                        <option value="mod">ROLE_MODERATOR</option>
+                        </select>
+                    </div>
+                </form>
+            </div> 
+            <div class="modal-footer">
+               <button
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+                (click)="cerrarModal()"
+              >
+                Cerrar
+              </button>
+              <button
+                type="button"
+                class="btn btn-primary"
+                data-dismiss="modal"
+                (click)="guardarUsuario()"
+              >
+                Guardar
+              </button> 
+            </div>
+          </div>
+        </div>
+      </div>
+</div>

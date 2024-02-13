@@ -14,6 +14,7 @@ import { DpaComponent } from './paginas/dpa/dpa.component';
 import { RrhhprincipalComponent } from './paginas/rrhhprincipal/rrhhprincipal.component';
 import { SuministrosPrincipalComponent } from './paginas/suministros-principal/suministros-principal.component';
 import { BolsaadminComponent } from './paginas/bolsaadmin/bolsaadmin.component';
+import { UsuariosComponent } from './paginas/usuarios/usuarios.component';
 
 const vistaUser = { roles: ['ROLE_USER' , 'ROLE_MODERATOR']};
 const vistaAdmin = { roles: ['ROLE_ADMIN' , 'ROLE_MODERATOR'] };
@@ -35,6 +36,7 @@ const routes: Routes = [
   { path: 'dpa', component:DpaComponent , canActivate: [RoleGuard], data: vistaAdmin },
   { path: 'suministros', component:SuministrosPrincipalComponent , canActivate: [RoleGuard], data: vistaAdmin },
   { path: 'logsimportacion', component:LogsimportacionComponent , canActivate: [RoleGuard], data: vistaAdmin },
+  { path: 'usuarios', component:UsuariosComponent , canActivate: [RoleGuard], data: vistaMod },
   // { path: 'indumentaria', component:IndumentariaComponent , canActivate: [RoleGuard], data: vistaAdmin },
 
 ];

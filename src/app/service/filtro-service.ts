@@ -109,6 +109,13 @@ export class FiltroService{
         option.value = String(year);
         selectYears.appendChild(option);
       }
-      // $('select[multiple]').multiSelect();
+    }
+
+    public openModal(id:string) {
+      $('#'+id).modal('show');
+    }
+  
+    public closeModal(id:string){
+      $('#'+id).modal('hide');
     }
 }

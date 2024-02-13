@@ -15,8 +15,8 @@ export class LoginComponent {
  
 
   main = async() => {
-    console.log(this.username);
-    console.log(this.password);
+    // console.log(this.username);
+    // console.log(this.password);
     await this.authService.procesarUsuario(this.username, this.password);
   }
 
