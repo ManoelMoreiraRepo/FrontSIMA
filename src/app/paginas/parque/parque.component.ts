@@ -12,7 +12,6 @@ export class ParqueComponent {
 
   constructor(private dpaService : DpaService , private importacionService : ImpotacionService ){}
 
-  // selectedFile:any;
   nombres : any = [];
   importes: any = [];
   cantidades: any = [];
@@ -88,27 +87,6 @@ export class ParqueComponent {
 
     })
   }
-
-  
- 
-
-  // onFileChange(event: any) {
-  //   this.selectedFile = event.target.files[0]; 
-  //   this.subirArchivo();
-  // }
-
-  // subirArchivo(){
-  //   const formData = new FormData();
-  //   if(!this.selectedFile){
-  //     return;
-  //   }
-
-  //   formData.append('file', this.selectedFile);
-  //   this.importacionService.subir(formData);
-  //   setTimeout(() => {
-  //    location.reload();
-  //   }, 2000);
-  // }
 
   getSumaTotal(obj :any){
     return  obj.data.datasets[0].data.reduce((suma:any,numero : any)=> suma+ numero, 0);

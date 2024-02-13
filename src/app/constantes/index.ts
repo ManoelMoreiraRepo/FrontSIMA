@@ -34,7 +34,7 @@ export const arrayMenuEmpleado = [
             titulo:"BOLSA DE TRABAJO",
             descrip:"Reporte semanal de estado",
             img:"./assets/img/lupa.png",
-            url:"/rrhh/bolsa"
+            url:"/#/bolsa"
           }
         ]
     },

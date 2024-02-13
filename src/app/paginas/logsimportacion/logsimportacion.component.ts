@@ -11,7 +11,7 @@ declare var $: any;
   styleUrls: ['./logsimportacion.component.css']
 })
 export class LogsimportacionComponent {
-
+  selectedFile: any;
   urlImagen : string = "./assets/img/Ellipse 99.png";
   lista : any;
   observacion:any = {
@@ -54,6 +54,24 @@ export class LogsimportacionComponent {
     lista.forEach((element:any) => {
       element.url = `${this.environment.URL_API}/importacion/descargar/${element.archivo}`;
     });
+  }
+
+
+  onFileChange(event: any) {
+    this.selectedFile = event.target.files[0];
+    this.subirArchivoNomina();
+  }
+
+  subirArchivoNomina(){
+    const formData = new FormData();
+    if(!this.selectedFile){
+      return;
+    }
+    formData.append('file', this.selectedFile);
+    this.importacionService.subir(formData);
+    // setTimeout(() => {
+    //  location.reload();
+    // }, 2000);
   }
   
 }

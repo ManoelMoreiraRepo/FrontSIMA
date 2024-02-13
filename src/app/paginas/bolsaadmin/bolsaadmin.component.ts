@@ -13,8 +13,8 @@ export class BolsaadminComponent {
   constructor(private authService : AuthService , private ofertaService : OfertaService , private importacionService : ImpotacionService , private router: Router){}
 
   esAdmin = this.authService.getRole()!='ROLE_USER';
+  urlImagen : string = "./assets/img/Ellipse 99.png";
   urlImagenPostu:string = "./assets/img/postu.png";
-  // selectedFile:any;
   lista : any = [ ]
   paginable:any;
   alldata:any
@@ -56,22 +56,4 @@ export class BolsaadminComponent {
     return getLogoByGerencia(gerencia);
   }
 
-  // onFileChange(event: any) {
-  //   this.selectedFile = event.target.files[0];
-    
-  //   this.subirArchivo();
-  // }
-
-  // subirArchivo(){
-  //   const formData = new FormData();
-  //   if(!this.selectedFile){
-  //     return;
-  //   }
-
-  //   formData.append('file', this.selectedFile);
-  //   this.importacionService.subir(formData);
-  //   setTimeout(() => {
-  //    location.reload();
-  //   }, 2000);
-  // }
 }

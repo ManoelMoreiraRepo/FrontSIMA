@@ -10,27 +10,8 @@ import { ImpotacionService } from 'src/app/service/importacion-service';
   styleUrls: ['./suministros.component.css']
 })
 export class SuministrosComponent {
-  // urlImagen : string = "./assets/img/suministros.png";
   objeto:any = {};
   selectedFile:any;
-  // subtitulos = [
-  //   {
-  //     titulo:"SUMINISTROS",
-  //     url:"/suministros"
-  //   },
-  //   {
-  //     titulo:"PERIFERICOS",
-  //     url:"/perifericos"
-  //   },
-  //   {
-  //     titulo:"EQUIPAMIENTOS",
-  //     url:"/equipamientos"
-  //   },
-  //   {
-  //     titulo:"INDUMENTARIA",
-  //     url:"/indumentaria"
-  //   }
-  // ]
   totales :any = [
     {
       titulo:"GRUPO SIMA",
@@ -141,25 +122,5 @@ export class SuministrosComponent {
       },
     }
   }
-  
-  onFileChange(event: any) {
-    this.selectedFile = event.target.files[0]; 
-    this.subirArchivo();
-  }
-
-  subirArchivo(){
-    const formData = new FormData();
-    if(!this.selectedFile){
-      return;
-    }
-
-    formData.append('file', this.selectedFile);
-    this.importacionService.subir(formData);
-    setTimeout(() => {
-     location.reload();
-    }, 2000);
-  }
-
-  
 
 }

@@ -14,11 +14,20 @@ export class ImpotacionService{
     public subir(archivo:any) {
         this.httpClient.post(this.URL + `archivo`, archivo ,  { responseType: 'text' , withCredentials: true,}).subscribe(
             (response) => {
-              this.mensajero.success(response);
+              this.mensajero.info(response);
             },
             (error) => {
-              this.mensajero.error("Error al cargar el archivo.");
-              console.error('Error al cargar el archivo: ', error);
+              if(error.error){
+                try {
+                  let mensaje = JSON.parse(error.error).mensaje;
+                  this.mensajero.info(mensaje);
+                } catch (error) {
+                }
+              }else{
+                this.mensajero.error("Error al cargar el archivo.");
+                console.error('Error al cargar el archivo: ', error);
+              }
+              
             }
         );
     }

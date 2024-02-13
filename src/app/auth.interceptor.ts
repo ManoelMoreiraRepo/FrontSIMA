@@ -28,7 +28,7 @@ export class AuthInterceptor implements HttpInterceptor {
           if (error instanceof HttpErrorResponse && error.status === 401) {
              this.router.navigate(['/login']);
           }else{
-            this.mensajero.error("Ocurrio un error.");
+            //this.mensajero.error("Ocurrio un error.");
            // alert(JSON.stringify(error));
             console.log(error);
           }

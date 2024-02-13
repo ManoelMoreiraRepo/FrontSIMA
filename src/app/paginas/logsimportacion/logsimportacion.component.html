@@ -54,8 +54,24 @@
         </div>
       </div>
 
+      <div class="contenedorImportacion">
+        <div class="barraImportacion">
+            <div class="boxImport">
+                <div>
+                    <label for="file-nomina"><img src="./assets/img/up.png" alt="" > </label>
+                    <input id="file-nomina" class="inputFile" type="file" (change)="onFileChange($event)" />
+                </div>
+                <div>
+                    <h6>IMPORTACIÓN</h6>
+                    <span>Reporte semanal</span>
+                </div>
+            </div>
+            <div class="infoImportador">
+                <span>Opcion de carga de información</span>
+                <span>Responsable: RRHH</span>
+            </div>
+        </div>
+    </div>
 
     <app-footer class="footer"></app-footer>
-
-    
 </div>
