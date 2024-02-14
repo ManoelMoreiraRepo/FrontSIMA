@@ -25,7 +25,11 @@ export class UsuarioService {
     }
 
     public getUsuario(id : any): Observable<any> {
-        return this.http.get(this.URL + `traer?id=${id}` , this.httpOptions);
+        return this.http.get(this.URL + `traer/${id}` , this.httpOptions);
+    }
+
+    public guardarUsuario(obj:any){
+        return this.http.put(this.URL + 'update', obj , this.httpOptions);
     }
 }
 

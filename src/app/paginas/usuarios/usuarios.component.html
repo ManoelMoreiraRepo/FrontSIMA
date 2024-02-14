@@ -2,7 +2,16 @@
     <app-header></app-header>
     <app-titulero [indice]="5"></app-titulero>
     <app-separador [urlImg]="urlImagen" ></app-separador>
-    <div class="col-md-12 d-flex justify-content-center">
+    <div class="col-md-12 d-flex justify-content-center align-items-center " style="flex-direction: column;gap: 1rem;">
+        <div class="col-md-10">
+            <button
+                type="button"
+                class="btn btn-primary"
+                (click)="editarUsuario(0)"
+              >
+                Nuevo
+              </button> 
+        </div>
         <div class="col-md-10">
             <table class="table table-hover ">
                 <thead>
@@ -47,24 +56,25 @@
                 <form  autocomplete="off">
                     <div class="input-group mb-3">
                         <span class="input-group-text" >Usuario</span>
-                        <input type="text" id="usuario" [(ngModel)]="usuarioEditable.usuario" class="form-control" placeholder="Usuario" aria-label="Usuario" >
+                        <input type="text" id="usuario" [(ngModel)]="usuarioEditable.username" name="usuario" class="form-control" placeholder="Usuario" aria-label="Usuario" >
                     </div>
                     <div class="input-group mb-3">
                         <span class="input-group-text" >Contraseña</span>
-                        <input type="password"  id="contrasena" class="form-control" placeholder="Contraseña" aria-label="Username" >
+                        <input type="password"  id="contrasena" name="contrasena" [(ngModel)]="usuarioEditable.password" class="form-control" placeholder="Contraseña" name="contrasena" >
                     </div>
                     <div class="input-group mb-3">
                         <span class="input-group-text" >Correo</span>
-                        <input type="text" id="correo" [(ngModel)]="usuarioEditable.correo" class="form-control" placeholder="Correo" aria-label="Correo" >
+                        <input type="text" id="correo" name="correo" [(ngModel)]="usuarioEditable.email" class="form-control" placeholder="Correo" aria-label="Correo" >
                     </div>
                     <div class="input-group mb-3">
                         <label class="input-group-text" for="rol">Rol</label>
-                        <select class="form-select" id="rol"  [(ngModel)]="usuarioEditable.rol">
-                        <option value="user">ROLE_USER</option>
-                        <option value="admin">ROLE_ADMIN</option>
-                        <option value="mod">ROLE_MODERATOR</option>
+                        <select class="form-select" id="rol" name="rol" [(ngModel)]="usuarioEditable.role">
+                        <option value="ROLE_USER">ROLE_USER</option>
+                        <option value="ROLE_ADMIN">ROLE_ADMIN</option>
+                        <option value="ROLE_MODERATOR">ROLE_MODERATOR</option>
                         </select>
                     </div>
+                    <input type="hidden" [(ngModel)] = 'usuarioEditable.id' name="idUsuario" />
                 </form>
             </div> 
             <div class="modal-footer">
@@ -88,4 +98,6 @@
           </div>
         </div>
       </div>
+
+      <app-footer class="footer"></app-footer>
 </div>
