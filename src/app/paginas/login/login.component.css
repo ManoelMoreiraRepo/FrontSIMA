@@ -84,3 +84,8 @@
     text-decoration: none;
     color: #bbe1fa;
 }
+
+input::placeholder {
+    font-weight: bold;
+    opacity: 1 !important;
+}

@@ -3,7 +3,7 @@ import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { catchError } from 'rxjs/operators';
-import { throwError } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
 
 @Injectable({
     providedIn: 'root'
@@ -33,6 +33,10 @@ export class AuthService {
           throw error;
         }
       };
+
+      public sendEmail(cuenta: { nombre: string; apellido: string; dni: string; email: string; }):Observable<any> {
+        return this.http.post(this.URL + 'sendEmail' , cuenta ,{ observe: 'response', withCredentials: false });
+      }
       
 
       procesarUsuario = async (username: string, password: string) => {

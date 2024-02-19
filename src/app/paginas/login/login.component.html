@@ -1,5 +1,5 @@
 <div class="container-fluid ">
-    <div class="vh-100 row justify-content-center align-items-center text-center">
+    <div *ngIf="!nuevaCuenta" class="vh-100 row justify-content-center align-items-center text-center">
         <div class="  text-center ">
             <div id="login">
                 <div class="titulo">
@@ -18,11 +18,31 @@
                     <button type="button" class="btn btn-danger" >Cancelar</button>
                 </form>
                 <div class="pie-form">
-                    <a href="#">¿No tienes Cuenta? Registrate</a>
+                    <a href="#" (click)="nuevaCuenta = true">¿No tienes Cuenta? Registrate</a>
                 </div>
             </div>
-            <div class="inferior">
+            <!-- <div class="inferior">
                 <a href=" ">Volver</a>
+            </div> -->
+        </div>
+    </div>
+    <div  *ngIf="nuevaCuenta" class="vh-100 row justify-content-center align-items-center text-center">
+        <div class="  text-center ">
+            <div id="login">
+                <div class="titulo">
+                    <img src="assets/img/logo.fwTransparente.png" class="img-fluid"
+             alt="" width="" height="">
+                </div>
+                <form (ngSubmit)="enviarMail()" #loginForm="ngForm" >
+                    <!-- [(ngModel)]="nombreUsuario" required  -->
+                    <input type="text" id="nombre" name="nombre" placeholder="Ingrese su nombre" [(ngModel)]="cuenta.nombre" class="form-control form-control-lg" />
+                    <input type="text" id="apellido" name="apellido" placeholder="Ingrese su apellido" [(ngModel)]="cuenta.apellido" class="form-control form-control-lg" />
+                    <input type="text" id="dni" name="dni"  placeholder="Ingrese su dni" [(ngModel)]="cuenta.dni" class="form-control form-control-lg" />
+                    <input type="email" id="correo" name="correo" placeholder="Ingrese su correo" [(ngModel)]="cuenta.email" class="form-control form-control-lg" />
+                    <button type="button" class="btn btn-danger" (click)="nuevaCuenta = false" >Cancelar</button>
+                    <button type="submit" class="btn btn-danger" >Enviar</button>
+                </form>
+                
             </div>
         </div>
     </div>
