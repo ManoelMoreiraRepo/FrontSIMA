@@ -1,5 +1,5 @@
-<div *ngIf="grilla" class="cotenenedorCalendario"> 
-    <div class="d-flex">
+<div *ngIf="grilla" class="cotenenedorCalendario col-lg-12"> 
+    <div class="d-flex contenedordatabox justify-content-center col-lg-12">
         <div class="data-content">
             <div class="borde-button">
               <span *ngIf="diasTrabajados" >{{ getTurnos() }}</span>
@@ -19,6 +19,13 @@
             <div>Horas</div>
           </div>
     </div>
+    <div class="contenedordatabox">
+        <span class="tituloSeccion">OBSERVACIONES</span>
+        <div class="data-content ">
+            <div class="">
+            </div>
+          </div>
+    </div>
     <div class="wrapper-calendar">
         <div class="header-calendar">
             <div>
@@ -32,7 +39,7 @@
         <ol>
             <li *ngFor="let day of week" class="day-name">{{day | slice:0:3}}</li>
 
-            <li (click)="clickDay(day)" [style.gridColumnStart]="first ? day?.indexWeek : 'auto'"
+            <li (click)="clickDay(day , day?.estado)" [style.gridColumnStart]="first ? day?.indexWeek : 'auto'"
             *ngFor="let day of monthSelect;let first = first" >
                 <ng-template #diaSinData><span>{{day?.value}}</span></ng-template>
                 <span *ngIf="day?.estado ; else diaSinData" class="marcaDIa"  [ngClass]="esDiaTrabajado(day) ? 'marcaVerde' : 'marcaDia'" title="{{day?.estado}}">{{day?.value}}</span>
@@ -42,6 +49,6 @@
 
     <hr>
     <div>
-        Fecha: {{dateValue | date}}
+        Fecha: {{dateValue | date}} <span *ngIf="estadoVisible">Turno : {{estadoVisible}}</span>
     </div>
 </div>

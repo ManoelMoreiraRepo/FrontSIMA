@@ -7,6 +7,7 @@
     padding: .5rem;
     border: solid 1px #eaeaea;
     box-shadow: 0 0 10px #e4e4e4;
+    background-color: white;
 }
 
 .cotenenedorCalendario div {
@@ -115,7 +116,14 @@
     height: 28px;
     text-wrap: nowrap;
 }
-
+.contenedordatabox{
+    background-color: white;
+    margin-bottom: 12px;
+}
+.tituloSeccion{
+    margin: 4px 8px;
+    font-weight: 800;
+  }
  
 @media(max-width : 796px){
     .day-name {
@@ -124,9 +132,9 @@
         padding: 4px;
     }
 
-    .cotenenedorCalendario{
+    /* .cotenenedorCalendario{
         width: 365px;
-    }
+    } */
 
     .cotenenedorCalendario li {
         padding: .25rem;
@@ -136,6 +144,11 @@
 
     .btn-prev , .btn-next {
         font-size: 12px;
+    }
+
+    .contenedordatabox{
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
 }

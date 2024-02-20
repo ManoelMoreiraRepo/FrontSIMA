@@ -6,6 +6,7 @@ import { PersonaServiceTsServiceService } from 'src/app/service/persona-service-
 import { ServiceindumentariaServiceService } from 'src/app/service/serviceindumentaria.service.service';
 import { IMAGEN_DEFAULT } from 'src/app/constantes';
 import { CredencialService } from 'src/app/service/credencial-service';
+import { esMovil } from 'src/app/utils';
 
 declare var $: any;
 @Component({
@@ -63,6 +64,8 @@ export class InformacionempleadoComponent {
   imagenURL : string = "";
 
   credenciales : any = {};
+
+  esMovil = esMovil();
 
   uniformesRecibidos = {
     "uniformes": [
@@ -209,8 +212,15 @@ export class InformacionempleadoComponent {
     return Object.entries(objeto).filter(([key, value]) => key !== 'nombre');
   }
 
-  toContenedor(selector:string){
-    document.getElementById(selector)?.scrollIntoView({ behavior: 'smooth' });
+  toContenedor(selector:string , clase:string){
+    document.getElementById('contenedorInformacionGeneral')?.classList.remove('gris1', 'gris2' , 'gris3', 'gris4');
+    document.getElementById('contenedorInformacionGeneral')?.classList.add('gris'+clase);
+    if(this.esMovil){
+      document.getElementById(selector)?.scrollIntoView({ behavior: 'smooth' });
+    }
+   
   }
   
+
+
 }

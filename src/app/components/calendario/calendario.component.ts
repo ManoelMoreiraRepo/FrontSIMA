@@ -24,6 +24,7 @@ export class CalendarioComponent {
   monthSelect: any[] = [];
   dateSelect: any;
   dateValue: any;
+  estadoVisible : any = '';
   diasTrabajados : any =[];
   grilla :any;
 
@@ -79,7 +80,8 @@ export class CalendarioComponent {
     }
   }
 
-  clickDay(day:any) {
+  clickDay(day:any , estado : any) {
+    this.estadoVisible = estado;
     const monthYear = this.dateSelect.format('YYYY-MM')
     const parse = `${monthYear}-${day.value}`
     const objectDate = moment(parse)

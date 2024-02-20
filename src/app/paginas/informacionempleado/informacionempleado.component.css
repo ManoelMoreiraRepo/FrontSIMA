@@ -25,10 +25,11 @@
   height: 100%;
 }
 
-#nav-perfil{
-  background-color: #D9D9D9;
+#nav-perfil .container, #nav-operaciones .container, #nav-indumentaria .container, #nav-capacitaciones .container, #nav-credenciales .container{
+  background-color: white;
+  margin-bottom: 12px;
 }
-#nav-operaciones{
+/* #nav-operaciones{
   background-color: #B9B9B9;
 }
 #nav-indumentaria{
@@ -39,7 +40,7 @@
 }
 #nav-credenciales{
   background-color: #343434;
-}
+} */
 
 .fondoTransparente{
   background-color: transparent;
@@ -53,6 +54,9 @@
   justify-content: center;
   flex-direction: column;
   height: 100px;
+}
+.data-content :nth-child(2){
+  font-weight: bolder;
 }
 .borde-button{
   border-bottom: 2px solid black;
@@ -132,7 +136,6 @@ table th[colspan="2"]:active {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 
-/* Estilo de las "box informativas" */
 .fechasUniforme  span {
   display: block;
   text-align: center;
@@ -146,7 +149,7 @@ table th[colspan="2"]:active {
 
 .fechasUniforme span span:nth-child(2) {
   font-size: 1.2em;
-  color: #0077b6; /* Puedes ajustar el color a tu preferencia */
+  color: #0077b6; 
   margin-top: 5px;
 }
 .contenedorInfo{
@@ -172,7 +175,7 @@ table th[colspan="2"]:active {
 .contenedorCredenciales{
   background-color: white;
   width: 95%;
-  margin: 12px auto;
+  margin-bottom: 12px;
 }
 .tituloSeccion{
   margin: 4px 8px;
@@ -181,8 +184,9 @@ table th[colspan="2"]:active {
 
 .perfilComponente{
   /* border-radius: 12px; */
-  margin: 0 12px  0 0;
-  background-color: #D9D9D9;
+  /* margin: 0 12px  0 0; */
+  background-color: white;
+  margin-bottom: 12px;
 }
 
 
@@ -209,6 +213,9 @@ table th[colspan="2"]:active {
   background-color: #FA3B12;
   color:white;
 }
+.contenedorGeneral{
+  margin-bottom: 100px;
+}
 
 @media(max-width : 796px){
   .contenedorInfor{
@@ -228,15 +235,20 @@ table th[colspan="2"]:active {
     width: 90%;
   }
   .data-content{
-    width: 40%;
+    width: 50% !important;
   }
+
+  /* #nav-operaciones .data-content{
+    flex-wrap: wrap;
+    justify-content: center;
+  } */
+
+  
   #nav-operaciones{
     margin-bottom: 200px !important;
   }
   #nav-credenciales .data-content{
     width: 50%;
   }
-  .data-content{
-    width: 50%;
-  }
+ 
 }

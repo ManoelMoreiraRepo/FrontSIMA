@@ -7,6 +7,9 @@
     flex-direction: column;
     height: 100px;
   }
+  .data-content :nth-child(2){
+    font-weight: bolder;
+  }
   .borde-button{
     border-bottom: 2px solid black;
     height: 28px;

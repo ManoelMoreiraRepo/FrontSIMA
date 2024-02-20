@@ -10,7 +10,7 @@
       role="tab"
       aria-controls="nav-perfil"
       aria-selected="true"
-      (click)="toContenedor('nav-perfil')"
+      (click)="toContenedor('nav-perfil' , '1')"
     >
       Perfil
     </button>
@@ -23,7 +23,7 @@
       role="tab"
       aria-controls="nav-operaciones"
       aria-selected="false"
-      (click)="toContenedor('nav-operaciones')"
+      (click)="toContenedor('nav-operaciones' ,'2')"
     >
       Operaciones
     </button>
@@ -36,7 +36,7 @@
       role="tab"
       aria-controls="nav-indumentaria"
       aria-selected="false"
-      (click)="toContenedor('nav-indumentaria')"
+      (click)="toContenedor('nav-indumentaria' , '3')"
     >
       Indumentaria
     </button>
@@ -61,13 +61,13 @@
       role="tab"
       aria-controls="nav-credenciales"
       aria-selected="false"
-      (click)="toContenedor('nav-credenciales')"
+      (click)="toContenedor('nav-credenciales' , '4')"
     >
       Credenciales
     </button>
   </div>
 </nav>
-<div class="contenedorInfor" style="display: flex;margin:12px 0 0 12px;width: 98%;">
+<div id="contenedorInformacionGeneral" class="contenedorInfor gris1" style="display: flex;padding:1%;width: 100%;">
 
   <div class="foto col-lg-3 d-flex flex-column align-items-center p-4 perfilComponente">
     <app-perfil *ngIf="empleado" [empleado]="empleado" [imagenURL]="imagenURL"></app-perfil>
@@ -83,63 +83,81 @@
       tabindex="0"
     >
       <div class="container">
-        <div class="row d-flex align-items-center col-md-12" style="justify-content: center;">
-          <div class="perfil col-md-8 gy-5" style="display: contents;">
+        <span class="tituloSeccion">DATOS PERSONALES</span>
+        <div class="row d-flex align-items-center col-md-12 m-2" style="justify-content: left;">
+          <div class="boxInfo perfil col-md-8 gy-5" style="display: contents;">
+            <div class="data-content">
+              <div class="borde-button">{{ empleado.legajoEmpleado }}</div>
+              <div>Legajo</div>
+            </div>
+            <div class="data-content">
+              <div class="borde-button">{{ empleado.dniempleado }}</div>
+              <div>DNI</div>
+            </div>
+            <div class="data-content">
+              <div class="borde-button">
+                {{ empleado.fechaNascimentoEmpleado | date : "dd/MM/y" }}
+              </div>
+              <div class="text-nowrap">Fecha de Nacimento</div>
+            </div>
+            <div class="data-content">
+              <div class="borde-button">{{ empleado.emailEmpleado }}</div>
+              <div>E-mail</div>
+            </div>
+            <div class="data-content">
+              <div class="borde-button">{{ empleado.sindicato }}</div>
+              <div>Sindicato</div>
+            </div>
+
               <div class="data-content">
                 <div class="borde-button">{{ empleado.direccionEmpleado }}</div>
                 <div>Direccion</div>
               </div>
-              <div class="data-content">
-                <div class="borde-button">0</div>
-                <div>INFRACIONES</div>
-              </div>
-              <div class="data-content">
-                <div class="borde-button">0</div>
-                <div>SANCIONES</div>
-              </div>
-              <div class="data-content">
-                <div class="borde-button">{{ empleado.legajoEmpleado }}</div>
-                <div>Legajo</div>
-              </div>
-              <div class="data-content">
-                <div class="borde-button">{{ empleado.dniempleado }}</div>
-                <div>DNI</div>
-              </div>
-              <div class="data-content">
-                <div class="borde-button">{{ empleado.objetivoEmpleado }}</div>
-                <div>Objetivo</div>
-              </div>
-              <div class="data-content">
-                <div class="borde-button">{{ empleado.cargoEmpleado }}</div>
-                <div>Cargo</div>
-              </div>
+
               <div class="data-content">
                 <div class="borde-button">
                   {{ empleado.codigoPostalEmpleado }}
                 </div>
                 <div>Codigo Postal</div>
               </div>
+              
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <span class="tituloSeccion">OBJETIVO / SERVICIO</span>
+        <div class="row d-flex align-items-center col-md-12 m-2" style="justify-content: left;">
+          <div class="boxInfo perfil col-md-8 gy-5" style="display: contents;">
+            <div class="data-content">
+              <div class="borde-button"></div>
+              <div>Cliente</div>
+            </div>
+            <div class="data-content">
+              <div class="borde-button">{{ empleado.objetivoEmpleado }}</div>
+              <div>Objetivo</div>
+            </div>  
+            <div class="data-content">
+              <div class="borde-button">{{ empleado.cargoEmpleado }}</div>
+              <div>Cargo</div>
+            </div>
+            <div class="data-content">
+              <div class="borde-button">{{ empleado.turnoEmpleado }}</div>
+              <div>Turno</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <span class="tituloSeccion">OBSERVACIONES</span>
+        <div class="row d-flex align-items-center col-md-12 m-2" style="justify-content: left;">
+          <div class="boxInfo perfil col-md-8 gy-5" style="display: contents;">
               <div class="data-content">
-                <div class="borde-button">
-                  {{ empleado.fechaNascimentoEmpleado | date : "dd/MM/y" }}
-                </div>
-                <div class="text-nowrap">Fecha de Nacimento</div>
+                <div class="borde-button">0</div>
+                <div>SANCIONES</div>
               </div>
               <div class="data-content">
-                <div class="borde-button">{{ empleado.telefonoEmpleado }}</div>
-                <div>Telefono Contacto</div>
-              </div>
-              <div class="data-content">
-                <div class="borde-button">{{ empleado.turnoEmpleado }}</div>
-                <div>Turno</div>
-              </div>
-              <div class="data-content">
-                <div class="borde-button">{{ empleado.emailEmpleado }}</div>
-                <div>E-mail</div>
-              </div>
-              <div class="data-content">
-                <div class="borde-button">{{ empleado.sindicato }}</div>
-                <div>Sindicato</div>
+                <div class="borde-button">0</div>
+                <div>INFRACIONES</div>
               </div>
               
           </div>
@@ -155,8 +173,8 @@
       aria-labelledby="nav-operaciones-tab"
       tabindex="1"
     >
-      <div class="fondo d-flex justify-content-center col-md-12">
-          <app-calendario *ngIf="idEmpleado" [idEmpleado]="idEmpleado"></app-calendario>
+      <div class="fondo d-flex justify-content-center col-lg-12">
+          <app-calendario *ngIf="idEmpleado"  class="col-lg-10" [idEmpleado]="idEmpleado"></app-calendario>
       </div>
     </div>
   
@@ -167,8 +185,9 @@
       role="tabpanel"
       aria-labelledby="nav-indumentaria-tab"
       tabindex="2"
-    >
-      <div class="contenedorInfo">
+    > 
+      
+      <div *ngIf="!esMovil" class="container contenedorInfo">
 
         <div class="fondo d-flex justify-content-center">
           <table class="table tablaIndumentaria m-3 p-3">
@@ -196,150 +215,37 @@
           </table>
 
         </div>
-
-
-        <!-- 
-      <div class="fondo d-flex justify-content-center">
-  
-        <div class="contenedorUniformes col-md-8">
-          <div class="fechasUniforme col-md-12">
-            <span>
-              <span>Fecha última entrega</span>
-              <span>07/23</span>
-            </span>
-  
-            <span>
-              <span>Fecha proxima entrega</span>
-              <span>07/24</span>
-            </span>
-          </div>
-          <div class="col-md-6 d-flex">
-            <table class="col-md-6 ">
-              <thead>
-                <tr>
-                  <th colspan="2" (click)="openModal('#uniforme1')">
-                    {{ uniformesRecibidos.uniformes[0].nombre }}
-                  </th>
-                </tr>
-                <tr>
-                  <th>Uniforme 1</th>
-                  <th>Talle</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr
-                  *ngFor="
-                    let propiedad of getPropiedades(uniformesRecibidos.uniformes[0])
-                  "
-                >
-                  <td>{{ propiedad[0] }}</td>
-                  <td>{{ propiedad[1] }}</td>
-                </tr>
-              </tbody>
-            </table>
-            <table class="col-md-6 ">
-              <thead>
-                <tr>
-                  <th colspan="2" (click)="openModal('#uniforme2')">
-                    {{ uniformesRecibidos.uniformes[1].nombre }}
-                  </th>
-                </tr>
-                <tr>
-                  <th>Uniforme 2</th>
-                  <th>Talle</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr
-                  *ngFor="
-                    let propiedad of getPropiedades(uniformesRecibidos.uniformes[0])
-                  "
-                >
-                  <td>{{ propiedad[0] }}</td>
-                  <td>{{ propiedad[1] }}</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          
-        </div>
-      </div>
-      <div
-        class="modal fade"
-        id="uniforme1"
-        tabindex="-1"
-        role="dialog"
-        aria-labelledby="exampleModalLabel"
-        aria-hidden="true"
-      >
-        <div class="modal-dialog" role="document">
-          <div class="modal-content" *ngIf="uniformesData">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">
-                {{ uniformesData.uniformes[indexUniforme1].nombre }}
-              </h5>
-            </div>
-            <div class="modal-body text-center">
-              <div>
-                <ul>
-                  <li *ngFor="let item of uniformesData.uniformes[0].items">
-                    {{ item }}
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="modal-footer">
-              <button
-                type="button"
-                class="btn btn-secondary"
-                data-dismiss="modal"
-                (click)="closeModal('#uniforme1')"
-              >
-                Cerrar
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-      -->
-      <div
-        class="modal fade"
-        id="uniforme2"
-        tabindex="-1"
-        role="dialog"
-        aria-labelledby="exampleModalLabel"
-        aria-hidden="true"
-      >
-        <div class="modal-dialog" role="document">
-          <div class="modal-content" *ngIf="uniformesData">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">
-                {{ uniformesData.uniformes[indexUniforme2].nombre }}
-              </h5>
-            </div>
-            <div class="modal-body text-center">
-              <div>
-                <ul>
-                  <li *ngFor="let item of uniformesData.uniformes[0].items">
-                    {{ item }}
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="modal-footer">
-              <button
-                type="button"
-                class="btn btn-secondary"
-                data-dismiss="modal"
-                (click)="closeModal('#uniforme2')"
-              >
-                Cerrar
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
+      
     </div>
+
+
+
+    <div *ngIf="esMovil" class="container contenedorInfo">
+
+      <div class="fondo d-flex justify-content-center">
+        <table class="table tablaIndumentaria m-3 p-3">
+          <thead class="table-light">
+            <tr>
+              <th>PRODUCTO</th>
+              <th>MODELO</th>
+              <th>TALLE</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of empleado.indumentaria" >
+              <td>{{item.nombreIndumentaria}}</td>
+              <td>{{item.modeloIndumentaria}}</td>
+              <td>{{item.talle}}</td>
+            </tr>
+            <tr *ngIf="empleado.indumentaria.length == 0" ><td colspan="6">El empleado no tiene indumentaria informada.</td></tr>
+          </tbody>
+        </table>
+
+      </div>
+    
+  </div>
+
+
     </div>
   
     <!-- <div
@@ -358,8 +264,8 @@
       tabindex="4"
     >
   
-    <div class="container" style="padding-bottom:120px">
-      <div class="row d-flex align-items-center m-3" style="justify-content: center;">
+    <div class="" style="padding-bottom:120px">
+      <div class="row d-flex align-items-center" style="justify-content: center;">
   
         <div class="perfil col-lg-9 gy-5" style="display: contents; width: 100%;">
           <div class="habilitaciones contenedorCredenciales">
