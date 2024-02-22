@@ -58,9 +58,7 @@ export class AuthService {
             this.redireccionMain();
           }
         } catch (error : any) {
-          if (error.status === 401) {
-            // this.mensajero.error("Ocurrió un error.");
-          }
+             this.mensajero.error("Usuario o contraseña incorrecta.");
         }
       };
       
