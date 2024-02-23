@@ -89,7 +89,7 @@ export class CalendarioComponent {
 
   clickDay(day:any , estado : any , horas:any) {
     this.estadoVisible = estado;
-    this.horasVisible = horas != null ? horas : "";
+    this.horasVisible = horas != null && this.esDiaTrabajado({estado:estado})? horas : "";
     const monthYear = this.dateSelect.format('YYYY-MM')
     const parse = `${monthYear}-${day.value}`
     const objectDate = moment(parse)

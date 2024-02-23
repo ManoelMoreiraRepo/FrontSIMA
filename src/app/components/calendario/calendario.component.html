@@ -42,7 +42,7 @@
             <li (click)="clickDay(day , day?.estado , day?.horas)" [style.gridColumnStart]="first ? day?.indexWeek : 'auto'"
             *ngFor="let day of monthSelect;let first = first" >
                 <ng-template #diaSinData><span>{{day?.value}}</span></ng-template>
-                <span *ngIf="day?.estado ; else diaSinData" class="marcaDIa"  [ngClass]="esDiaTrabajado(day) ? 'marcaVerde' : 'marcaDia'" title="{{day?.estado}}">{{day?.value}}</span>
+                <span *ngIf="day?.estado ; else diaSinData" [ngClass]="esDiaTrabajado(day) ? 'marcaVerde' : 'marcaAzul'  " title="{{day?.estado}}">{{day?.value}}</span>
             </li>
         </ol>
     </div>
