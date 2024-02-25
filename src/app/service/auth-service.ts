@@ -4,19 +4,23 @@ import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { catchError } from 'rxjs/operators';
 import { Observable, throwError } from 'rxjs';
+import { inHabilitarBoton, HabilitarBoton , inHabilitarBotonPorSegundos} from 'src/app/utils';
 
 @Injectable({
     providedIn: 'root'
 })
 export class AuthService {
-  
+    inHabilitarBoton = inHabilitarBoton;
+    HabilitarBoton = HabilitarBoton;
+    inHabilitarBotonPorSegundos = inHabilitarBotonPorSegundos
     private role: string | null = '';
     private username: string | null = '';
     URL = `${this.environment.URL_API}/auth/`;
     constructor(private http: HttpClient, private router: Router, private mensajero: ToastrService , @Inject('ENVIRONMENT') private environment: any) {
         this.role = localStorage.getItem('userRole') || null;
     }
-    login = async (username: string, password: string) => {
+    login = async (username: string, password: string , idBoton:string) => {
+        inHabilitarBoton(idBoton);
         this.setUsername(username);
         const credentials = { username, password };
         try {
@@ -24,7 +28,7 @@ export class AuthService {
             .post(this.URL + `signin`, credentials, { observe: 'response', withCredentials: false })
             .toPromise();
       
-      
+         
           return response;
         } catch (error : any) {
           if (error.status === 401) {
@@ -39,9 +43,10 @@ export class AuthService {
       }
       
 
-      procesarUsuario = async (username: string, password: string) => {
+      procesarUsuario = async (username: string, password: string, idBoton:string) => {
         try {
-          const loginResponse = await this.login(username, password);
+
+          const loginResponse = await this.login(username, password, idBoton);
       
           const response : any = await this.http
             .get(this.URL + `role`, { withCredentials: true })
@@ -53,11 +58,12 @@ export class AuthService {
             this.setRole(response.role);
             localStorage.setItem('userRole', response.role);
           }
-      
+          HabilitarBoton(idBoton);
           if (response.role) {
             this.redireccionMain();
           }
         } catch (error : any) {
+          HabilitarBoton(idBoton);
              this.mensajero.error("Usuario o contraseña incorrecta.");
         }
       };

@@ -13,9 +13,11 @@
                     <input type="password" id="password" name="password"  [(ngModel)]="password" class="form-control form-control-lg" />
                     <!-- (click)="main()" -->
                     
-                    <button type="submit" class="btn btn-danger" >Acceder</button>
+                    <button id="botonAcceder" type="submit" class="btn btn-danger" >Acceder</button>
                     
-                    <button type="button" class="btn btn-danger" >Cancelar</button>
+                    <button id="botonCancelar" type="button" class="btn btn-danger" (click)="resetLogin()" >
+                        Cancelar
+                    </button>
                 </form>
                 <div class="pie-form">
                     <a href="#" (click)="nuevaCuenta = true">¿No tienes Cuenta? Registrate</a>
@@ -33,14 +35,14 @@
                     <img src="assets/img/logo.fwTransparente.png" class="img-fluid"
              alt="" width="" height="">
                 </div>
-                <form (ngSubmit)="enviarMail()" #loginForm="ngForm" >
+                <form (ngSubmit)="enviarMail('botonEnvialMail')" #loginForm="ngForm" >
                     <!-- [(ngModel)]="nombreUsuario" required  -->
                     <input type="text" id="nombre" name="nombre" placeholder="Ingrese su nombre" [(ngModel)]="cuenta.nombre" class="form-control form-control-lg" />
                     <input type="text" id="apellido" name="apellido" placeholder="Ingrese su apellido" [(ngModel)]="cuenta.apellido" class="form-control form-control-lg" />
                     <input type="text" id="dni" name="dni"  placeholder="Ingrese su dni" [(ngModel)]="cuenta.dni" class="form-control form-control-lg" />
                     <input type="email" id="correo" name="correo" placeholder="Ingrese su correo" [(ngModel)]="cuenta.email" class="form-control form-control-lg" />
-                    <button type="button" class="btn btn-danger" (click)="nuevaCuenta = false" >Cancelar</button>
-                    <button type="submit" class="btn btn-danger" >Enviar</button>
+                    <button type="button" class="btn btn-danger" (click)="resetEnvioMail()" >Cancelar</button>
+                    <button id="botonEnvialMail" type="submit" class="btn btn-danger" >Enviar</button>
                 </form>
                 
             </div>
