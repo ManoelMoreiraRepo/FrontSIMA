@@ -7,6 +7,7 @@ import { ServiceindumentariaServiceService } from 'src/app/service/serviceindume
 import { IMAGEN_DEFAULT } from 'src/app/constantes';
 import { CredencialService } from 'src/app/service/credencial-service';
 import { esMovil } from 'src/app/utils';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
 declare var $: any;
 @Component({
@@ -66,6 +67,8 @@ export class InformacionempleadoComponent {
   credenciales : any = {};
 
   esMovil = esMovil();
+
+  faArrowLeft = faArrowLeft;
 
   uniformesRecibidos = {
     "uniformes": [
@@ -221,6 +224,8 @@ export class InformacionempleadoComponent {
    
   }
   
-
+  volverANomina(){
+    this.router.navigate(["/rrhh"] , { queryParams : {componente : "/rrhh/empleado"}})
+  }
 
 }

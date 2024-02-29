@@ -14,12 +14,21 @@ export class ImpotacionService{
     public subir(archivo:any) {
         this.httpClient.post(this.URL + `archivo`, archivo ,  { responseType: 'text' , withCredentials: true,}).subscribe(
             (response) => {
-              this.mensajero.info(response);
+              try {
+                let mensaje = JSON.parse(response).message;
+                this.mensajero.info(mensaje);
+                setTimeout(() => {
+                  location.reload();
+                }, 2000);
+              } catch (error) {
+                this.mensajero.info("Proceso iniciado.");
+              }
+              
             },
             (error) => {
               if(error.error){
                 try {
-                  let mensaje = JSON.parse(error.error).mensaje;
+                  let mensaje = JSON.parse(error.error).message;
                   this.mensajero.info(mensaje);
                 } catch (error) {
                 }

@@ -29,3 +29,7 @@
 .contenedorInformacion div{
     width: 69%;
 }
+
+.cargando{
+    display: none;
+}

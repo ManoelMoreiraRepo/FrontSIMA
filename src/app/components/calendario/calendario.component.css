@@ -99,6 +99,13 @@
 .marcaVerde{
     padding: 4px;
     color: green;
+    font-weight: 700;
+}
+
+.marcaAzul{
+    padding: 4px;
+    color: blue;
+    font-weight: 645;
 }
 
 .data-content {

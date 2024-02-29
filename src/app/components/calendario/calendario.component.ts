@@ -9,6 +9,7 @@ import { PersonaServiceTsServiceService } from 'src/app/service/persona-service-
   styleUrls: ['./calendario.component.css']
 })
 export class CalendarioComponent {
+
   @Input() idEmpleado:any; 
   week: any = [
     "Lunes",
@@ -25,6 +26,7 @@ export class CalendarioComponent {
   dateSelect: any;
   dateValue: any;
   estadoVisible : any = '';
+  horasVisible : any = '';
   diasTrabajados : any =[];
   grilla :any;
 
@@ -45,6 +47,10 @@ export class CalendarioComponent {
     
   }
 
+  getCantidadHoras(array: any) {
+    return array.reduce((act:any , elemt:any) => act + elemt.horas , 0);
+  }
+
   getDaysFromDate(month:any, year:any) {
     let startDate = moment.utc(`${year}/${month}/01`)
     const endDate = startDate.clone().endOf('month')
@@ -63,7 +69,8 @@ export class CalendarioComponent {
         name: dayObject.format("dddd"),
         value: a,
         indexWeek: dayObject.isoWeekday(),
-        estado: correspondingEntry ? correspondingEntry.estado : ""
+        estado: correspondingEntry ? correspondingEntry.estado : "",
+        horas : correspondingEntry ? correspondingEntry.horas : ""
       };
     });
 
@@ -80,8 +87,9 @@ export class CalendarioComponent {
     }
   }
 
-  clickDay(day:any , estado : any) {
+  clickDay(day:any , estado : any , horas:any) {
     this.estadoVisible = estado;
+    this.horasVisible = horas != null && this.esDiaTrabajado({estado:estado})? horas : "";
     const monthYear = this.dateSelect.format('YYYY-MM')
     const parse = `${monthYear}-${day.value}`
     const objectDate = moment(parse)

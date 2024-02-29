@@ -68,10 +68,11 @@ export class LogsimportacionComponent {
       return;
     }
     formData.append('file', this.selectedFile);
+    document.querySelectorAll('.cargando').forEach(e=>{
+      e.classList.remove('cargando');
+    })
     this.importacionService.subir(formData);
-    // setTimeout(() => {
-    //  location.reload();
-    // }, 2000);
+   
   }
   
 }
