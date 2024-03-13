@@ -7,14 +7,9 @@
              alt="" width="" height="">
                 </div>
                 <form (ngSubmit)="main()" #loginForm="ngForm" >
-                    <!-- [(ngModel)]="nombreUsuario" required  -->
-                    <input type="email" id="nombreUsuario" name="nombreUsuario"  [(ngModel)]="username" class="form-control form-control-lg" />
-                    <!-- [(ngModel)]="password" required -->
+                    <input type="text" id="nombreUsuario" name="nombreUsuario"  [(ngModel)]="username" class="form-control form-control-lg" />
                     <input type="password" id="password" name="password"  [(ngModel)]="password" class="form-control form-control-lg" />
-                    <!-- (click)="main()" -->
-                    
                     <button id="botonAcceder" type="submit" class="btn btn-danger" >Acceder</button>
-                    
                     <button id="botonCancelar" type="button" class="btn btn-danger" (click)="resetLogin()" >
                         Cancelar
                     </button>

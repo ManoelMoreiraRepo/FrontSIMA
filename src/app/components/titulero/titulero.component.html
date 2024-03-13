@@ -1,4 +1,4 @@
-<div>
+<div class="contenedorGeneralTitulos">
     <div class="contenedorTitulos">
         <div *ngFor="let item of titulos; index as i">
             <span *ngIf="i != indice" class="itemTitulo" ><a (click)="navigateToDestination(item.url)" >{{item.titulo}}</a></span>

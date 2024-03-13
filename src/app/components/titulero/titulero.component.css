@@ -1,9 +1,13 @@
+.contenedorGeneralTitulos{
+    border-bottom : 2px solid black;
+}
 .contenedorTitulos{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     gap: 12px;
     margin: 1rem;
+   
 }
 .itemTitulo{
     color:white;
