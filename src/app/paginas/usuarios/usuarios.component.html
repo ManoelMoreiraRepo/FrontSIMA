@@ -2,7 +2,8 @@
     <app-header></app-header>
     <app-titulero [indice]="5"></app-titulero>
     <app-separador [urlImg]="urlImagen" ></app-separador>
-    <div class="col-md-12 d-flex justify-content-center align-items-center " style="flex-direction: column;gap: 1rem;">
+    <div class="contenedorGeneral">
+      <div class="col-md-12 d-flex justify-content-center align-items-center " style="flex-direction: column;gap: 1rem;">
         <div class="col-md-10">
             <button
                 type="button"
@@ -37,6 +38,8 @@
             </table>
         </div>
     </div>
+    </div>
+    
     <div
         class="modal fade"
         id="modalEditarUsuario"

@@ -1,7 +1,7 @@
 .contenedorTabla{
-    display: flex;
-    justify-content: center;
-    
+   display: grid;
+   margin: 12px;
+   overflow-x: auto;
 }
 .tablaBolsa{
     margin-bottom: 174px;
@@ -10,7 +10,8 @@
 .tablaBolsa th,td{
     background-color: white;
     padding: 10px;
-    border: 12px solid #11354F;;
+    border: 12px solid #11354F;
+    text-wrap: nowrap;
 }
 
 .tablaBolsa th:nth-child(3),td:nth-child(3){

@@ -14,3 +14,9 @@
     justify-content: center;
     text-wrap: nowrap;
 }
+.contenedorGeneral{
+    display: grid;
+    margin:12px;
+    overflow-x: auto;
+    justify-items: center;
+}

@@ -2,3 +2,8 @@
     background-color: white;
     padding: 12px;
 }
+.contenedorGeneral{
+    display: grid;
+    margin:12px;
+    overflow-x: auto;
+}

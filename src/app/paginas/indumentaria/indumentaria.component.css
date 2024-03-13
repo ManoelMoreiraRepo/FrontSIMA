@@ -6,8 +6,11 @@
 .contenedorInfo{
     padding: 12px;
     background-color: white;
-    width: 80%;
+    width: 90%;
     gap:1rem ;  
     flex-direction: column;
     align-items: center;
+}
+.table-responsive {
+    overflow-x: auto;
 }

@@ -4,3 +4,8 @@
 #graficoAnual canvas{
     width: 1500px !important;
 }
+.contenedorGeneral{
+    display: grid;
+    margin:12px;
+    overflow-x: auto;
+}

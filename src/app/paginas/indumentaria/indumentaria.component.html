@@ -3,8 +3,8 @@
     <span class="etiqueta fondoRojo">INFO</span>
 
     <div class="contenedorGeneral d-flex justify-content-center">
-        <div class="contenedorInfo d-flex" >
-            <div class="col-lg-12 d-flex gap-3">
+        <div class="contenedorInfo d-flex mt-3" >
+            <div class="col-lg-12 d-flex gap-3 flex-wrap">
               
                 <div class="col-lg-2">
                   <label for="selectAnios">Años</label>
@@ -42,8 +42,8 @@
 
            
         </div>
-        <div class="contenedorInfo d-flex" >
-            <table class="table table-hover">
+        <div class="contenedorInfo " [ngStyle]="{'overflow':'auto', 'display': 'grid'}" >
+            <table class="table table-hover table-responsive">
                 <thead>
                   <tr>
                     <th>Año/Mes</th>
