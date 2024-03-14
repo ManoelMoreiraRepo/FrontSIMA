@@ -23,5 +23,6 @@
     .contenedorOferta{
         flex-direction: column;
         margin-bottom: 147px !important;
+        width: 90%;
     }
 }

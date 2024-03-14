@@ -50,3 +50,10 @@
     justify-content: space-around;
     
 }
+
+@media (max-width : 769px){
+    .acceso{
+        width: 100%;
+    }
+    
+}
