@@ -1,7 +1,7 @@
 .contenedorTabla{
-    display: flex;
+    display: grid;
     justify-content: center;
-    
+    overflow-x: auto;
 }
 .tablaBolsa{
     margin-bottom: 174px;
