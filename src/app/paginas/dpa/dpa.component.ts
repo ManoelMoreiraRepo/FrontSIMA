@@ -17,6 +17,10 @@ export class DpaComponent {
     {
       titulo:"INFRACCIONES / SINIESTROS",
       url:"infracciones"
+    },
+    {
+      titulo:"COMBUSTIBLE",
+      url:"combustible"
     }
   ]
 

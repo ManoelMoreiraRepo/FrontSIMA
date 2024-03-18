@@ -9,29 +9,30 @@ import { Observable } from 'rxjs';
 export class DpaService {
 
   URL = `${this.environment.URL_API}/dpa/`;
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json'
+    }),
+    withCredentials: true
+  };
+
   constructor(private httpClient: HttpClient, private mensajero: ToastrService , @Inject('ENVIRONMENT') private environment: any) {
   }
 
   public getEstadistica(): Observable<any> {
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json'
-      }),
-      withCredentials: true
-    };
-
-    return this.httpClient.get(this.URL + "estadistica", httpOptions);
+    
+    return this.httpClient.get(this.URL + "estadistica", this.httpOptions);
   }
 
   public getCantidadActivos(): Observable<any> {
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json'
-      }),
-      withCredentials: true
-    };
-
-    return this.httpClient.get(this.URL + "activos", httpOptions);
+    return this.httpClient.get(this.URL + "activos", this.httpOptions);
+  }
+  //Puede ser IMPORTE o LITROS
+  public getTotalesPorGerencia(): Observable<any[]> {
+    return this.httpClient.get<any[]>(this.URL + 'totales?agrupado=GERENCIA', this.httpOptions);
   }
 
+  public getTotalesPorMovil(): Observable<any[]> {
+    return this.httpClient.get<any[]>(this.URL + "totales?agrupado=MOVIL", this.httpOptions);
+  }
 }

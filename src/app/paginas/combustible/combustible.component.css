@@ -1,0 +1,55 @@
+.tablaTotalMovil{
+    max-height: 350px;
+    overflow-y: scroll;
+}
+.contenedorInfo{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 1rem;
+    background-color: white;
+    padding: 12px 4px;
+    margin: 12px 0;
+}
+.contenedorGeneral{
+    display: grid;
+   justify-items: center;
+   grid-gap: 20px;
+}
+.contenedorGrafico{
+    padding: 4px;
+    border: 1px solid black;
+    width: 400px;
+    height: 400px;
+}
+.tituloSeccion{
+    background-color: black;
+    color: white;
+    padding: 8px;
+    width: 99.6%;
+    font-size: medium;
+    font-weight: 700;
+    margin: 2px 2px 0 2px;
+}
+.contenedorSeccion{
+    background-color: white;
+}
+.table { 
+    text-align: left;
+}
+tr :last-child{
+    text-align: right;
+}
+
+@media (max-width : 769px){
+    .contenedorInfo{
+        flex-direction: column;
+    }
+    .contenedorGrafico{
+        width: 360px !important;
+        height: 360px !important;
+    }
+    .tituloSeccion{
+       width: 98.8%;
+    }
+}

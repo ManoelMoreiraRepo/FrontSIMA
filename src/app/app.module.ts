@@ -47,6 +47,7 @@ import { RrhhprincipalComponent } from './paginas/rrhhprincipal/rrhhprincipal.co
 import { SuministrosPrincipalComponent } from './paginas/suministros-principal/suministros-principal.component';
 import { UsuariosComponent } from './paginas/usuarios/usuarios.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { CombustibleComponent } from './paginas/combustible/combustible.component';
 
 @NgModule({
   declarations: [
@@ -83,7 +84,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     DpaComponent,
     RrhhprincipalComponent,
     SuministrosPrincipalComponent,
-    UsuariosComponent
+    UsuariosComponent,
+    CombustibleComponent
   ],
   imports: [
     BrowserModule,

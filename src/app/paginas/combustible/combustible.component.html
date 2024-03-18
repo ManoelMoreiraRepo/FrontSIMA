@@ -1,0 +1,138 @@
+<div class="contenedorGeneral">
+    <div class="contenedorSeccion col-lg-10">
+        <p class="tituloSeccion">Valor</p>
+        <div class="contenedorInfo">
+            <div class="col-lg-3" *ngIf="totalesPorGerencia | async as totalGerencia">
+                <table class="table table-hover table-bordered " >
+                    <thead>
+                        <tr>
+                            <th>GERENCIA</th>
+                            <th>COMBUSTIBLE</th>
+                        </tr>
+                    </thead>
+                    <tbody >
+                        <tr *ngFor="let item of totalGerencia ">
+                            <td>{{getGerencia(item[0])}}</td>
+                            <td>{{item[1] | currency:'ARS ':'symbol':'4.2-2' }}</td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+                <table class="table table-hover table-bordered ">
+                    <thead>
+                        
+                    </thead>
+                    <tbody >
+                    <tr>
+                        <td><b>TOTAL</b></td>
+                        <td>{{getSumatoria(totalGerencia , 1) | currency:'ARS ':'symbol':'4.2-2' }}</td>
+                    </tr>
+                </tbody>
+                </table>
+            </div>
+            <div class="contenedorGrafico col-lg-4" style="width: 400px;height:400px">
+                <app-bar-chart *ngIf="objetoGerencia"  [objeto]="objetoGerencia" ></app-bar-chart>
+            </div>
+            <div class="col-lg-4"  *ngIf="totalesPorMovil | async as totalMovil">
+                <div class="tablaTotalMovil" >
+                    <table class="table table-hover table-bordered ">
+                        <thead>
+                            <tr>
+                                <th>DOMINIO</th>
+                                <th>GERENCIA</th>
+                                <th>COMBUSTIBLE</th>
+                            </tr>
+                        </thead>
+                        <tbody >
+                            <tr *ngFor="let item of totalMovil ">
+                                <td>{{item[0]}}</td>
+                                <td>{{getGerencia(item[1])}}</td>
+                                <td>{{item[2] | currency:'ARS ':'symbol':'4.2-2' }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <table class="table table-hover table-bordered ">
+                    <thead>
+                        
+                    </thead>
+                    <tbody >
+                    <tr>
+                        <td><b>TOTAL GENERAL</b></td>
+                        <td>{{getSumatoria(totalMovil , 2) | currency:'ARS ':'symbol':'4.2-2' }}</td>
+                    </tr>
+                </tbody>
+                </table>
+            </div>
+            
+        </div>
+    </div>
+    
+    <div class="contenedorSeccion col-lg-10">
+        <p class="tituloSeccion">Litros</p>
+        <div class="contenedorInfo">
+            <div class="col-lg-3" *ngIf="totalesPorGerencia | async as totalGerencia">
+                <table class="table table-hover table-bordered ">
+                    <thead>
+                        <tr>
+                            <th>GERENCIA</th>
+                            <th>COMBUSTIBLE</th>
+                        </tr>
+                    </thead>
+                    <tbody >
+                        <tr *ngFor="let item of totalGerencia ">
+                            <td>{{getGerencia(item[0])}}</td>
+                            <td>{{item[2] }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table class="table table-hover table-bordered ">
+                    <thead>
+                        
+                    </thead>
+                    <tbody >
+                    <tr>
+                        <td><b>TOTAL</b></td>
+                        <td>{{getSumatoria(totalGerencia , 2) | currency:' ':'symbol':'4.2-2' }}</td>
+                    </tr>
+                </tbody>
+                </table>
+            </div>
+            <div class="contenedorGrafico col-lg-4" style="width: 400px;height:400px">
+                <app-bar-chart *ngIf="objetoMovil"  [objeto]="objetoMovil" ></app-bar-chart>
+            </div>
+            <div class="col-lg-4" *ngIf="totalesPorMovil | async as totalMovil">
+                <div class="tablaTotalMovil">
+                    <table class="table table-hover table-bordered ">
+                        <thead>
+                            <tr>
+                                <th>DOMINIO</th>
+                                <th>GERENCIA</th>
+                                <th>COMBUSTIBLE</th>
+                            </tr>
+                        </thead>
+                        <tbody >
+                            <tr *ngFor="let item of totalMovil ">
+                                <td>{{item[0]}}</td>
+                                <td>{{getGerencia(item[1])}}</td>
+                                <td>{{item[3]}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <table class="table table-hover table-bordered ">
+                    <thead>
+                        
+                    </thead>
+                    <tbody >
+                    <tr>
+                        <td><b>TOTAL GENERAL</b></td>
+                        <td>{{getSumatoria(totalMovil , 3) | currency:' ':'symbol':'4.2-2' }}</td>
+                    </tr>
+                </tbody>
+                </table>
+            </div>
+           
+        </div>
+    </div>
+</div>

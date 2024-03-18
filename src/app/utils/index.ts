@@ -25,6 +25,33 @@ export function getLogoByGerencia(gerencia: string):string {
     return url;
 }
 
+export function getGerenciaNombre(gerencia : string):string{
+    let nombre = '';
+    switch (gerencia) {
+        case 'GER01':
+            nombre = "GRUPO SIMA" ;
+            break;
+        case 'GER02':
+            nombre = "AEROPUERTOS" ;
+            break;
+        case 'GER03':
+            nombre = "GLOBAL" ;
+            break;
+        case 'GER04':
+            nombre = "EDENOR" ;
+            break;
+        case 'GER05':
+            nombre = "LA BIZANTINA" ;
+            break;
+        case 'GER06':
+            nombre = "ECOKLIN" ;
+            break;
+        default:
+            break;
+    }
+    return nombre;
+}
+
 
 export function esMovil(){
     let anchoPantalla = window.innerWidth;
